@@ -37,14 +37,16 @@ namespace SistemaDeControleDeTCCs
             services.AddDbContext<ContextoGeral>(options =>
             options.UseSqlServer(Configuration.GetConnectionString("StringDeConexao")));
 
+            services.AddScoped<PopularBancoDados>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env, PopularBancoDados popularBanco)
         {
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
+                popularBanco.Popular();
             }
             else
             {
