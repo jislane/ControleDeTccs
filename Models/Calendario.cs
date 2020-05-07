@@ -11,9 +11,16 @@ namespace SistemaDeControleDeTCCs.Models
     {
         [Key]
         public int CalendarioId { get; set; }
-
-        public DateTime  DataApresentacao { get; set; }
-
-        public ICollection<Tcc> Tccs { get; set; }
+        [Required(ErrorMessage = "O {0} é obrigatório")]
+        public int Ano { get; set; }
+        [Required(ErrorMessage = "O {0} é obrigatório")]
+        public int Semestre { get; set; }
+        [Display(Name = "Data Início")]
+        [Required(ErrorMessage = "A {0} é obrigatória")]
+        public DateTime DataInicio { get; set; }
+        [Display(Name = "Data Fim")]
+        [Required(ErrorMessage = "A {0} é obrigatória")]
+        public DateTime DataFim { get; set; }
+        public Boolean Ativo { get; set; }
     }
 }

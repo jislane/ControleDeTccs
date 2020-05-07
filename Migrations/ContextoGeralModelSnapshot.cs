@@ -29,7 +29,25 @@ namespace SistemaDeControleDeTCCs.Migrations
                     b.Property<DateTime>("DataDeCadastro")
                         .HasColumnType("datetime2");
 
+                    b.Property<double>("Nota")
+                        .HasColumnType("float");
+
+                    b.Property<int?>("TccId")
+                        .HasColumnType("int");
+
+                    b.Property<int?>("TipoUsuarioId")
+                        .HasColumnType("int");
+
+                    b.Property<int?>("UsuarioId")
+                        .HasColumnType("int");
+
                     b.HasKey("BancaId");
+
+                    b.HasIndex("TccId");
+
+                    b.HasIndex("TipoUsuarioId");
+
+                    b.HasIndex("UsuarioId");
 
                     b.ToTable("Banca");
                 });
@@ -41,8 +59,20 @@ namespace SistemaDeControleDeTCCs.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<DateTime>("DataApresentacao")
+                    b.Property<int>("Ano")
+                        .HasColumnType("int");
+
+                    b.Property<bool>("Ativo")
+                        .HasColumnType("bit");
+
+                    b.Property<DateTime>("DataFim")
                         .HasColumnType("datetime2");
+
+                    b.Property<DateTime>("DataInicio")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int>("Semestre")
+                        .HasColumnType("int");
 
                     b.HasKey("CalendarioId");
 
@@ -71,14 +101,23 @@ namespace SistemaDeControleDeTCCs.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<int?>("BancaId")
-                        .HasColumnType("int");
-
-                    b.Property<int?>("CalendarioId")
-                        .HasColumnType("int");
+                    b.Property<DateTime>("DataApresentacao")
+                        .HasColumnType("datetime2");
 
                     b.Property<DateTime>("DataDeCadastro")
                         .HasColumnType("datetime2");
+
+                    b.Property<DateTime>("DataFinalizacao")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("LocalApresentacao")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<double>("Nota")
+                        .HasColumnType("float");
+
+                    b.Property<string>("Resumo")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<int?>("StatusId")
                         .HasColumnType("int");
@@ -91,10 +130,6 @@ namespace SistemaDeControleDeTCCs.Migrations
                         .HasColumnType("int");
 
                     b.HasKey("TccId");
-
-                    b.HasIndex("BancaId");
-
-                    b.HasIndex("CalendarioId");
 
                     b.HasIndex("StatusId");
 
@@ -152,16 +187,23 @@ namespace SistemaDeControleDeTCCs.Migrations
                     b.ToTable("Usuario");
                 });
 
+            modelBuilder.Entity("SistemaDeControleDeTCCs.Models.Banca", b =>
+                {
+                    b.HasOne("SistemaDeControleDeTCCs.Models.Tcc", "Tcc")
+                        .WithMany()
+                        .HasForeignKey("TccId");
+
+                    b.HasOne("SistemaDeControleDeTCCs.Models.TipoUsuario", "TipoUsuario")
+                        .WithMany()
+                        .HasForeignKey("TipoUsuarioId");
+
+                    b.HasOne("SistemaDeControleDeTCCs.Models.Usuario", "Usuario")
+                        .WithMany()
+                        .HasForeignKey("UsuarioId");
+                });
+
             modelBuilder.Entity("SistemaDeControleDeTCCs.Models.Tcc", b =>
                 {
-                    b.HasOne("SistemaDeControleDeTCCs.Models.Banca", "Banca")
-                        .WithMany("Tccs")
-                        .HasForeignKey("BancaId");
-
-                    b.HasOne("SistemaDeControleDeTCCs.Models.Calendario", "Calendario")
-                        .WithMany("Tccs")
-                        .HasForeignKey("CalendarioId");
-
                     b.HasOne("SistemaDeControleDeTCCs.Models.Status", "Status")
                         .WithMany("Tccs")
                         .HasForeignKey("StatusId");

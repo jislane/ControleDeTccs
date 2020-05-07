@@ -11,19 +11,16 @@ namespace SistemaDeControleDeTCCs.Models
     {
         [Key]
         public int TccId { get; set; }
-
         [Column(TypeName = "nvarchar(250)")]
         [Required(ErrorMessage = "Este campo e obrigatório!")]
         public string Tema { get; set; }
-
-        public DateTime  DataDeCadastro { get; set; }
-
+        public DateTime DataDeCadastro { get; set; }
         public Status Status { get; set; }
-        public Banca Banca { get; set; }
         public Usuario Usuario { get; set; }
-        public Calendario Calendario { get; set; }
-
-
-
+        public string Resumo { get; set; }
+        public DateTime DataApresentacao { get; set; }
+        public DateTime DataFinalizacao { get; set; }
+        public double Nota { get; set; }
+        public string LocalApresentacao { get; set; }
     }
 }

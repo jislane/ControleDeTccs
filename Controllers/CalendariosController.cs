@@ -49,11 +49,11 @@ namespace SistemaDeControleDeTCCs.Controllers
         }
 
         // POST: Calendarios/Create
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
+        // To protect from overposting attacks, enable the specific properties you want to bind to, for 
+        // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("CalendarioId,DataApresentacao")] Calendario calendario)
+        public async Task<IActionResult> Create([Bind("CalendarioId,Ano,Semestre,DataInicio,DataFim,Ativo")] Calendario calendario)
         {
             if (ModelState.IsValid)
             {
@@ -81,11 +81,11 @@ namespace SistemaDeControleDeTCCs.Controllers
         }
 
         // POST: Calendarios/Edit/5
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
+        // To protect from overposting attacks, enable the specific properties you want to bind to, for 
+        // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("CalendarioId,DataApresentacao")] Calendario calendario)
+        public async Task<IActionResult> Edit(int id, [Bind("CalendarioId,Ano,Semestre,DataInicio,DataFim,Ativo")] Calendario calendario)
         {
             if (id != calendario.CalendarioId)
             {
