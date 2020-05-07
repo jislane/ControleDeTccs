@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using SistemaDeControleDeTCCs.Models;
 
 namespace SistemaDeControleDeTCCs.Migrations
 {
     [DbContext(typeof(ContextoGeral))]
-    partial class ContextoGeralModelSnapshot : ModelSnapshot
+    [Migration("20200507032236_AlteracoesAtributos")]
+    partial class AlteracoesAtributos
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

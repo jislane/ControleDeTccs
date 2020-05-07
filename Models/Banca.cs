@@ -11,10 +11,11 @@ namespace SistemaDeControleDeTCCs.Models
     {
         [Key]
         public int BancaId { get; set; }
-
         public DateTime DataDeCadastro { get; set; }
-
-        public ICollection<Tcc> Tccs { get; set; }
+        public Tcc Tcc { get; set; }
+        public Usuario Usuario { get; set; }
+        public TipoUsuario TipoUsuario { get; set; }
+        public double Nota { get; set; }
 
     }
 }

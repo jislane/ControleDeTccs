@@ -13,7 +13,19 @@
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.DataApresentacao)
+                @Html.DisplayNameFor(model => model.Ano)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Semestre)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DataInicio)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DataFim)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Ativo)
             </th>
             <th></th>
         </tr>
@@ -22,7 +34,19 @@
 @foreach (var item in Model) {
         <tr>
             <td>
-                @Html.DisplayFor(modelItem => item.DataApresentacao)
+                @Html.DisplayFor(modelItem => item.Ano)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Semestre)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DataInicio)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DataFim)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Ativo)
             </td>
             <td>
                 <a asp-action="Edit" asp-route-id="@item.CalendarioId">Edit</a> |
