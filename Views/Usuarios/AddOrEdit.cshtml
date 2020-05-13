@@ -1,4 +1,4 @@
-﻿@model SistemaDeControleDeTCCs.Models.Usuario
+﻿@model SistemaDeControleDeTCCs.Models.ViewModels.UsuarioViewModel
 
 @{
     ViewData["Title"] = "Novo Usuário";
@@ -11,34 +11,41 @@
     <div class="col-md-4">
         <form asp-action="AddOrEdit">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <input type="hidden" asp-for="UsuarioId"/>
+            <input type="hidden" asp-for="Usuario.UsuarioId" />
             <div class="form-group">
-                <label asp-for="Nome" class="control-label"></label>
-                <input asp-for="Nome" class="form-control" />
-                <span asp-validation-for="Nome" class="text-danger"></span>
+                <label asp-for="Usuario.TipoUsuarioId" class="control-label"></label>
+                <select asp-for="Usuario.TipoUsuarioId" asp-items="@(new SelectList(Model.TiposUsuario,"TipoUsuarioId","DescTipo"))" class="form-control">
+                    <option value="">Selecione</option>
+                </select>
+                <span asp-validation-for="Usuario.TipoUsuarioId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Usuario.Nome" class="control-label"></label>
+                <input asp-for="Usuario.Nome" class="form-control" />
+                <span asp-validation-for="Usuario.Nome" class="text-danger"></span>
             </div>
             <div class="form-row">
                 <div class="form-group">
-                    <label asp-for="Matricula" class="control-label"></label>
-                    <input asp-for="Matricula" class="form-control" />
-                    <span asp-validation-for="Matricula" class="text-danger"></span>
+                    <label asp-for="Usuario.Matricula" class="control-label"></label>
+                    <input asp-for="Usuario.Matricula" class="form-control" />
+                    <span asp-validation-for="Usuario.Matricula" class="text-danger"></span>
                 </div>
                 <div class="form-group">
-                    <label asp-for="cpf" class="control-label"></label>
-                    <input asp-for="cpf" class="form-control" />
-                    <span asp-validation-for="cpf" class="text-danger"></span>
+                    <label asp-for="Usuario.cpf" class="control-label"></label>
+                    <input asp-for="Usuario.cpf" class="form-control" />
+                    <span asp-validation-for="Usuario.cpf" class="text-danger"></span>
                 </div>
             </div>
             <div class="form-row">
                 <div class="form-group">
-                    <label asp-for="telefone" class="control-label"></label>
-                    <input asp-for="telefone" class="form-control" />
-                    <span asp-validation-for="telefone" class="text-danger"></span>
+                    <label asp-for="Usuario.telefone" class="control-label"></label>
+                    <input asp-for="Usuario.telefone" class="form-control" />
+                    <span asp-validation-for="Usuario.telefone" class="text-danger"></span>
                 </div>
                 <div class="form-group">
-                    <label asp-for="email" class="control-label"></label>
-                    <input asp-for="email" class="form-control" />
-                    <span asp-validation-for="email" class="text-danger"></span>
+                    <label asp-for="Usuario.email" class="control-label"></label>
+                    <input asp-for="Usuario.email" class="form-control" />
+                    <span asp-validation-for="Usuario.email" class="text-danger"></span>
                 </div>
                 <div class="form-row">
                     <div class="form-group col-md-6">

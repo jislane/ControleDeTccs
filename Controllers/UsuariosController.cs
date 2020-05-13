@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using SistemaDeControleDeTCCs.Models;
+using SistemaDeControleDeTCCs.Models.ViewModels;
 
 namespace SistemaDeControleDeTCCs.Controllers
 {
@@ -27,10 +28,14 @@ namespace SistemaDeControleDeTCCs.Controllers
         // GET: Usuarios/Create
         public IActionResult AddOrEdit(int id = 0)
         {
-            if (id == 0)
-                return View(new Usuario());
-            else
-                return View(_context.Usuario.Find(id));
+            var tiposUsuarios = _context.TipoUsuario.OrderBy(x => x.DescTipo).Where(x => x.DescTipo.Contains("Aluno") || x.DescTipo.Contains("Professor")).ToList();
+            var usuario = new Usuario();
+            if (id != 0)
+            {
+                usuario = _context.Usuario.Find(id);
+            }
+            var viewModel = new UsuarioViewModel { TiposUsuario = tiposUsuarios, Usuario = usuario };
+            return View(viewModel);
         }
 
         // POST: Usuarios/Create
@@ -38,7 +43,7 @@ namespace SistemaDeControleDeTCCs.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> AddOrEdit([Bind("UsuarioId,Nome,Matricula,cpf,telefone,email")] Usuario usuario)
+        public async Task<IActionResult> AddOrEdit([Bind("UsuarioId,Nome,Matricula,cpf,telefone,email,TipoUsuarioId")] Usuario usuario)
         {
             if (ModelState.IsValid)
             {

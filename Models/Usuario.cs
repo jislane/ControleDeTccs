@@ -15,12 +15,12 @@ namespace SistemaDeControleDeTCCs.Models
 
         [DisplayName("Nome")]
         [Column(TypeName = "nvarchar(250)")]
-        [Required(ErrorMessage = "Este campo e obrigatório!")]
+        [Required(ErrorMessage = "O {0} é obrigatório!")]
         public string Nome { get; set; }
 
         [DisplayName("Matrícula")]
         [Column(TypeName = "nvarchar(25)")]
-        [Required(ErrorMessage = "Este campo e obrigatório!")]
+        [Required(ErrorMessage = "A {0} é obrigatória!")]
         public string Matricula { get; set; }
 
         [DisplayName("CPF")]
@@ -33,10 +33,16 @@ namespace SistemaDeControleDeTCCs.Models
 
         [DisplayName("E-mail")]
         [Column(TypeName = "nvarchar(25)")]
+        [Required(ErrorMessage = "O {0} é obrigatório!")]
         public string  email { get; set; }
 
         public ICollection<Tcc> Tccs { get; set; }
 
         public TipoUsuario TipoUsuario { get; set; }
+
+        [ForeignKey("TipoUsuario")]
+        [DisplayName("Tipo de Usuário")]
+        [Required(ErrorMessage = "O {0} é obrigatório!")]
+        public int TipoUsuarioId { get; set; }
     }
 }
