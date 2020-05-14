@@ -1,6 +1,8 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
+using System.Net.Mail;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -10,6 +12,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using SistemaDeControleDeTCCs.Models;
+using SistemaDeControleDeTCCs.Services;
 
 namespace SistemaDeControleDeTCCs
 {
@@ -38,6 +41,22 @@ namespace SistemaDeControleDeTCCs
             options.UseSqlServer(Configuration.GetConnectionString("StringDeConexao")));
 
             services.AddScoped<PopularBancoDados>();
+
+            services.AddScoped<SmtpClient>(options => {
+                SmtpClient smtp = new SmtpClient()
+                {
+                    Host = Configuration.GetValue<string>("Email:ServerSMTP"),
+                    Port = Configuration.GetValue<int>("Email:ServerPort"),
+                    UseDefaultCredentials = false,
+                    Credentials = new NetworkCredential(Configuration.GetValue<string>("Email:Username"), Configuration.GetValue<string>("Email:Password")),
+                    EnableSsl = true
+                };
+
+                return smtp;
+            });
+
+            services.AddScoped<SenderEmail>();
+            
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

@@ -348,6 +348,11 @@ C:\Users\willi\source\repos\ControleDeTccs\obj\Debug\netcoreapp3.1\Razor\Views\B
 C:\Users\willi\source\repos\ControleDeTccs\obj\Debug\netcoreapp3.1\Razor\Views\Bancas\Details.cshtml.g.cs
 C:\Users\willi\source\repos\ControleDeTccs\obj\Debug\netcoreapp3.1\Razor\Views\Bancas\Edit.cshtml.g.cs
 C:\Users\willi\source\repos\ControleDeTccs\obj\Debug\netcoreapp3.1\Razor\Views\Bancas\Index.cshtml.g.cs
+C:\Users\willi\source\repos\ControleDeTccs\obj\Debug\netcoreapp3.1\Razor\Views\Calendarios\Create.cshtml.g.cs
+C:\Users\willi\source\repos\ControleDeTccs\obj\Debug\netcoreapp3.1\Razor\Views\Calendarios\Delete.cshtml.g.cs
+C:\Users\willi\source\repos\ControleDeTccs\obj\Debug\netcoreapp3.1\Razor\Views\Calendarios\Details.cshtml.g.cs
+C:\Users\willi\source\repos\ControleDeTccs\obj\Debug\netcoreapp3.1\Razor\Views\Calendarios\Edit.cshtml.g.cs
+C:\Users\willi\source\repos\ControleDeTccs\obj\Debug\netcoreapp3.1\Razor\Views\Calendarios\Index.cshtml.g.cs
 C:\Users\willi\source\repos\ControleDeTccs\obj\Debug\netcoreapp3.1\Razor\Views\Home\Index.cshtml.g.cs
 C:\Users\willi\source\repos\ControleDeTccs\obj\Debug\netcoreapp3.1\Razor\Views\Home\Privacy.cshtml.g.cs
 C:\Users\willi\source\repos\ControleDeTccs\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Error.cshtml.g.cs
@@ -375,9 +380,3 @@ C:\Users\willi\source\repos\ControleDeTccs\obj\Debug\netcoreapp3.1\SistemaDeCont
 C:\Users\willi\source\repos\ControleDeTccs\obj\Debug\netcoreapp3.1\SistemaDeControleDeTCCs.csproj.CopyComplete
 C:\Users\willi\source\repos\ControleDeTccs\obj\Debug\netcoreapp3.1\SistemaDeControleDeTCCs.dll
 C:\Users\willi\source\repos\ControleDeTccs\obj\Debug\netcoreapp3.1\SistemaDeControleDeTCCs.pdb
-C:\Users\willi\source\repos\ControleDeTccs\obj\Debug\netcoreapp3.1\SistemaDeControleDeTCCs.csprojAssemblyReference.cache
-C:\Users\willi\source\repos\ControleDeTccs\obj\Debug\netcoreapp3.1\Razor\Views\Calendarios\Create.cshtml.g.cs
-C:\Users\willi\source\repos\ControleDeTccs\obj\Debug\netcoreapp3.1\Razor\Views\Calendarios\Delete.cshtml.g.cs
-C:\Users\willi\source\repos\ControleDeTccs\obj\Debug\netcoreapp3.1\Razor\Views\Calendarios\Details.cshtml.g.cs
-C:\Users\willi\source\repos\ControleDeTccs\obj\Debug\netcoreapp3.1\Razor\Views\Calendarios\Edit.cshtml.g.cs
-C:\Users\willi\source\repos\ControleDeTccs\obj\Debug\netcoreapp3.1\Razor\Views\Calendarios\Index.cshtml.g.cs
