@@ -7,16 +7,20 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using SistemaDeControleDeTCCs.Models;
 using SistemaDeControleDeTCCs.Models.ViewModels;
+using SistemaDeControleDeTCCs.Services;
+using SistemaDeControleDeTCCs.Utils;
 
 namespace SistemaDeControleDeTCCs.Controllers
 {
     public class UsuariosController : Controller
     {
         private readonly ContextoGeral _context;
+        private readonly SenderEmail _senderEmail;
 
-        public UsuariosController(ContextoGeral context)
+        public UsuariosController(ContextoGeral context, SenderEmail senderEmail)
         {
             _context = context;
+            _senderEmail = senderEmail;
         }
 
         // GET: Usuarios
@@ -47,11 +51,19 @@ namespace SistemaDeControleDeTCCs.Controllers
         {
             if (ModelState.IsValid)
             {
-                if (usuario.UsuarioId == 0) 
-                _context.Add(usuario);
+                if (usuario.UsuarioId == 0)
+                {
+                    _context.Add(usuario);
+                    var senha = KeyGenerator.GetUniqueKey(8);
+                    await _context.SaveChangesAsync();
+                    usuario.TipoUsuario = _context.TipoUsuario.Where(x => x.TipoUsuarioId == usuario.TipoUsuarioId).FirstOrDefault();
+                    _senderEmail.EnviarSenhaParaUsuarioViaEmail(usuario, senha);
+                }
                 else
+                {
                     _context.Update(usuario);
-                await _context.SaveChangesAsync();
+                    await _context.SaveChangesAsync();
+                }
                 return RedirectToAction(nameof(Index));
             }
             return View(usuario);
