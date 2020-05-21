@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using SistemaDeControleDeTCCs.Models;
+using SistemaDeControleDeTCCs.Models.ViewModels;
 
 namespace SistemaDeControleDeTCCs.Controllers
 {
@@ -27,10 +28,14 @@ namespace SistemaDeControleDeTCCs.Controllers
         // GET: Tccs/Create
         public IActionResult AddOrEdit(int id = 0)
         {
-            if (id == 0)
-                return View(new Tcc());
-            else
-                return View(_context.Tccs.Find(id));
+            var discentes = _context.Usuario.Where(x => x.TipoUsuario.DescTipo.Contains("Aluno")).ToList();
+            var tcc = new Tcc();
+            if (id != 0)
+            {
+                tcc = _context.Tccs.Find(id);
+            }
+            var viewModel = new TccViewModel { Usuarios = discentes, Tcc = tcc };
+            return View(viewModel);
         }
 
         // POST: Tccs/Create
@@ -38,14 +43,20 @@ namespace SistemaDeControleDeTCCs.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> AddOrEdit([Bind("TccId,Tema,DataDeCadastro,cpf")] Tcc tcc)
+        public async Task<IActionResult> AddOrEdit([Bind("TccId,Tema,UsuarioId,DataDeCadastro")] Tcc tcc)
         {
             if (ModelState.IsValid)
             {
                 if (tcc.TccId == 0)
+                {
+                    tcc.DataDeCadastro = DateTime.Now;
+                    tcc.Status = _context.Status.Where(x => x.DescStatus.Contains("Pendente")).FirstOrDefault();
                     _context.Add(tcc);
+                }
                 else
+                {
                     _context.Update(tcc);
+                }
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }

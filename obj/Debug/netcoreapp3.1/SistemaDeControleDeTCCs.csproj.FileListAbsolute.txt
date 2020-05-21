@@ -380,3 +380,4 @@ C:\Users\willi\source\repos\ControleDeTccs\obj\Debug\netcoreapp3.1\SistemaDeCont
 C:\Users\willi\source\repos\ControleDeTccs\obj\Debug\netcoreapp3.1\SistemaDeControleDeTCCs.csproj.CopyComplete
 C:\Users\willi\source\repos\ControleDeTccs\obj\Debug\netcoreapp3.1\SistemaDeControleDeTCCs.dll
 C:\Users\willi\source\repos\ControleDeTccs\obj\Debug\netcoreapp3.1\SistemaDeControleDeTCCs.pdb
+C:\Users\willi\source\repos\ControleDeTccs\obj\Debug\netcoreapp3.1\SistemaDeControleDeTCCs.csprojAssemblyReference.cache
