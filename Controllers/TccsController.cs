@@ -7,16 +7,19 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using SistemaDeControleDeTCCs.Models;
 using SistemaDeControleDeTCCs.Models.ViewModels;
+using SistemaDeControleDeTCCs.Services;
 
 namespace SistemaDeControleDeTCCs.Controllers
 {
     public class TccsController : Controller
     {
         private readonly ContextoGeral _context;
+        private readonly SenderEmail _senderEmail;
 
-        public TccsController(ContextoGeral context)
+        public TccsController(ContextoGeral context, SenderEmail senderEmail)
         {
             _context = context;
+            _senderEmail = senderEmail;
         }
 
         // GET: Tccs
@@ -52,12 +55,15 @@ namespace SistemaDeControleDeTCCs.Controllers
                     tcc.DataDeCadastro = DateTime.Now;
                     tcc.Status = _context.Status.Where(x => x.DescStatus.Contains("Pendente")).FirstOrDefault();
                     _context.Add(tcc);
+                    await _context.SaveChangesAsync();
+                    var discente = _context.Usuario.Where(x => x.UsuarioId == tcc.UsuarioId).FirstOrDefault();
+                    _senderEmail.NotificarDiscenteCadastroTCCViaEmail(discente, tcc.Tema);
                 }
                 else
                 {
                     _context.Update(tcc);
+                    await _context.SaveChangesAsync();
                 }
-                await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
             return View(tcc);
