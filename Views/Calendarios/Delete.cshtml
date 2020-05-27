@@ -1,51 +1,49 @@
 ﻿@model SistemaDeControleDeTCCs.Models.Calendario
 
 @{
-    ViewData["Title"] = "Delete";
+    ViewData["Title"] = "Deletar";
 }
 
-<h1>Delete</h1>
+<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+</button>
 
-<h3>Are you sure you want to delete this?</h3>
+<h2>@ViewData["Title"]</h2>
+
+<h5>Tem certeza de que deseja deletar?</h5>
 <div>
-    <h4>Calendario</h4>
+    <h6>Calendário de Banca</h6>
     <hr />
-    <dl class="row">
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Ano)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Ano)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Semestre)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Semestre)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.DataInicio)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.DataInicio)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.DataFim)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.DataFim)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Ativo)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Ativo)
-        </dd>
-    </dl>
+    <div class="form-row">
+        <div class="form-group col-md-4">
+            <b>@Html.DisplayNameFor(model => model.Ano)</b> <br />
+            <p>@Html.DisplayFor(model => model.Ano)</p>
+        </div>
+        <div class="form-group col-md-8">
+            <b>@Html.DisplayNameFor(model => model.Semestre)</b> <br />
+            <p>@Html.DisplayFor(model => model.Semestre)</p>
+        </div>
+    </div>
+    <div class="form-row">
+        <div class="form-group col-md-4">
+            <b>@Html.DisplayNameFor(model => model.DataInicio)</b> <br />
+            <p>@Html.DisplayFor(model => model.DataInicio)</p>
+        </div>
+        <div class="form-group col-md-8">
+            <b>@Html.DisplayNameFor(model => model.DataFim)</b> <br />
+            <p>@Html.DisplayFor(model => model.DataFim)</p>
+        </div>
+    </div>
+    <div class="form-row">
+        <div class="form-group col-md-4">
+            <b>@Html.DisplayNameFor(model => model.Ativo)</b> <br />
+            <p>@Html.DisplayFor(model => model.Ativo)</p>
+        </div>
+    </div>
     
     <form asp-action="Delete">
         <input type="hidden" asp-for="CalendarioId" />
-        <input type="submit" value="Delete" class="btn btn-danger" /> |
-        <a asp-action="Index">Back to List</a>
+        <input type="submit" value="Deletar" class="btn btn-danger" /> |
+        <a href="#" data-dismiss="modal">Cancelar</a>
     </form>
 </div>

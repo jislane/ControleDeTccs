@@ -1,37 +1,47 @@
 ﻿@model SistemaDeControleDeTCCs.Models.Calendario
 
 @{
-    ViewData["Title"] = "Edit";
+    ViewData["Title"] = "Editar";
 }
 
-<h1>Edit</h1>
+<h1>@ViewData["Title"]</h1>
 
-<h4>Calendario</h4>
+<h4>Calendário de Banca</h4>
 <hr />
 <div class="row">
     <div class="col-md-4">
         <form asp-action="Edit">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <input type="hidden" asp-for="CalendarioId" />
-            <div class="form-group">
-                <label asp-for="Ano" class="control-label"></label>
-                <input asp-for="Ano" class="form-control" />
-                <span asp-validation-for="Ano" class="text-danger"></span>
+            <div class="form-row">
+                <div class="form-group col-md-4">
+                    <label asp-for="Ano" class="control-label"></label>
+                    <input asp-for="Ano" class="form-control" />
+                    <span asp-validation-for="Ano" class="text-danger"></span>
+                </div>
+                <div class="form-group col-md-6">
+                    <label asp-for="Semestre" class="control-label"></label>
+                    <select asp-for="Semestre" class="form-control">
+                        <option value="">Selecione</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                    </select>
+                    <span asp-validation-for="Semestre" class="text-danger"></span>
+                </div>
             </div>
-            <div class="form-group">
-                <label asp-for="Semestre" class="control-label"></label>
-                <input asp-for="Semestre" class="form-control" />
-                <span asp-validation-for="Semestre" class="text-danger"></span>
+            <div class="form-row">
+                <div class="form-group col-md-8">
+                    <label asp-for="DataInicio" class="control-label"></label>
+                    <input asp-for="DataInicio" class="form-control" />
+                    <span asp-validation-for="DataInicio" class="text-danger"></span>
+                </div>
             </div>
-            <div class="form-group">
-                <label asp-for="DataInicio" class="control-label"></label>
-                <input asp-for="DataInicio" class="form-control" />
-                <span asp-validation-for="DataInicio" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="DataFim" class="control-label"></label>
-                <input asp-for="DataFim" class="form-control" />
-                <span asp-validation-for="DataFim" class="text-danger"></span>
+            <div class="form-row">
+                <div class="form-group col-md-8">
+                    <label asp-for="DataFim" class="control-label"></label>
+                    <input asp-for="DataFim" class="form-control" />
+                    <span asp-validation-for="DataFim" class="text-danger"></span>
+                </div>
             </div>
             <div class="form-group form-check">
                 <label class="form-check-label">
@@ -39,14 +49,11 @@
                 </label>
             </div>
             <div class="form-group">
-                <input type="submit" value="Save" class="btn btn-primary" />
+                <input type="submit" value="Salvar" class="btn btn-primary" /> |
+                <a asp-action="Index">Voltar</a>
             </div>
         </form>
     </div>
-</div>
-
-<div>
-    <a asp-action="Index">Back to List</a>
 </div>
 
 @section Scripts {

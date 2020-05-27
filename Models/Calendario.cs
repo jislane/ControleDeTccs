@@ -17,9 +17,11 @@ namespace SistemaDeControleDeTCCs.Models
         public int Semestre { get; set; }
         [Display(Name = "Data Início")]
         [Required(ErrorMessage = "A {0} é obrigatória")]
+        [DataType(DataType.Date, ErrorMessage = "Data inválida")]
         public DateTime DataInicio { get; set; }
         [Display(Name = "Data Fim")]
         [Required(ErrorMessage = "A {0} é obrigatória")]
+        [DataType(DataType.Date, ErrorMessage = "Data inválida")]
         public DateTime DataFim { get; set; }
         public Boolean Ativo { get; set; }
     }
