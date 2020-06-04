@@ -21,7 +21,7 @@ namespace SistemaDeControleDeTCCs.Controllers
         // GET: Calendarios
         public async Task<IActionResult> Index()
         {
-            return View(await _context.Calendario.ToListAsync());
+            return View(await _context.Calendario.OrderByDescending(x => x.Ativo).ThenByDescending(x => x.Ano).ThenByDescending(x => x.Semestre).ToListAsync());
         }
 
         // GET: Calendarios/Details/5
@@ -59,6 +59,7 @@ namespace SistemaDeControleDeTCCs.Controllers
             {
                 _context.Add(calendario);
                 await _context.SaveChangesAsync();
+                TempData["Success"] = "Calendário de banca cadastrado com sucesso.";
                 return RedirectToAction(nameof(Index));
             }
             return View(calendario);
@@ -110,6 +111,7 @@ namespace SistemaDeControleDeTCCs.Controllers
                         throw;
                     }
                 }
+                TempData["Success"] = "Calendário de banca alterado com sucesso.";
                 return RedirectToAction(nameof(Index));
             }
             return View(calendario);
@@ -130,7 +132,7 @@ namespace SistemaDeControleDeTCCs.Controllers
                 return NotFound();
             }
 
-            return View(calendario);
+            return PartialView(calendario);
         }
 
         // POST: Calendarios/Delete/5
@@ -141,6 +143,7 @@ namespace SistemaDeControleDeTCCs.Controllers
             var calendario = await _context.Calendario.FindAsync(id);
             _context.Calendario.Remove(calendario);
             await _context.SaveChangesAsync();
+            TempData["Success"] = "Calendário de banca excluído com sucesso.";
             return RedirectToAction(nameof(Index));
         }
 

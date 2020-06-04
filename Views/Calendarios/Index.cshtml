@@ -1,15 +1,35 @@
 ﻿@model IEnumerable<SistemaDeControleDeTCCs.Models.Calendario>
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Calendários de Bancas";
 }
 
-<h1>Index</h1>
+<script type="text/javascript">
+    $(document).ready(function () {
+        $(".btnDelete").click(function () {
+            console.log('aqui');
+            var id = $(this).data("value");
+            $("#conteudoModal").load("/Calendarios/Delete/" + id,
+                function () {
+                    $('#exampleModal').modal("show");
+                });
+        })
+    })
+</script>
 
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
-<table class="table">
+<h1>@ViewData["Title"]</h1>
+
+@if (TempData["Success"] != null)
+{
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
+        @TempData["Success"].ToString()
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+}
+
+<table class="table table-hover">
     <thead>
         <tr>
             <th>
@@ -24,36 +44,51 @@
             <th>
                 @Html.DisplayNameFor(model => model.DataFim)
             </th>
-            <th>
+            <th class="text-center">
                 @Html.DisplayNameFor(model => model.Ativo)
             </th>
-            <th></th>
+            <th>
+                <a asp-action="Create" class="btn btn-outline-success"><i class="far fa-plus-square"></i>Novo</a>
+            </th>
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Ano)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Semestre)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.DataInicio)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.DataFim)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Ativo)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.CalendarioId">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.CalendarioId">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.CalendarioId">Delete</a>
-            </td>
-        </tr>
-}
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Ano)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Semestre)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DataInicio)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DataFim)
+                </td>
+                <td class="text-center">
+                    @Html.DisplayFor(modelItem => item.Ativo)
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.CalendarioId"><i class="fa fa-marker fa-lg"></i></a> |
+                    <a href="#" data-value="@item.CalendarioId" class="btnDelete text-danger" ml-1><i class="fa fa-trash-alt fa-lg"></i> </a>
+                </td>
+            </tr>
+        }
     </tbody>
 </table>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-body">
+                <div id="conteudoModal">
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
