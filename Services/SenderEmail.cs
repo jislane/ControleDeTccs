@@ -22,25 +22,29 @@ namespace SistemaDeControleDeTCCs.Services
                 "<p>Prezado(a), <b>{0}</b>! </p>" +
                 "<p>Agora você possui uma conta no Sistema de Controle de TCC. Seguem os dados cadastrados. </p>" +
                 "Tipo de Usuário: {1} <br/>" +
-                "Nome: {2} <br/>" +
+                "Nome: {0} {2} <br/>" +
                 "Matrícula: {3} <br/>" +
                 "CPF: {4} <br/>" +
                 "E-mail: {5} <br/>" +
                 "Telefone: {6} <br/>" +
                 "<p>Para acessar o sistema utilize a seguinte senha: <b>{7}</b></p>" +
+                "<p>Cordialmente,</p>" +
+                "<p><b>SISTEMA DE CONTROLE DE TCC</b> <br/>" +
+                "Coordenação do Bacharelado em Sistemas de Informação - CBSI <br/>" +
+                "Instituto Federal de Sergipe - Campus Lagarto - IFS</p>" +
                 "<p><i>Não responda a esta mensagem. Este e-mail foi enviado por um sistema automático que não processa respostas.</i></p>",
                 usuario.Nome,
                 usuario.TipoUsuario.DescTipo,
-                usuario.Nome,
+                usuario.Sobrenome,
                 usuario.Matricula,
-                usuario.cpf,
-                usuario.email,
-                usuario.telefone,
+                usuario.Cpf,
+                usuario.Email,
+                usuario.PhoneNumber,
                 senha);
 
             MailMessage message = new MailMessage();
             message.From = new MailAddress(_configuration.GetValue<string>("Email:Username"));
-            message.To.Add(usuario.email);
+            message.To.Add(usuario.Email);
             message.Subject = "Dados de acesso - Sistema de Controle de TCC";
             message.Body = bodyEmail;
             message.IsBodyHtml = true;
@@ -62,7 +66,7 @@ namespace SistemaDeControleDeTCCs.Services
 
             MailMessage message = new MailMessage();
             message.From = new MailAddress(_configuration.GetValue<string>("Email:Username"));
-            message.To.Add(usuario.email);
+            message.To.Add(usuario.Email);
             message.Subject = "Cadastro de TCC - Sistema de Controle de TCC";
             message.Body = bodyEmail;
             message.IsBodyHtml = true;

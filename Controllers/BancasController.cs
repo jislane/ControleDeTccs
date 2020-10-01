@@ -2,15 +2,16 @@
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using SistemaDeControleDeTCCs.Data;
 using SistemaDeControleDeTCCs.Models;
 
 namespace SistemaDeControleDeTCCs.Controllers
 {
     public class BancasController : Controller
     {
-        private readonly ContextoGeral _context;
+        private readonly SistemaDeControleDeTCCsContext _context;
 
-        public BancasController(ContextoGeral context)
+        public BancasController(SistemaDeControleDeTCCsContext context)
         {
             _context = context;
         }

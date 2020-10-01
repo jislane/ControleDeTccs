@@ -5,15 +5,16 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
+using SistemaDeControleDeTCCs.Data;
 using SistemaDeControleDeTCCs.Models;
 
 namespace SistemaDeControleDeTCCs.Controllers
 {
     public class TipoUsuariosController : Controller
     {
-        private readonly ContextoGeral _context;
+        private readonly SistemaDeControleDeTCCsContext _context;
 
-        public TipoUsuariosController(ContextoGeral context)
+        public TipoUsuariosController(SistemaDeControleDeTCCsContext context)
         {
             _context = context;
         }

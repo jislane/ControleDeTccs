@@ -1,5 +1,10 @@
-﻿<!DOCTYPE html>
-<html lang="en">
+﻿@using Microsoft.AspNetCore.Identity
+
+@inject SignInManager<Usuario> SignInManager
+@inject UserManager<Usuario> UserManager
+
+<!DOCTYPE html>
+<html lang="pt-br">
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -19,16 +24,38 @@
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
+                    <partial name="_LoginPartial" />
                     <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Usuarios">Usuarios</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Tccs">TCC's</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Calendarios">Calendários</a>
-                        </li>
+                        @if (SignInManager.IsSignedIn(User))
+                        {
+                            @if (User.IsInRole("Administrador") || User.IsInRole("Coordenador"))
+                            {
+                                <li class="nav-item">
+                                    <a class="nav-link text-dark" asp-area="Coordenador" asp-controller="Usuarios" asp-action="Index">Usuários</a>
+                                </li>
+                            }
+                            @if (User.IsInRole("Coordenador"))
+                            {
+                                <li class="nav-item">
+                                    <a class="nav-link text-dark" asp-area="Coordenador" asp-controller="Tccs" asp-action="Index">TCC's</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link text-dark" asp-area="Coordenador" asp-controller="Calendarios" asp-action="Index">Calendários</a>
+                                </li>
+                            }
+                            @if (User.IsInRole("Professor"))
+                            {
+                                
+                            }
+                            @if (User.IsInRole("Aluno"))
+                            {
+                                
+                            }
+                        }
+                        else
+                        {
+
+                        }
                     </ul>
                 </div>
             </div>
@@ -42,10 +69,9 @@
 
     <footer class="border-top footer text-muted">
         <div class="container">
-            &copy; 2020 - SistemaDeControleDeTCCs</a>
+            &copy; 2020 - SistemaDeControleDeTCCs
         </div>
     </footer>
-    <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
     @RenderSection("Scripts", required: false)

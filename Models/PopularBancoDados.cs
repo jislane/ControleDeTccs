@@ -1,13 +1,15 @@
-﻿using System;
+﻿using Microsoft.AspNetCore.Identity;
+using SistemaDeControleDeTCCs.Data;
+using System;
 using System.Linq;
 
 namespace SistemaDeControleDeTCCs.Models
 {
     public class PopularBancoDados
     {
-        private readonly ContextoGeral _context;
+        private readonly SistemaDeControleDeTCCsContext _context;
 
-        public PopularBancoDados(ContextoGeral context)
+        public PopularBancoDados(SistemaDeControleDeTCCsContext context)
         {
             _context = context;
         }
@@ -18,6 +20,13 @@ namespace SistemaDeControleDeTCCs.Models
             {
                 return;
             }
+
+            var roleAdm = new IdentityRole { Name = "Administrador", NormalizedName = "ADMINISTRADOR" };
+            var roleAluno = new IdentityRole { Name = "Aluno", NormalizedName = "ALUNO" };
+            var roleProf = new IdentityRole { Name = "Professor", NormalizedName = "PROFESSOR" };
+            var roleCoord = new IdentityRole { Name = "Coordenador", NormalizedName = "COORDENADOR" };
+
+            _context.Roles.AddRange(roleAdm, roleProf, roleCoord, roleAluno);
 
             var tipoUsuarioAdm = new TipoUsuario { DescTipo = "Administrador" };
             var tipoUsuarioAluno = new TipoUsuario { DescTipo = "Aluno" };
@@ -40,104 +49,243 @@ namespace SistemaDeControleDeTCCs.Models
             var calendario20201 = new Calendario { Ano = 2020, Semestre = 1, DataInicio = new DateTime(2020, 06, 01), DataFim = new DateTime(2020, 06, 12), Ativo = true };
             _context.Calendario.AddRange(calendario20191, calendario20201);
 
+            // A senha de todos os usuários abaixo é: P@$$w0rd
+
             var userAdm = new Usuario
             {
-                email = "admin@ifs.edu.br",
-                Nome = "Administrador do Sistema",
+                UserName = "admin@ifs.edu.br",
+                NormalizedUserName = "admin@ifs.edu.br",
+                Email = "admin@ifs.edu.br",
+                NormalizedEmail = "admin@ifs.edu.br",
+                Nome = "Administrador",
+                Sobrenome = "do Sistema",
+                PasswordHash = "AQAAAAEAACcQAAAAEHWjbOIHqtSUeaxyCj/PR6rYwJ/xgW8jl8TYjeC4+iDj4EsSkQogl1TYPTRDpUA/5g==",
+                SecurityStamp = "WCSIGCB6MEQY4LMWJ7VFWYC43BJ6GNBD",
+                ConcurrencyStamp = "4f1ea59f-a987-45cf-abe6-d9e456b43fae",
+                LockoutEnabled = true,
+                AccessFailedCount = 1,
                 Matricula = "0",
                 TipoUsuario = tipoUsuarioAdm
             };
             var userCatuxe = new Usuario
             {
-                email = "catuxe@ifs.edu.br",
+                UserName = "catuxe@ifs.edu.br",
+                NormalizedUserName = "catuxe@ifs.edu.br",
+                Email = "catuxe@ifs.edu.br",
+                NormalizedEmail = "catuxe@ifs.edu.br",
                 Nome = "Catuxe",
+                Sobrenome = "Varjão",
+                PasswordHash = "AQAAAAEAACcQAAAAEHWjbOIHqtSUeaxyCj/PR6rYwJ/xgW8jl8TYjeC4+iDj4EsSkQogl1TYPTRDpUA/5g==",
+                SecurityStamp = "WCSIGCB6MEQY4LMWJ7VFWYC43BJ6GNBD",
+                ConcurrencyStamp = "4f1ea59f-a987-45cf-abe6-d9e456b43fae",
+                LockoutEnabled = true,
+                AccessFailedCount = 1,
                 Matricula = "143717",
-                cpf = "48786338786",
+                Cpf = "48786338786",
                 TipoUsuario = tipoUsuarioCoord,
-                telefone = "99999999999"
+                PhoneNumber = "99999999999"
             };
             var userJislane = new Usuario
             {
-                email = "jislane@ifs.edu.br",
+                UserName = "jislane@ifs.edu.br",
+                NormalizedUserName = "jislane@ifs.edu.br",
+                Email = "jislane@ifs.edu.br",
+                NormalizedEmail = "jislane@ifs.edu.br",
                 Nome = "Jislane",
+                Sobrenome = "Silva",
+                PasswordHash = "AQAAAAEAACcQAAAAEHWjbOIHqtSUeaxyCj/PR6rYwJ/xgW8jl8TYjeC4+iDj4EsSkQogl1TYPTRDpUA/5g==",
+                SecurityStamp = "WCSIGCB6MEQY4LMWJ7VFWYC43BJ6GNBD",
+                ConcurrencyStamp = "4f1ea59f-a987-45cf-abe6-d9e456b43fae",
+                LockoutEnabled = true,
+                AccessFailedCount = 1,
                 Matricula = "413682",
-                cpf = "61788703205",
+                Cpf = "61788703205",
                 TipoUsuario = tipoUsuarioProf,
-                telefone = "99999999999"
+                PhoneNumber = "99999999999"
             };
             var userGilson = new Usuario
             {
-                email = "gilson@ifs.edu.br",
+                UserName = "gilson@ifs.edu.br",
+                NormalizedUserName = "gilson@ifs.edu.br",
+                Email = "gilson@ifs.edu.br",
+                NormalizedEmail = "gilson@ifs.edu.br",
                 Nome = "Gilson",
+                Sobrenome = "Santos",
+                PasswordHash = "AQAAAAEAACcQAAAAEHWjbOIHqtSUeaxyCj/PR6rYwJ/xgW8jl8TYjeC4+iDj4EsSkQogl1TYPTRDpUA/5g==",
+                SecurityStamp = "WCSIGCB6MEQY4LMWJ7VFWYC43BJ6GNBD",
+                ConcurrencyStamp = "4f1ea59f-a987-45cf-abe6-d9e456b43fae",
+                LockoutEnabled = true,
+                AccessFailedCount = 1,
                 Matricula = "148915",
-                cpf = "05578896130",
+                Cpf = "05578896130",
                 TipoUsuario = tipoUsuarioProf,
-                telefone = "99999999999"
+                PhoneNumber = "99999999999"
             };
             var userGlauco = new Usuario
             {
-                email = "glauco@ifs.edu.br",
+                UserName = "glauco@ifs.edu.br",
+                NormalizedUserName = "glauco@ifs.edu.br",
+                Email = "glauco@ifs.edu.br",
+                NormalizedEmail = "glauco@ifs.edu.br",
                 Nome = "Glauco",
+                Sobrenome = "Carvalho",
+                PasswordHash = "AQAAAAEAACcQAAAAEHWjbOIHqtSUeaxyCj/PR6rYwJ/xgW8jl8TYjeC4+iDj4EsSkQogl1TYPTRDpUA/5g==",
+                SecurityStamp = "WCSIGCB6MEQY4LMWJ7VFWYC43BJ6GNBD",
+                ConcurrencyStamp = "4f1ea59f-a987-45cf-abe6-d9e456b43fae",
+                LockoutEnabled = true,
+                AccessFailedCount = 1,
                 Matricula = "154790",
-                cpf = "18780486144",
+                Cpf = "18780486144",
                 TipoUsuario = tipoUsuarioProf,
-                telefone = "99999999999"
+                PhoneNumber = "99999999999"
             };
             var userJean = new Usuario
             {
-                email = "jean@ifs.edu.br",
+                UserName = "jean@ifs.edu.br",
+                NormalizedUserName = "jean@ifs.edu.br",
+                Email = "jean@ifs.edu.br",
+                NormalizedEmail = "jean@ifs.edu.br",
                 Nome = "Jean",
+                Sobrenome = "Louis",
+                PasswordHash = "AQAAAAEAACcQAAAAEHWjbOIHqtSUeaxyCj/PR6rYwJ/xgW8jl8TYjeC4+iDj4EsSkQogl1TYPTRDpUA/5g==",
+                SecurityStamp = "WCSIGCB6MEQY4LMWJ7VFWYC43BJ6GNBD",
+                ConcurrencyStamp = "4f1ea59f-a987-45cf-abe6-d9e456b43fae",
+                LockoutEnabled = true,
+                AccessFailedCount = 1,
                 Matricula = "477854",
-                cpf = "05875304515",
+                Cpf = "05875304515",
                 TipoUsuario = tipoUsuarioProf,
-                telefone = "99999999999"
+                PhoneNumber = "99999999999"
             };
             var userWillian = new Usuario
             {
-                email = "willian@ifs.edu.br",
+                UserName = "willian@ifs.edu.br",
+                NormalizedUserName = "willian@ifs.edu.br",
+                Email = "willian@ifs.edu.br",
+                NormalizedEmail = "willian@ifs.edu.br",
                 Nome = "Willian",
+                Sobrenome = "Farias",
+                PasswordHash = "AQAAAAEAACcQAAAAEHWjbOIHqtSUeaxyCj/PR6rYwJ/xgW8jl8TYjeC4+iDj4EsSkQogl1TYPTRDpUA/5g==",
+                SecurityStamp = "WCSIGCB6MEQY4LMWJ7VFWYC43BJ6GNBD",
+                ConcurrencyStamp = "4f1ea59f-a987-45cf-abe6-d9e456b43fae",
+                LockoutEnabled = true,
+                AccessFailedCount = 1,
                 Matricula = "20142863156328",
-                cpf = "57878135484",
+                Cpf = "57878135484",
                 TipoUsuario = tipoUsuarioAluno,
-                telefone = "99999999999"
+                PhoneNumber = "99999999999"
             };
             var userAlex = new Usuario
             {
-                email = "alex@ifs.edu.br",
+                UserName = "alex@ifs.edu.br",
+                NormalizedUserName = "alex@ifs.edu.br",
+                Email = "alex@ifs.edu.br",
+                NormalizedEmail = "alex@ifs.edu.br",
                 Nome = "Alex",
+                Sobrenome = "Oliveira",
+                PasswordHash = "AQAAAAEAACcQAAAAEHWjbOIHqtSUeaxyCj/PR6rYwJ/xgW8jl8TYjeC4+iDj4EsSkQogl1TYPTRDpUA/5g==",
+                SecurityStamp = "WCSIGCB6MEQY4LMWJ7VFWYC43BJ6GNBD",
+                ConcurrencyStamp = "4f1ea59f-a987-45cf-abe6-d9e456b43fae",
+                LockoutEnabled = true,
+                AccessFailedCount = 1,
                 Matricula = "20151863147125",
-                cpf = "05447800241",
+                Cpf = "05447800241",
                 TipoUsuario = tipoUsuarioAluno,
-                telefone = "99999999999"
+                PhoneNumber = "99999999999"
             };
             var userAna = new Usuario
             {
-                email = "ana@ifs.edu.br",
+                UserName = "ana@ifs.edu.br",
+                NormalizedUserName = "ana@ifs.edu.br",
+                Email = "ana@ifs.edu.br",
+                NormalizedEmail = "ana@ifs.edu.br",
                 Nome = "Ana Carla",
+                Sobrenome = "Nascimento",
+                PasswordHash = "AQAAAAEAACcQAAAAEHWjbOIHqtSUeaxyCj/PR6rYwJ/xgW8jl8TYjeC4+iDj4EsSkQogl1TYPTRDpUA/5g==",
+                SecurityStamp = "WCSIGCB6MEQY4LMWJ7VFWYC43BJ6GNBD",
+                ConcurrencyStamp = "4f1ea59f-a987-45cf-abe6-d9e456b43fae",
+                LockoutEnabled = true,
+                AccessFailedCount = 1,
                 Matricula = "20151863147165",
-                cpf = "15787601551",
+                Cpf = "15787601551",
                 TipoUsuario = tipoUsuarioAluno,
-                telefone = "99999999999"
+                PhoneNumber = "99999999999"
             };
             var userMateus = new Usuario
             {
-                email = "mateus@ifs.edu.br",
+                UserName = "mateus@ifs.edu.br",
+                NormalizedUserName = "mateus@ifs.edu.br",
+                Email = "mateus@ifs.edu.br",
+                NormalizedEmail = "mateus@ifs.edu.br",
                 Nome = "Mateus",
+                Sobrenome = "Lima",
+                PasswordHash = "AQAAAAEAACcQAAAAEHWjbOIHqtSUeaxyCj/PR6rYwJ/xgW8jl8TYjeC4+iDj4EsSkQogl1TYPTRDpUA/5g==",
+                SecurityStamp = "WCSIGCB6MEQY4LMWJ7VFWYC43BJ6GNBD",
+                ConcurrencyStamp = "4f1ea59f-a987-45cf-abe6-d9e456b43fae",
+                LockoutEnabled = true,
+                AccessFailedCount = 1,
                 Matricula = "20131863058127",
-                cpf = "04263417322",
+                Cpf = "04263417322",
                 TipoUsuario = tipoUsuarioAluno,
-                telefone = "99999999999"
+                PhoneNumber = "99999999999"
             };
             var userHelena = new Usuario
             {
-                email = "helena@ifs.edu.br",
+                UserName = "helena@ifs.edu.br",
+                NormalizedUserName = "helena@ifs.edu.br",
+                Email = "helena@ifs.edu.br",
+                NormalizedEmail = "helena@ifs.edu.br",
                 Nome = "Helena",
+                Sobrenome = "Mendonça",
+                PasswordHash = "AQAAAAEAACcQAAAAEHWjbOIHqtSUeaxyCj/PR6rYwJ/xgW8jl8TYjeC4+iDj4EsSkQogl1TYPTRDpUA/5g==",
+                SecurityStamp = "WCSIGCB6MEQY4LMWJ7VFWYC43BJ6GNBD",
+                ConcurrencyStamp = "4f1ea59f-a987-45cf-abe6-d9e456b43fae",
+                LockoutEnabled = true,
+                AccessFailedCount = 1,
                 Matricula = "20122863098617",
-                cpf = "12364289838",
+                Cpf = "12364289838",
                 TipoUsuario = tipoUsuarioAluno,
-                telefone = "99999999999"
+                PhoneNumber = "99999999999"
             };
             _context.Usuario.AddRange(userAdm, userWillian, userAlex, userAna, userCatuxe, userJislane, userGilson, userGlauco, userJean, userMateus, userHelena);
+
+            var rowAdm = new IdentityUserRole<string>();
+            rowAdm.UserId = userAdm.Id;
+            rowAdm.RoleId = roleAdm.Id;
+            var rowCoord = new IdentityUserRole<string>();
+            rowCoord.UserId = userCatuxe.Id;
+            rowCoord.RoleId = roleCoord.Id;
+            var rowCoordProf = new IdentityUserRole<string>();
+            rowCoordProf.UserId = userCatuxe.Id;
+            rowCoordProf.RoleId = roleProf.Id;
+            var rowJislane = new IdentityUserRole<string>();
+            rowJislane.UserId = userJislane.Id;
+            rowJislane.RoleId = roleProf.Id;
+            var rowGilson = new IdentityUserRole<string>();
+            rowGilson.UserId = userGilson.Id;
+            rowGilson.RoleId = roleProf.Id;
+            var rowGlauco = new IdentityUserRole<string>();
+            rowGlauco.UserId = userGlauco.Id;
+            rowGlauco.RoleId = roleProf.Id;
+            var rowJean = new IdentityUserRole<string>();
+            rowJean.UserId = userJean.Id;
+            rowJean.RoleId = roleProf.Id;
+            var rowWillian = new IdentityUserRole<string>();
+            rowWillian.UserId = userWillian.Id;
+            rowWillian.RoleId = roleAluno.Id;
+            var rowAlex = new IdentityUserRole<string>();
+            rowAlex.UserId = userAlex.Id;
+            rowAlex.RoleId = roleAluno.Id;
+            var rowAna = new IdentityUserRole<string>();
+            rowAna.UserId = userAna.Id;
+            rowAna.RoleId = roleAluno.Id;
+            var rowMateus = new IdentityUserRole<string>();
+            rowMateus.UserId = userMateus.Id;
+            rowMateus.RoleId = roleAluno.Id;
+            var rowHelena = new IdentityUserRole<string>();
+            rowHelena.UserId = userHelena.Id;
+            rowHelena.RoleId = roleAluno.Id;
+            _context.UserRoles.AddRange(rowAdm, rowCoord, rowCoordProf, rowJislane, rowGilson, rowGlauco, rowJean, rowWillian, rowAlex, rowAna, rowMateus, rowHelena);
 
             var tccWillian = new Tcc {
                 Tema = "Sistema X",
@@ -194,7 +342,7 @@ namespace SistemaDeControleDeTCCs.Models
             var coorientadorAna = new Banca { Tcc = tccAna, Usuario = userGilson, TipoUsuario = tipoUsuarioCoorientador, Nota = 8.5 };
             var membroBancaAna = new Banca { Tcc = tccAna, Usuario = userJean, TipoUsuario = tipoUsuarioMembroBanca, Nota = 8.0 };
             _context.Banca.AddRange(orientadorWillian, coorientadorWillian, orientadorAlex, coorientadorAlex, orientadorAna, coorientadorAna, membroBancaAna, orientadorMateus, coorientadorMateus, membroBancaMateus);
-
+            
             _context.SaveChanges();
         }
     }
