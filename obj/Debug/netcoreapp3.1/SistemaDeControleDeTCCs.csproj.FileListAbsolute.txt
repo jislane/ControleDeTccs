@@ -199,8 +199,6 @@ C:\Users\willi\source\repos\ControleDeTccs\bin\Debug\netcoreapp3.1\SistemaDeCont
 C:\Users\willi\source\repos\ControleDeTccs\bin\Debug\netcoreapp3.1\SistemaDeControleDeTCCs.Views.pdb
 C:\Users\willi\source\repos\ControleDeTccs\bin\Debug\netcoreapp3.1\EntityFramework.SqlServer.dll
 C:\Users\willi\source\repos\ControleDeTccs\bin\Debug\netcoreapp3.1\EntityFramework.dll
-C:\Users\willi\source\repos\ControleDeTccs\bin\Debug\netcoreapp3.1\Microsoft.AspNet.Identity.Core.dll
-C:\Users\willi\source\repos\ControleDeTccs\bin\Debug\netcoreapp3.1\Microsoft.AspNet.Identity.EntityFramework.dll
 C:\Users\willi\source\repos\ControleDeTccs\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Cryptography.Internal.dll
 C:\Users\willi\source\repos\ControleDeTccs\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
 C:\Users\willi\source\repos\ControleDeTccs\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore.dll
@@ -242,6 +240,11 @@ C:\Users\willi\source\repos\ControleDeTccs\bin\Debug\netcoreapp3.1\Microsoft.Ext
 C:\Users\willi\source\repos\ControleDeTccs\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Options.dll
 C:\Users\willi\source\repos\ControleDeTccs\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Primitives.dll
 C:\Users\willi\source\repos\ControleDeTccs\bin\Debug\netcoreapp3.1\Microsoft.Identity.Client.dll
+C:\Users\willi\source\repos\ControleDeTccs\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\Users\willi\source\repos\ControleDeTccs\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Logging.dll
+C:\Users\willi\source\repos\ControleDeTccs\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Protocols.dll
+C:\Users\willi\source\repos\ControleDeTccs\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+C:\Users\willi\source\repos\ControleDeTccs\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Tokens.dll
 C:\Users\willi\source\repos\ControleDeTccs\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.Web.CodeGeneration.dll
 C:\Users\willi\source\repos\ControleDeTccs\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.Web.CodeGeneration.Contracts.dll
 C:\Users\willi\source\repos\ControleDeTccs\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.Web.CodeGeneration.Core.dll
@@ -266,6 +269,7 @@ C:\Users\willi\source\repos\ControleDeTccs\bin\Debug\netcoreapp3.1\System.Compos
 C:\Users\willi\source\repos\ControleDeTccs\bin\Debug\netcoreapp3.1\System.Configuration.ConfigurationManager.dll
 C:\Users\willi\source\repos\ControleDeTccs\bin\Debug\netcoreapp3.1\System.Data.SqlClient.dll
 C:\Users\willi\source\repos\ControleDeTccs\bin\Debug\netcoreapp3.1\System.Diagnostics.DiagnosticSource.dll
+C:\Users\willi\source\repos\ControleDeTccs\bin\Debug\netcoreapp3.1\System.IdentityModel.Tokens.Jwt.dll
 C:\Users\willi\source\repos\ControleDeTccs\bin\Debug\netcoreapp3.1\System.Runtime.Caching.dll
 C:\Users\willi\source\repos\ControleDeTccs\bin\Debug\netcoreapp3.1\System.Security.Cryptography.ProtectedData.dll
 C:\Users\willi\source\repos\ControleDeTccs\bin\Debug\netcoreapp3.1\System.Text.Json.dll

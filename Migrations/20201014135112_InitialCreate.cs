@@ -57,7 +57,7 @@ namespace SistemaDeControleDeTCCs.Migrations
                 {
                     TipoUsuarioId = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    DescTipo = table.Column<string>(type: "nvarchar(250)", nullable: true)
+                    DescTipo = table.Column<string>(nullable: true)
                 },
                 constraints: table =>
                 {
@@ -118,7 +118,7 @@ namespace SistemaDeControleDeTCCs.Migrations
                         column: x => x.TipoUsuarioId,
                         principalTable: "TipoUsuario",
                         principalColumn: "TipoUsuarioId",
-                        onDelete: ReferentialAction.Cascade);
+                        onDelete: ReferentialAction.Restrict);
                 });
 
             migrationBuilder.CreateTable(
@@ -217,9 +217,9 @@ namespace SistemaDeControleDeTCCs.Migrations
                     StatusId = table.Column<int>(nullable: true),
                     UsuarioId = table.Column<string>(nullable: false),
                     Resumo = table.Column<string>(nullable: true),
-                    DataApresentacao = table.Column<DateTime>(nullable: false),
-                    DataFinalizacao = table.Column<DateTime>(nullable: false),
-                    Nota = table.Column<double>(nullable: false),
+                    DataApresentacao = table.Column<DateTime>(nullable: true),
+                    DataFinalizacao = table.Column<DateTime>(nullable: true),
+                    Nota = table.Column<double>(nullable: true),
                     LocalApresentacao = table.Column<string>(nullable: true)
                 },
                 constraints: table =>
@@ -246,10 +246,10 @@ namespace SistemaDeControleDeTCCs.Migrations
                     BancaId = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     DataDeCadastro = table.Column<DateTime>(nullable: false),
-                    TccId = table.Column<int>(nullable: true),
-                    UsuarioId = table.Column<string>(nullable: true),
-                    TipoUsuarioId = table.Column<int>(nullable: true),
-                    Nota = table.Column<double>(nullable: false)
+                    TccId = table.Column<int>(nullable: false),
+                    UsuarioId = table.Column<string>(nullable: false),
+                    TipoUsuarioId = table.Column<int>(nullable: false),
+                    Nota = table.Column<double>(nullable: true)
                 },
                 constraints: table =>
                 {
@@ -259,7 +259,7 @@ namespace SistemaDeControleDeTCCs.Migrations
                         column: x => x.TccId,
                         principalTable: "Tccs",
                         principalColumn: "TccId",
-                        onDelete: ReferentialAction.Restrict);
+                        onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
                         name: "FK_Banca_TipoUsuario_TipoUsuarioId",
                         column: x => x.TipoUsuarioId,

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
@@ -20,11 +21,13 @@ namespace SistemaDeControleDeTCCs.Controllers
     {
         private readonly SistemaDeControleDeTCCsContext _context;
         private readonly SenderEmail _senderEmail;
+        private readonly UserManager<Usuario> _userManager;
 
-        public UsuariosController(SistemaDeControleDeTCCsContext context, SenderEmail senderEmail)
+        public UsuariosController(SistemaDeControleDeTCCsContext context, SenderEmail senderEmail, UserManager<Usuario> userManager)
         {
             _context = context;
             _senderEmail = senderEmail;
+            _userManager = userManager;
         }
 
         // GET: Usuarios
@@ -51,15 +54,26 @@ namespace SistemaDeControleDeTCCs.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> AddOrEdit([Bind("UsuarioId,Nome,Matricula,cpf,telefone,email,TipoUsuarioId")] Usuario usuario)
+        public async Task<IActionResult> AddOrEdit([Bind("Id,Nome,Sobrenome,Matricula,Cpf,PhoneNumber,Email,TipoUsuarioId")] Usuario usuario)        
         {
-            if (ModelState.IsValid)
+                      
+            if (ModelState.IsValid)                
             {
                 if (usuario.Id != null)
                 {
-                    _context.Update(usuario);
-                    await _context.SaveChangesAsync();
+                    // _context.Update(usuario);
+                    // await _context.SaveChangesAsync();
                     
+                    var userTemp = _userManager.FindByIdAsync(usuario.Id).Result;
+                    userTemp.Nome = usuario.Nome;
+                    userTemp.Sobrenome = usuario.Sobrenome;
+                    userTemp.Matricula = usuario.Matricula;
+                    userTemp.Cpf = usuario.Cpf;
+                    userTemp.PhoneNumber = usuario.PhoneNumber;
+                    userTemp.Email = usuario.Email;
+                    userTemp.TipoUsuarioId = usuario.TipoUsuarioId;
+                    var user = await _userManager.UpdateAsync(userTemp);
+
                 }
                 /*
                 else
@@ -73,6 +87,10 @@ namespace SistemaDeControleDeTCCs.Controllers
                 */
                 return RedirectToAction(nameof(Index));
             }
+            var errors = ModelState
+            .Where(x => x.Value.Errors.Count > 0)
+            .Select(x => new { x.Key, x.Value.Errors })
+            .ToArray();
             return View(usuario);
         }
 

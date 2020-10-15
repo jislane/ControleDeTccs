@@ -51,6 +51,7 @@ namespace SistemaDeControleDeTCCs.Models
 
             // A senha de todos os usuários abaixo é: P@$$w0rd
 
+
             var userAdm = new Usuario
             {
                 UserName = "admin@ifs.edu.br",
@@ -65,7 +66,7 @@ namespace SistemaDeControleDeTCCs.Models
                 LockoutEnabled = true,
                 AccessFailedCount = 1,
                 Matricula = "0",
-                TipoUsuario = tipoUsuarioAdm
+                TipoUsuario = tipoUsuarioAdm                
             };
             var userCatuxe = new Usuario
             {
@@ -248,7 +249,8 @@ namespace SistemaDeControleDeTCCs.Models
                 PhoneNumber = "99999999999"
             };
             _context.Usuario.AddRange(userAdm, userWillian, userAlex, userAna, userCatuxe, userJislane, userGilson, userGlauco, userJean, userMateus, userHelena);
-
+            
+            
             var rowAdm = new IdentityUserRole<string>();
             rowAdm.UserId = userAdm.Id;
             rowAdm.RoleId = roleAdm.Id;
@@ -286,64 +288,66 @@ namespace SistemaDeControleDeTCCs.Models
             rowHelena.UserId = userHelena.Id;
             rowHelena.RoleId = roleAluno.Id;
             _context.UserRoles.AddRange(rowAdm, rowCoord, rowCoordProf, rowJislane, rowGilson, rowGlauco, rowJean, rowWillian, rowAlex, rowAna, rowMateus, rowHelena);
+            
+            //var tccWillian = new Tcc {
+            //    Tema = "Sistema X",
+            //    Usuario = userWillian,
+            //    DataDeCadastro = new DateTime(2020, 02, 13, 19, 35, 04),
+            //    Status = statusPendente
+            //};
+            //var tccAlex = new Tcc {
+            //    Tema = "Sistema Y",
+            //    Usuario = userAlex,
+            //    DataDeCadastro = new DateTime(2020, 03, 02, 21, 43, 12),
+            //    Status = statusHomologadoTCC
+            //};
+            //var tccMateus = new Tcc
+            //{
+            //    Tema = "Sistema M",
+            //    Usuario = userMateus,
+            //    DataDeCadastro = new DateTime(2017, 07, 07, 14, 27, 15),
+            //    Status = statusHomologadoBanca,
+            //    Resumo = "Resumo resumo resumo",
+            //    LocalApresentacao = "Lab. 01, COINF",
+            //    DataApresentacao = new DateTime(2018, 06, 19, 19, 30, 00)
+            //};
+            //var tccHelena = new Tcc
+            //{
+            //    Tema = "Sistema H",
+            //    Usuario = userHelena,
+            //    DataDeCadastro = new DateTime(2016, 08, 11, 17, 04, 27),
+            //    Status = statusCancelado,
+            //    Resumo = "Resumo resumo resumo"
+            //};
+            //var tccAna = new Tcc
+            //{
+            //    Tema = "Sistema Z",
+            //    Usuario = userAna,
+            //    DataDeCadastro = new DateTime(2019, 03, 11, 20, 08, 31),
+            //    Status = statusAprovado,
+            //    Resumo = "Resumo resumo resumo",
+            //    LocalApresentacao = "Laboratório 06, COINF, IFS-Lagarto",
+            //    DataApresentacao = new DateTime(2019, 06, 04, 20, 30, 52),
+            //    DataFinalizacao = new DateTime(2019, 06, 14, 19, 34, 08),
+            //    Nota = 8.5
+            //};
+            //_context.Tccs.AddRange(tccWillian, tccAlex, tccAna, tccMateus, tccHelena);
 
-            var tccWillian = new Tcc {
-                Tema = "Sistema X",
-                Usuario = userWillian,
-                DataDeCadastro = new DateTime(2020, 02, 13, 19, 35, 04),
-                Status = statusPendente
-            };
-            var tccAlex = new Tcc {
-                Tema = "Sistema Y",
-                Usuario = userAlex,
-                DataDeCadastro = new DateTime(2020, 03, 02, 21, 43, 12),
-                Status = statusHomologadoTCC
-            };
-            var tccMateus = new Tcc
-            {
-                Tema = "Sistema M",
-                Usuario = userMateus,
-                DataDeCadastro = new DateTime(2017, 07, 07, 14, 27, 15),
-                Status = statusHomologadoBanca,
-                Resumo = "Resumo resumo resumo",
-                LocalApresentacao = "Lab. 01, COINF",
-                DataApresentacao = new DateTime(2018, 06, 19, 19, 30, 00)
-            };
-            var tccHelena = new Tcc
-            {
-                Tema = "Sistema H",
-                Usuario = userHelena,
-                DataDeCadastro = new DateTime(2016, 08, 11, 17, 04, 27),
-                Status = statusCancelado,
-                Resumo = "Resumo resumo resumo"
-            };
-            var tccAna = new Tcc
-            {
-                Tema = "Sistema Z",
-                Usuario = userAna,
-                DataDeCadastro = new DateTime(2019, 03, 11, 20, 08, 31),
-                Status = statusAprovado,
-                Resumo = "Resumo resumo resumo",
-                LocalApresentacao = "Laboratório 06, COINF, IFS-Lagarto",
-                DataApresentacao = new DateTime(2019, 06, 04, 20, 30, 52),
-                DataFinalizacao = new DateTime(2019, 06, 14, 19, 34, 08),
-                Nota = 8.5
-            };
-            _context.Tccs.AddRange(tccWillian, tccAlex, tccAna, tccMateus, tccHelena);
-
-            var orientadorWillian = new Banca { Tcc = tccWillian, Usuario = userCatuxe, TipoUsuario = tipoUsuarioOrientador };
-            var coorientadorWillian = new Banca { Tcc = tccWillian, Usuario = userGilson, TipoUsuario = tipoUsuarioCoorientador };
-            var orientadorAlex = new Banca { Tcc = tccAlex, Usuario = userGilson, TipoUsuario = tipoUsuarioOrientador };
-            var coorientadorAlex = new Banca { Tcc = tccAlex, Usuario = userJislane, TipoUsuario = tipoUsuarioCoorientador };
-            var orientadorMateus = new Banca { Tcc = tccMateus, Usuario = userGlauco, TipoUsuario = tipoUsuarioOrientador };
-            var coorientadorMateus = new Banca { Tcc = tccMateus, Usuario = userJean, TipoUsuario = tipoUsuarioCoorientador };
-            var membroBancaMateus = new Banca { Tcc = tccMateus, Usuario = userGilson, TipoUsuario = tipoUsuarioMembroBanca };
-            var orientadorAna = new Banca { Tcc = tccAna, Usuario = userJislane, TipoUsuario = tipoUsuarioOrientador, Nota = 9.0 };
-            var coorientadorAna = new Banca { Tcc = tccAna, Usuario = userGilson, TipoUsuario = tipoUsuarioCoorientador, Nota = 8.5 };
-            var membroBancaAna = new Banca { Tcc = tccAna, Usuario = userJean, TipoUsuario = tipoUsuarioMembroBanca, Nota = 8.0 };
-            _context.Banca.AddRange(orientadorWillian, coorientadorWillian, orientadorAlex, coorientadorAlex, orientadorAna, coorientadorAna, membroBancaAna, orientadorMateus, coorientadorMateus, membroBancaMateus);
+            
+            //var orientadorWillian = new Banca { Tcc = tccWillian, Usuario = userCatuxe, TipoUsuario = tipoUsuarioOrientador };
+            //var coorientadorWillian = new Banca { Tcc = tccWillian, Usuario = userGilson, TipoUsuario = tipoUsuarioCoorientador };
+            //var orientadorAlex = new Banca { Tcc = tccAlex, Usuario = userGilson, TipoUsuario = tipoUsuarioOrientador };
+            //var coorientadorAlex = new Banca { Tcc = tccAlex, Usuario = userJislane, TipoUsuario = tipoUsuarioCoorientador };
+            //var orientadorMateus = new Banca { Tcc = tccMateus, Usuario = userGlauco, TipoUsuario = tipoUsuarioOrientador };
+            //var coorientadorMateus = new Banca { Tcc = tccMateus, Usuario = userJean, TipoUsuario = tipoUsuarioCoorientador };
+            //var membroBancaMateus = new Banca { Tcc = tccMateus, Usuario = userGilson, TipoUsuario = tipoUsuarioMembroBanca };
+            //var orientadorAna = new Banca { Tcc = tccAna, Usuario = userJislane, TipoUsuario = tipoUsuarioOrientador, Nota = 9.0 };
+            //var coorientadorAna = new Banca { Tcc = tccAna, Usuario = userGilson, TipoUsuario = tipoUsuarioCoorientador, Nota = 8.5 };
+            //var membroBancaAna = new Banca { Tcc = tccAna, Usuario = userJean, TipoUsuario = tipoUsuarioMembroBanca, Nota = 8.0 };
+            //_context.Banca.AddRange(orientadorWillian, coorientadorWillian, orientadorAlex, coorientadorAlex, orientadorAna, coorientadorAna, membroBancaAna, orientadorMateus, coorientadorMateus, membroBancaMateus);
             
             _context.SaveChanges();
+            
         }
     }
 }

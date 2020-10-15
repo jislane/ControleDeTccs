@@ -25,9 +25,9 @@ namespace SistemaDeControleDeTCCs.Models
         [Required(ErrorMessage = "O {0} é obrigatório!")]
         public string UsuarioId { get; set; }
         public string Resumo { get; set; }
-        public DateTime DataApresentacao { get; set; }
-        public DateTime DataFinalizacao { get; set; }
-        public double Nota { get; set; }
-        public string LocalApresentacao { get; set; }
+        public DateTime? DataApresentacao { get; set; }
+        public DateTime? DataFinalizacao { get; set; }
+        public double? Nota { get; set; }
+        public string? LocalApresentacao { get; set; }
     }
 }

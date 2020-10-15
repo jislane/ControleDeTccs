@@ -1,6 +1,9 @@
-﻿using System.Linq;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using SistemaDeControleDeTCCs.Data;
 using SistemaDeControleDeTCCs.Models;
@@ -19,7 +22,28 @@ namespace SistemaDeControleDeTCCs.Controllers
         // GET: Bancas
         public async Task<IActionResult> Index()
         {
-            return View(await _context.Banca.ToListAsync());
+            //var sistemaDeControleDeTCCsContext = _context.Banca.Include(b => b.Tcc).Include(b => b.TipoUsuario).Include(b => b.Usuario);
+            //return View(await sistemaDeControleDeTCCsContext.ToListAsync());
+            List<Banca> result = new List<Banca>();
+            if (User.IsInRole("Coordenador"))
+            {
+                result = await _context.Banca.Where(x => x.TipoUsuarioId == 7).OrderByDescending(x => x.DataDeCadastro).ToListAsync();
+            }
+            else
+            {
+                string userId = _context.Users.FirstOrDefault(p => p.UserName == User.Identity.Name).Id;
+                result = await _context.Banca.Where(x => x.TipoUsuarioId == 7 && x.UsuarioId == userId).OrderByDescending(x => x.DataDeCadastro).ToListAsync();
+            }
+
+            foreach (var item in result)
+            {
+                item.Tcc = _context.Tccs.Find(item.TccId);
+                item.Tcc.Usuario = _context.Usuario.Find(item.Tcc.UsuarioId);
+                item.Usuario = _context.Usuario.Find(item.UsuarioId);
+                item.TipoUsuario = _context.TipoUsuario.Find(item.TipoUsuarioId);
+            }
+            return View(result);
+
         }
 
         // GET: Bancas/Details/5
@@ -31,7 +55,23 @@ namespace SistemaDeControleDeTCCs.Controllers
             }
 
             var banca = await _context.Banca
+                .Include(b => b.Tcc)
+                .Include(b => b.TipoUsuario)
+                .Include(b => b.Usuario)
                 .FirstOrDefaultAsync(m => m.BancaId == id);
+            banca.Tcc.Usuario = _context.Usuario.Find(banca.Tcc.UsuarioId);
+
+            List<Banca> resultTemp = _context.Banca.Where(b => b.TccId == banca.TccId && b.TipoUsuarioId != 7).ToList();
+            List<Banca> result = new List<Banca>();
+            foreach (var item in resultTemp)
+            {
+                item.Usuario = _context.Usuario.Find(item.UsuarioId);
+                item.TipoUsuario = _context.TipoUsuario.Find(item.TipoUsuarioId);
+                result.Add(item);
+            }
+
+            ViewData["menbrosBanca"] = result;
+
             if (banca == null)
             {
                 return NotFound();
@@ -41,25 +81,30 @@ namespace SistemaDeControleDeTCCs.Controllers
         }
 
         // GET: Bancas/Create
-        public IActionResult Create()
+        public IActionResult Create(int id)
         {
+            ViewData["TccId"] = id;
+            ViewData["TipoUsuarioId"] = new SelectList(_context.TipoUsuario.Where(x => x.TipoUsuarioId == 5 || x.TipoUsuarioId == 3 || x.TipoUsuarioId == 1 || x.TipoUsuarioId == 2).OrderBy(x => x.DescTipo), "TipoUsuarioId", "DescTipo");
+            ViewData["UsuarioId"] = new SelectList(_context.Usuario.Where(x => x.TipoUsuarioId == 5 || x.TipoUsuarioId == 3 || x.TipoUsuarioId == 1 || x.TipoUsuarioId == 2).OrderBy(x => x.Nome), "Id", "Nome");
             return View();
         }
 
         // POST: Bancas/Create
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
+        // To protect from overposting attacks, enable the specific properties you want to bind to, for 
+        // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("BancaId,DataDeCadastro")] Banca banca)
+        public async Task<IActionResult> Create(int TccId, [Bind("UsuarioId,TipoUsuarioId")] Banca banca)
         {
-            if (ModelState.IsValid)
-            {
-                _context.Add(banca);
-                await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
-            }
-            return View(banca);
+            banca.DataDeCadastro = DateTime.Now;
+            banca.Tcc = _context.Tccs.Find(TccId);
+            banca.TipoUsuario = _context.TipoUsuario.Find(banca.TipoUsuarioId);
+            banca.Usuario = _context.Usuario.Find(banca.UsuarioId);
+
+            _context.Add(banca);
+            await _context.SaveChangesAsync();
+            return RedirectToAction(nameof(Index));
+
         }
 
         // GET: Bancas/Edit/5
@@ -75,15 +120,18 @@ namespace SistemaDeControleDeTCCs.Controllers
             {
                 return NotFound();
             }
+            ViewData["TccId"] = new SelectList(_context.Tccs, "TccId", "Tema", banca.TccId);
+            ViewData["TipoUsuarioId"] = new SelectList(_context.TipoUsuario, "TipoUsuarioId", "TipoUsuarioId", banca.TipoUsuarioId);
+            ViewData["UsuarioId"] = new SelectList(_context.Usuario, "Id", "Id", banca.UsuarioId);
             return View(banca);
         }
 
         // POST: Bancas/Edit/5
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
+        // To protect from overposting attacks, enable the specific properties you want to bind to, for 
+        // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("BancaId,DataDeCadastro")] Banca banca)
+        public async Task<IActionResult> Edit(int id, [Bind("BancaId,DataDeCadastro,TccId,UsuarioId,TipoUsuarioId,Nota")] Banca banca)
         {
             if (id != banca.BancaId)
             {
@@ -110,6 +158,9 @@ namespace SistemaDeControleDeTCCs.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
+            ViewData["TccId"] = new SelectList(_context.Tccs, "TccId", "Tema", banca.TccId);
+            ViewData["TipoUsuarioId"] = new SelectList(_context.TipoUsuario, "TipoUsuarioId", "TipoUsuarioId", banca.TipoUsuarioId);
+            ViewData["UsuarioId"] = new SelectList(_context.Usuario, "Id", "Id", banca.UsuarioId);
             return View(banca);
         }
 
@@ -122,6 +173,9 @@ namespace SistemaDeControleDeTCCs.Controllers
             }
 
             var banca = await _context.Banca
+                .Include(b => b.Tcc)
+                .Include(b => b.TipoUsuario)
+                .Include(b => b.Usuario)
                 .FirstOrDefaultAsync(m => m.BancaId == id);
             if (banca == null)
             {

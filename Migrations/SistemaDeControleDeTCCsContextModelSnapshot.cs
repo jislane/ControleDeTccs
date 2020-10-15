@@ -15,7 +15,7 @@ namespace SistemaDeControleDeTCCs.Migrations
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "3.1.4")
+                .HasAnnotation("ProductVersion", "3.1.9")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
@@ -160,16 +160,17 @@ namespace SistemaDeControleDeTCCs.Migrations
                     b.Property<DateTime>("DataDeCadastro")
                         .HasColumnType("datetime2");
 
-                    b.Property<double>("Nota")
+                    b.Property<double?>("Nota")
                         .HasColumnType("float");
 
-                    b.Property<int?>("TccId")
+                    b.Property<int>("TccId")
                         .HasColumnType("int");
 
-                    b.Property<int?>("TipoUsuarioId")
+                    b.Property<int>("TipoUsuarioId")
                         .HasColumnType("int");
 
                     b.Property<string>("UsuarioId")
+                        .IsRequired()
                         .HasColumnType("nvarchar(450)");
 
                     b.HasKey("BancaId");
@@ -232,19 +233,19 @@ namespace SistemaDeControleDeTCCs.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<DateTime>("DataApresentacao")
+                    b.Property<DateTime?>("DataApresentacao")
                         .HasColumnType("datetime2");
 
                     b.Property<DateTime>("DataDeCadastro")
                         .HasColumnType("datetime2");
 
-                    b.Property<DateTime>("DataFinalizacao")
+                    b.Property<DateTime?>("DataFinalizacao")
                         .HasColumnType("datetime2");
 
                     b.Property<string>("LocalApresentacao")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<double>("Nota")
+                    b.Property<double?>("Nota")
                         .HasColumnType("float");
 
                     b.Property<string>("Resumo")
@@ -278,7 +279,7 @@ namespace SistemaDeControleDeTCCs.Migrations
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<string>("DescTipo")
-                        .HasColumnType("nvarchar(250)");
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("TipoUsuarioId");
 
@@ -425,15 +426,21 @@ namespace SistemaDeControleDeTCCs.Migrations
                 {
                     b.HasOne("SistemaDeControleDeTCCs.Models.Tcc", "Tcc")
                         .WithMany()
-                        .HasForeignKey("TccId");
+                        .HasForeignKey("TccId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.HasOne("SistemaDeControleDeTCCs.Models.TipoUsuario", "TipoUsuario")
                         .WithMany()
-                        .HasForeignKey("TipoUsuarioId");
+                        .HasForeignKey("TipoUsuarioId")
+                        .OnDelete(DeleteBehavior.ClientCascade)
+                        .IsRequired();
 
                     b.HasOne("SistemaDeControleDeTCCs.Models.Usuario", "Usuario")
                         .WithMany()
-                        .HasForeignKey("UsuarioId");
+                        .HasForeignKey("UsuarioId")
+                        .OnDelete(DeleteBehavior.ClientCascade)
+                        .IsRequired();
                 });
 
             modelBuilder.Entity("SistemaDeControleDeTCCs.Models.Tcc", b =>
@@ -443,7 +450,7 @@ namespace SistemaDeControleDeTCCs.Migrations
                         .HasForeignKey("StatusId");
 
                     b.HasOne("SistemaDeControleDeTCCs.Models.Usuario", "Usuario")
-                        .WithMany("Tccs")
+                        .WithMany()
                         .HasForeignKey("UsuarioId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -452,9 +459,9 @@ namespace SistemaDeControleDeTCCs.Migrations
             modelBuilder.Entity("SistemaDeControleDeTCCs.Models.Usuario", b =>
                 {
                     b.HasOne("SistemaDeControleDeTCCs.Models.TipoUsuario", "TipoUsuario")
-                        .WithMany("Usuario")
+                        .WithMany()
                         .HasForeignKey("TipoUsuarioId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.ClientCascade)
                         .IsRequired();
                 });
 #pragma warning restore 612, 618

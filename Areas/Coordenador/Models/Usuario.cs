@@ -28,11 +28,7 @@ namespace SistemaDeControleDeTCCs.Models
         [DisplayName("CPF")]
         [Column(TypeName = "nvarchar(11)")]
         public string Cpf { get; set; }
-
-        public ICollection<Tcc> Tccs { get; set; }
-
         public TipoUsuario TipoUsuario { get; set; }
-
         [ForeignKey("TipoUsuario")]
         [DisplayName("Tipo de Usuário")]
         [Required(ErrorMessage = "O {0} é obrigatório!")]

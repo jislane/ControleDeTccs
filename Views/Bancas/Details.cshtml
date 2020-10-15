@@ -2,23 +2,78 @@
 
 @{
     ViewData["Title"] = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h1>Details</h1>
+<h1>Detalhes</h1>
 
 <div>
     <h4>Banca</h4>
     <hr />
     <dl class="row">
-        <dt class = "col-sm-2">
+        <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.DataDeCadastro)
         </dt>
-        <dd class = "col-sm-10">
+        <dd class="col-sm-10">
             @Html.DisplayFor(model => model.DataDeCadastro)
         </dd>
-    </dl>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Tcc.Tema)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Tcc.Tema)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Tcc.Resumo)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Tcc.Resumo)
+        </dd>
+        <dt class="col-sm-2">
+            Aluno:
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Tcc.Usuario.Nome) @Html.DisplayFor(model => model.Tcc.Usuario.Sobrenome)
+        </dd>
+        <dt class="col-sm-2">
+            Orientador:
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Usuario.Nome) @Html.DisplayFor(model => model.Usuario.Sobrenome)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Nota)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Nota)
+        </dd>
+        <dt class="col-sm-2">
+            Membros banca
+        </dt>
+        <dd class="col-sm-10">
+            @if (ViewData["menbrosBanca"] != null)
+            {
+                if (ViewData.Values != null && ViewData.Values.Count() > 0)
+                {
+                    <table>
+                        <tbody>
+                            @foreach (var item in ViewData["menbrosBanca"] as List<Banca>)
+                            {
+
+                                <tr>
+                                    <td class="col-sm-10"> <span>@item.Usuario.Nome</span> <samp>@item.Usuario.Sobrenome</samp></td>
+                                    <td class="col-sm-10"> <a asp-action="Delete" asp-route-id="@item.BancaId">Delete</a></td>
+                                </tr>
+
+                            }
+                        </tbody>
+                    </table>
+                }
+            }
+        </dd>
+        </dl>
 </div>
 <div>
-    <a asp-action="Edit" asp-route-id="@Model.BancaId">Edit</a> |
-    <a asp-action="Index">Back to List</a>
+    @*<a asp-action="Edit" asp-route-id="@Model.BancaId">Edit</a> |*@
+    <a asp-action="Index">Voltar para lista</a>
 </div>

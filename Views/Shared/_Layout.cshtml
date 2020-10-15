@@ -43,9 +43,17 @@
                                     <a class="nav-link text-dark" asp-area="Coordenador" asp-controller="Calendarios" asp-action="Index">Calendários</a>
                                 </li>
                             }
+
+                            @if (User.IsInRole("Professor") || User.IsInRole("Coordenador"))
+                            {
+                                <li class="nav-item">
+                                    <a class="nav-link text-dark" asp-area="" asp-controller="Bancas" asp-action="Index">Banca</a>
+                                </li>
+                            }
+
                             @if (User.IsInRole("Professor"))
                             {
-                                
+
                             }
                             @if (User.IsInRole("Aluno"))
                             {
