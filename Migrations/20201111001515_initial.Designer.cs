@@ -10,8 +10,8 @@ using SistemaDeControleDeTCCs.Data;
 namespace SistemaDeControleDeTCCs.Migrations
 {
     [DbContext(typeof(SistemaDeControleDeTCCsContext))]
-    [Migration("20201014135112_InitialCreate")]
-    partial class InitialCreate
+    [Migration("20201111001515_initial")]
+    partial class initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -253,7 +253,7 @@ namespace SistemaDeControleDeTCCs.Migrations
                     b.Property<string>("Resumo")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int?>("StatusId")
+                    b.Property<int>("StatusId")
                         .HasColumnType("int");
 
                     b.Property<string>("Tema")
@@ -449,7 +449,9 @@ namespace SistemaDeControleDeTCCs.Migrations
                 {
                     b.HasOne("SistemaDeControleDeTCCs.Models.Status", "Status")
                         .WithMany("Tccs")
-                        .HasForeignKey("StatusId");
+                        .HasForeignKey("StatusId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.HasOne("SistemaDeControleDeTCCs.Models.Usuario", "Usuario")
                         .WithMany()

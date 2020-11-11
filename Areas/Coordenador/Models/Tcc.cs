@@ -18,6 +18,7 @@ namespace SistemaDeControleDeTCCs.Models
         public string Tema { get; set; }
         public DateTime DataDeCadastro { get; set; }
         public Status Status { get; set; }
+        public int StatusId { get; set; }
         public Usuario Usuario { get; set; }
 
         [ForeignKey("Usuario")]

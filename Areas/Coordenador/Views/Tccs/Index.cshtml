@@ -1,4 +1,4 @@
-﻿@model IEnumerable<SistemaDeControleDeTCCs.Models.Tcc>
+﻿@model SistemaDeControleDeTCCs.Models.ViewModels.TccViewModel
 
 @{
     ViewData["Title"] = "Index";
@@ -6,14 +6,47 @@
 
 <h1>TCC's</h1>
 
+<form asp-action="Index" method="get">
+    <div>
+        <p>
+            Tema:
+            <input type="text" name="filterTema" value="@ViewData["filterTema"]" />
+            Discente:
+            <select asp-items="@ViewBag.Discente" id="filterDiscente" name="filterDiscente">
+                <option value="">Selecione</option>
+            </select>
+            Status:
+            <select asp-items="@ViewBag.Status" id="filterStatus" name="filterStatus">
+                <option value="">Selecione</option>
+            </select>
+            Semestre:
+            <select asp-items="@ViewBag.Semestre" id="filterSemestre" name="filterSemestre">
+                <option value="">Selecione</option>
+            </select>
+
+            <input type="submit" value="Pesquisar" class="btn btn-primary" /> |
+            <a asp-action="Index">Limpar filtros</a>
+        </p>
+    </div>
+</form>
+
 <table class="table">
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.Tema)
+                Tema
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.DataDeCadastro)
+                Discente
+            </th>
+            <th>
+                Orientador
+            </th>
+            <th>
+                Status
+            </th>
+            <th>
+                Apresentação
             </th>
             <th>
                 <a asp-action="AddOrEdit" class="btn btn-outline-success"><i class="far fa-plus-square"></i>Novo</a>
@@ -21,18 +54,39 @@
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Tema)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.DataDeCadastro)
-            </td>
-            <td>
-                <a asp-action="AddOrEdit" asp-route-id="@item.TccId"><i class="fa fa-marker fa-lg"></i></a> |
-                <a asp-action="Delete" asp-route-id="@item.TccId" class="text-danger" ml-1 onclick="return confirm('Tem certeza que quer deletasr este registro?')"><i class="fa fa-trash-alt fa-lg"></i></a>
-            </td>
-        </tr>}
+        @foreach (var item in Model.Tccs) {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Tema)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Usuario.Nome) @Html.DisplayFor(modelItem => item.Usuario.Sobrenome)
+                </td>
+                @foreach(var b in Model.Banca.Where(x => x.TipoUsuario.DescTipo.ToLower().Equals("orientador") && x.TccId == item.TccId))
+                {
+                    <td>
+                        @Html.DisplayFor(modelItem => b.Usuario.Nome) @Html.DisplayFor(modelItem => b.Usuario.Sobrenome)
+                    </td>
+                }
+                <td>
+                    @Html.DisplayFor(modelItem => item.Status.DescStatus)
+                </td>
+                <td>
+                    @if (item.DataApresentacao != null)
+                    {
+                        string dtApresentacao = item.DataApresentacao.Value.Date.ToString("dd/MM/yyyy");
+                        @Html.DisplayFor(modelItem => dtApresentacao)
+                    }
+                    else
+                    {
+                        <p>Sem data</p>
+                    }
+                </td>
+                <td>
+                    <a asp-action="AddOrEdit" asp-route-id="@item.TccId"><i class="fa fa-marker fa-lg"></i></a> |
+                    <a asp-action="Delete" asp-route-id="@item.TccId" class="text-danger" ml-1 onclick="return confirm('Tem certeza que quer deletasr este registro?')"><i class="fa fa-trash-alt fa-lg"></i></a>
+                </td>
+            </tr>
+         }
     </tbody>
 </table>

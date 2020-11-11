@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace SistemaDeControleDeTCCs.Migrations
 {
-    public partial class InitialCreate : Migration
+    public partial class initial : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -214,7 +214,7 @@ namespace SistemaDeControleDeTCCs.Migrations
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Tema = table.Column<string>(type: "nvarchar(250)", nullable: false),
                     DataDeCadastro = table.Column<DateTime>(nullable: false),
-                    StatusId = table.Column<int>(nullable: true),
+                    StatusId = table.Column<int>(nullable: false),
                     UsuarioId = table.Column<string>(nullable: false),
                     Resumo = table.Column<string>(nullable: true),
                     DataApresentacao = table.Column<DateTime>(nullable: true),
@@ -230,7 +230,7 @@ namespace SistemaDeControleDeTCCs.Migrations
                         column: x => x.StatusId,
                         principalTable: "Status",
                         principalColumn: "StatusId",
-                        onDelete: ReferentialAction.Restrict);
+                        onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
                         name: "FK_Tccs_AspNetUsers_UsuarioId",
                         column: x => x.UsuarioId,
