@@ -6,6 +6,16 @@
 
 <h1>@ViewData["Title"]</h1>
 
+@if (TempData["Error"] != null)
+{
+    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+        @TempData["Error"].ToString()
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+}
+
 <h4>Calendário de Banca</h4>
 <hr />
 <div class="row">
