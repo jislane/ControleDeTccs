@@ -102,7 +102,7 @@ namespace SistemaDeControleDeTCCs.Areas.Identity.Pages.Account
         public async Task OnGetAsync(string returnUrl = null)
         {
             // pass the TipoUsuario List using ViewData
-            ViewData["tiposUsuarios"] = _context.TipoUsuario.OrderBy(x => x.DescTipo).Where(x => x.DescTipo.Contains("Aluno") || x.DescTipo.Contains("Professor")).ToList();
+            ViewData["tiposUsuarios"] = _context.TipoUsuario.OrderBy(x => x.DescTipo).Where(x => x.DescTipo.Contains("Aluno") || x.DescTipo.Contains("Professor") || x.DescTipo.Contains("Coordenador")).ToList();
             ReturnUrl = returnUrl;
             ExternalLogins = (await _signInManager.GetExternalAuthenticationSchemesAsync()).ToList();
         }

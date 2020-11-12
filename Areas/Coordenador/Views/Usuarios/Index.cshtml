@@ -1,14 +1,35 @@
 ﻿@model IEnumerable<SistemaDeControleDeTCCs.Models.Usuario>
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Usuários";
 }
 
-<h1>Usuários</h1>
+<h1>@ViewData["Title"]</h1>
+
+<form asp-action="Index" method="get">
+    <div>
+        <p>
+            Nome:
+            <input type="text" name="filterNome" value="@ViewData["filterNome"]" />
+            Matrícula/CPF:
+            <input type="text" name="filterMatriculaCPF" value="@ViewData["filterMatriculaCPF"]" />
+            Tipo de Usuário:
+            <select asp-items="@ViewBag.TipoUsuario" id="filterTipoUsuario" name="filterTipoUsuario">
+                <option value="">Selecione</option>
+            </select>
+
+            <input type="submit" value="Pesquisar" class="btn btn-primary" /> |
+            <a asp-action="Index">Limpar filtros</a>
+        </p>
+    </div>
+</form>
 
 <table class="table table-hover">
     <thead>
         <tr>
+            <th>
+                Tipo
+            </th>
             <th>
                 Nome Completo
             </th>
@@ -32,6 +53,9 @@
     <tbody>
 @foreach (var item in Model) {
         <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.TipoUsuario.DescTipo)
+            </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Nome) @Html.DisplayFor(modelItem => item.Sobrenome)
             </td>

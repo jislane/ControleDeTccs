@@ -61,6 +61,16 @@ namespace SistemaDeControleDeTCCs.Controllers
         {
             if (ModelState.IsValid)
             {
+                if(_context.Calendario.Where(x => x.Ano == calendario.Ano && x.Semestre == calendario.Semestre).ToList().Count > 0)
+                {
+                    TempData["Error"] = "Operação cancelada! Já existe um Calendário de banca cadastrado para o ano " + calendario.Ano + "." + calendario.Semestre;
+                    return View(calendario);
+                } else if (calendario.Ativo && _context.Calendario.Where(x => x.Ativo == true).ToList().Count > 0)
+                {
+                    TempData["Error"] = "Operação cancelada! Não é possível ter mais de um calendário de banca ativo simultaneamente.";
+                    return View(calendario);
+                }
+
                 _context.Add(calendario);
                 await _context.SaveChangesAsync();
                 TempData["Success"] = "Calendário de banca cadastrado com sucesso.";
@@ -99,6 +109,17 @@ namespace SistemaDeControleDeTCCs.Controllers
 
             if (ModelState.IsValid)
             {
+                if (_context.Calendario.Where(x => x.Ano == calendario.Ano && x.Semestre == calendario.Semestre && x.CalendarioId != calendario.CalendarioId).ToList().Count > 0)
+                {
+                    TempData["Error"] = "Operação cancelada! Já existe um Calendário de banca cadastrado para o ano " + calendario.Ano + "." + calendario.Semestre;
+                    return View(calendario);
+                }
+                else if (calendario.Ativo && _context.Calendario.Where(x => x.Ativo == true && x.CalendarioId != calendario.CalendarioId).ToList().Count > 0)
+                {
+                    TempData["Error"] = "Operação cancelada! Não é possível ter mais de um calendário de banca ativo simultaneamente.";
+                    return View(calendario);
+                }
+
                 try
                 {
                     _context.Update(calendario);

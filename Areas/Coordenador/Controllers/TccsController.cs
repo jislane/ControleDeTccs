@@ -29,22 +29,92 @@ namespace SistemaDeControleDeTCCs.Controllers
         }
 
         // GET: Tccs
-        public async Task<IActionResult> Index()
+        public IActionResult Index(string filterTema, string filterDiscente, int filterStatus, int filterSemestre)
         {
-            return View(_context.Tccs.ToList());
+            List<Tcc> tccs = _context.Tccs.ToList();
+            List<Usuario> usuarios = new List<Usuario>();
+            List<Banca> banca = new List<Banca>();
+            foreach (Tcc item in tccs)
+            {
+                item.Usuario = _context.Usuario.Find(item.UsuarioId);
+                item.Status = _context.Status.Find(item.StatusId);
+                if (!usuarios.Contains(item.Usuario))
+                    usuarios.Add(item.Usuario);
+                List<Banca> membrosBanca = _context.Banca.Where(x => x.TccId == item.TccId).ToList();
+                foreach(Banca b in _context.Banca.Where(x => x.TccId == item.TccId).ToList())
+                {
+                    b.Usuario = _context.Usuario.Find(b.UsuarioId);
+                    b.TipoUsuario = _context.TipoUsuario.Find(b.TipoUsuarioId);
+                    banca.Add(b);
+                }
+            }
+            // filtros
+            if (!string.IsNullOrEmpty(filterTema))
+            {
+                tccs = tccs.Where(x => x.Tema.ToUpper().Contains(filterTema.ToUpper())).ToList();
+                ViewData["filterTema"] = filterTema;
+            }
+            if (!string.IsNullOrEmpty(filterDiscente))
+            {
+                tccs = tccs.Where(x => x.UsuarioId == filterDiscente).ToList();
+                ViewBag.Discente = new SelectList(usuarios, "Id", "Nome", filterDiscente);
+            }
+            else
+            {
+                ViewBag.Discente = new SelectList(usuarios, "Id", "Nome");
+            }
+            if (filterStatus > 0)
+            {
+                tccs = tccs.Where(x => x.StatusId == filterStatus).ToList();
+                ViewBag.Status = new SelectList(_context.Status.ToList(), "StatusId", "DescStatus", filterStatus);
+            }
+            else
+            {
+                ViewBag.Status = new SelectList(_context.Status.ToList(), "StatusId", "DescStatus");
+            }
+            if (filterSemestre > 0)
+            {
+                Calendario calendario = _context.Calendario.Where(x => x.CalendarioId == filterSemestre).FirstOrDefault();
+                tccs = tccs.Where(x => x.DataApresentacao >= calendario.DataInicio && x.DataApresentacao <= calendario.DataFim).ToList();
+                var calendarios = _context.Calendario.Select(x => new { Value = x.CalendarioId, Text = string.Format("{0}.{1}", x.Ano, x.Semestre) }).ToList();
+                calendarios.Add(new { Value = -1, Text = "Sem data" });
+                ViewBag.Semestre = new SelectList(calendarios.OrderByDescending(x => x.Text), "Value", "Text", filterSemestre);
+            }
+            else if(filterSemestre == -1)
+            {
+                tccs = tccs.Where(x => x.DataApresentacao == null).ToList();
+                var calendarios = _context.Calendario.Select(x => new { Value = x.CalendarioId, Text = string.Format("{0}.{1}", x.Ano, x.Semestre) }).ToList();
+                calendarios.Add(new { Value = -1, Text = "Sem data" });
+                ViewBag.Semestre = new SelectList(calendarios.OrderByDescending(x => x.Text), "Value", "Text", filterSemestre);
+            }
+            else
+            {
+                var calendarios = _context.Calendario.Select(x => new { Value = x.CalendarioId, Text = string.Format("{0}.{1}", x.Ano, x.Semestre) }).ToList();
+                calendarios.Add(new { Value = -1, Text = "Sem data" });
+                ViewBag.Semestre = new SelectList(calendarios.OrderByDescending(x => x.Text), "Value", "Text");
+            }
+
+            TccViewModel viewModel = new TccViewModel { Tccs = tccs.OrderBy(x => x.Tema).ToList(), Banca = banca };
+            return View(viewModel);
         }
 
         // GET: Tccs/Create
         public IActionResult AddOrEdit(int id = 0)
         {                           
-            var discentes = _context.Usuario.Where(x => x.TipoUsuario.DescTipo.Contains("Aluno")).ToList();
-            var tcc = new Tcc();
+            List<Usuario> discentes = _context.Usuario.Where(x => x.TipoUsuario.DescTipo.Contains("Aluno")).ToList();
+            Tcc tcc = new Tcc();
+            Usuario orientador = new Usuario();
             if (id != 0)
             {
                 tcc = _context.Tccs.Find(id);
+                string orientadorId = _context.Banca.Where(x => x.TccId == tcc.TccId && x.TipoUsuario.DescTipo.ToLower().Equals("orientador")).Select(x => x.UsuarioId).FirstOrDefault();
+                ViewBag.ProfessorList = new SelectList(_context.Usuario.Where(x => x.TipoUsuarioId.Equals(5) || x.TipoUsuarioId.Equals(1)).OrderBy(x => x.Nome), "Id", "Nome", orientadorId);
             }
-            ViewBag.ProfessorList = new SelectList(_context.Usuario.Where(x => x.TipoUsuarioId.Equals(5)).OrderBy(x => x.Nome), "Id", "Nome");
-            var viewModel = new TccViewModel { Usuarios = discentes, Tcc = tcc };
+            else
+            {
+                ViewBag.ProfessorList = new SelectList(_context.Usuario.Where(x => x.TipoUsuarioId.Equals(5) || x.TipoUsuarioId.Equals(1)).OrderBy(x => x.Nome), "Id", "Nome");
+            }
+            TccViewModel viewModel = new TccViewModel { Usuarios = discentes, Tcc = tcc };
             return View(viewModel);
         }
 
@@ -78,6 +148,7 @@ namespace SistemaDeControleDeTCCs.Controllers
                 }
                 else
                 {
+                    tcc.StatusId = _context.Tccs.Where(x => x.TccId == tcc.TccId).Select(x => x.StatusId).FirstOrDefault();
                     _context.Update(tcc);
                     await _context.SaveChangesAsync();
                     //Adiconarndo o orientador a Banca
