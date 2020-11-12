@@ -31,15 +31,36 @@ namespace SistemaDeControleDeTCCs.Controllers
         }
 
         // GET: Usuarios
-        public async Task<IActionResult> Index()
+        public IActionResult Index(string filterNome, string filterMatriculaCPF, int filterTipoUsuario)
         {
-            return View(await _context.Usuario.ToListAsync());
+            List<Usuario> usuarios = _context.Usuario.ToList();
+            // filtros
+            if (!string.IsNullOrEmpty(filterNome))
+            {
+                usuarios = usuarios.Where(x => x.Nome.ToUpper().Contains(filterNome.ToUpper())).ToList();
+                ViewData["filterNome"] = filterNome;
+            }
+            if (!string.IsNullOrEmpty(filterMatriculaCPF))
+            {
+                usuarios = usuarios.Where(x => x.Cpf.Contains(filterMatriculaCPF) || x.Matricula.Contains(filterMatriculaCPF)).ToList();
+                ViewData["filterMatriculaCPF"] = filterMatriculaCPF;
+            }
+            if (filterTipoUsuario > 0)
+            {
+                usuarios = usuarios.Where(x => x.TipoUsuarioId == filterTipoUsuario).ToList();
+                ViewBag.TipoUsuario = new SelectList(_context.TipoUsuario.Where(x => x.TipoUsuarioId == 1 || x.TipoUsuarioId == 4 || x.TipoUsuarioId == 5 || x.TipoUsuarioId == 6).OrderBy(x => x.DescTipo).ToList(), "TipoUsuarioId", "DescTipo", filterTipoUsuario);
+            }
+            else
+            {
+                ViewBag.TipoUsuario = new SelectList(_context.TipoUsuario.Where(x => x.TipoUsuarioId == 1 || x.TipoUsuarioId == 4 || x.TipoUsuarioId == 5 || x.TipoUsuarioId == 6).OrderBy(x => x.DescTipo).ToList(), "TipoUsuarioId", "DescTipo");
+            }
+            return View(usuarios.OrderBy(x => x.Nome));
         }
 
         // GET: Usuarios/Create
         public IActionResult AddOrEdit(string id)
         {
-            var tiposUsuarios = _context.TipoUsuario.OrderBy(x => x.DescTipo).Where(x => x.DescTipo.Contains("Aluno") || x.DescTipo.Contains("Professor")).ToList();
+            var tiposUsuarios = _context.TipoUsuario.OrderBy(x => x.DescTipo).Where(x => x.DescTipo.Contains("Aluno") || x.DescTipo.Contains("Professor") || x.DescTipo.Contains("Coordenador")).ToList();
             var usuario = new Usuario();
             if (id != null)
             {
