@@ -1,0 +1,75 @@
+﻿@page
+@model RegisterModel
+@{
+    ViewData["Title"] = "Novo Usuário";
+    var tiposUsuarios = (List<SistemaDeControleDeTCCs.Models.TipoUsuario>)ViewData["tiposUsuarios"];
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<div class="row">
+    <div class="col-md-6">
+        <form asp-route-returnUrl="@Model.ReturnUrl" method="post">
+            @*<h4>Criar uma nova conta.</h4>*@
+            <hr />
+            @*<div asp-validation-summary="All" class="text-danger"></div>*@
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <partial name="_StatusMessage" for="StatusMessage" />
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label asp-for="Input.TipoUsuarioId" class="control-label"></label>
+                    <select asp-for="Input.TipoUsuarioId" asp-items='new SelectList(tiposUsuarios,"TipoUsuarioId","DescTipo")' class="form-control">
+                        <option value="">Selecione</option>
+                    </select>
+                    <span asp-validation-for="Input.TipoUsuarioId" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label asp-for="Input.Nome"></label>
+                    <input asp-for="Input.Nome" class="form-control" />
+                    <span asp-validation-for="Input.Nome" class="text-danger"></span>
+                </div>
+                <div class="form-group col-md-6">
+                    <label asp-for="Input.Sobrenome"></label>
+                    <input asp-for="Input.Sobrenome" class="form-control" />
+                    <span asp-validation-for="Input.Sobrenome" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label asp-for="Input.Matricula" class="control-label"></label>
+                    <input asp-for="Input.Matricula" class="form-control" />
+                    <span asp-validation-for="Input.Matricula" class="text-danger"></span>
+                </div>
+                <div class="form-group col-md-6">
+                    <label asp-for="Input.Cpf" class="control-label"></label>
+                    <input asp-for="Input.Cpf" class="form-control" />
+                    <span asp-validation-for="Input.Cpf" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="form-group">
+                <label asp-for="Input.Email"></label>
+                <input asp-for="Input.Email" class="form-control" />
+                <span asp-validation-for="Input.Email" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Input.PhoneNumber" class="control-label"></label>
+                <input asp-for="Input.PhoneNumber" class="form-control" />
+                <span asp-validation-for="Input.PhoneNumber" class="text-danger"></span>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <button type="submit" class="btn btn-primary btn-block">Registrar</button>
+                </div>
+                <div class="form-group col-md-6">
+                    <a asp-action="Index" asp-area="Coordenador" asp-controller="Usuarios" class="btn btn-secondary btn-block"><i class="fa fa-table"></i> Voltar para lista</a>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

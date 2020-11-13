@@ -1,0 +1,81 @@
+﻿@model IEnumerable<SistemaDeControleDeTCCs.Models.Usuario>
+
+@{
+    ViewData["Title"] = "Usuários";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<form asp-action="Index" method="get">
+    <div>
+        <p>
+            Nome:
+            <input type="text" name="filterNome" value="@ViewData["filterNome"]" />
+            Matrícula/CPF:
+            <input type="text" name="filterMatriculaCPF" value="@ViewData["filterMatriculaCPF"]" />
+            Tipo de Usuário:
+            <select asp-items="@ViewBag.TipoUsuario" id="filterTipoUsuario" name="filterTipoUsuario">
+                <option value="">Selecione</option>
+            </select>
+
+            <input type="submit" value="Pesquisar" class="btn btn-primary" /> |
+            <a asp-action="Index">Limpar filtros</a>
+        </p>
+    </div>
+</form>
+
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <th>
+                Tipo
+            </th>
+            <th>
+                Nome Completo
+            </th>
+            <th>
+                Matrícula
+            </th>
+            <th>
+                CPF
+            </th>
+            <th>
+                Telefone
+            </th>
+            <th>
+                E-mail
+            </th>
+            <th>
+                <a class="btn btn-outline-success" id="register" asp-area="Identity" asp-page="/Account/Register"><i class="far fa-plus-square"></i>Novo</a>
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.TipoUsuario.DescTipo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nome) @Html.DisplayFor(modelItem => item.Sobrenome)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Matricula)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Cpf)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PhoneNumber)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Email)
+            </td>
+            <td>
+                <a asp-action="AddOrEdit" asp-route-id="@item.Id"><i class="fa fa-marker fa-lg"></i></a> |
+                <a asp-action="Delete" asp-route-id="@item.Id" class="text-danger" ml-1 onclick="return confirm('Tem certeza que quer deletasr este registro?')"><i class="fa fa-trash-alt fa-lg"></i> </a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

@@ -11,12 +11,7 @@ namespace SistemaDeControleDeTCCs.Models
     {
         [Key]
         public int TipoUsuarioId { get; set; }
-
-        [Column(TypeName = "nvarchar(250)")]
         public string  DescTipo { get; set; }
-
-        public ICollection<Usuario> Usuario { get; set; }
-
 
     }
 }
