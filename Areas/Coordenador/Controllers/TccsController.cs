@@ -176,5 +176,10 @@ namespace SistemaDeControleDeTCCs.Controllers
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
+
+        public async Task<IActionResult> Resumo(int? id)
+        {
+            return View("Resumo", _context.Tccs.Where(t => t.TccId == id).ToList());
+        }
     }
 }

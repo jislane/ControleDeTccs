@@ -33,5 +33,6 @@ namespace SistemaDeControleDeTCCs.Data
         public DbSet<Status> Status { get; set; }
         public DbSet<TipoUsuario> TipoUsuario { get; set; }
         public DbSet<Usuario> Usuario { get; set; }
+        public DbSet<FileTCC> FileTCC { get; set; }
     }
 }

@@ -274,6 +274,29 @@ namespace SistemaDeControleDeTCCs.Migrations
                         onDelete: ReferentialAction.Restrict);
                 });
 
+            migrationBuilder.CreateTable(
+                name: "FileTCC",
+                columns: table => new
+                {
+                    Id = table.Column<Guid>(nullable: false),
+                    Name = table.Column<string>(nullable: false),
+                    Extension = table.Column<string>(nullable: false),
+                    DataCadastro = table.Column<DateTime>(nullable: false),
+                    Length = table.Column<long>(nullable: false),
+                    FileStream = table.Column<byte[]>(nullable: false),
+                    TccId = table.Column<int>(nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_FileTCC", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_FileTCC_Tccs_TccId",
+                        column: x => x.TccId,
+                        principalTable: "Tccs",
+                        principalColumn: "TccId",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
             migrationBuilder.CreateIndex(
                 name: "IX_AspNetRoleClaims_RoleId",
                 table: "AspNetRoleClaims",
@@ -334,6 +357,11 @@ namespace SistemaDeControleDeTCCs.Migrations
                 column: "UsuarioId");
 
             migrationBuilder.CreateIndex(
+                name: "IX_FileTCC_TccId",
+                table: "FileTCC",
+                column: "TccId");
+
+            migrationBuilder.CreateIndex(
                 name: "IX_Tccs_StatusId",
                 table: "Tccs",
                 column: "StatusId");
@@ -366,6 +394,9 @@ namespace SistemaDeControleDeTCCs.Migrations
 
             migrationBuilder.DropTable(
                 name: "Calendario");
+
+            migrationBuilder.DropTable(
+                name: "FileTCC");
 
             migrationBuilder.DropTable(
                 name: "AspNetRoles");

@@ -211,6 +211,40 @@ namespace SistemaDeControleDeTCCs.Migrations
                     b.ToTable("Calendario");
                 });
 
+            modelBuilder.Entity("SistemaDeControleDeTCCs.Models.FileTCC", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<DateTime>("DataCadastro")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Extension")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<byte[]>("FileStream")
+                        .IsRequired()
+                        .HasColumnType("varbinary(max)");
+
+                    b.Property<long>("Length")
+                        .HasColumnType("bigint");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("TccId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("TccId");
+
+                    b.ToTable("FileTCC");
+                });
+
             modelBuilder.Entity("SistemaDeControleDeTCCs.Models.Status", b =>
                 {
                     b.Property<int>("StatusId")
@@ -440,6 +474,15 @@ namespace SistemaDeControleDeTCCs.Migrations
                         .WithMany()
                         .HasForeignKey("UsuarioId")
                         .OnDelete(DeleteBehavior.ClientCascade)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("SistemaDeControleDeTCCs.Models.FileTCC", b =>
+                {
+                    b.HasOne("SistemaDeControleDeTCCs.Models.Tcc", "Tcc")
+                        .WithMany()
+                        .HasForeignKey("TccId")
+                        .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });
 

@@ -1,7 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
@@ -12,11 +15,15 @@ namespace SistemaDeControleDeTCCs.Controllers
 {
     public class BancasController : Controller
     {
+
+        private IHostingEnvironment _appEnvironment;
+
         private readonly SistemaDeControleDeTCCsContext _context;
 
-        public BancasController(SistemaDeControleDeTCCsContext context)
+        public BancasController(SistemaDeControleDeTCCsContext context, IHostingEnvironment env)
         {
             _context = context;
+            _appEnvironment = env;
         }
 
         // GET: Bancas
@@ -29,10 +36,19 @@ namespace SistemaDeControleDeTCCs.Controllers
             {
                 result = await _context.Banca.Where(x => x.TipoUsuarioId == 7).OrderByDescending(x => x.DataDeCadastro).ToListAsync();
             }
-            else
+            else if (User.IsInRole("Professor"))
             {
                 string userId = _context.Users.FirstOrDefault(p => p.UserName == User.Identity.Name).Id;
                 result = await _context.Banca.Where(x => x.TipoUsuarioId == 7 && x.UsuarioId == userId).OrderByDescending(x => x.DataDeCadastro).ToListAsync();
+            }
+            else if (User.IsInRole("Aluno"))
+            {
+                string userId = _context.Users.FirstOrDefault(p => p.UserName == User.Identity.Name).Id;
+                var tccList = await _context.Tccs.Where(t => t.UsuarioId == userId).ToListAsync();
+                foreach (var item in tccList)
+                {
+                    result.Add(await _context.Banca.Where(b => b.TccId == item.TccId && b.TipoUsuarioId == 7).OrderByDescending(x => x.DataDeCadastro).FirstAsync());
+                }
             }
 
             foreach (var item in result)
@@ -42,12 +58,19 @@ namespace SistemaDeControleDeTCCs.Controllers
                 item.Usuario = _context.Usuario.Find(item.UsuarioId);
                 item.TipoUsuario = _context.TipoUsuario.Find(item.TipoUsuarioId);
             }
+
+            if (User.IsInRole("Aluno"))
+            {
+                return View("indexAluno", result);
+            }
+
             return View(result);
 
         }
 
         // GET: Bancas/Details/5
-        public async Task<IActionResult> Details(int? id)
+
+        public async Task<IActionResult> Details(int? id, double? Nota_1, double? Nota_2, double? Nota_3, double? Nota_4, double? Nota_5)
         {
             if (id == null)
             {
@@ -61,8 +84,14 @@ namespace SistemaDeControleDeTCCs.Controllers
                 .FirstOrDefaultAsync(m => m.BancaId == id);
             banca.Tcc.Usuario = _context.Usuario.Find(banca.Tcc.UsuarioId);
 
-            List<Banca> resultTemp = _context.Banca.Where(b => b.TccId == banca.TccId && b.TipoUsuarioId != 7).ToList();
+            AtualizarNotas(Nota_1, Nota_2, Nota_3, Nota_4, Nota_5, banca.TccId);
+
+
+            List<Banca> resultTemp = _context.Banca.Where(b => b.TccId == banca.TccId).OrderBy(b => b.BancaId).ToList();
             List<Banca> result = new List<Banca>();
+
+
+
             foreach (var item in resultTemp)
             {
                 item.Usuario = _context.Usuario.Find(item.UsuarioId);
@@ -70,7 +99,7 @@ namespace SistemaDeControleDeTCCs.Controllers
                 result.Add(item);
             }
 
-            ViewData["menbrosBanca"] = result;
+            ViewBag.menbrosBanca = result;
 
             if (banca == null)
             {
@@ -196,9 +225,129 @@ namespace SistemaDeControleDeTCCs.Controllers
             return RedirectToAction(nameof(Index));
         }
 
+        public async Task<IActionResult> ResumoEdit(int TccId, List<IFormFile> arquivos, [Bind("Resumo")] Tcc tcc)
+        {
+            if (TccId == 0)
+            {
+                return NotFound();
+            }
+            var result = _context.Tccs.Where(t => t.TccId == TccId).FirstOrDefault();
+            result.Resumo = tcc.Resumo;
+            _context.Update(result);
+            await _context.SaveChangesAsync();
+
+            if (arquivos.Count != 0)
+            {
+                SaveFile(arquivos, TccId);
+            }
+
+            return View("Resumo", result);
+        }
+        public async Task<IActionResult> Resumo(int? id)
+        {
+            return View(_context.Tccs.Find(id));
+        }
+
+
+        public async Task<IActionResult> Anexo(int? id)
+        {
+            ViewBag.TccId = id;
+            List<FileTCC> result = await _context.FileTCC.Where(f => f.TccId == id).OrderByDescending(f => f.DataCadastro).ToListAsync();
+
+            foreach (var item in result)
+            {
+                item.Tcc = _context.Tccs.Find(item.TccId);
+                item.Tcc.Usuario = _context.Usuario.Find(item.Tcc.UsuarioId);
+            }
+
+            return View("Anexo",result);
+        }
+
+
+        public async Task<IActionResult> SaveFile(List<IFormFile> arquivos, int TccId)
+        {
+
+            var arquivo = arquivos.First();
+            var fileBinary = new byte[arquivo.Length];
+            using (var stream = arquivo.OpenReadStream())
+            {
+                stream.Read(fileBinary, 0, fileBinary.Length); 
+            }
+                
+            var fileSample = new FileTCC
+            {
+                Id = Guid.NewGuid(),
+                Name = arquivo.FileName,
+                Extension = "pdf",
+                DataCadastro = DateTime.Now,
+                Length = arquivo.Length,
+                FileStream = fileBinary,
+                TccId = TccId
+            };
+            _context.Add(fileSample);
+            await _context.SaveChangesAsync();
+
+            //return RedirectToAction("Index");
+            ViewBag.TccId = TccId;
+            return View("Anexo", _context.FileTCC.Where(f => f.TccId == TccId));
+        }
+
         private bool BancaExists(int id)
         {
             return _context.Banca.Any(e => e.BancaId == id);
+        }
+
+        private void AtualizarNotas(double? Nota_1, double? Nota_2, double? Nota_3, double? Nota_4, double? Nota_5, int TccId)
+        {
+            var count = 1;
+            double notas = 0;
+            if (Nota_1 != null)
+            {
+                var resultTemp = _context.Banca.Where(b => b.TccId == TccId).OrderBy(b => b.BancaId).ToList();
+                foreach (var item in resultTemp)
+                {
+                    if (count == 1)
+                    {
+                        notas += Nota_1.Value;
+                        item.Nota = Nota_1;
+                        _context.Update(item);
+                        _context.SaveChanges();
+                    }
+                    if (count == 2)
+                    {
+                        notas += Nota_2.Value;
+                        item.Nota = Nota_2;
+                        _context.Update(item);
+                        _context.SaveChanges();
+                    }
+                    if (count == 3)
+                    {
+                        notas += Nota_3.Value;
+                        item.Nota = Nota_3;
+                        _context.Update(item);
+                        _context.SaveChanges();
+                    }
+                    if (count == 4)
+                    {
+                        notas += Nota_4.Value;
+                        item.Nota = Nota_4;
+                        _context.Update(item);
+                        _context.SaveChanges();
+                    }
+                    if (count == 5)
+                    {
+                        notas += Nota_5.Value;
+                        item.Nota = Nota_5;
+                        _context.Update(item);
+                        _context.SaveChanges();
+                    }
+                    count++;
+                }
+                var result = _context.Tccs.Where(t => t.TccId == TccId).First();
+                result.Nota = notas / resultTemp.Count;
+                _context.Update(result);
+                _context.SaveChanges();
+            }
         }
     }
 }
