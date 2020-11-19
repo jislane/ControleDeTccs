@@ -36,42 +36,52 @@
             @Html.DisplayFor(model => model.Tcc.Usuario.Nome) @Html.DisplayFor(model => model.Tcc.Usuario.Sobrenome)
         </dd>
         <dt class="col-sm-2">
-            Orientador:
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Usuario.Nome) @Html.DisplayFor(model => model.Usuario.Sobrenome)
-        </dd>
-        <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.Nota)
         </dt>
         <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Nota)
+            @Html.DisplayFor(model => model.Tcc.Nota)
         </dd>
         <dt class="col-sm-2">
             Membros banca
         </dt>
-        <dd class="col-sm-10">
-            @if (ViewData["menbrosBanca"] != null)
-            {
-                if (ViewData.Values != null && ViewData.Values.Count() > 0)
-                {
-                    <table>
-                        <tbody>
-                            @foreach (var item in ViewData["menbrosBanca"] as List<Banca>)
+        <dd>
+            <form method="post">
+                <table border="0" cellspacing="10" cellpadding="10">
+                    <tbody>
+                        @if (ViewBag.menbrosBanca != null)
+                        {
+                            if (ViewBag.menbrosBanca.Count > 0)
                             {
+                                int count = 0;
 
-                                <tr>
-                                    <td class="col-sm-10"> <span>@item.Usuario.Nome</span> <samp>@item.Usuario.Sobrenome</samp></td>
-                                    <td class="col-sm-10"> <a asp-action="Delete" asp-route-id="@item.BancaId">Delete</a></td>
-                                </tr>
+                                @foreach (var item in ViewBag.menbrosBanca as List<Banca>)
+                                {
+                                    count++;
+                                    <tr>
+                                        <td> <input value="@item.Nota" class="form-control" name="Nota_@count" id="Nota_@count" /></td>
+                                        <td> @item.Usuario.Nome @item.Usuario.Sobrenome</td>
+                                        <td> @item.TipoUsuario.DescTipo</td>
+                                        <td>
+                                            @if (item.TipoUsuario.TipoUsuarioId != 7)
+                                            {<a asp-action="Delete" asp-route-id="@item.BancaId">Delete</a>}
+                                        </td>
+                                    </tr>
+
+                                }
 
                             }
-                        </tbody>
-                    </table>
-                }
-            }
+                        }
+                        <tr>
+                            <td><button type="submit" class="btn btn-default">Salvar</button></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </form>
         </dd>
-        </dl>
+    </dl>
 </div>
 <div>
     @*<a asp-action="Edit" asp-route-id="@Model.BancaId">Edit</a> |*@

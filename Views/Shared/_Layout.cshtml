@@ -44,7 +44,7 @@
                                 </li>
                             }
 
-                            @if (User.IsInRole("Professor") || User.IsInRole("Coordenador"))
+                            @if (User.IsInRole("Professor") || User.IsInRole("Coordenador") || User.IsInRole("Aluno"))
                             {
                                 <li class="nav-item">
                                     <a class="nav-link text-dark" asp-area="" asp-controller="Bancas" asp-action="Index">Banca</a>

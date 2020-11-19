@@ -1,0 +1,46 @@
+﻿@model IEnumerable<SistemaDeControleDeTCCs.Models.Banca>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Bancas</h1>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.DataDeCadastro)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Tcc)
+            </th>
+            <th>Orientador</th>
+            <th>Aluno</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DataDeCadastro)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Tcc.Tema)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Usuario.Nome) @Html.DisplayFor(modelItem => item.Usuario.Sobrenome)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Tcc.Usuario.Nome) @Html.DisplayFor(modelItem => item.Tcc.Usuario.Sobrenome)
+                </td>
+                <td>
+                    <a asp-action="Resumo" asp-route-id="@item.TccId">Resumo</a> |
+                    <a asp-action="Anexo" asp-route-id="@item.TccId">Add File</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
