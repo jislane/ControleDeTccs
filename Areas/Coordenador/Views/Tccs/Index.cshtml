@@ -1,10 +1,42 @@
 ﻿@model SistemaDeControleDeTCCs.Models.ViewModels.TccViewModel
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "TCC";
 }
 
-<h1>TCC's</h1>
+<script type="text/javascript">
+    $(document).ready(function () {
+        $(".btnCancelar").click(function () {
+            var id = $(this).data("value");
+            $("#conteudoModal").load("/Coordenador/Tccs/Cancelar/" + id,
+                function () {
+                    $('#exampleModal').modal("show");
+                });
+        })
+    })
+</script>
+
+<h1>@ViewData["Title"]</h1>
+
+@if (TempData["Success"] != null)
+{
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
+        @TempData["Success"].ToString()
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+}
+
+@if (TempData["Error"] != null)
+{
+    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+        @TempData["Error"].ToString()
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+}
 
 <form asp-action="Index" method="get">
     <div>
@@ -84,10 +116,27 @@
                     }
                 </td>
                 <td>
-                    <a asp-action="AddOrEdit" asp-route-id="@item.TccId"><i class="fa fa-marker fa-lg"></i></a> |
-                    <a asp-action="Delete" asp-route-id="@item.TccId" class="text-danger" ml-1 onclick="return confirm('Tem certeza que quer deletasr este registro?')"><i class="fa fa-trash-alt fa-lg"></i></a>
+                    @if (item.StatusId == 3 || item.StatusId == 4 || item.StatusId == 5)
+                    {
+                        <a asp-action="AddOrEdit" asp-route-id="@item.TccId" title="Editar"><i class="fa fa-marker fa-lg"></i></a> <text>|</text>
+                        <a href="#" data-value="@item.TccId" class="btnCancelar" ml-1><i class="fas fa-times-circle" style="color:red" title="Cancelar"></i></a> <text>|</text>
+                        <a asp-action="Delete" asp-route-id="@item.TccId" title="Excluir" class="text-danger" ml-1 onclick="return confirm('Tem certeza que quer deletar este registro?')"><i class="fa fa-trash-alt fa-lg"></i></a>
+                    }
                 </td>
             </tr>
         }
     </tbody>
 </table>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-body">
+                <div id="conteudoModal">
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -252,6 +252,35 @@ namespace SistemaDeControleDeTCCs.Controllers
             return RedirectToAction(nameof(Index));
         }
 
+        [Authorize(Roles = "Coordenador")]
+        public async Task<IActionResult> Cancelar(int? id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            var tcc = await _context.Tccs.FindAsync(id);
+            if (tcc == null)
+            {
+                return NotFound();
+            }
+            tcc.Usuario = _context.Usuario.Where(x => x.Id == tcc.UsuarioId).FirstOrDefault();
+            return PartialView(tcc);
+        }
+
+        [HttpPost, ActionName("Cancelar")]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> CancelarConfirmed(int id)
+        {
+            var tcc = await _context.Tccs.FindAsync(id);
+            tcc.StatusId = _context.Status.Where(x => x.DescStatus.ToLower().Equals("cancelado")).Select(x => x.StatusId).FirstOrDefault();
+            _context.Update(tcc);
+            await _context.SaveChangesAsync();
+            TempData["Success"] = "Operação concluída! O TCC foi cancelado.";
+            return RedirectToAction(nameof(Index));
+        }
+
         public async Task<IActionResult> Resumo(int? id)
         {
             return View("Resumo", _context.Tccs.Where(t => t.TccId == id).ToList());
