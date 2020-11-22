@@ -6,7 +6,8 @@
 
 <h1>@ViewData["Title"]</h1>
 
-<form asp-action="Index" method="get">
+<!--
+ <form asp-action="Index" method="get">
     <div>
         <p>
             Nome:
@@ -23,8 +24,9 @@
         </p>
     </div>
 </form>
+-->
 
-<table class="table table-hover">
+<table id="tabela" class="table table-bordered table-hover">
     <thead>
         <tr>
             <th>
@@ -51,31 +53,56 @@
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.TipoUsuario.DescTipo)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Nome) @Html.DisplayFor(modelItem => item.Sobrenome)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Matricula)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Cpf)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.PhoneNumber)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Email)
-            </td>
-            <td>
-                <a asp-action="AddOrEdit" asp-route-id="@item.Id"><i class="fa fa-marker fa-lg"></i></a> |
-                <a asp-action="Delete" asp-route-id="@item.Id" class="text-danger" ml-1 onclick="return confirm('Tem certeza que quer deletasr este registro?')"><i class="fa fa-trash-alt fa-lg"></i> </a>
-            </td>
-        </tr>
-}
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TipoUsuario.DescTipo)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Nome) @Html.DisplayFor(modelItem => item.Sobrenome)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Matricula)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Cpf)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PhoneNumber)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Email)
+                </td>
+                <td>
+                    <a asp-action="AddOrEdit" asp-route-id="@item.Id"><i class="fa fa-marker fa-lg"></i></a> |
+                    <a asp-action="Delete" asp-route-id="@item.Id" class="text-danger" ml-1 onclick="return confirm('Tem certeza que quer deletasr este registro?')"><i class="fa fa-trash-alt fa-lg"></i> </a>
+                </td>
+            </tr>
+        }
     </tbody>
 </table>
+
+<link rel="stylesheet" href="//cdn.datatables.net/1.10.22/css/jquery.dataTables.min.css">
+
+@section scripts{
+    <script src="//cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js"></script>
+    <script src="https//ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.css"/>
+    <<link rel="stylesheet" href="https://cdn.datatables.net/1.10.22/css/dataTables.bootstrap4.min.css"/>
+    <script>
+        $(document).ready(function () {
+            $('#tabela').DataTable({"language": {
+            "lengthMenu": "Mostrando _MENU_ registros por página",
+            "zeroRecords": "Registro não localizado!",
+            "info": "Mostrando página _PAGE_ de _PAGES_",
+            "infoEmpty": "Nenhum registro disponível",
+            "infoFiltered": "(filtrados de _MAX_ registros)"
+        }});
+        });
+    </script>
+}
+
+
+
+
