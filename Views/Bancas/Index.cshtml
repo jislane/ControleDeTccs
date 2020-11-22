@@ -1,11 +1,21 @@
 ﻿@model IEnumerable<SistemaDeControleDeTCCs.Models.Banca>
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Bancas";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h1>Bancas</h1>
+@if (TempData["Error"] != null)
+{
+    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+        @TempData["Error"].ToString()
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+}
+
+<h1>@ViewData["Title"]</h1>
 <table class="table">
     <thead>
         <tr>
@@ -40,6 +50,10 @@
                     @*<a asp-action="Edit" asp-route-id="@item.BancaId">Edit</a> |*@
                     <a asp-action="Details" asp-route-id="@item.BancaId">Detalhes</a> |
                     <a asp-action="Create" asp-route-id="@item.TccId">Add participantes</a>
+                    @if (item.Tcc.StatusId == 3 || item.Tcc.StatusId == 4 || item.Tcc.StatusId == 5)
+                    {
+                        <text>|</text> <a asp-area="Coordenador" asp-controller="Tccs" asp-action="AddDataLocalApresentacao" asp-route-id="@item.TccId">Homologar</a>
+                    }
                     @*<a asp-action="Delete" asp-route-id="@item.BancaId">Delete</a>*@
                 </td>
             </tr>

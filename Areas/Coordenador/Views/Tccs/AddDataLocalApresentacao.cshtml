@@ -1,0 +1,68 @@
+﻿@model SistemaDeControleDeTCCs.Models.Tcc
+
+@{
+    ViewData["Title"] = "Dados para Defesa - TCC";
+    Usuario orientador = ViewBag.Orientador;
+    Calendario calendario = ViewBag.CalendarioAtivo;
+}
+
+@if (TempData["Error"] != null)
+{
+    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+        @TempData["Error"].ToString()
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+}
+
+<h4>@ViewData["Title"]</h4>
+<hr />
+<div class="row">
+    <div class="col-md-12">
+        <form asp-action="AddDataLocalApresentacao">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="TccId" />
+            <input type="hidden" asp-for="Tema" />
+            <input type="hidden" asp-for="UsuarioId" />
+            <div class="form-group">
+                <p>Tema: @Html.DisplayFor(modelItem => Model.Tema)</p>
+            </div>
+            <div class="form-group">
+                <p>Discente: @Html.DisplayFor(modelItem => Model.Usuario.Nome) @Html.DisplayFor(modelItem => Model.Usuario.Sobrenome)</p>
+            </div>
+            <div class="form-group">
+                <p>Orientador: @Html.DisplayFor(modelItem => orientador.Nome) @Html.DisplayFor(modelItem => orientador.Sobrenome)</p>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-3">
+                    <label asp-for="DataApresentacao" class="control-label"></label>
+                    <input asp-for="DataApresentacao" class="form-control" />
+                    <small id="passwordHelpInline" class="text-muted">
+                        Deve ser entre @calendario.DataInicio.ToString("dd/MM/yyyy") à @calendario.DataFim.ToString("dd/MM/yyyy") .
+                    </small>
+                    <span asp-validation-for="DataApresentacao" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label asp-for="LocalApresentacao" class="control-label"></label>
+                    <input asp-for="LocalApresentacao" class="form-control" />
+                    <span asp-validation-for="LocalApresentacao" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-2">
+                    <input type="submit" value="Salvar" class="btn btn-primary btn-block" />
+                </div>
+                <div class="form-group col-md-2">
+                    <a asp-area="" asp-controller="Bancas" asp-action="Index" class="btn btn-secondary btn-block"><i class="fa fa-table"></i>Voltar para lista</a>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

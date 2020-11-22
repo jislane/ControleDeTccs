@@ -166,7 +166,7 @@ namespace SistemaDeControleDeTCCs.Areas.Identity.Pages.Account
 
                     StatusMessage = "Conta criada e enviado e-mail com a senha de acesso.";
                     user.TipoUsuario = _context.TipoUsuario.Where(x => x.TipoUsuarioId == user.TipoUsuarioId).FirstOrDefault();
-                    //_senderEmail.EnviarSenhaParaUsuarioViaEmail(user, senha);
+                    _senderEmail.EnviarSenhaParaUsuarioViaEmail(user, senha);
                     //_logger.LogInformation("User created a new account with password ("+ senha +").");
                     return RedirectToPage();
                 }

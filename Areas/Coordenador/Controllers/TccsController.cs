@@ -16,7 +16,7 @@ using SistemaDeControleDeTCCs.Services;
 namespace SistemaDeControleDeTCCs.Controllers
 {
     [Area("Coordenador")]
-    [Authorize(Policy = "Coordenador")]
+    [Authorize(Roles = "Professor")]
     public class TccsController : Controller
     {
         private readonly SistemaDeControleDeTCCsContext _context;
@@ -28,7 +28,7 @@ namespace SistemaDeControleDeTCCs.Controllers
             _senderEmail = senderEmail;
         }
 
-        // GET: Tccs
+        [Authorize(Roles = "Coordenador")]
         public IActionResult Index(string filterTema, string filterDiscente, int filterStatus, int filterSemestre)
         {
             List<Tcc> tccs = _context.Tccs.ToList();
@@ -98,7 +98,7 @@ namespace SistemaDeControleDeTCCs.Controllers
             return View(viewModel);
         }
 
-        // GET: Tccs/Create
+        [Authorize(Roles = "Coordenador")]
         public IActionResult AddOrEdit(int id = 0)
         {                           
             List<Usuario> discentes = _context.Usuario.Where(x => x.TipoUsuario.DescTipo.Contains("Aluno")).ToList();
@@ -118,9 +118,7 @@ namespace SistemaDeControleDeTCCs.Controllers
             return View(viewModel);
         }
 
-        // POST: Tccs/Create
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
+        [Authorize(Roles = "Coordenador")]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> AddOrEdit(string OrientadorId, [Bind("TccId,Tema,UsuarioId,DataDeCadastro")] Tcc tcc)
@@ -144,7 +142,7 @@ namespace SistemaDeControleDeTCCs.Controllers
                     await _context.SaveChangesAsync();
                     //*****************
                     var discente = _context.Usuario.Where(x => x.Id == tcc.UsuarioId).FirstOrDefault();
-                    //_senderEmail.NotificarDiscenteCadastroTCCViaEmail(discente, tcc.Tema);
+                    _senderEmail.NotificarDiscenteCadastroTCCViaEmail(discente, tcc.Tema);
                 }
                 else
                 {
@@ -168,7 +166,84 @@ namespace SistemaDeControleDeTCCs.Controllers
             return View(tcc);
         }
 
-        // GET: Usuarios/Delete/5
+        [Authorize(Roles = "Professor")]
+        public IActionResult AddDataLocalApresentacao(int id = 0)
+        {
+            Tcc tcc = new Tcc();
+            if (id != 0)
+            {
+                tcc = _context.Tccs.Find(id);
+                tcc.Usuario = _context.Usuario.Where(x => x.Id == tcc.UsuarioId).FirstOrDefault();
+                Banca bancaOrientador = _context.Banca.Where(x => x.TccId == tcc.TccId && x.TipoUsuario.DescTipo.ToLower().Equals("orientador")).FirstOrDefault();
+                ViewBag.Orientador = _context.Usuario.Where(x => x.Id == bancaOrientador.UsuarioId).FirstOrDefault();
+                ViewBag.CalendarioAtivo = _context.Calendario.Where(x => x.Ativo == true).FirstOrDefault();
+            }
+            
+            if ((tcc.Resumo == null || tcc.Resumo.Equals("") ) && _context.FileTCC.Where(x => x.TccId == tcc.TccId).ToList().Count == 0)
+            {
+                TempData["Error"] = "Homologação cancelada! Favor, solicite ao discente que insira o resumo e o arquivo do TCC.";
+                return RedirectToAction("Index", "Bancas", new { area = "" });
+            }
+            else if (tcc.Resumo == null || tcc.Resumo.Equals(""))
+            {
+                TempData["Error"] = "Homologação cancelada! Favor, solicite ao discente que insira o resumo do TCC.";
+                return RedirectToAction("Index", "Bancas", new { area = "" });
+            }
+            else if (_context.FileTCC.Where(x => x.TccId == tcc.TccId).ToList().Count == 0)
+            {
+                TempData["Error"] = "Homologação cancelada! Favor, solicite ao discente que insira o arquivo do TCC.";
+                return RedirectToAction("Index", "Bancas", new { area = "" });
+            }
+            else if (_context.Banca.Where(x => x.TccId == tcc.TccId).ToList().Count < 3)
+            {
+                TempData["Error"] = "Homologação cancelada! Favor, adicione os membros da banca.";
+                return RedirectToAction("Index", "Bancas", new { area = "" });
+            }
+            return View(tcc);
+        }
+
+        [Authorize(Roles = "Professor")]
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> AddDataLocalApresentacao(Tcc tccAtualizado)
+        {
+            Tcc tcc = _context.Tccs.Where(x => x.TccId == tccAtualizado.TccId).FirstOrDefault();
+            Calendario calendarioAtivo = _context.Calendario.Where(x => x.Ativo == true).FirstOrDefault();
+            if (tccAtualizado.DataApresentacao == null)
+            {
+                TempData["Error"] = "Favor, informe a data de apresentação.";
+            }
+            else if (tccAtualizado.DataApresentacao.Value.Date < calendarioAtivo.DataInicio.Date || tccAtualizado.DataApresentacao.Value.Date > calendarioAtivo.DataFim.Date)
+            {
+                TempData["Error"] = "Data de apresentação inválida! Favor, informe uma data entre " + calendarioAtivo.DataInicio.ToString("dd/MM/yyyy") + " à " + calendarioAtivo.DataFim.ToString("dd/MM/yyyy") + ".";
+            }
+            else if (tccAtualizado.LocalApresentacao == null)
+            {
+                TempData["Error"] = "Favor, informe o local da apresentação.";
+            }
+            else if (ModelState.IsValid)
+            {
+                tcc.DataApresentacao = tccAtualizado.DataApresentacao;
+                tcc.LocalApresentacao = tccAtualizado.LocalApresentacao;
+                tcc.StatusId = _context.Status.Where(x => x.DescStatus.Contains("Homologado Banca")).Select(x => x.StatusId).FirstOrDefault();
+                _context.Update(tcc);
+                await _context.SaveChangesAsync();
+
+                return RedirectToAction("Index", "Bancas", new { area = "" });
+            }
+
+            if (tccAtualizado.TccId != 0)
+            {
+                tcc.Usuario = _context.Usuario.Where(x => x.Id == tccAtualizado.UsuarioId).FirstOrDefault();
+                Banca bancaOrientador = _context.Banca.Where(x => x.TccId == tccAtualizado.TccId && x.TipoUsuario.DescTipo.ToLower().Equals("orientador")).FirstOrDefault();
+                ViewBag.Orientador = _context.Usuario.Where(x => x.Id == bancaOrientador.UsuarioId).FirstOrDefault();
+                ViewBag.CalendarioAtivo = _context.Calendario.Where(x => x.Ativo == true).FirstOrDefault();
+            }
+            
+            return View(tcc);
+        }
+
+        [Authorize(Roles = "Coordenador")]
         public async Task<IActionResult> Delete(int? id)
         {
             var tcc = await _context.Tccs.FindAsync(id);
