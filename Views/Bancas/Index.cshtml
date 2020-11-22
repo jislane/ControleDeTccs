@@ -54,6 +54,7 @@
                     {
                         <text>|</text> <a asp-area="Coordenador" asp-controller="Tccs" asp-action="AddDataLocalApresentacao" asp-route-id="@item.TccId">Homologar</a>
                     }
+                    | <a asp-action="Anexo" asp-route-id="@item.TccId">Arquivo</a>
                     @*<a asp-action="Delete" asp-route-id="@item.BancaId">Delete</a>*@
                 </td>
             </tr>
