@@ -205,7 +205,7 @@ namespace SistemaDeControleDeTCCs.Controllers
         [Authorize(Roles = "Professor")]
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> AddDataLocalApresentacao(Tcc tccAtualizado)
+        public async Task<IActionResult> AddDataLocalApresentacao(Tcc tccAtualizado, IList<int> checkNotificaMembrosBanca)
         {
             Tcc tcc = _context.Tccs.Where(x => x.TccId == tccAtualizado.TccId).FirstOrDefault();
             Calendario calendarioAtivo = _context.Calendario.Where(x => x.Ativo == true).FirstOrDefault();
@@ -228,7 +228,19 @@ namespace SistemaDeControleDeTCCs.Controllers
                 tcc.StatusId = _context.Status.Where(x => x.DescStatus.Contains("Homologado Banca")).Select(x => x.StatusId).FirstOrDefault();
                 _context.Update(tcc);
                 await _context.SaveChangesAsync();
-
+                TempData["Success"] = "Banca homologada com sucesso";
+                if (checkNotificaMembrosBanca.Count > 0)
+                {
+                    tcc.Usuario = _context.Usuario.Where(x => x.Id == tccAtualizado.UsuarioId).FirstOrDefault();
+                    List<Banca> banca = _context.Banca.Where(x => x.TccId == tcc.TccId).ToList();
+                    foreach(Banca item in banca)
+                    {
+                        _senderEmail.NotificarMembrosBancaViaEmail(tcc, _context.Usuario.Where(x => x.Id == item.UsuarioId).FirstOrDefault());
+                    }
+                    _senderEmail.NotificarMembrosBancaViaEmail(tcc, tcc.Usuario);
+                    TempData["Success"] += " e enviada notificação via e-mail para os membros da banca";
+                }
+                TempData["Success"] += ".";
                 return RedirectToAction("Index", "Bancas", new { area = "" });
             }
 
@@ -281,7 +293,7 @@ namespace SistemaDeControleDeTCCs.Controllers
             return RedirectToAction(nameof(Index));
         }
 
-        public async Task<IActionResult> Resumo(int? id)
+        public IActionResult Resumo(int? id)
         {
             return View("Resumo", _context.Tccs.Where(t => t.TccId == id).ToList());
         }

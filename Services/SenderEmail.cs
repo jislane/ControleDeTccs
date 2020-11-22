@@ -1,6 +1,7 @@
 ﻿using Microsoft.Extensions.Configuration;
 using SistemaDeControleDeTCCs.Models;
 using System;
+using System.Collections.Generic;
 using System.Net.Mail;
 
 namespace SistemaDeControleDeTCCs.Services
@@ -68,6 +69,33 @@ namespace SistemaDeControleDeTCCs.Services
             message.From = new MailAddress(_configuration.GetValue<string>("Email:Username"));
             message.To.Add(usuario.Email);
             message.Subject = "Cadastro de TCC - Sistema de Controle de TCC";
+            message.Body = bodyEmail;
+            message.IsBodyHtml = true;
+
+            _smtp.Send(message);
+        }
+
+        public void NotificarMembrosBancaViaEmail(Tcc tcc, Usuario usuario)
+        {
+            string bodyEmail = string.Format("<p>Prezado(a), <b>{0}</b>! </p>" +
+                "<p>Seguem abaixo os dados de defesa do Trabalho de Conclusão de Curso (TCC) intitulado \"<b>{1}</b>\", de autoria do discente <b>{2}</b>.</p>" +
+                "<p>Data: {3}</p>" +
+                "<p>Local: {4}</p>" +
+                "<p>Cordialmente,</p>" +
+                "<p><b>SISTEMA DE CONTROLE DE TCC</b> <br/>" +
+                "Coordenação do Bacharelado em Sistemas de Informação - CBSI <br/>" +
+                "Instituto Federal de Sergipe - Campus Lagarto - IFS</p>" +
+                "<p><i>Não responda a esta mensagem. Este e-mail foi enviado por um sistema automático que não processa respostas.</i></p>",
+                usuario.Nome,
+                tcc.Tema,
+                tcc.Usuario.Nome + " " + tcc.Usuario.Sobrenome,
+                tcc.DataApresentacao,
+                tcc.LocalApresentacao);
+
+            MailMessage message = new MailMessage();
+            message.From = new MailAddress(_configuration.GetValue<string>("Email:Username"));
+            message.To.Add(usuario.Email);
+            message.Subject = "Dados de Defesa do TCC";
             message.Body = bodyEmail;
             message.IsBodyHtml = true;
 
