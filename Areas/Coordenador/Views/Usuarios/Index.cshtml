@@ -5,6 +5,8 @@
 }
 
 <h1>@ViewData["Title"]</h1>
+<a class="btn btn-outline-success" id="register" asp-area="Identity" asp-page="/Account/Register"><i class="fa fa-user-plus" aria-hidden="true"></i>Novo</a>
+<p></p>
 
 <!--
  <form asp-action="Index" method="get">
@@ -48,7 +50,7 @@
                 E-mail
             </th>
             <th>
-                <a class="btn btn-outline-success" id="register" asp-area="Identity" asp-page="/Account/Register"><i class="far fa-plus-square"></i>Novo</a>
+                Ação
             </th>
         </tr>
     </thead>
@@ -75,8 +77,10 @@
                     @Html.DisplayFor(modelItem => item.Email)
                 </td>
                 <td>
-                    <a asp-action="AddOrEdit" asp-route-id="@item.Id"><i class="fa fa-marker fa-lg"></i></a> |
-                    <a asp-action="Delete" asp-route-id="@item.Id" class="text-danger" ml-1 onclick="return confirm('Tem certeza que quer deletasr este registro?')"><i class="fa fa-trash-alt fa-lg"></i> </a>
+                    <a class="btn btn-outline-primary btn-sm" asp-action="AddOrEdit" asp-route-id="@item.Id"><i class="fa fa-pencil" aria-hidden="true"></i></a> |
+                    <a class="btn btn-outline-danger btn-sm" ml-1 onclick="return confirm('Tem certeza que quer deletar este registro?')" asp-action="Delete" asp-route-id="@item.Id">
+                        <i class="fa fa-trash" aria-hidden="true"></i>
+                    </a>
                 </td>
             </tr>
         }
@@ -88,17 +92,20 @@
 @section scripts{
     <script src="//cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js"></script>
     <script src="https//ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.css"/>
-    <<link rel="stylesheet" href="https://cdn.datatables.net/1.10.22/css/dataTables.bootstrap4.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.css" />
+    <
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.22/css/dataTables.bootstrap4.min.css" />
     <script>
         $(document).ready(function () {
-            $('#tabela').DataTable({"language": {
-            "lengthMenu": "Mostrando _MENU_ registros por página",
-            "zeroRecords": "Registro não localizado!",
-            "info": "Mostrando página _PAGE_ de _PAGES_",
-            "infoEmpty": "Nenhum registro disponível",
-            "infoFiltered": "(filtrados de _MAX_ registros)"
-        }});
+            $('#tabela').DataTable({
+                "language": {
+                    "lengthMenu": "Mostrando _MENU_ registros por página",
+                    "zeroRecords": "Registro não localizado!",
+                    "info": "Mostrando página _PAGE_ de _PAGES_",
+                    "infoEmpty": "Nenhum registro disponível",
+                    "infoFiltered": "(filtrados de _MAX_ registros)"
+                }
+            });
         });
     </script>
 }
