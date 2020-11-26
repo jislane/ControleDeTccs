@@ -4,20 +4,10 @@
     ViewData["Title"] = "Calendários de Bancas";
 }
 
-<script type="text/javascript">
-    $(document).ready(function () {
-        $(".btnDelete").click(function () {
-            console.log('aqui');
-            var id = $(this).data("value");
-            $("#conteudoModal").load("/Coordenador/Calendarios/Delete/" + id,
-                function () {
-                    $('#exampleModal').modal("show");
-                });
-        })
-    })
-</script>
-
 <h1>@ViewData["Title"]</h1>
+
+<a asp-action="Create" class="btn btn-outline-success"><i class="fa fa-calendar" aria-hidden="true"></i> Novo</a>
+<p></p>
 
 @if (TempData["Success"] != null)
 {
@@ -39,7 +29,7 @@
     </div>
 }
 
-<table class="table table-hover">
+<table id="tabelaCalendario" class="table table-bordered table-hover">
     <thead>
         <tr>
             <th>
@@ -58,7 +48,7 @@
                 @Html.DisplayNameFor(model => model.Ativo)
             </th>
             <th>
-                <a asp-action="Create" class="btn btn-outline-success"><i class="far fa-plus-square"></i>Novo</a>
+                Ação
             </th>
         </tr>
     </thead>
@@ -82,8 +72,8 @@
                     @Html.DisplayFor(modelItem => item.Ativo)
                 </td>
                 <td>
-                    <a asp-action="Edit" asp-route-id="@item.CalendarioId"><i class="fa fa-marker fa-lg"></i></a> |
-                    <a href="#" data-value="@item.CalendarioId" class="btnDelete text-danger" ml-1><i class="fa fa-trash-alt fa-lg"></i> </a>
+                    <a class="btn btn-outline-primary btn-sm" asp-action="Edit" asp-route-id="@item.CalendarioId"><i class="fa fa-trash" aria-hidden="true"></i></a> |
+                    <a href="#" data-value="@item.CalendarioId" class="btnDelete btn-outline-danger btn-sm"><i class="fa fa-trash-alt fa-lg"></i> </a>
                 </td>
             </tr>
         }
@@ -102,3 +92,37 @@
         </div>
     </div>
 </div>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $(".btnDelete").click(function () {
+            console.log('aqui');
+            var id = $(this).data("value");
+            $("#conteudoModal").load("/Coordenador/Calendarios/Delete/" + id,
+                function () {
+                    $('#exampleModal').modal("show");
+                });
+        })
+    })
+</script>
+
+@section scripts{
+    <script src="//cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js"></script>
+    <script src="https//ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.css" />
+    <
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.22/css/dataTables.bootstrap4.min.css" />
+    <script>
+        $(document).ready(function () {
+            $('#tabelaCalendario').DataTable({
+                "language": {
+                    "lengthMenu": "Mostrando _MENU_ registros por página",
+                    "zeroRecords": "Registro não localizado!",
+                    "info": "Mostrando página _PAGE_ de _PAGES_",
+                    "infoEmpty": "Nenhum registro disponível",
+                    "infoFiltered": "(filtrados de _MAX_ registros)"
+                }
+            });
+        });
+    </script>
+}

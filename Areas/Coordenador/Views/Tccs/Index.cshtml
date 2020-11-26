@@ -4,9 +4,14 @@
     ViewData["Title"] = "Index";
 }
 
-<h1>TCC's</h1>
+<h1>Trabalhos de Conclusão de Curso - TCC's</h1>
+<th>
+    <a asp-action="AddOrEdit" class="btn btn-outline-success"><i class="fa fa-book" aria-hidden="true"></i> Novo</a>
+</th>
+<p></p>
 
-<form asp-action="Index" method="get">
+<!--
+    <form asp-action="Index" method="get">
     <div>
         <p>
             Tema:
@@ -29,8 +34,9 @@
         </p>
     </div>
 </form>
+-->
 
-<table class="table">
+<table id="tabelaTcc" class="table table-bordered table-hover">
     <thead>
         <tr>
             <th>
@@ -49,7 +55,7 @@
                 Apresentação
             </th>
             <th>
-                <a asp-action="AddOrEdit" class="btn btn-outline-success"><i class="far fa-plus-square"></i>Novo</a>
+                Ação
             </th>
         </tr>
     </thead>
@@ -84,10 +90,33 @@
                     }
                 </td>
                 <td>
-                    <a asp-action="AddOrEdit" asp-route-id="@item.TccId"><i class="fa fa-marker fa-lg"></i></a> |
-                    <a asp-action="Delete" asp-route-id="@item.TccId" class="text-danger" ml-1 onclick="return confirm('Tem certeza que quer deletasr este registro?')"><i class="fa fa-trash-alt fa-lg"></i></a>
+                    <a class="btn btn-outline-primary btn-sm" asp-action="AddOrEdit" asp-route-id="@item.TccId"><i class="fa fa-pencil" aria-hidden="true"></i></a> |
+                    <a asp-action="Delete" asp-route-id="@item.TccId" class="btn btn-outline-danger btn-sm" ml-1 onclick="return confirm('Tem certeza que quer deletar este registro?')"> <i class="fa fa-trash" aria-hidden="true"></i></a>
                 </td>
             </tr>
         }
     </tbody>
 </table>
+
+<link rel="stylesheet" href="//cdn.datatables.net/1.10.22/css/jquery.dataTables.min.css">
+
+@section scripts{
+    <script src="//cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js"></script>
+    <script src="https//ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.css" />
+    <
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.22/css/dataTables.bootstrap4.min.css" />
+    <script>
+        $(document).ready(function () {
+            $('#tabelaTcc').DataTable({
+                "language": {
+                    "lengthMenu": "Mostrando _MENU_ registros por página",
+                    "zeroRecords": "Registro não localizado!",
+                    "info": "Mostrando página _PAGE_ de _PAGES_",
+                    "infoEmpty": "Nenhum registro disponível",
+                    "infoFiltered": "(filtrados de _MAX_ registros)"
+                }
+            });
+        });
+    </script>
+}
