@@ -9594,19 +9594,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\willi\\.nuget\\packages\\": {}
+    "C:\\Users\\Alex e Grace\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\willi\\source\\repos\\ControleDeTccs\\SistemaDeControleDeTCCs.csproj",
+      "projectUniqueName": "C:\\Users\\Alex e Grace\\source\\repos\\SistemaDeControleDeTCCs\\SistemaDeControleDeTCCs.csproj",
       "projectName": "SistemaDeControleDeTCCs",
-      "projectPath": "C:\\Users\\willi\\source\\repos\\ControleDeTccs\\SistemaDeControleDeTCCs.csproj",
-      "packagesPath": "C:\\Users\\willi\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\willi\\source\\repos\\ControleDeTccs\\obj\\",
+      "projectPath": "C:\\Users\\Alex e Grace\\source\\repos\\SistemaDeControleDeTCCs\\SistemaDeControleDeTCCs.csproj",
+      "packagesPath": "C:\\Users\\Alex e Grace\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Alex e Grace\\source\\repos\\SistemaDeControleDeTCCs\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\willi\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Alex e Grace\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -9701,7 +9701,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.301\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.102\\RuntimeIdentifierGraph.json"
       }
     }
   }

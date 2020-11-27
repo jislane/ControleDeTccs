@@ -4,7 +4,7 @@
     ViewData["Title"] = "Novo Usuário";
 }
 
-<h4>Usuario</h4>
+    <h2>@ViewData["Title"]</h2>
 
 <hr />
 <div class="row">
@@ -64,8 +64,6 @@
         </form>
     </div>
 </div>
-
-
 
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
