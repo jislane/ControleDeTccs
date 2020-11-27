@@ -91,17 +91,17 @@
         $(".btnAdd").click(function () {
             console.log('aqui');
             var id = $(this).data("value");
-            $("#conteudoModal").load("/Identity/Account/Register" + id,
+            $("#conteudoModal").load("/Identity/Account/Register",
                 function () {
                     $('#exampleModal').modal("show");
                 });
-        })
-    })
+        });
+    });
 </script>
 
-<link rel="stylesheet" href="//cdn.datatables.net/1.10.22/css/jquery.dataTables.min.css">
 
 @section scripts{
+    <link rel="stylesheet" href="//cdn.datatables.net/1.10.22/css/jquery.dataTables.min.css">
     <script src="//cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.css" />
