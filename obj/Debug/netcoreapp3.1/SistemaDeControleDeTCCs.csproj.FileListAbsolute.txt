@@ -435,6 +435,7 @@ C:\Users\Alex e Grace\source\repos\SistemaDeControleDeTCCs\obj\Debug\netcoreapp3
 C:\Users\Alex e Grace\source\repos\SistemaDeControleDeTCCs\obj\Debug\netcoreapp3.1\Razor\Areas\Coordenador\Views\Tccs\Index.cshtml.g.cs
 C:\Users\Alex e Grace\source\repos\SistemaDeControleDeTCCs\obj\Debug\netcoreapp3.1\Razor\Areas\Coordenador\Views\Usuarios\AddOrEdit.cshtml.g.cs
 C:\Users\Alex e Grace\source\repos\SistemaDeControleDeTCCs\obj\Debug\netcoreapp3.1\Razor\Areas\Coordenador\Views\Usuarios\Index.cshtml.g.cs
+C:\Users\Alex e Grace\source\repos\SistemaDeControleDeTCCs\obj\Debug\netcoreapp3.1\Razor\Areas\Coordenador\Views\Usuarios\_AddOrEdit.cshtml.g.cs
 C:\Users\Alex e Grace\source\repos\SistemaDeControleDeTCCs\obj\Debug\netcoreapp3.1\Razor\Areas\Coordenador\Views\_ViewImports.cshtml.g.cs
 C:\Users\Alex e Grace\source\repos\SistemaDeControleDeTCCs\obj\Debug\netcoreapp3.1\Razor\Areas\Coordenador\Views\_ViewStart.cshtml.g.cs
 C:\Users\Alex e Grace\source\repos\SistemaDeControleDeTCCs\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\Account\AccessDenied.cshtml.g.cs
@@ -495,6 +496,7 @@ C:\Users\Alex e Grace\source\repos\SistemaDeControleDeTCCs\obj\Debug\netcoreapp3
 C:\Users\Alex e Grace\source\repos\SistemaDeControleDeTCCs\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Error.cshtml.g.cs
 C:\Users\Alex e Grace\source\repos\SistemaDeControleDeTCCs\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_Layout.cshtml.g.cs
 C:\Users\Alex e Grace\source\repos\SistemaDeControleDeTCCs\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_LoginPartial.cshtml.g.cs
+C:\Users\Alex e Grace\source\repos\SistemaDeControleDeTCCs\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_Modal.cshtml.g.cs
 C:\Users\Alex e Grace\source\repos\SistemaDeControleDeTCCs\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_ValidationScriptsPartial.cshtml.g.cs
 C:\Users\Alex e Grace\source\repos\SistemaDeControleDeTCCs\obj\Debug\netcoreapp3.1\Razor\Views\Status\Create.cshtml.g.cs
 C:\Users\Alex e Grace\source\repos\SistemaDeControleDeTCCs\obj\Debug\netcoreapp3.1\Razor\Views\Status\Delete.cshtml.g.cs

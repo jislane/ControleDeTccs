@@ -1,0 +1,93 @@
+﻿@model SistemaDeControleDeTCCs.Models.ViewModels.UsuarioViewModel
+<!--Modal Body Start-->
+
+    <div class="modal-content">
+
+        <!--Modal Header Start-->
+        <div class="modal-header">
+            <h4 class="modal-title">Add User</h4>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+        </div>
+        <!--Modal Header End-->
+
+
+
+
+        <form asp-action="AddOrEdit" asp-controller="Usuarios" method="post" enctype="multipart/form-data">
+            @Html.AntiForgeryToken()
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-md-4">
+                        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                        <input type="hidden" asp-for="Usuario.Id" />
+                        <div class="form-group">
+                            <label asp-for="Usuario.TipoUsuarioId" class="control-label"></label>
+                            <select asp-for="Usuario.TipoUsuarioId" asp-items="@(new SelectList(Model.TiposUsuario,"TipoUsuarioId","DescTipo"))" class="form-control">
+                                <option value="">Selecione</option>
+                            </select>
+                            <span asp-validation-for="Usuario.TipoUsuarioId" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="Usuario.Nome" class="control-label"></label>
+                            <input asp-for="Usuario.Nome" class="form-control" />
+                            <span asp-validation-for="Usuario.Nome" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="Usuario.Sobrenome" class="control-label"></label>
+                            <input asp-for="Usuario.Sobrenome" class="form-control" />
+                            <span asp-validation-for="Usuario.Sobrenome" class="text-danger"></span>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label asp-for="Usuario.Matricula" class="control-label"></label>
+                                <input asp-for="Usuario.Matricula" class="form-control" />
+                                <span asp-validation-for="Usuario.Matricula" class="text-danger"></span>
+                            </div>
+                            <div class="form-group">
+                                <label asp-for="Usuario.Cpf" class="control-label"></label>
+                                <input asp-for="Usuario.Cpf" class="form-control" />
+                                <span asp-validation-for="Usuario.Cpf" class="text-danger"></span>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label asp-for="Usuario.PhoneNumber" class="control-label"></label>
+                                <input asp-for="Usuario.PhoneNumber" class="form-control" />
+                                <span asp-validation-for="Usuario.PhoneNumber" class="text-danger"></span>
+                            </div>
+                            <div class="form-group">
+                                <label asp-for="Usuario.Email" class="control-label"></label>
+                                <input asp-for="Usuario.Email" class="form-control" />
+                                <span asp-validation-for="Usuario.Email" class="text-danger"></span>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group col-md-6">
+                                    <input type="submit" value="Salvar" class="btn btn-primary btn-block" />
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <a asp-action="Index" class="btn btn-secondary btn-block"><i class="fa fa-table"></i>Voltar para lista</a>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </form>
+        <!--Modal Footer Start-->
+        <div class="modal-footer">
+            <button data-dismiss="modal" id="cancel" class="btn btn-default" type="button">Cancel</button>
+            <button class="btn btn-success relative" id="btnSubmit" type="submit">
+                <i class="loader"></i>
+                Submit
+            </button>
+        </div>
+        <!--Modal Footer End-->
+    
+</div>
+<!--Modal Body End-->
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
+

@@ -1,11 +1,9 @@
 ﻿@model IEnumerable<SistemaDeControleDeTCCs.Models.Usuario>
 
-@{
-    ViewData["Title"] = "Usuários";
-}
-
-<h1>@ViewData["Title"]</h1>
-<a class="btnAdd btn btn-outline-success" id="register" asp-area="Identity" asp-page="/Account/Register"><i class="fa fa-user-plus" aria-hidden="true"></i>Novo</a>
+<a class="btn btn-outline-success btnAdd" id="register" asp-area="Identity" asp-page="/Account/Register"><i class="fa fa-user-plus" aria-hidden="true"></i>Novo</a>
+<p></p>
+<a class="btn btn-primary popup" data-url="/Identity/Account/Register" data-toggle="modal" data-target="#modal-create-edit-user" id="UserModel">Add New User <i class="fa fa-plus"></i></a>
+<partial name="_Modal" />
 <p></p>
 
 <table id="tabela" class="table table-bordered table-hover">
@@ -57,7 +55,7 @@
                     @Html.DisplayFor(modelItem => item.Email)
                 </td>
                 <td>
-                    <a class="btn btn-outline-primary btn-sm" data-url="AddOrEdit" data-toggle="modal" data-target="#exampleModal" asp-action="" asp-route-id="@item.Id"><i class="fa fa-pencil" aria-hidden="true"></i></a> |
+                    <a class="btn btn-outline-primary btn-sm" asp-action="AddOrEdit" asp-route-id="@item.Id"><i class="fa fa-pencil" aria-hidden="true"></i></a> |
                     <a class="btn btn-outline-danger btn-sm" ml-1 onclick="return confirm('Tem certeza que quer deletar este registro?')" asp-action="Delete" asp-route-id="@item.Id">
                         <i class="fa fa-trash" aria-hidden="true"></i>
                     </a>
@@ -67,28 +65,32 @@
     </tbody>
 </table>
 
-<!-- Modal -->
+<!-- Modal Teste 01
 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-body">
                 <div class="modal-header">
-                    <h5 class="modal-title">Adicionar novo usuário</h5>
+                    <h5 class="modal-title">Editar Usuário</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
                 <div id="conteudoModal">
+                    <div class="form-group">
+
+
+                    </div>
+
                 </div>
             </div>
         </div>
     </div>
 </div>
 
-<script type="text/javascript">
+@*<script type="text/javascript">
     $(document).ready(function () {
-        $(".btnAdd").click(function () {
-            console.log('aqui');
+        $(".popup").click(function () {
             var id = $(this).data("value");
             $("#conteudoModal").load("/Identity/Account/Register/" + id,
                 function () {
@@ -96,32 +98,29 @@
                 });
         })
     })
-</script>
-
-
-
+</script>*@
+-->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 <link rel="stylesheet" href="//cdn.datatables.net/1.10.22/css/jquery.dataTables.min.css" />
 <script src="//cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js"></script>
 
+
 @section scripts{
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.css" />
     <link rel="stylesheet" href="https://cdn.datatables.net/1.10.22/css/dataTables.bootstrap4.min.css" />
+
+    <link href="~/lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
+    <link href="~/css/bootstrap.css" rel="stylesheet" />
+    <script src="~/js/jquery-3.5.1.min.js"></script>
+    <script src="~/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/User.js"></script>
+    <script src="//cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js"></script>
     <script>
         $(document).ready(function () {
-            $('#tabela').DataTable({
-                "language": {
-                    "lengthMenu": "Mostrando _MENU_ registros por página",
-                    "zeroRecords": "Registro não localizado!",
-                    "info": "Mostrando página _PAGE_ de _PAGES_",
-                    "infoEmpty": "Nenhum registro disponível",
-                    "infoFiltered": "(filtrados de _MAX_ registros)"
-                }
-            });
+            $('#tabela').DataTable();
         });
     </script>
 }
-
 
 
 

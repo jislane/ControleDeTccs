@@ -5,6 +5,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Content Remove="Areas\Coordenador\Views\Usuarios\Index1.cshtml" />
     <Content Remove="wwwroot\js\Teste.js" />
   </ItemGroup>
 

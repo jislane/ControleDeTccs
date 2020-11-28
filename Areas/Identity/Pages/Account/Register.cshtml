@@ -6,7 +6,6 @@
 }
 
 <h1>@ViewData["Title"]</h1>
-<h5>Adicionando novo usuário</h5>
 <div class="row">
     <div class="col-md-6">
         <form asp-route-returnUrl="@Model.ReturnUrl" method="post">
@@ -59,11 +58,11 @@
                 <span asp-validation-for="Input.PhoneNumber" class="text-danger"></span>
             </div>
             <div class="form-row">
-                <div class="form-group col-md-6">
-                    <button type="submit" class="btn btn-primary btn-block">Registrar</button>
+                <div>
+                    <button type="submit" class="btn btn-outline-success"><i class="fa fa-floppy-o" aria-hidden="true"></i> Salvar</button>
                 </div>
-                <div class="form-group col-md-6">
-                    <a asp-action="Index" asp-area="Coordenador" asp-controller="Usuarios" class="btn btn-secondary btn-block"><i class="fa fa-table"></i> Voltar para lista</a>
+                <div>
+                    <a asp-action="Index" asp-area="Coordenador" asp-controller="Usuarios" class="btn btn-outline-secondary"><i class="fa fa-list" aria-hidden="true"></i> Voltar para a lista</a>
                 </div>
             </div>
         </form>
