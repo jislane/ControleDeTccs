@@ -236,6 +236,17 @@ namespace SistemaDeControleDeTCCs.Controllers
             _context.Update(result);
             await _context.SaveChangesAsync();
 
+            List<FileTCC> filesTcc = _context.FileTCC.Where(x => x.TccId == TccId).ToList();
+            result.Status = _context.Status.Where(x => x.StatusId == result.StatusId).FirstOrDefault();
+            if (result.Status.DescStatus.ToLower().Equals("cadastrado")
+                && result.Resumo != null && !result.Resumo.Equals("")
+                && filesTcc != null && filesTcc.Count > 0)
+            {
+                result.StatusId = _context.Status.Where(x => x.DescStatus.ToLower().Contains("pré-homologado")).Select(x => x.StatusId).FirstOrDefault();
+                _context.Update(result);
+                await _context.SaveChangesAsync();
+            }
+
             if (arquivos.Count != 0)
             {
                 SaveFile(arquivos, TccId);
@@ -286,6 +297,18 @@ namespace SistemaDeControleDeTCCs.Controllers
             };
             _context.Add(fileSample);
             await _context.SaveChangesAsync();
+
+            Tcc tcc = _context.Tccs.Where(x => x.TccId == TccId).FirstOrDefault();
+            tcc.Status = _context.Status.Where(x => x.StatusId == tcc.StatusId).FirstOrDefault();
+            List<FileTCC> filesTcc = _context.FileTCC.Where(x => x.TccId == TccId).ToList();
+            if (tcc.Status.DescStatus.ToLower().Equals("cadastrado")
+                && tcc.Resumo != null && !tcc.Resumo.Equals("")
+                && filesTcc != null && filesTcc.Count > 0)
+            {
+                tcc.StatusId = _context.Status.Where(x => x.DescStatus.ToLower().Contains("pré-homologado")).Select(x => x.StatusId).FirstOrDefault();
+                _context.Update(tcc);
+                await _context.SaveChangesAsync();
+            }
 
             //return RedirectToAction("Index");
             ViewBag.TccId = TccId;

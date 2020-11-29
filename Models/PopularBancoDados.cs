@@ -37,8 +37,8 @@ namespace SistemaDeControleDeTCCs.Models
             var tipoUsuarioMembroBanca = new TipoUsuario { DescTipo = "Membro da Banca" };
             _context.TipoUsuario.AddRange(tipoUsuarioAdm, tipoUsuarioAluno, tipoUsuarioCoord, tipoUsuarioCoorientador, tipoUsuarioMembroBanca, tipoUsuarioOrientador, tipoUsuarioProf);
 
-            var statusPendente = new Status { DescStatus = "Pendente" };
-            var statusHomologadoTCC = new Status { DescStatus = "Homologado TCC" };
+            var statusPendente = new Status { DescStatus = "Cadastrado" };
+            var statusHomologadoTCC = new Status { DescStatus = "Pré-Homologado" };
             var statusHomologadoBanca = new Status { DescStatus = "Homologado Banca" };
             var statusCancelado = new Status { DescStatus = "Cancelado" };
             var statusAprovado = new Status { DescStatus = "Aprovado" };
