@@ -96,7 +96,6 @@ namespace SistemaDeControleDeTCCs.Controllers
                     var user = await _userManager.UpdateAsync(userTemp);
 
                 }
-                /*
                 else
                 {
                     _context.Add(usuario);
@@ -105,7 +104,6 @@ namespace SistemaDeControleDeTCCs.Controllers
                     usuario.TipoUsuario = _context.TipoUsuario.Where(x => x.TipoUsuarioId == usuario.TipoUsuarioId).FirstOrDefault();
                     _senderEmail.EnviarSenhaParaUsuarioViaEmail(usuario, senha);
                 }
-                */
                 return RedirectToAction(nameof(Index));
             }
             var errors = ModelState
