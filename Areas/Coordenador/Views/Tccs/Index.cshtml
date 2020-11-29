@@ -1,7 +1,41 @@
 ﻿@model SistemaDeControleDeTCCs.Models.ViewModels.TccViewModel
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "TCC";
+}
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $(".btnCancelar").click(function () {
+            var id = $(this).data("value");
+            $("#conteudoModal").load("/Coordenador/Tccs/Cancelar/" + id,
+                function () {
+                    $('#exampleModal').modal("show");
+                });
+        })
+    })
+</script>
+
+<h1>@ViewData["Title"]</h1>
+
+@if (TempData["Success"] != null)
+{
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
+        @TempData["Success"].ToString()
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+}
+
+@if (TempData["Error"] != null)
+{
+    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+        @TempData["Error"].ToString()
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
 }
 
 <h1>Trabalhos de Conclusão de Curso - TCC's</h1>
@@ -28,7 +62,6 @@
             <select asp-items="@ViewBag.Semestre" id="filterSemestre" name="filterSemestre">
                 <option value="">Selecione</option>
             </select>
-
             <input type="submit" value="Pesquisar" class="btn btn-primary" /> |
             <a asp-action="Index">Limpar filtros</a>
         </p>
@@ -90,19 +123,37 @@
                     }
                 </td>
                 <td>
-                    <a class="btn btn-outline-primary btn-sm" asp-action="AddOrEdit" asp-route-id="@item.TccId"><i class="fa fa-pencil" aria-hidden="true"></i></a> |
-                    <a asp-action="Delete" asp-route-id="@item.TccId" class="btn btn-outline-danger btn-sm" ml-1 onclick="return confirm('Tem certeza que quer deletar este registro?')"> <i class="fa fa-trash" aria-hidden="true"></i></a>
+
+                    @if (item.StatusId == 3 || item.StatusId == 4 || item.StatusId == 5)
+                    {
+                        <a class="btn btn-outline-primary btn-sm" asp-action="AddOrEdit" asp-route-id="@item.TccId" title="Editar"><i class="fa fa-pencil" aria-hidden="true"></i></a> <text>|</text>
+                        <a href="#" data-value="@item.TccId" class="btnCancelar" ml-1><i class="fas fa-times-circle" style="color:red" title="Cancelar"></i></a> <text>|</text>
+                        <a asp-action="Delete" asp-route-id="@item.TccId" title="Excluir" class="btn btn-outline-danger btn-sm" ml-1 onclick="return confirm('Tem certeza que quer deletar este registro?')"> <i class="fa fa-trash" aria-hidden="true"></i></a>
+                    }
                 </td>
             </tr>
         }
     </tbody>
 </table>
 
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-body">
+                <div id="conteudoModal">
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 <link rel="stylesheet" href="//cdn.datatables.net/1.10.22/css/jquery.dataTables.min.css" />
 <script src="//cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js"></script>
 
-@section scripts{   
+@section scripts{
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.css" />
     <link rel="stylesheet" href="https://cdn.datatables.net/1.10.22/css/dataTables.bootstrap4.min.css" />
     <script>

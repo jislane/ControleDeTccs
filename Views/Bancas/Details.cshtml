@@ -5,10 +5,9 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h1>Detalhes</h1>
+<h1>Detalhesda Banca</h1>
 
 <div>
-    <h4>Banca</h4>
     <hr />
     <dl class="row">
         <dt class="col-sm-2">
@@ -36,6 +35,32 @@
             @Html.DisplayFor(model => model.Tcc.Usuario.Nome) @Html.DisplayFor(model => model.Tcc.Usuario.Sobrenome)
         </dd>
         <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Tcc.DataApresentacao)
+        </dt>
+        <dd class="col-sm-10">
+            @if (Model.Tcc.DataApresentacao == null)
+            {
+                <p>A definir</p>
+            }
+            else
+            {
+                @Html.DisplayFor(model => model.Tcc.DataApresentacao)
+            }
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Tcc.LocalApresentacao)
+        </dt>
+        <dd class="col-sm-10">
+            @if (Model.Tcc.LocalApresentacao == null)
+            {
+                <p>A definir</p>
+            }
+            else
+            {
+                @Html.DisplayFor(model => model.Tcc.LocalApresentacao)
+            }
+        </dd>
+        <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.Nota)
         </dt>
         <dd class="col-sm-10">
@@ -58,7 +83,7 @@
                                 {
                                     count++;
                                     <tr>
-                                        <td> <input value="@item.Nota" class="form-control" name="Nota_@count" id="Nota_@count" /></td>
+                                        <td> <input value="@item.Nota" class="form-control" placeholder="Atribua a nota!" name="Nota_@count" id="Nota_@count" /></td>
                                         <td> @item.Usuario.Nome @item.Usuario.Sobrenome</td>
                                         <td> @item.TipoUsuario.DescTipo</td>
                                         <td>

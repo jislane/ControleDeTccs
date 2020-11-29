@@ -1,8 +1,29 @@
 ﻿@model IEnumerable<SistemaDeControleDeTCCs.Models.Banca>
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Bancas";
     //Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@if (TempData["Error"] != null)
+{
+    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+        @TempData["Error"].ToString()
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+}
+
+
+@if (TempData["Success"] != null)
+{
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
+        @TempData["Success"].ToString()
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
 }
 
 <h1>Bancas</h1>
@@ -46,6 +67,11 @@
                     @*<a asp-action="Edit" asp-route-id="@item.BancaId">Edit</a> |*@
                     <a class="btn btn-outline-info btn-sm" asp-action="Details" asp-route-id="@item.BancaId"><i class="fa fa-info-circle" aria-hidden="true"></i></a> |
                     <a class="btn btn-outline-success btn-sm" asp-action="Create" asp-route-id="@item.TccId"><i class="fa fa-user-plus" aria-hidden="true"></i></a>
+                    @if (item.Tcc.StatusId == 3 || item.Tcc.StatusId == 4 || item.Tcc.StatusId == 5)
+                    {
+                        <text>|</text> <a asp-area="Coordenador" asp-controller="Tccs" asp-action="AddDataLocalApresentacao" asp-route-id="@item.TccId">Homologar</a>
+                    }
+                    | <a asp-action="Anexo" asp-route-id="@item.TccId">Arquivo</a>
                     @*<a asp-action="Delete" asp-route-id="@item.BancaId">Delete</a>*@
                 </td>
             </tr>

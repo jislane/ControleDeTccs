@@ -66,7 +66,9 @@ namespace SistemaDeControleDeTCCs.Models
                 LockoutEnabled = true,
                 AccessFailedCount = 1,
                 Matricula = "0",
-                TipoUsuario = tipoUsuarioAdm                
+                TipoUsuario = tipoUsuarioAdm,
+                Cpf = "99999999999",
+                PhoneNumber = "99999999999"
             };
             var userCatuxe = new Usuario
             {

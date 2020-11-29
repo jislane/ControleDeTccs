@@ -70,7 +70,7 @@ namespace SistemaDeControleDeTCCs.Controllers
 
         // GET: Bancas/Details/5
 
-        public async Task<IActionResult> Details(int? id, double? Nota_1, double? Nota_2, double? Nota_3, double? Nota_4, double? Nota_5)
+        public async Task<IActionResult> Details(int? id, double? Nota_1, double? Nota_2, double? Nota_3, double? Nota_4, double? Nota_5, string? DataApresentacao, string? LocalApresentacao)
         {
             if (id == null)
             {
@@ -243,7 +243,7 @@ namespace SistemaDeControleDeTCCs.Controllers
 
             return View("Resumo", result);
         }
-        public async Task<IActionResult> Resumo(int? id)
+        public IActionResult Resumo(int? id)
         {
             return View(_context.Tccs.Find(id));
         }
@@ -345,6 +345,7 @@ namespace SistemaDeControleDeTCCs.Controllers
                 }
                 var result = _context.Tccs.Where(t => t.TccId == TccId).First();
                 result.Nota = notas / resultTemp.Count;
+                result.StatusId = result.Nota >= 6 ? _context.Status.Where(x => x.DescStatus.ToLower().Equals("aprovado")).Select(x => x.StatusId).FirstOrDefault() : _context.Status.Where(x => x.DescStatus.ToLower().Equals("reprovado")).Select(x => x.StatusId).FirstOrDefault();
                 _context.Update(result);
                 _context.SaveChanges();
             }

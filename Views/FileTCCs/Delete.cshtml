@@ -7,7 +7,7 @@
 
 <h1>Delete</h1>
 
-<h3>Você quer deletar esse regustro?</h3>
+<h3>Você quer deletar esse registro?</h3>
 <div>
     <hr />
     <dl class="row">
@@ -33,7 +33,7 @@
     
     <form asp-action="Delete">
         <input type="hidden" asp-for="Id" />
-        <input type="submit" value="Delete" class="btn btn-danger" /> |
-        <a asp-action="Index" asp-controller="Bancas">Voltar para lista</a>
+        <input type="submit" value="Delete" class="btn btn-outline-danger" /> |
+        <a asp-action="Index" asp-controller="Bancas" class="btn btn-outline-secondary"><i class="fa fa-list" aria-hidden="true"></i> Voltar para a lista</a>
     </form>
 </div>

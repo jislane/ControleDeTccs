@@ -1,41 +1,61 @@
 ﻿@model IEnumerable<SistemaDeControleDeTCCs.Models.FileTCC>
 
 @{
-    ViewData["Title"] = "Create";
+    ViewData["Title"] = "Arquivos";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h1>Resumo do TCC</h1>
+<<<<<<< HEAD
+<h1>Arquivo PDF do TCC</h1>
+<hr />
+
+=======
+<h1>@ViewData["Title"]</h1>
 <hr />
 <div class="row">
+    
+>>>>>>> 67a8c78c58c02a29cdf238b6c5d319e94c6ea455
     <div class="col-md-4">
         <form asp-action="SaveFile" method="post" enctype="multipart/form-data">
             <input type="hidden" value="@ViewBag.TccId" name="TccId" id="TccId" />
             <div class="form-group">
-                <label>Arquivo(pdf)</label></br>
+<<<<<<< HEAD
+                <label>Arquivo(pdf)</label>
                 <input type="file" name="arquivos" id="arquivos" accept="application/pdf">
             </div>
             <div class="form-group">
-                <input type="submit" value="Salvar" class="btn btn-primary" />
+                <input type="submit" value="Salvar" class="btn btn-outline-success" />
+=======
+                @if (User.IsInRole("Aluno"))
+                {
+                    <label>Arquivo(pdf)</label><br>
+                    <input type="file" name="arquivos" id="arquivos" accept="application/pdf">
+                }
+            </div>
+            <div class="form-group">
+                @if (User.IsInRole("Aluno"))
+                {
+                    <input type="submit" value="Enviar" class="btn btn-primary" />
+                }
+>>>>>>> 67a8c78c58c02a29cdf238b6c5d319e94c6ea455
             </div>
         </form>
     </div>
-    <table class="table">
-        <thead>
-            <tr>
-                <th>
-                    Data/Hora Cadastro
-                </th>
-                <th>
-                    Nome Arquivo
-                </th>
-                <th></th>
-            </tr>
-        </thead>
-        <tbody>
-            @foreach (var item in Model)
-            {
+    <div>
+        <table id="tabelaBancaAnexo" class="table table-bordered table-hover">
+            <thead>
                 <tr>
+<<<<<<< HEAD
+                    <th>
+                        Data/Hora Cadastro
+                    </th>
+                    <th>
+                        Nome Arquivo
+                    </th>
+                    <th>
+                        Ação
+                    </th>
+=======
                     <td>
                         @Html.DisplayFor(modelItem => item.DataCadastro)
                     </td>
@@ -43,19 +63,58 @@
                         @Html.DisplayFor(modelItem => item.Name)
                     </td>
                     <td>
-                        <a asp-action="Download" asp-controller="FileTCCs" asp-route-id="@item.Id">Download</a> |
-                        <a asp-action="Delete" asp-controller="FileTCCs"  asp-route-id="@item.Id">Dekete</a>
+                        <a asp-action="Download" asp-controller="FileTCCs" asp-route-id="@item.Id">Download</a>
+                        @if (User.IsInRole("Aluno"))
+                        {
+                            <text>|</text> <a asp-action="Delete" asp-controller="FileTCCs" asp-route-id="@item.Id">Excluir</a>
+                        }
                     </td>
+>>>>>>> 67a8c78c58c02a29cdf238b6c5d319e94c6ea455
                 </tr>
-            }
-        </tbody>
-    </table>
-</div>
-
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.DataCadastro)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Name)
+                        </td>
+                        <td align="center">
+                            <a class="btn btn-outline-primary btn-sm" asp-action="Download" asp-controller="FileTCCs" asp-route-id="@item.Id"><i class="fa fa-download" aria-hidden="true"></i></a> |
+                            <a class="btn btn-outline-danger btn-sm" asp-action="Delete" asp-controller="FileTCCs" asp-route-id="@item.Id"><i class="fa fa-trash" aria-hidden="true"></i></a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+    
 <div>
-    <a asp-action="Index">Voltar para lista</a>
+    <a asp-action="Index" class="btn btn-outline-secondary"><i class="fa fa-list" aria-hidden="true"></i> Voltar para a lista</a>
 </div>
 
-@section Scripts {
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<link rel="stylesheet" href="//cdn.datatables.net/1.10.22/css/jquery.dataTables.min.css" />
+<script src="//cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js"></script>
+
+@section scripts{
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.css" />
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.22/css/dataTables.bootstrap4.min.css" />
+    <script>
+        $(document).ready(function () {
+            $('#tabelaBancaAnexo').DataTable({
+                "language": {
+                    "lengthMenu": "Mostrando _MENU_ registros por página",
+                    "zeroRecords": "Registro não localizado!",
+                    "info": "Mostrando página _PAGE_ de _PAGES_",
+                    "infoEmpty": "Nenhum registro disponível",
+                    "infoFiltered": "(filtrados de _MAX_ registros)"
+                }
+            });
+        });
+    </script>
 }
