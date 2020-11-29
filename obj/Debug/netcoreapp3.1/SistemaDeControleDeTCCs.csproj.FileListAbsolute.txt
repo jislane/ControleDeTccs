@@ -519,3 +519,5 @@ C:\Users\Alex e Grace\source\repos\SistemaDeControleDeTCCs\obj\Debug\netcoreapp3
 C:\Users\Alex e Grace\source\repos\SistemaDeControleDeTCCs\obj\Debug\netcoreapp3.1\staticwebassets\SistemaDeControleDeTCCs.StaticWebAssets.xml
 C:\Users\Alex e Grace\source\repos\SistemaDeControleDeTCCs\obj\Debug\netcoreapp3.1\SistemaDeControleDeTCCs.dll
 C:\Users\Alex e Grace\source\repos\SistemaDeControleDeTCCs\obj\Debug\netcoreapp3.1\SistemaDeControleDeTCCs.pdb
+C:\Users\Alex e Grace\source\repos\SistemaDeControleDeTCCs\obj\Debug\netcoreapp3.1\Razor\Areas\Coordenador\Views\Tccs\AddDataLocalApresentacao.cshtml.g.cs
+C:\Users\Alex e Grace\source\repos\SistemaDeControleDeTCCs\obj\Debug\netcoreapp3.1\Razor\Areas\Coordenador\Views\Tccs\Cancelar.cshtml.g.cs
