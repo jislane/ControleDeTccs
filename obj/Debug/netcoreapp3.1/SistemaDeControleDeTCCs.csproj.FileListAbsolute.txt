@@ -431,7 +431,9 @@ C:\Users\Alex e Grace\source\repos\SistemaDeControleDeTCCs\obj\Debug\netcoreapp3
 C:\Users\Alex e Grace\source\repos\SistemaDeControleDeTCCs\obj\Debug\netcoreapp3.1\Razor\Areas\Coordenador\Views\Calendarios\Details.cshtml.g.cs
 C:\Users\Alex e Grace\source\repos\SistemaDeControleDeTCCs\obj\Debug\netcoreapp3.1\Razor\Areas\Coordenador\Views\Calendarios\Edit.cshtml.g.cs
 C:\Users\Alex e Grace\source\repos\SistemaDeControleDeTCCs\obj\Debug\netcoreapp3.1\Razor\Areas\Coordenador\Views\Calendarios\Index.cshtml.g.cs
+C:\Users\Alex e Grace\source\repos\SistemaDeControleDeTCCs\obj\Debug\netcoreapp3.1\Razor\Areas\Coordenador\Views\Tccs\AddDataLocalApresentacao.cshtml.g.cs
 C:\Users\Alex e Grace\source\repos\SistemaDeControleDeTCCs\obj\Debug\netcoreapp3.1\Razor\Areas\Coordenador\Views\Tccs\AddOrEdit.cshtml.g.cs
+C:\Users\Alex e Grace\source\repos\SistemaDeControleDeTCCs\obj\Debug\netcoreapp3.1\Razor\Areas\Coordenador\Views\Tccs\Cancelar.cshtml.g.cs
 C:\Users\Alex e Grace\source\repos\SistemaDeControleDeTCCs\obj\Debug\netcoreapp3.1\Razor\Areas\Coordenador\Views\Tccs\Delete.cshtml.g.cs
 C:\Users\Alex e Grace\source\repos\SistemaDeControleDeTCCs\obj\Debug\netcoreapp3.1\Razor\Areas\Coordenador\Views\Tccs\Index.cshtml.g.cs
 C:\Users\Alex e Grace\source\repos\SistemaDeControleDeTCCs\obj\Debug\netcoreapp3.1\Razor\Areas\Coordenador\Views\Usuarios\AddOrEdit.cshtml.g.cs
@@ -519,5 +521,3 @@ C:\Users\Alex e Grace\source\repos\SistemaDeControleDeTCCs\obj\Debug\netcoreapp3
 C:\Users\Alex e Grace\source\repos\SistemaDeControleDeTCCs\obj\Debug\netcoreapp3.1\staticwebassets\SistemaDeControleDeTCCs.StaticWebAssets.xml
 C:\Users\Alex e Grace\source\repos\SistemaDeControleDeTCCs\obj\Debug\netcoreapp3.1\SistemaDeControleDeTCCs.dll
 C:\Users\Alex e Grace\source\repos\SistemaDeControleDeTCCs\obj\Debug\netcoreapp3.1\SistemaDeControleDeTCCs.pdb
-C:\Users\Alex e Grace\source\repos\SistemaDeControleDeTCCs\obj\Debug\netcoreapp3.1\Razor\Areas\Coordenador\Views\Tccs\AddDataLocalApresentacao.cshtml.g.cs
-C:\Users\Alex e Grace\source\repos\SistemaDeControleDeTCCs\obj\Debug\netcoreapp3.1\Razor\Areas\Coordenador\Views\Tccs\Cancelar.cshtml.g.cs
