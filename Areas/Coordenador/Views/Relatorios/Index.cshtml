@@ -1,0 +1,25 @@
+﻿
+@{
+    ViewData["Title"] = "RELATÓRIO DE TCC";
+}
+
+<h2>@ViewData["Title"]</h2>
+<br /><br />
+<form asp-action="Preview" method="get" target="_blank">
+    <div class="form-group row">
+        
+        <div>
+            <label class="col-sm-2 col-form-label">Semestre:</label>
+        </div>
+        
+        <div class="col-sm-auto">
+            <select asp-items="@ViewBag.Semestre" id="filterSemestre" name="filterSemestre">
+                <option value="">Selecione</option>
+            </select>
+        </div>
+        
+        <div>
+            <input type="submit" value="Gerar PDF" class="btn btn-primary" />
+        </div>
+    </div>
+</form>

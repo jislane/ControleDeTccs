@@ -42,6 +42,9 @@
                                 <li class="nav-item">
                                     <a class="nav-link text-dark" asp-area="Coordenador" asp-controller="Calendarios" asp-action="Index">Calendários</a>
                                 </li>
+                                <li class="nav-item">
+                                    <a class="nav-link text-dark" asp-area="Coordenador" asp-controller="Relatorios" asp-action="Index">Relatórios</a>
+                                </li>
                             }
 
                             @if (User.IsInRole("Professor") || User.IsInRole("Coordenador") || User.IsInRole("Aluno"))
@@ -57,7 +60,7 @@
                             }
                             @if (User.IsInRole("Aluno"))
                             {
-                                
+
                             }
                         }
                         else
