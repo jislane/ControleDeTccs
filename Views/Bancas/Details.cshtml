@@ -5,10 +5,9 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h1>Detalhes</h1>
+<h1>Detalhesda Banca</h1>
 
 <div>
-    <h4>Banca</h4>
     <hr />
     <dl class="row">
         <dt class="col-sm-2">
@@ -84,7 +83,7 @@
                                 {
                                     count++;
                                     <tr>
-                                        <td> <input value="@item.Nota" class="form-control" name="Nota_@count" id="Nota_@count" /></td>
+                                        <td> <input value="@item.Nota" class="form-control" placeholder="Atribua a nota!" name="Nota_@count" id="Nota_@count" /></td>
                                         <td> @item.Usuario.Nome @item.Usuario.Sobrenome</td>
                                         <td> @item.TipoUsuario.DescTipo</td>
                                         <td>

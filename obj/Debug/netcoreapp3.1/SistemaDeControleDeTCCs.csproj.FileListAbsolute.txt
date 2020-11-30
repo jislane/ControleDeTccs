@@ -416,7 +416,6 @@ C:\Users\Alex e Grace\source\repos\SistemaDeControleDeTCCs\bin\Debug\netcoreapp3
 C:\Users\Alex e Grace\source\repos\SistemaDeControleDeTCCs\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.0\System.Runtime.Caching.dll
 C:\Users\Alex e Grace\source\repos\SistemaDeControleDeTCCs\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.0\System.Runtime.Caching.dll
 C:\Users\Alex e Grace\source\repos\SistemaDeControleDeTCCs\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
-C:\Users\Alex e Grace\source\repos\SistemaDeControleDeTCCs\obj\Debug\netcoreapp3.1\SistemaDeControleDeTCCs.csprojAssemblyReference.cache
 C:\Users\Alex e Grace\source\repos\SistemaDeControleDeTCCs\obj\Debug\netcoreapp3.1\SistemaDeControleDeTCCs.MvcApplicationPartsAssemblyInfo.cs
 C:\Users\Alex e Grace\source\repos\SistemaDeControleDeTCCs\obj\Debug\netcoreapp3.1\SistemaDeControleDeTCCs.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\Alex e Grace\source\repos\SistemaDeControleDeTCCs\obj\Debug\netcoreapp3.1\SistemaDeControleDeTCCs.RazorAssemblyInfo.cache
@@ -431,7 +430,10 @@ C:\Users\Alex e Grace\source\repos\SistemaDeControleDeTCCs\obj\Debug\netcoreapp3
 C:\Users\Alex e Grace\source\repos\SistemaDeControleDeTCCs\obj\Debug\netcoreapp3.1\Razor\Areas\Coordenador\Views\Calendarios\Details.cshtml.g.cs
 C:\Users\Alex e Grace\source\repos\SistemaDeControleDeTCCs\obj\Debug\netcoreapp3.1\Razor\Areas\Coordenador\Views\Calendarios\Edit.cshtml.g.cs
 C:\Users\Alex e Grace\source\repos\SistemaDeControleDeTCCs\obj\Debug\netcoreapp3.1\Razor\Areas\Coordenador\Views\Calendarios\Index.cshtml.g.cs
+C:\Users\Alex e Grace\source\repos\SistemaDeControleDeTCCs\obj\Debug\netcoreapp3.1\Razor\Areas\Coordenador\Views\Tccs\AddDataLocalApresentacao.cshtml.g.cs
 C:\Users\Alex e Grace\source\repos\SistemaDeControleDeTCCs\obj\Debug\netcoreapp3.1\Razor\Areas\Coordenador\Views\Tccs\AddOrEdit.cshtml.g.cs
+C:\Users\Alex e Grace\source\repos\SistemaDeControleDeTCCs\obj\Debug\netcoreapp3.1\Razor\Areas\Coordenador\Views\Tccs\Cancelar.cshtml.g.cs
+C:\Users\Alex e Grace\source\repos\SistemaDeControleDeTCCs\obj\Debug\netcoreapp3.1\Razor\Areas\Coordenador\Views\Tccs\Delete.cshtml.g.cs
 C:\Users\Alex e Grace\source\repos\SistemaDeControleDeTCCs\obj\Debug\netcoreapp3.1\Razor\Areas\Coordenador\Views\Tccs\Index.cshtml.g.cs
 C:\Users\Alex e Grace\source\repos\SistemaDeControleDeTCCs\obj\Debug\netcoreapp3.1\Razor\Areas\Coordenador\Views\Usuarios\AddOrEdit.cshtml.g.cs
 C:\Users\Alex e Grace\source\repos\SistemaDeControleDeTCCs\obj\Debug\netcoreapp3.1\Razor\Areas\Coordenador\Views\Usuarios\Index.cshtml.g.cs

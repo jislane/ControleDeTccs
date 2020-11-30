@@ -41,7 +41,7 @@ namespace SistemaDeControleDeTCCs.Controllers
                 if (!usuarios.Contains(item.Usuario))
                     usuarios.Add(item.Usuario);
                 List<Banca> membrosBanca = _context.Banca.Where(x => x.TccId == item.TccId).ToList();
-                foreach(Banca b in _context.Banca.Where(x => x.TccId == item.TccId).ToList())
+                foreach (Banca b in _context.Banca.Where(x => x.TccId == item.TccId).ToList())
                 {
                     b.Usuario = _context.Usuario.Find(b.UsuarioId);
                     b.TipoUsuario = _context.TipoUsuario.Find(b.TipoUsuarioId);
@@ -80,7 +80,7 @@ namespace SistemaDeControleDeTCCs.Controllers
                 calendarios.Add(new { Value = -1, Text = "Sem data" });
                 ViewBag.Semestre = new SelectList(calendarios.OrderByDescending(x => x.Text), "Value", "Text", filterSemestre);
             }
-            else if(filterSemestre == -1)
+            else if (filterSemestre == -1)
             {
                 tccs = tccs.Where(x => x.DataApresentacao == null).ToList();
                 var calendarios = _context.Calendario.Select(x => new { Value = x.CalendarioId, Text = string.Format("{0}.{1}", x.Ano, x.Semestre) }).ToList();
@@ -100,7 +100,7 @@ namespace SistemaDeControleDeTCCs.Controllers
 
         [Authorize(Roles = "Coordenador")]
         public IActionResult AddOrEdit(int id = 0)
-        {                           
+        {
             List<Usuario> discentes = _context.Usuario.Where(x => x.TipoUsuario.DescTipo.Contains("Aluno")).ToList();
             Tcc tcc = new Tcc();
             Usuario orientador = new Usuario();

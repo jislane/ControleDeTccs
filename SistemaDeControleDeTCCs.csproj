@@ -5,6 +5,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Areas\Coordenador\Views\Tccs\Delete.cshtml.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Content Remove="Areas\Coordenador\Views\Usuarios\Index1.cshtml" />
     <Content Remove="wwwroot\js\Teste.js" />
   </ItemGroup>
@@ -36,6 +40,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Include="wwwroot\Imagens\ifs-instituto-federal-de-educacao-ciencia-e-tecnologia-de-sergipe.png" />
     <None Include="wwwroot\js\site.js" />
   </ItemGroup>
 

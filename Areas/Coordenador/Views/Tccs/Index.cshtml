@@ -1,7 +1,7 @@
 ﻿@model SistemaDeControleDeTCCs.Models.ViewModels.TccViewModel
 
 @{
-    ViewData["Title"] = "TCC";
+    ViewData["Title"] = "Trabalhos de Conclusão de Curso - TCC's";
 }
 
 <script type="text/javascript">
@@ -38,7 +38,6 @@
     </div>
 }
 
-<h1>Trabalhos de Conclusão de Curso - TCC's</h1>
 <th>
     <a asp-action="AddOrEdit" class="btn btn-outline-success"><i class="fa fa-book" aria-hidden="true"></i> Novo</a>
 </th>
@@ -62,7 +61,6 @@
             <select asp-items="@ViewBag.Semestre" id="filterSemestre" name="filterSemestre">
                 <option value="">Selecione</option>
             </select>
-
             <input type="submit" value="Pesquisar" class="btn btn-primary" /> |
             <a asp-action="Index">Limpar filtros</a>
         </p>
@@ -123,12 +121,12 @@
                         <p>Sem data</p>
                     }
                 </td>
-                <td>
+                <td style="width:150px">
 
                     @if (item.StatusId == 3 || item.StatusId == 4 || item.StatusId == 5)
                     {
                         <a class="btn btn-outline-primary btn-sm" asp-action="AddOrEdit" asp-route-id="@item.TccId" title="Editar"><i class="fa fa-pencil" aria-hidden="true"></i></a> <text>|</text>
-                        <a href="#" data-value="@item.TccId" class="btnCancelar" ml-1><i class="fas fa-times-circle" style="color:red" title="Cancelar"></i></a> <text>|</text>
+                        <a href="#" data-value="@item.TccId" class="btn btn-outline-warning btn-sm btnCancelar" ml-1><i class="fa fa-times" title="Cancelar" aria-hidden="true"></i></a> <text>|</text>
                         <a asp-action="Delete" asp-route-id="@item.TccId" title="Excluir" class="btn btn-outline-danger btn-sm" ml-1 onclick="return confirm('Tem certeza que quer deletar este registro?')"> <i class="fa fa-trash" aria-hidden="true"></i></a>
                     }
                 </td>
@@ -154,7 +152,7 @@
 <link rel="stylesheet" href="//cdn.datatables.net/1.10.22/css/jquery.dataTables.min.css" />
 <script src="//cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js"></script>
 
-@section scripts{   
+@section scripts{
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.css" />
     <link rel="stylesheet" href="https://cdn.datatables.net/1.10.22/css/dataTables.bootstrap4.min.css" />
     <script>
