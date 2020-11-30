@@ -63,15 +63,15 @@
                 <td>
                     @Html.DisplayFor(modelItem => item.Tcc.Usuario.Nome) @Html.DisplayFor(modelItem => item.Tcc.Usuario.Sobrenome)
                 </td>
-                <td>
+                <td style="width:200px">
                     @*<a asp-action="Edit" asp-route-id="@item.BancaId">Edit</a> |*@
-                    <a class="btn btn-outline-info btn-sm" asp-action="Details" asp-route-id="@item.BancaId"><i class="fa fa-info-circle" aria-hidden="true"></i></a> |
-                    <a class="btn btn-outline-success btn-sm" asp-action="Create" asp-route-id="@item.TccId"><i class="fa fa-user-plus" aria-hidden="true"></i></a>
+                    <a title="Informações" class="btn btn-outline-info btn-sm" asp-action="Details" asp-route-id="@item.BancaId"><i class="fa fa-info-circle" aria-hidden="true"></i></a> |
+                    <a title="Adicionar Membro" class="btn btn-outline-success btn-sm" asp-action="Create" asp-route-id="@item.TccId"><i class="fa fa-user-plus" aria-hidden="true"></i></a>
                     @if (item.Tcc.StatusId == 3 || item.Tcc.StatusId == 4 || item.Tcc.StatusId == 5)
                     {
-                        <text>|</text> <a asp-area="Coordenador" asp-controller="Tccs" asp-action="AddDataLocalApresentacao" asp-route-id="@item.TccId">Homologar</a>
+                        <text>|</text> <a title="Homologar Banca" class="btn btn-outline-success btn-sm" asp-area="Coordenador" asp-controller="Tccs" asp-action="AddDataLocalApresentacao" asp-route-id="@item.TccId"><i class="fa fa-check" aria-hidden="true"></i></a>
                     }
-                    | <a asp-action="Anexo" asp-route-id="@item.TccId">Arquivo</a>
+                    | <a title="Anexos" class="btn btn-outline-primary btn-sm"asp-action="Anexo" asp-route-id="@item.TccId"><i class="fa fa-file" aria-hidden="true"></i></a>
                     @*<a asp-action="Delete" asp-route-id="@item.BancaId">Delete</a>*@
                 </td>
             </tr>
