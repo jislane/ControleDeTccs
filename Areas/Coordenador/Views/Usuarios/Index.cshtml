@@ -60,6 +60,7 @@
                 </td>
                 <td>
                     <a title="Editar" class="btn btn-outline-primary btn-sm" asp-action="AddOrEdit" asp-route-id="@item.Id"><i class="fa fa-pencil" aria-hidden="true"></i></a> |
+                    <a asp-action="Reset" asp-route-id="@item.UserName">Reset</a> |
                     <a title="Excluir" class="btn btn-outline-danger btn-sm" ml-1 onclick="return confirm('Tem certeza que quer deletar este registro?')" asp-action="Delete" asp-route-id="@item.Id">
                         <i class="fa fa-trash" aria-hidden="true"></i>
                     </a>

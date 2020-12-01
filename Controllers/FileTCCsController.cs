@@ -164,7 +164,7 @@ namespace SistemaDeControleDeTCCs.Controllers
                 return NotFound();
             }
             var result = await _context.FileTCC.FindAsync(id);
-            return File(result.FileStream, "application/pdf");
+            return File(result.FileStream, result.Extension, result.Name);
         }
 
 
