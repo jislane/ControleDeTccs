@@ -129,7 +129,7 @@ namespace SistemaDeControleDeTCCs.Controllers
                 if (tcc.TccId == 0)
                 {
                     tcc.DataDeCadastro = DateTime.Now;
-                    tcc.Status = _context.Status.Where(x => x.DescStatus.Contains("Pendente")).FirstOrDefault();
+                    tcc.Status = _context.Status.Where(x => x.DescStatus.Contains("Cadastrado")).FirstOrDefault();
                     _context.Add(tcc);
                     await _context.SaveChangesAsync();
                     //Adiconarndo o orientador a Banca
