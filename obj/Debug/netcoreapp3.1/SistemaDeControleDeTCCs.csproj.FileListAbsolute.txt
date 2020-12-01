@@ -266,8 +266,10 @@ C:\Users\Alex e Grace\source\repos\SistemaDeControleDeTCCs\bin\Debug\netcoreapp3
 C:\Users\Alex e Grace\source\repos\SistemaDeControleDeTCCs\bin\Debug\netcoreapp3.1\SistemaDeControleDeTCCs.pdb
 C:\Users\Alex e Grace\source\repos\SistemaDeControleDeTCCs\bin\Debug\netcoreapp3.1\SistemaDeControleDeTCCs.Views.dll
 C:\Users\Alex e Grace\source\repos\SistemaDeControleDeTCCs\bin\Debug\netcoreapp3.1\SistemaDeControleDeTCCs.Views.pdb
+C:\Users\Alex e Grace\source\repos\SistemaDeControleDeTCCs\bin\Debug\netcoreapp3.1\BouncyCastle.Crypto.dll
 C:\Users\Alex e Grace\source\repos\SistemaDeControleDeTCCs\bin\Debug\netcoreapp3.1\EntityFramework.SqlServer.dll
 C:\Users\Alex e Grace\source\repos\SistemaDeControleDeTCCs\bin\Debug\netcoreapp3.1\EntityFramework.dll
+C:\Users\Alex e Grace\source\repos\SistemaDeControleDeTCCs\bin\Debug\netcoreapp3.1\itextsharp.dll
 C:\Users\Alex e Grace\source\repos\SistemaDeControleDeTCCs\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Cryptography.Internal.dll
 C:\Users\Alex e Grace\source\repos\SistemaDeControleDeTCCs\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
 C:\Users\Alex e Grace\source\repos\SistemaDeControleDeTCCs\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore.dll
@@ -430,6 +432,7 @@ C:\Users\Alex e Grace\source\repos\SistemaDeControleDeTCCs\obj\Debug\netcoreapp3
 C:\Users\Alex e Grace\source\repos\SistemaDeControleDeTCCs\obj\Debug\netcoreapp3.1\Razor\Areas\Coordenador\Views\Calendarios\Details.cshtml.g.cs
 C:\Users\Alex e Grace\source\repos\SistemaDeControleDeTCCs\obj\Debug\netcoreapp3.1\Razor\Areas\Coordenador\Views\Calendarios\Edit.cshtml.g.cs
 C:\Users\Alex e Grace\source\repos\SistemaDeControleDeTCCs\obj\Debug\netcoreapp3.1\Razor\Areas\Coordenador\Views\Calendarios\Index.cshtml.g.cs
+C:\Users\Alex e Grace\source\repos\SistemaDeControleDeTCCs\obj\Debug\netcoreapp3.1\Razor\Areas\Coordenador\Views\Relatorios\Index.cshtml.g.cs
 C:\Users\Alex e Grace\source\repos\SistemaDeControleDeTCCs\obj\Debug\netcoreapp3.1\Razor\Areas\Coordenador\Views\Tccs\AddDataLocalApresentacao.cshtml.g.cs
 C:\Users\Alex e Grace\source\repos\SistemaDeControleDeTCCs\obj\Debug\netcoreapp3.1\Razor\Areas\Coordenador\Views\Tccs\AddOrEdit.cshtml.g.cs
 C:\Users\Alex e Grace\source\repos\SistemaDeControleDeTCCs\obj\Debug\netcoreapp3.1\Razor\Areas\Coordenador\Views\Tccs\Cancelar.cshtml.g.cs

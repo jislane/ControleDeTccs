@@ -58,11 +58,10 @@
                 <td>
                     @Html.DisplayFor(modelItem => item.Email)
                 </td>
-                <td>
+                <td style="width:150px">
                     <a title="Editar" class="btn btn-outline-primary btn-sm" asp-action="AddOrEdit" asp-route-id="@item.Id"><i class="fa fa-pencil" aria-hidden="true"></i></a> |
-                    <a asp-action="Reset" asp-route-id="@item.UserName">Reset</a> |
-                    <a title="Excluir" class="btn btn-outline-danger btn-sm" ml-1 onclick="return confirm('Tem certeza que quer deletar este registro?')" asp-action="Delete" asp-route-id="@item.Id">
-                        <i class="fa fa-trash" aria-hidden="true"></i>
+                    <a title="Resetar senha" class="btn btn-outline-warning btn-sm" asp-action="Reset" asp-route-id="@item.UserName"><i class="fa fa-envelope-o" aria-hidden="true"></i></a> |
+                    <a title="Excluir" class="btn btn-outline-danger btn-sm" ml-1 onclick="return confirm('Tem certeza que quer deletar este registro?')" asp-action="Delete" asp-route-id="@item.Id"><i class="fa fa-trash" aria-hidden="true"></i>
                     </a>
                 </td>
             </tr>
