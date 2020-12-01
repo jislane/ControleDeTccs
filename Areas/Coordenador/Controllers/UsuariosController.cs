@@ -120,6 +120,20 @@ namespace SistemaDeControleDeTCCs.Controllers
             _context.Users.Remove(usuario);
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
-        }       
+        }   
+        
+        public async Task<IActionResult> Reset(string id)
+        {
+            Usuario usuario = await _userManager.FindByNameAsync(id);
+            usuario.TipoUsuario = _context.TipoUsuario.Where(t => t.TipoUsuarioId == usuario.TipoUsuarioId).FirstOrDefault();
+            var token = await _userManager.GeneratePasswordResetTokenAsync(usuario);
+            var senha = KeyGenerator.GetUniqueKey(8);
+            var result = await _userManager.ResetPasswordAsync(usuario, token, senha);            
+            if (result.Succeeded)
+            {
+                _senderEmail.EnviarSenhaParaUsuarioViaEmail(usuario, senha);
+            }
+            return RedirectToAction(nameof(Index));
+        }
     }
 }

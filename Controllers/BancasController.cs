@@ -289,7 +289,7 @@ namespace SistemaDeControleDeTCCs.Controllers
             {
                 Id = Guid.NewGuid(),
                 Name = arquivo.FileName,
-                Extension = "pdf",
+                Extension = arquivo.ContentType,//"pdf",
                 DataCadastro = DateTime.Now,
                 Length = arquivo.Length,
                 FileStream = fileBinary,
