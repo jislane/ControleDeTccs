@@ -1,4 +1,5 @@
-﻿using Microsoft.Extensions.Configuration;
+﻿using Microsoft.AspNetCore.Http;
+using Microsoft.Extensions.Configuration;
 using SistemaDeControleDeTCCs.Models;
 using System;
 using System.Collections.Generic;
@@ -10,11 +11,13 @@ namespace SistemaDeControleDeTCCs.Services
     {
         private readonly SmtpClient _smtp;
         private readonly IConfiguration _configuration;
+        private readonly IHttpContextAccessor _httpContextAccessor;
 
-        public SenderEmail(SmtpClient smtp, IConfiguration configuration)
+        public SenderEmail(SmtpClient smtp, IConfiguration configuration, IHttpContextAccessor httpContextAccessor)
         {
             _smtp = smtp;
             _configuration = configuration;
+            _httpContextAccessor = httpContextAccessor;
         }
 
         public void EnviarSenhaParaUsuarioViaEmail(Usuario usuario, String senha)
@@ -75,12 +78,17 @@ namespace SistemaDeControleDeTCCs.Services
             _smtp.Send(message);
         }
 
-        public void NotificarMembrosBancaViaEmail(Tcc tcc, Usuario usuario)
+        public void NotificarMembrosBancaViaEmail(Tcc tcc, Usuario usuario, String fileID)
         {
+            //Exemplo Download 
+            ///localhost:51077/FileTCCs/Download/605a9a65-10ae-45de-a8b8-e9c2ab0e690c
+            string host = _httpContextAccessor.HttpContext.Request.Host.Value;
+            string url = host + "/FileTCCs/Download/" + fileID;
             string bodyEmail = string.Format("<p>Prezado(a), <b>{0}</b>! </p>" +
                 "<p>Seguem abaixo os dados de defesa do Trabalho de Conclusão de Curso (TCC) intitulado \"<b>{1}</b>\", de autoria do discente <b>{2}</b>.</p>" +
                 "<p>Data: {3}</p>" +
                 "<p>Local: {4}</p>" +
+                "<p>Link Download TCC: <a href=http://" + url + ">{5}</a></p>" +
                 "<p>Cordialmente,</p>" +
                 "<p><b>SISTEMA DE CONTROLE DE TCC</b> <br/>" +
                 "Coordenação do Bacharelado em Sistemas de Informação - CBSI <br/>" +
@@ -90,7 +98,8 @@ namespace SistemaDeControleDeTCCs.Services
                 tcc.Tema,
                 tcc.Usuario.Nome + " " + tcc.Usuario.Sobrenome,
                 tcc.DataApresentacao,
-                tcc.LocalApresentacao);
+                tcc.LocalApresentacao,
+                tcc.Tema);
 
             MailMessage message = new MailMessage();
             message.From = new MailAddress(_configuration.GetValue<string>("Email:Username"));

@@ -233,11 +233,12 @@ namespace SistemaDeControleDeTCCs.Controllers
                 {
                     tcc.Usuario = _context.Usuario.Where(x => x.Id == tccAtualizado.UsuarioId).FirstOrDefault();
                     List<Banca> banca = _context.Banca.Where(x => x.TccId == tcc.TccId).ToList();
-                    foreach(Banca item in banca)
+                    FileTCC file = _context.FileTCC.Where(f => f.TccId == tcc.TccId).OrderByDescending(f => f.DataCadastro).FirstOrDefault();
+                    foreach (Banca item in banca)
                     {
-                        _senderEmail.NotificarMembrosBancaViaEmail(tcc, _context.Usuario.Where(x => x.Id == item.UsuarioId).FirstOrDefault());
+                        _senderEmail.NotificarMembrosBancaViaEmail(tcc, _context.Usuario.Where(x => x.Id == item.UsuarioId).FirstOrDefault(), file.Id.ToString());
                     }
-                    _senderEmail.NotificarMembrosBancaViaEmail(tcc, tcc.Usuario);
+                    _senderEmail.NotificarMembrosBancaViaEmail(tcc, tcc.Usuario, file.Id.ToString());
                     TempData["Success"] += " e enviada notificação via e-mail para os membros da banca";
                 }
                 TempData["Success"] += ".";
