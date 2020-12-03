@@ -178,8 +178,8 @@ namespace SistemaDeControleDeTCCs.Controllers
                 ViewBag.Orientador = _context.Usuario.Where(x => x.Id == bancaOrientador.UsuarioId).FirstOrDefault();
                 ViewBag.CalendarioAtivo = _context.Calendario.Where(x => x.Ativo == true).FirstOrDefault();
             }
-            
-            if ((tcc.Resumo == null || tcc.Resumo.Equals("") ) && _context.FileTCC.Where(x => x.TccId == tcc.TccId).ToList().Count == 0)
+
+            if ((tcc.Resumo == null || tcc.Resumo.Equals("")) && _context.FileTCC.Where(x => x.TccId == tcc.TccId).ToList().Count == 0)
             {
                 TempData["Error"] = "Homologação cancelada! Favor, solicite ao discente que insira o resumo e o arquivo do TCC.";
                 return RedirectToAction("Index", "Bancas", new { area = "" });
@@ -252,7 +252,7 @@ namespace SistemaDeControleDeTCCs.Controllers
                 ViewBag.Orientador = _context.Usuario.Where(x => x.Id == bancaOrientador.UsuarioId).FirstOrDefault();
                 ViewBag.CalendarioAtivo = _context.Calendario.Where(x => x.Ativo == true).FirstOrDefault();
             }
-            
+
             return View(tcc);
         }
 

@@ -10,6 +10,8 @@
 
   <ItemGroup>
     <Content Remove="Areas\Coordenador\Views\Usuarios\Index1.cshtml" />
+    <Content Remove="Areas\Coordenador\Views\Usuarios\_AddOrEdit.cshtml" />
+    <Content Remove="Views\Shared\_Modal.cshtml" />
     <Content Remove="wwwroot\js\Teste.js" />
   </ItemGroup>
 

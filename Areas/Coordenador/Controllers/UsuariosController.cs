@@ -75,16 +75,16 @@ namespace SistemaDeControleDeTCCs.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> AddOrEdit([Bind("Id,Nome,Sobrenome,Matricula,Cpf,PhoneNumber,Email,TipoUsuarioId")] Usuario usuario)        
+        public async Task<IActionResult> AddOrEdit([Bind("Id,Nome,Sobrenome,Matricula,Cpf,PhoneNumber,Email,TipoUsuarioId")] Usuario usuario)
         {
-                      
-            if (ModelState.IsValid)                
+
+            if (ModelState.IsValid)
             {
                 if (usuario.Id != null)
                 {
                     // _context.Update(usuario);
                     // await _context.SaveChangesAsync();
-                    
+
                     var userTemp = _userManager.FindByIdAsync(usuario.Id).Result;
                     userTemp.Nome = usuario.Nome;
                     userTemp.Sobrenome = usuario.Sobrenome;
@@ -102,7 +102,7 @@ namespace SistemaDeControleDeTCCs.Controllers
                     var senha = KeyGenerator.GetUniqueKey(8);
                     await _context.SaveChangesAsync();
                     usuario.TipoUsuario = _context.TipoUsuario.Where(x => x.TipoUsuarioId == usuario.TipoUsuarioId).FirstOrDefault();
-                    _senderEmail.EnviarSenhaParaUsuarioViaEmail(usuario, senha);
+                    //_senderEmail.EnviarSenhaParaUsuarioViaEmail(usuario, senha);
                 }
                 return RedirectToAction(nameof(Index));
             }
@@ -120,15 +120,15 @@ namespace SistemaDeControleDeTCCs.Controllers
             _context.Users.Remove(usuario);
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
-        }   
-        
+        }
+
         public async Task<IActionResult> Reset(string id)
         {
             Usuario usuario = await _userManager.FindByNameAsync(id);
             usuario.TipoUsuario = _context.TipoUsuario.Where(t => t.TipoUsuarioId == usuario.TipoUsuarioId).FirstOrDefault();
             var token = await _userManager.GeneratePasswordResetTokenAsync(usuario);
             var senha = KeyGenerator.GetUniqueKey(8);
-            var result = await _userManager.ResetPasswordAsync(usuario, token, senha);            
+            var result = await _userManager.ResetPasswordAsync(usuario, token, senha);
             if (result.Succeeded)
             {
                 _senderEmail.EnviarSenhaParaUsuarioViaEmail(usuario, senha);
