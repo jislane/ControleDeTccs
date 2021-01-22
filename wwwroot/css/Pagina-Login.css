@@ -9,3 +9,9 @@ box-shadow: 1px 5px 30px rgb(195, 195, 195);
 #id_fundo {
     background-color: rgb(243, 243, 243);
 }
+
+.validation-summary-errors ul {
+    padding: 0;
+    text-decoration: none;
+    list-style-type: none;
+}
