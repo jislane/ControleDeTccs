@@ -22,12 +22,17 @@ namespace SistemaDeControleDeTCCs.Controllers
         private readonly SistemaDeControleDeTCCsContext _context;
         private readonly SenderEmail _senderEmail;
         private readonly UserManager<Usuario> _userManager;
+        private RoleManager<IdentityRole> _roleManager;
 
-        public UsuariosController(SistemaDeControleDeTCCsContext context, SenderEmail senderEmail, UserManager<Usuario> userManager)
+        public UsuariosController(SistemaDeControleDeTCCsContext context,
+            SenderEmail senderEmail,
+            UserManager<Usuario> userManager,
+            RoleManager<IdentityRole> roleManager)
         {
             _context = context;
             _senderEmail = senderEmail;
             _userManager = userManager;
+            _roleManager = roleManager;
         }
 
         // GET: Usuarios
@@ -82,10 +87,21 @@ namespace SistemaDeControleDeTCCs.Controllers
             {
                 if (usuario.Id != null)
                 {
+                    //Administrador
+                    var admId = _context.TipoUsuario.FirstOrDefault(t => t.DescTipo == "Administrador").TipoUsuarioId;
                     // _context.Update(usuario);
                     // await _context.SaveChangesAsync();
 
                     var userTemp = _userManager.FindByIdAsync(usuario.Id).Result;
+                    if (userTemp.TipoUsuarioId == admId
+                       && !User.IsInRole("Administrador"))
+                    {
+                        ModelState.AddModelError(String.Empty,
+                            "O usuário que você está tentando alterar é um usuário administrador e apenas outro administrador pode realizar esta modificação");
+                        
+                        return AddOrEdit(userTemp.Id);
+                    }
+                    var typeUser = userTemp.TipoUsuarioId;
                     userTemp.Nome = usuario.Nome;
                     userTemp.Sobrenome = usuario.Sobrenome;
                     userTemp.Matricula = usuario.Matricula;
@@ -93,8 +109,22 @@ namespace SistemaDeControleDeTCCs.Controllers
                     userTemp.PhoneNumber = usuario.PhoneNumber;
                     userTemp.Email = usuario.Email;
                     userTemp.TipoUsuarioId = usuario.TipoUsuarioId;
-                    var user = await _userManager.UpdateAsync(userTemp);
 
+                    // Atualiza o usuário
+                    await _userManager.UpdateAsync(userTemp);
+
+                    if (typeUser != usuario.TipoUsuarioId) {
+                        var nameTipoUsuarioOld = _context.TipoUsuario.Find(typeUser).DescTipo;
+                        // Obtem as Role nova e antiga do usuário
+                        var nameTipoUsuarioNew = _context.TipoUsuario.Find(usuario.TipoUsuarioId).DescTipo;
+
+                        var roleOld = _roleManager.FindByNameAsync(nameTipoUsuarioOld).Result;
+                        var roleNew = _roleManager.FindByNameAsync(nameTipoUsuarioNew).Result;
+                        // Remove a Role Antiga
+                        await _userManager.RemoveFromRoleAsync(userTemp, roleOld.Name);
+                        // Adiciona a Role Nova
+                        await _userManager.AddToRoleAsync(userTemp, roleNew.Name);
+                    }
                 }
                 else
                 {
