@@ -34,7 +34,7 @@ namespace SistemaDeControleDeTCCs
             services.AddControllersWithViews();
 
             services.AddDbContext<SistemaDeControleDeTCCsContext>(options =>
-                    options.UseSqlServer(Configuration.GetConnectionString("SistemaDeControleDeTCCsContextConnection")));
+                    options.UseSqlServer(Configuration.GetConnectionString("StringDeConexaoDocker")));
 
             services.AddIdentity<Usuario, IdentityRole>().AddEntityFrameworkStores<SistemaDeControleDeTCCsContext>().AddDefaultTokenProviders();
             services.AddRazorPages();
