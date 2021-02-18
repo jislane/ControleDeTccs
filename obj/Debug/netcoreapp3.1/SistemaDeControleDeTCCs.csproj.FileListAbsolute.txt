@@ -579,11 +579,6 @@ C:\Users\Thiago Teixeira\source\repos\ControleDeTccs\bin\Debug\netcoreapp3.1\Mic
 C:\Users\Thiago Teixeira\source\repos\ControleDeTccs\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Options.dll
 C:\Users\Thiago Teixeira\source\repos\ControleDeTccs\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Primitives.dll
 C:\Users\Thiago Teixeira\source\repos\ControleDeTccs\bin\Debug\netcoreapp3.1\Microsoft.Identity.Client.dll
-C:\Users\Thiago Teixeira\source\repos\ControleDeTccs\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.JsonWebTokens.dll
-C:\Users\Thiago Teixeira\source\repos\ControleDeTccs\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Logging.dll
-C:\Users\Thiago Teixeira\source\repos\ControleDeTccs\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Protocols.dll
-C:\Users\Thiago Teixeira\source\repos\ControleDeTccs\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
-C:\Users\Thiago Teixeira\source\repos\ControleDeTccs\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Tokens.dll
 C:\Users\Thiago Teixeira\source\repos\ControleDeTccs\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.Web.CodeGeneration.dll
 C:\Users\Thiago Teixeira\source\repos\ControleDeTccs\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.Web.CodeGeneration.Contracts.dll
 C:\Users\Thiago Teixeira\source\repos\ControleDeTccs\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.Web.CodeGeneration.Core.dll
@@ -608,7 +603,6 @@ C:\Users\Thiago Teixeira\source\repos\ControleDeTccs\bin\Debug\netcoreapp3.1\Sys
 C:\Users\Thiago Teixeira\source\repos\ControleDeTccs\bin\Debug\netcoreapp3.1\System.Configuration.ConfigurationManager.dll
 C:\Users\Thiago Teixeira\source\repos\ControleDeTccs\bin\Debug\netcoreapp3.1\System.Data.SqlClient.dll
 C:\Users\Thiago Teixeira\source\repos\ControleDeTccs\bin\Debug\netcoreapp3.1\System.Diagnostics.DiagnosticSource.dll
-C:\Users\Thiago Teixeira\source\repos\ControleDeTccs\bin\Debug\netcoreapp3.1\System.IdentityModel.Tokens.Jwt.dll
 C:\Users\Thiago Teixeira\source\repos\ControleDeTccs\bin\Debug\netcoreapp3.1\System.Runtime.Caching.dll
 C:\Users\Thiago Teixeira\source\repos\ControleDeTccs\bin\Debug\netcoreapp3.1\System.Security.Cryptography.ProtectedData.dll
 C:\Users\Thiago Teixeira\source\repos\ControleDeTccs\bin\Debug\netcoreapp3.1\System.Text.Json.dll
@@ -686,7 +680,6 @@ C:\Users\Thiago Teixeira\source\repos\ControleDeTccs\bin\Debug\netcoreapp3.1\run
 C:\Users\Thiago Teixeira\source\repos\ControleDeTccs\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.0\System.Runtime.Caching.dll
 C:\Users\Thiago Teixeira\source\repos\ControleDeTccs\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.0\System.Runtime.Caching.dll
 C:\Users\Thiago Teixeira\source\repos\ControleDeTccs\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
-C:\Users\Thiago Teixeira\source\repos\ControleDeTccs\obj\Debug\netcoreapp3.1\SistemaDeControleDeTCCs.csprojAssemblyReference.cache
 C:\Users\Thiago Teixeira\source\repos\ControleDeTccs\obj\Debug\netcoreapp3.1\SistemaDeControleDeTCCs.AssemblyInfoInputs.cache
 C:\Users\Thiago Teixeira\source\repos\ControleDeTccs\obj\Debug\netcoreapp3.1\SistemaDeControleDeTCCs.AssemblyInfo.cs
 C:\Users\Thiago Teixeira\source\repos\ControleDeTccs\obj\Debug\netcoreapp3.1\SistemaDeControleDeTCCs.csproj.CoreCompileInputs.cache
@@ -794,3 +787,10 @@ C:\Users\Thiago Teixeira\source\repos\ControleDeTccs\obj\Debug\netcoreapp3.1\Sis
 C:\Users\Thiago Teixeira\source\repos\ControleDeTccs\obj\Debug\netcoreapp3.1\SistemaDeControleDeTCCs.dll
 C:\Users\Thiago Teixeira\source\repos\ControleDeTccs\obj\Debug\netcoreapp3.1\SistemaDeControleDeTCCs.pdb
 C:\Users\Thiago Teixeira\source\repos\ControleDeTccs\obj\Debug\netcoreapp3.1\SistemaDeControleDeTCCs.genruntimeconfig.cache
+C:\Users\Thiago Teixeira\source\repos\ControleDeTccs\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\Users\Thiago Teixeira\source\repos\ControleDeTccs\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Logging.dll
+C:\Users\Thiago Teixeira\source\repos\ControleDeTccs\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Protocols.dll
+C:\Users\Thiago Teixeira\source\repos\ControleDeTccs\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+C:\Users\Thiago Teixeira\source\repos\ControleDeTccs\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Tokens.dll
+C:\Users\Thiago Teixeira\source\repos\ControleDeTccs\bin\Debug\netcoreapp3.1\System.IdentityModel.Tokens.Jwt.dll
+C:\Users\Thiago Teixeira\source\repos\ControleDeTccs\obj\Debug\netcoreapp3.1\SistemaDeControleDeTCCs.csprojAssemblyReference.cache
