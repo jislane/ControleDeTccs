@@ -38,10 +38,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Migrations\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <None Include="wwwroot\Imagens\ifs-instituto-federal-de-educacao-ciencia-e-tecnologia-de-sergipe.png" />
     <None Include="wwwroot\js\site.js" />
   </ItemGroup>
