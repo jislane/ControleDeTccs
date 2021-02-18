@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Alex e Grace\\source\\repos\\SistemaDeControleDeTCCs\\SistemaDeControleDeTCCs.csproj": {}
+    "C:\\Users\\Thiago Teixeira\\source\\repos\\ControleDeTccs\\SistemaDeControleDeTCCs.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Alex e Grace\\source\\repos\\SistemaDeControleDeTCCs\\SistemaDeControleDeTCCs.csproj": {
+    "C:\\Users\\Thiago Teixeira\\source\\repos\\ControleDeTccs\\SistemaDeControleDeTCCs.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Alex e Grace\\source\\repos\\SistemaDeControleDeTCCs\\SistemaDeControleDeTCCs.csproj",
+        "projectUniqueName": "C:\\Users\\Thiago Teixeira\\source\\repos\\ControleDeTccs\\SistemaDeControleDeTCCs.csproj",
         "projectName": "SistemaDeControleDeTCCs",
-        "projectPath": "C:\\Users\\Alex e Grace\\source\\repos\\SistemaDeControleDeTCCs\\SistemaDeControleDeTCCs.csproj",
-        "packagesPath": "C:\\Users\\Alex e Grace\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Alex e Grace\\source\\repos\\SistemaDeControleDeTCCs\\obj\\",
+        "projectPath": "C:\\Users\\Thiago Teixeira\\source\\repos\\ControleDeTccs\\SistemaDeControleDeTCCs.csproj",
+        "packagesPath": "C:\\Users\\Thiago Teixeira\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Thiago Teixeira\\source\\repos\\ControleDeTccs\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Alex e Grace\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Thiago Teixeira\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -26,6 +26,7 @@
         },
         "frameworks": {
           "netcoreapp3.1": {
+            "targetAlias": "netcoreapp3.1",
             "projectReferences": {}
           }
         },
@@ -37,6 +38,7 @@
       },
       "frameworks": {
         "netcoreapp3.1": {
+          "targetAlias": "netcoreapp3.1",
           "dependencies": {
             "EntityFramework": {
               "target": "Package",
@@ -113,7 +115,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.102\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.102\\RuntimeIdentifierGraph.json"
         }
       }
     }

@@ -8,15 +8,19 @@ using System.Threading.Tasks;
 
 namespace SistemaDeControleDeTCCs.Models
 {
-    public class TipoUsuario
+    public class Campus
     {
         [Key]
-        public int TipoUsuarioId { get; set; }
+        public int Id { get; set; }
 
-        [DisplayName("Descrição do Tipo de Usuário")]
-        [Column(TypeName = "nvarchar(250)")]
+        [DisplayName("Nome")]
+        [Column(TypeName = "nvarchar(40)")]
         [Required(ErrorMessage = "O campo {0} é obrigatorio.")]
-        public string  DescTipo { get; set; }
+        public string Nome { get; set; }
 
+        [DisplayName("Endereço")]
+        [Column(TypeName = "nvarchar(50)")]
+        [Required(ErrorMessage = "O campo {0} é obrigatorio.")]
+        public string Endereco { get; set; }
     }
 }

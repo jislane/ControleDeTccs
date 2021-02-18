@@ -13,25 +13,35 @@ namespace SistemaDeControleDeTCCs.Models
     {
         [DisplayName("Nome")]
         [Column(TypeName = "nvarchar(250)")]
-        [Required(ErrorMessage = "O {0} é obrigatório!")]
+        [Required(ErrorMessage = "O campo {0} é obrigatorio.")]
         public string Nome { get; set; }
 
+        [DisplayName("Sobrenome")]
         [Required(ErrorMessage = "O campo {0} é obrigatorio.")]
         [MinLength(6, ErrorMessage = "{0} inválido!")]
         public string Sobrenome { get; set; }
 
         [DisplayName("Matrícula")]
         [Column(TypeName = "nvarchar(25)")]
-        [Required(ErrorMessage = "A {0} é obrigatória!")]
+        [Required(ErrorMessage = "O campo {0} é obrigatorio.")]
         public string Matricula { get; set; }
 
         [DisplayName("CPF")]
         [Column(TypeName = "nvarchar(11)")]
+        [Required(ErrorMessage = "O campo {0} é obrigatorio.")]
         public string Cpf { get; set; }
+
         public TipoUsuario TipoUsuario { get; set; }
+
         [ForeignKey("TipoUsuario")]
         [DisplayName("Tipo de Usuário")]
-        [Required(ErrorMessage = "O {0} é obrigatório!")]
+        [Required(ErrorMessage = "O campo {0} é obrigatorio.")]
         public int TipoUsuarioId { get; set; }
+
+        public Curso Curso { get; set; }
+
+        [DisplayName("Curso")]
+        [Required(ErrorMessage = "O campo {0} é obrigatorio.")]
+        public int IdCurso { get; set; }
     }
 }
