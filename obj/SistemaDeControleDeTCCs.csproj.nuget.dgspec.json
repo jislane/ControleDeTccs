@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Thiago Teixeira\\source\\repos\\ControleDeTccs\\SistemaDeControleDeTCCs.csproj": {}
+    "C:\\Users\\Zero\\Documents\\IFS\\20202\\PROJETO_INTEGRADOR_II\\PROJ\\ControleDeTccs\\SistemaDeControleDeTCCs.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Thiago Teixeira\\source\\repos\\ControleDeTccs\\SistemaDeControleDeTCCs.csproj": {
+    "C:\\Users\\Zero\\Documents\\IFS\\20202\\PROJETO_INTEGRADOR_II\\PROJ\\ControleDeTccs\\SistemaDeControleDeTCCs.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Thiago Teixeira\\source\\repos\\ControleDeTccs\\SistemaDeControleDeTCCs.csproj",
+        "projectUniqueName": "C:\\Users\\Zero\\Documents\\IFS\\20202\\PROJETO_INTEGRADOR_II\\PROJ\\ControleDeTccs\\SistemaDeControleDeTCCs.csproj",
         "projectName": "SistemaDeControleDeTCCs",
-        "projectPath": "C:\\Users\\Thiago Teixeira\\source\\repos\\ControleDeTccs\\SistemaDeControleDeTCCs.csproj",
-        "packagesPath": "C:\\Users\\Thiago Teixeira\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Thiago Teixeira\\source\\repos\\ControleDeTccs\\obj\\",
+        "projectPath": "C:\\Users\\Zero\\Documents\\IFS\\20202\\PROJETO_INTEGRADOR_II\\PROJ\\ControleDeTccs\\SistemaDeControleDeTCCs.csproj",
+        "packagesPath": "C:\\Users\\Zero\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Zero\\Documents\\IFS\\20202\\PROJETO_INTEGRADOR_II\\PROJ\\ControleDeTccs\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Thiago Teixeira\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Zero\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -26,7 +26,6 @@
         },
         "frameworks": {
           "netcoreapp3.1": {
-            "targetAlias": "netcoreapp3.1",
             "projectReferences": {}
           }
         },
@@ -38,7 +37,6 @@
       },
       "frameworks": {
         "netcoreapp3.1": {
-          "targetAlias": "netcoreapp3.1",
           "dependencies": {
             "EntityFramework": {
               "target": "Package",
@@ -58,17 +56,17 @@
             },
             "Microsoft.EntityFrameworkCore.SqlServer": {
               "target": "Package",
-              "version": "[3.1.10, )"
+              "version": "[3.1.11, )"
             },
             "Microsoft.EntityFrameworkCore.Sqlite": {
               "target": "Package",
-              "version": "[3.1.10, )"
+              "version": "[3.1.11, )"
             },
             "Microsoft.EntityFrameworkCore.Tools": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
               "suppressParent": "All",
               "target": "Package",
-              "version": "[3.1.10, )"
+              "version": "[3.1.11, )"
             },
             "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
               "target": "Package",
@@ -97,7 +95,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.103\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.406\\RuntimeIdentifierGraph.json"
         }
       }
     }
