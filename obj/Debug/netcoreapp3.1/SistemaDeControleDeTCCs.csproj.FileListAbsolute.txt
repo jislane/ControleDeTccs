@@ -1072,3 +1072,10 @@ C:\Users\Zero\Documents\IFS\20202\PROJETO_INTEGRADOR_II\PROJ\ControleDeTccs\obj\
 C:\Users\Zero\Documents\IFS\20202\PROJETO_INTEGRADOR_II\PROJ\ControleDeTccs\obj\Debug\netcoreapp3.1\Razor\Areas\Administrador\Views\Cursos\Index.cshtml.g.cs
 C:\Users\Zero\Documents\IFS\20202\PROJETO_INTEGRADOR_II\PROJ\ControleDeTccs\obj\Debug\netcoreapp3.1\Razor\Areas\Administrador\Views\_ViewImports.cshtml.g.cs
 C:\Users\Zero\Documents\IFS\20202\PROJETO_INTEGRADOR_II\PROJ\ControleDeTccs\obj\Debug\netcoreapp3.1\Razor\Areas\Administrador\Views\_ViewStart.cshtml.g.cs
+C:\Users\Thiago Teixeira\source\repos\ControleDeTccs\obj\Debug\netcoreapp3.1\Razor\Areas\Administrador\Views\Cursos\Create.cshtml.g.cs
+C:\Users\Thiago Teixeira\source\repos\ControleDeTccs\obj\Debug\netcoreapp3.1\Razor\Areas\Administrador\Views\Cursos\Delete.cshtml.g.cs
+C:\Users\Thiago Teixeira\source\repos\ControleDeTccs\obj\Debug\netcoreapp3.1\Razor\Areas\Administrador\Views\Cursos\Details.cshtml.g.cs
+C:\Users\Thiago Teixeira\source\repos\ControleDeTccs\obj\Debug\netcoreapp3.1\Razor\Areas\Administrador\Views\Cursos\Edit.cshtml.g.cs
+C:\Users\Thiago Teixeira\source\repos\ControleDeTccs\obj\Debug\netcoreapp3.1\Razor\Areas\Administrador\Views\Cursos\Index.cshtml.g.cs
+C:\Users\Thiago Teixeira\source\repos\ControleDeTccs\obj\Debug\netcoreapp3.1\Razor\Areas\Administrador\Views\_ViewImports.cshtml.g.cs
+C:\Users\Thiago Teixeira\source\repos\ControleDeTccs\obj\Debug\netcoreapp3.1\Razor\Areas\Administrador\Views\_ViewStart.cshtml.g.cs
