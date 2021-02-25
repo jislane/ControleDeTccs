@@ -16,8 +16,6 @@
     })
 </script>
 
-<h1>@ViewData["Title"]</h1>
-
 @if (TempData["Success"] != null)
 {
     <div class="alert alert-success alert-dismissible fade show" role="alert">
@@ -38,10 +36,8 @@
     </div>
 }
 
-<th>
-    <a asp-action="AddOrEdit" class="btn btn-outline-success"><i class="fa fa-book" aria-hidden="true"></i> Novo</a>
-</th>
-<p></p>
+<h1>@ViewData["Title"]</h1>
+<a asp-action="AddOrEdit" class="btn btn-outline-success btnAdd"><i class="fa fa-book" aria-hidden="true"></i> Novo</a>
 
 <!--
     <form asp-action="Index" method="get">
