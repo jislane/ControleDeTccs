@@ -801,3 +801,10 @@ C:\Users\R&M\Documents\Controle TCC\ControleDeTccs\obj\Debug\netcoreapp3.1\Siste
 C:\Users\R&M\Documents\Controle TCC\ControleDeTccs\obj\Debug\netcoreapp3.1\SistemaDeControleDeTCCs.MvcApplicationPartsAssemblyInfo.cs
 C:\Users\R&M\Documents\Controle TCC\ControleDeTccs\obj\Debug\netcoreapp3.1\SistemaDeControleDeTCCs.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\R&M\Documents\Controle TCC\ControleDeTccs\obj\Debug\netcoreapp3.1\Razor\Views\Logger\Index.cshtml.g.cs
+C:\Users\Full Plus\source\repos\manasses-ifs\ControleDeTccs\obj\Debug\netcoreapp3.1\SistemaDeControleDeTCCs.AssemblyInfoInputs.cache
+C:\Users\Full Plus\source\repos\manasses-ifs\ControleDeTccs\obj\Debug\netcoreapp3.1\SistemaDeControleDeTCCs.AssemblyInfo.cs
+C:\Users\Full Plus\source\repos\manasses-ifs\ControleDeTccs\obj\Debug\netcoreapp3.1\SistemaDeControleDeTCCs.csproj.CoreCompileInputs.cache
+C:\Users\Full Plus\source\repos\manasses-ifs\ControleDeTccs\obj\Debug\netcoreapp3.1\SistemaDeControleDeTCCs.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\Full Plus\source\repos\manasses-ifs\ControleDeTccs\obj\Debug\netcoreapp3.1\SistemaDeControleDeTCCs.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\Full Plus\source\repos\manasses-ifs\ControleDeTccs\obj\Debug\netcoreapp3.1\SistemaDeControleDeTCCs.RazorAssemblyInfo.cache
+C:\Users\Full Plus\source\repos\manasses-ifs\ControleDeTccs\obj\Debug\netcoreapp3.1\SistemaDeControleDeTCCs.RazorAssemblyInfo.cs

@@ -43,12 +43,27 @@ namespace SistemaDeControleDeTCCs.Controllers
                 return NotFound();
             }
 
+            _context.LogAuditoria.Add(
+                new LogAuditoria
+                {
+                    EmailUsuario = User.Identity.Name,
+                    DetalhesAuditoria = "Entrou na tela de listagem de calendarios"
+                });
+
             return View(calendario);
         }
 
         // GET: Calendarios/Create
         public IActionResult Create()
         {
+            _context.LogAuditoria.Add(
+                new LogAuditoria
+                {
+                    EmailUsuario=User.Identity.Name,
+                    DetalhesAuditoria = "Entrou na tela de cadastro de calendarios"
+                });
+
+            _context.SaveChanges();
             return View();
         }
 
@@ -75,6 +90,16 @@ namespace SistemaDeControleDeTCCs.Controllers
                 await _context.SaveChangesAsync();
                 TempData["Success"] = "Calendário de banca cadastrado com sucesso.";
                 return RedirectToAction(nameof(Index));
+
+                _context.LogAuditoria.Add(
+                new LogAuditoria
+                {
+                    EmailUsuario = User.Identity.Name,
+                    DetalhesAuditoria = string.Concat("Cadastrou o calendario:",
+                    calendario.CalendarioId, "Data de cadastro: ", DateTime.Now.ToLongDateString())
+                });
+
+                _context.SaveChanges();
             }
             return View(calendario);
         }
@@ -89,9 +114,21 @@ namespace SistemaDeControleDeTCCs.Controllers
 
             var calendario = await _context.Calendario.FindAsync(id);
             if (calendario == null)
+
+               
             {
                 return NotFound();
             }
+
+            _context.LogAuditoria.Add(
+                new LogAuditoria
+                {
+                    EmailUsuario = User.Identity.Name,
+                    DetalhesAuditoria = "Entrou na tela de edição de calendarios:"
+                    
+                });
+
+
             return View(calendario);
         }
 
@@ -136,6 +173,14 @@ namespace SistemaDeControleDeTCCs.Controllers
                         throw;
                     }
                 }
+
+                new LogAuditoria
+                {
+                    EmailUsuario = User.Identity.Name,
+                    DetalhesAuditoria = string.Concat("Editou o calendario:",
+                   calendario.CalendarioId, "Data da edição: ", DateTime.Now.ToLongDateString())
+                };
+
                 TempData["Success"] = "Calendário de banca alterado com sucesso.";
                 return RedirectToAction(nameof(Index));
             }
@@ -170,6 +215,13 @@ namespace SistemaDeControleDeTCCs.Controllers
             await _context.SaveChangesAsync();
             TempData["Success"] = "Calendário de banca excluído com sucesso.";
             return RedirectToAction(nameof(Index));
+
+            new LogAuditoria
+            {
+                EmailUsuario = User.Identity.Name,
+                DetalhesAuditoria = string.Concat("Deletou o calendario:",
+                   calendario.CalendarioId, "Data da deleção: ", DateTime.Now.ToLongDateString())
+            };
         }
 
         private bool CalendarioExists(int id)

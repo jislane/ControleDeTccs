@@ -95,6 +95,13 @@ namespace SistemaDeControleDeTCCs.Controllers
             }
 
             TccViewModel viewModel = new TccViewModel { Tccs = tccs.OrderBy(x => x.Tema).ToList(), Banca = banca };
+
+            _context.LogAuditoria.Add(
+                new LogAuditoria
+                {
+                    EmailUsuario = User.Identity.Name,
+                    DetalhesAuditoria = "Entrou na tela de listagem de TCC's"
+                });
             return View(viewModel);
         }
 
@@ -143,6 +150,14 @@ namespace SistemaDeControleDeTCCs.Controllers
                     //*****************
                     var discente = _context.Usuario.Where(x => x.Id == tcc.UsuarioId).FirstOrDefault();
                     _senderEmail.NotificarDiscenteCadastroTCCViaEmail(discente, tcc.Tema);
+
+                    _context.LogAuditoria.Add(
+               new LogAuditoria
+               {
+                   EmailUsuario = User.Identity.Name,
+                   DetalhesAuditoria = string.Concat("Cadastrou um TCC:",
+                   tcc.TccId, "Data de cadastro: ", DateTime.Now.ToLongDateString())
+               });
                 }
                 else
                 {
@@ -158,6 +173,13 @@ namespace SistemaDeControleDeTCCs.Controllers
                     _context.Update(banca);
                     await _context.SaveChangesAsync();
                     //*****************
+                    _context.LogAuditoria.Add(
+              new LogAuditoria
+              {
+                  EmailUsuario = User.Identity.Name,
+                  DetalhesAuditoria = string.Concat("Atualizou um TCC:",
+                  tcc.TccId, "Data de atualização: ", DateTime.Now.ToLongDateString())
+              });
 
                 }
 
@@ -261,6 +283,15 @@ namespace SistemaDeControleDeTCCs.Controllers
         {
             var tcc = await _context.Tccs.FindAsync(id);
             _context.Tccs.Remove(tcc);
+
+            _context.LogAuditoria.Add(
+              new LogAuditoria
+              {
+                  EmailUsuario = User.Identity.Name,
+                  DetalhesAuditoria = string.Concat("Excluiu um TCC:",
+                  tcc.TccId, "Data da exclusão : ", DateTime.Now.ToLongDateString())
+              });
+
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
@@ -289,6 +320,15 @@ namespace SistemaDeControleDeTCCs.Controllers
             var tcc = await _context.Tccs.FindAsync(id);
             tcc.StatusId = _context.Status.Where(x => x.DescStatus.ToLower().Equals("cancelado")).Select(x => x.StatusId).FirstOrDefault();
             _context.Update(tcc);
+
+            _context.LogAuditoria.Add(
+              new LogAuditoria
+              {
+                  EmailUsuario = User.Identity.Name,
+                  DetalhesAuditoria = string.Concat("Cancelou um TCC:",
+                  tcc.TccId, "Data de cancelamento: ", DateTime.Now.ToLongDateString())
+              });
+
             await _context.SaveChangesAsync();
             TempData["Success"] = "Operação concluída! O TCC foi cancelado.";
             return RedirectToAction(nameof(Index));

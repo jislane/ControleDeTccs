@@ -1,20 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\R&M\\Documents\\Controle TCC\\ControleDeTccs\\SistemaDeControleDeTCCs.csproj": {}
+    "C:\\Users\\Full Plus\\source\\repos\\manasses-ifs\\ControleDeTccs\\SistemaDeControleDeTCCs.csproj": {}
   },
   "projects": {
-    "C:\\Users\\R&M\\Documents\\Controle TCC\\ControleDeTccs\\SistemaDeControleDeTCCs.csproj": {
+    "C:\\Users\\Full Plus\\source\\repos\\manasses-ifs\\ControleDeTccs\\SistemaDeControleDeTCCs.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\R&M\\Documents\\Controle TCC\\ControleDeTccs\\SistemaDeControleDeTCCs.csproj",
+        "projectUniqueName": "C:\\Users\\Full Plus\\source\\repos\\manasses-ifs\\ControleDeTccs\\SistemaDeControleDeTCCs.csproj",
         "projectName": "SistemaDeControleDeTCCs",
-        "projectPath": "C:\\Users\\R&M\\Documents\\Controle TCC\\ControleDeTccs\\SistemaDeControleDeTCCs.csproj",
-        "packagesPath": "C:\\Users\\R&M\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\R&M\\Documents\\Controle TCC\\ControleDeTccs\\obj\\",
+        "projectPath": "C:\\Users\\Full Plus\\source\\repos\\manasses-ifs\\ControleDeTccs\\SistemaDeControleDeTCCs.csproj",
+        "packagesPath": "C:\\Users\\Full Plus\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Full Plus\\source\\repos\\manasses-ifs\\ControleDeTccs\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
         "configFilePaths": [
-          "C:\\Users\\R&M\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Full Plus\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -26,6 +29,7 @@
         },
         "frameworks": {
           "netcoreapp3.1": {
+            "targetAlias": "netcoreapp3.1",
             "projectReferences": {}
           }
         },
@@ -37,6 +41,7 @@
       },
       "frameworks": {
         "netcoreapp3.1": {
+          "targetAlias": "netcoreapp3.1",
           "dependencies": {
             "EntityFramework": {
               "target": "Package",
@@ -137,7 +142,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.406\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.103\\RuntimeIdentifierGraph.json"
         }
       }
     }

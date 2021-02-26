@@ -24,8 +24,9 @@ namespace SistemaDeControleDeTCCs.Extentions.Filters
                 var urlAcessada = context.HttpContext.Request.GetDisplayUrl();
                 var valueHost = context.HttpContext.Request.Host.Value;
                 var tipoContent = context.HttpContext.Request.ContentType;
+                var dadoauterado = context.HttpContext.Items.Values;
 
-                var logMsg = $"O usuário {user} acessou a Url {urlAcessada} \nEm: {DateTime.Now} \n =============================\n{valueHost}\n{tipoContent}\nTipo de Autenticação: {tipoAuth}";
+                var logMsg = $"O usuário {user} acessou a Url {urlAcessada} \nEm: {DateTime.Now} \n =============================\n{valueHost}\n{tipoContent}\nTipo de Autenticação: {tipoAuth}\nO seguinte dado foi auterado:{dadoauterado}";
 
                 _logger.Info(logMsg);
               
