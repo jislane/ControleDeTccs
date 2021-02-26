@@ -9980,11 +9980,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Full Plus\\source\\repos\\manasses-ifs\\ControleDeTccs\\SistemaDeControleDeTCCs.csproj",
+      "projectUniqueName": "E:\\Desktop\\Controle de TCC\\ControleDeTccs\\SistemaDeControleDeTCCs.csproj",
       "projectName": "SistemaDeControleDeTCCs",
-      "projectPath": "C:\\Users\\Full Plus\\source\\repos\\manasses-ifs\\ControleDeTccs\\SistemaDeControleDeTCCs.csproj",
+      "projectPath": "E:\\Desktop\\Controle de TCC\\ControleDeTccs\\SistemaDeControleDeTCCs.csproj",
       "packagesPath": "C:\\Users\\Full Plus\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Full Plus\\source\\repos\\manasses-ifs\\ControleDeTccs\\obj\\",
+      "outputPath": "E:\\Desktop\\Controle de TCC\\ControleDeTccs\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

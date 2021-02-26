@@ -47,6 +47,7 @@ namespace SistemaDeControleDeTCCs.Controllers
                     b.TipoUsuario = _context.TipoUsuario.Find(b.TipoUsuarioId);
                     banca.Add(b);
                 }
+
             }
             // filtros
             if (!string.IsNullOrEmpty(filterTema))
@@ -96,13 +97,9 @@ namespace SistemaDeControleDeTCCs.Controllers
 
             TccViewModel viewModel = new TccViewModel { Tccs = tccs.OrderBy(x => x.Tema).ToList(), Banca = banca };
 
-            _context.LogAuditoria.Add(
-                new LogAuditoria
-                {
-                    EmailUsuario = User.Identity.Name,
-                    DetalhesAuditoria = "Entrou na tela de listagem de TCC's"
-                });
+
             return View(viewModel);
+
         }
 
         [Authorize(Roles = "Coordenador")]
@@ -146,18 +143,21 @@ namespace SistemaDeControleDeTCCs.Controllers
                     banca.Usuario = _context.Usuario.Where(x => x.Id == OrientadorId).Single();
                     banca.DataDeCadastro = DateTime.Now;
                     _context.Add(banca);
+
+                    _context.LogAuditoria.Add(
+                    new LogAuditoria
+                       {
+                   EmailUsuario = User.Identity.Name,
+                   DetalhesAuditoria = string.Concat("Cadastrou o TCC de Id:",
+                   tcc.TccId, "Data de cadastro: ", DateTime.Now.ToLongDateString())
+                        });
+
                     await _context.SaveChangesAsync();
                     //*****************
                     var discente = _context.Usuario.Where(x => x.Id == tcc.UsuarioId).FirstOrDefault();
                     _senderEmail.NotificarDiscenteCadastroTCCViaEmail(discente, tcc.Tema);
 
-                    _context.LogAuditoria.Add(
-               new LogAuditoria
-               {
-                   EmailUsuario = User.Identity.Name,
-                   DetalhesAuditoria = string.Concat("Cadastrou um TCC:",
-                   tcc.TccId, "Data de cadastro: ", DateTime.Now.ToLongDateString())
-               });
+
                 }
                 else
                 {
@@ -171,15 +171,17 @@ namespace SistemaDeControleDeTCCs.Controllers
                     banca.Usuario = _context.Usuario.Where(x => x.Id == OrientadorId).Single();
                     banca.DataDeCadastro = DateTime.Now;
                     _context.Update(banca);
+
+                    _context.LogAuditoria.Add(
+                         new LogAuditoria
+                      {
+                     EmailUsuario = User.Identity.Name,
+                    DetalhesAuditoria = string.Concat("Atualizou o TCC de Id:",
+                    tcc.TccId, "Data de atualização: ", DateTime.Now.ToLongDateString())
+                           });
                     await _context.SaveChangesAsync();
                     //*****************
-                    _context.LogAuditoria.Add(
-              new LogAuditoria
-              {
-                  EmailUsuario = User.Identity.Name,
-                  DetalhesAuditoria = string.Concat("Atualizou um TCC:",
-                  tcc.TccId, "Data de atualização: ", DateTime.Now.ToLongDateString())
-              });
+                    
 
                 }
 
@@ -288,7 +290,7 @@ namespace SistemaDeControleDeTCCs.Controllers
               new LogAuditoria
               {
                   EmailUsuario = User.Identity.Name,
-                  DetalhesAuditoria = string.Concat("Excluiu um TCC:",
+                  DetalhesAuditoria = string.Concat("Excluiu o  TCC de Id:",
                   tcc.TccId, "Data da exclusão : ", DateTime.Now.ToLongDateString())
               });
 
@@ -325,7 +327,7 @@ namespace SistemaDeControleDeTCCs.Controllers
               new LogAuditoria
               {
                   EmailUsuario = User.Identity.Name,
-                  DetalhesAuditoria = string.Concat("Cancelou um TCC:",
+                  DetalhesAuditoria = string.Concat("Cancelou o TCC de Id:",
                   tcc.TccId, "Data de cancelamento: ", DateTime.Now.ToLongDateString())
               });
 
@@ -336,6 +338,7 @@ namespace SistemaDeControleDeTCCs.Controllers
 
         public IActionResult Resumo(int? id)
         {
+
             return View("Resumo", _context.Tccs.Where(t => t.TccId == id).ToList());
         }
     }
