@@ -53,6 +53,10 @@
     <None Include="wwwroot\js\site.js" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Migrations\" />
+  </ItemGroup>
+
 
 
 </Project>

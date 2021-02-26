@@ -977,7 +977,6 @@ E:\Desktop\Controle de TCC\ControleDeTccs\bin\Debug\netcoreapp3.1\runtimes\win\l
 E:\Desktop\Controle de TCC\ControleDeTccs\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.0\System.Runtime.Caching.dll
 E:\Desktop\Controle de TCC\ControleDeTccs\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.0\System.Runtime.Caching.dll
 E:\Desktop\Controle de TCC\ControleDeTccs\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
-E:\Desktop\Controle de TCC\ControleDeTccs\obj\Debug\netcoreapp3.1\SistemaDeControleDeTCCs.csprojAssemblyReference.cache
 E:\Desktop\Controle de TCC\ControleDeTccs\obj\Debug\netcoreapp3.1\SistemaDeControleDeTCCs.AssemblyInfoInputs.cache
 E:\Desktop\Controle de TCC\ControleDeTccs\obj\Debug\netcoreapp3.1\SistemaDeControleDeTCCs.AssemblyInfo.cs
 E:\Desktop\Controle de TCC\ControleDeTccs\obj\Debug\netcoreapp3.1\SistemaDeControleDeTCCs.csproj.CoreCompileInputs.cache
@@ -991,6 +990,13 @@ E:\Desktop\Controle de TCC\ControleDeTccs\obj\Debug\netcoreapp3.1\scopedcss\bund
 E:\Desktop\Controle de TCC\ControleDeTccs\obj\Debug\netcoreapp3.1\SistemaDeControleDeTCCs.TagHelpers.input.cache
 E:\Desktop\Controle de TCC\ControleDeTccs\obj\Debug\netcoreapp3.1\SistemaDeControleDeTCCs.TagHelpers.output.cache
 E:\Desktop\Controle de TCC\ControleDeTccs\obj\Debug\netcoreapp3.1\SistemaDeControleDeTCCs.RazorCoreGenerate.cache
+E:\Desktop\Controle de TCC\ControleDeTccs\obj\Debug\netcoreapp3.1\Razor\Areas\Administrador\Views\Cursos\Create.cshtml.g.cs
+E:\Desktop\Controle de TCC\ControleDeTccs\obj\Debug\netcoreapp3.1\Razor\Areas\Administrador\Views\Cursos\Delete.cshtml.g.cs
+E:\Desktop\Controle de TCC\ControleDeTccs\obj\Debug\netcoreapp3.1\Razor\Areas\Administrador\Views\Cursos\Details.cshtml.g.cs
+E:\Desktop\Controle de TCC\ControleDeTccs\obj\Debug\netcoreapp3.1\Razor\Areas\Administrador\Views\Cursos\Edit.cshtml.g.cs
+E:\Desktop\Controle de TCC\ControleDeTccs\obj\Debug\netcoreapp3.1\Razor\Areas\Administrador\Views\Cursos\Index.cshtml.g.cs
+E:\Desktop\Controle de TCC\ControleDeTccs\obj\Debug\netcoreapp3.1\Razor\Areas\Administrador\Views\_ViewImports.cshtml.g.cs
+E:\Desktop\Controle de TCC\ControleDeTccs\obj\Debug\netcoreapp3.1\Razor\Areas\Administrador\Views\_ViewStart.cshtml.g.cs
 E:\Desktop\Controle de TCC\ControleDeTccs\obj\Debug\netcoreapp3.1\Razor\Areas\Coordenador\Views\Calendarios\Create.cshtml.g.cs
 E:\Desktop\Controle de TCC\ControleDeTccs\obj\Debug\netcoreapp3.1\Razor\Areas\Coordenador\Views\Calendarios\Delete.cshtml.g.cs
 E:\Desktop\Controle de TCC\ControleDeTccs\obj\Debug\netcoreapp3.1\Razor\Areas\Coordenador\Views\Calendarios\Details.cshtml.g.cs
@@ -1086,3 +1092,4 @@ E:\Desktop\Controle de TCC\ControleDeTccs\obj\Debug\netcoreapp3.1\SistemaDeContr
 E:\Desktop\Controle de TCC\ControleDeTccs\obj\Debug\netcoreapp3.1\SistemaDeControleDeTCCs.dll
 E:\Desktop\Controle de TCC\ControleDeTccs\obj\Debug\netcoreapp3.1\SistemaDeControleDeTCCs.pdb
 E:\Desktop\Controle de TCC\ControleDeTccs\obj\Debug\netcoreapp3.1\SistemaDeControleDeTCCs.genruntimeconfig.cache
+E:\Desktop\Controle de TCC\ControleDeTccs\obj\Debug\netcoreapp3.1\SistemaDeControleDeTCCs.csprojAssemblyReference.cache
