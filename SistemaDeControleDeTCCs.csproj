@@ -49,10 +49,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Areas\Administrador\Controllers\" />
-    <Folder Include="Areas\Administrador\Data\" />
-    <Folder Include="Areas\Administrador\Models\" />
-    <Folder Include="Areas\Administrador\Views\" />
+    <None Include="wwwroot\Imagens\ifs-instituto-federal-de-educacao-ciencia-e-tecnologia-de-sergipe.png" />
+    <None Include="wwwroot\js\site.js" />
   </ItemGroup>
 
 

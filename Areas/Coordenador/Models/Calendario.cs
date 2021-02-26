@@ -11,18 +11,28 @@ namespace SistemaDeControleDeTCCs.Models
     {
         [Key]
         public int CalendarioId { get; set; }
-        [Required(ErrorMessage = "O {0} é obrigatório")]
+
+        [Display(Name = "Ano")]
+        [Required(ErrorMessage = "O campo {0} é obrigatorio.")]
         public int Ano { get; set; }
-        [Required(ErrorMessage = "O {0} é obrigatório")]
+
+        [Display(Name = "Semestre")]
+        [Required(ErrorMessage = "O campo {0} é obrigatorio.")]
         public int Semestre { get; set; }
+
         [Display(Name = "Data Início")]
-        [Required(ErrorMessage = "A {0} é obrigatória")]
+        [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}")]
+        [Required(ErrorMessage = "O campo {0} é obrigatorio.")]
         [DataType(DataType.Date, ErrorMessage = "Data inválida")]
         public DateTime DataInicio { get; set; }
+
         [Display(Name = "Data Fim")]
-        [Required(ErrorMessage = "A {0} é obrigatória")]
+        [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}")]
+        [Required(ErrorMessage = "O campo {0} é obrigatorio.")]
         [DataType(DataType.Date, ErrorMessage = "Data inválida")]
         public DateTime DataFim { get; set; }
+
+        [Display(Name = "Situação")]
         public Boolean Ativo { get; set; }
     }
 }

@@ -1,6 +1,7 @@
 {
   "format": 1,
   "restore": {
+<<<<<<< HEAD
     "E:\\Desktop\\Controle de TCC\\ControleDeTccs\\SistemaDeControleDeTCCs.csproj": {}
   },
   "projects": {
@@ -12,12 +13,29 @@
         "projectPath": "E:\\Desktop\\Controle de TCC\\ControleDeTccs\\SistemaDeControleDeTCCs.csproj",
         "packagesPath": "C:\\Users\\Full Plus\\.nuget\\packages\\",
         "outputPath": "E:\\Desktop\\Controle de TCC\\ControleDeTccs\\obj\\",
+=======
+    "C:\\Users\\Thiago Teixeira\\source\\repos\\ControleDeTccs\\SistemaDeControleDeTCCs.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\Thiago Teixeira\\source\\repos\\ControleDeTccs\\SistemaDeControleDeTCCs.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Thiago Teixeira\\source\\repos\\ControleDeTccs\\SistemaDeControleDeTCCs.csproj",
+        "projectName": "SistemaDeControleDeTCCs",
+        "projectPath": "C:\\Users\\Thiago Teixeira\\source\\repos\\ControleDeTccs\\SistemaDeControleDeTCCs.csproj",
+        "packagesPath": "C:\\Users\\Thiago Teixeira\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Thiago Teixeira\\source\\repos\\ControleDeTccs\\obj\\",
+>>>>>>> 1861ba15b001befe3ae923bd8dcc413ac1e1d9b5
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
+<<<<<<< HEAD
           "C:\\Users\\Full Plus\\AppData\\Roaming\\NuGet\\NuGet.Config",
+=======
+          "C:\\Users\\Thiago Teixeira\\AppData\\Roaming\\NuGet\\NuGet.Config",
+>>>>>>> 1861ba15b001befe3ae923bd8dcc413ac1e1d9b5
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -57,10 +75,11 @@
             },
             "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
               "target": "Package",
-              "version": "[3.1.9, )"
+              "version": "[3.1.10, )"
             },
             "Microsoft.AspNetCore.Identity.UI": {
               "target": "Package",
+<<<<<<< HEAD
               "version": "[3.1.9, )"
             },
             "Microsoft.EntityFrameworkCore": {
@@ -76,6 +95,9 @@
               "suppressParent": "All",
               "target": "Package",
               "version": "[3.1.9, )"
+=======
+              "version": "[3.1.10, )"
+>>>>>>> 1861ba15b001befe3ae923bd8dcc413ac1e1d9b5
             },
             "Microsoft.EntityFrameworkCore.InMemory": {
               "target": "Package",
@@ -87,7 +109,7 @@
             },
             "Microsoft.EntityFrameworkCore.SqlServer": {
               "target": "Package",
-              "version": "[3.1.9, )"
+              "version": "[3.1.11, )"
             },
             "Microsoft.EntityFrameworkCore.SqlServer.Design": {
               "target": "Package",
@@ -95,7 +117,7 @@
             },
             "Microsoft.EntityFrameworkCore.Sqlite": {
               "target": "Package",
-              "version": "[3.1.9, )"
+              "version": "[3.1.11, )"
             },
             "Microsoft.EntityFrameworkCore.Sqlite.Core": {
               "target": "Package",
@@ -105,19 +127,11 @@
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
               "suppressParent": "All",
               "target": "Package",
-              "version": "[3.1.9, )"
-            },
-            "Microsoft.VisualStudio.Web.CodeGeneration": {
-              "target": "Package",
-              "version": "[3.1.4, )"
-            },
-            "Microsoft.VisualStudio.Web.CodeGeneration.Core": {
-              "target": "Package",
-              "version": "[3.1.4, )"
+              "version": "[3.1.11, )"
             },
             "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
               "target": "Package",
-              "version": "[3.1.4, )"
+              "version": "[3.1.5, )"
             },
             "iTextSharp": {
               "target": "Package",

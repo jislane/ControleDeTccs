@@ -28,6 +28,12 @@
                     <ul class="navbar-nav flex-grow-1">
                         @if (SignInManager.IsSignedIn(User))
                         {
+                            @if (User.IsInRole("Administrador"))
+                            {
+                                <li class="nav-item">
+                                    <a class="nav-link text-dark" asp-area="Administrador" asp-controller="Cursos" asp-action="Index">Cursos</a>
+                                </li>
+                            }
                             @if (User.IsInRole("Administrador") || User.IsInRole("Coordenador"))
                             {
                                 <li class="nav-item">
@@ -77,7 +83,6 @@
             @RenderBody()
         </main>
     </div>
-
     <footer class="border-top footer text-muted">
         <div class="container">
             &copy; 2020 - SistemaDeControleDeTCCs

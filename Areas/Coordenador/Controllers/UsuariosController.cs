@@ -38,8 +38,7 @@ namespace SistemaDeControleDeTCCs.Controllers
         // GET: Usuarios
         public IActionResult Index(string filterNome, string filterMatriculaCPF, int filterTipoUsuario)
         {
-
-            List<Usuario> usuarios = _context.Usuario.ToList();
+            List<Usuario> usuarios = _context.Usuario.Include(u => u.TipoUsuario).ToList();
             // filtros
             if (!string.IsNullOrEmpty(filterNome))
             {
