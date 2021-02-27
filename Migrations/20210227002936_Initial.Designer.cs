@@ -10,14 +10,14 @@ using SistemaDeControleDeTCCs.Data;
 namespace SistemaDeControleDeTCCs.Migrations
 {
     [DbContext(typeof(SistemaDeControleDeTCCsContext))]
-    [Migration("20210226051941_Intial")]
-    partial class Intial
+    [Migration("20210227002936_Initial")]
+    partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "3.1.9")
+                .HasAnnotation("ProductVersion", "3.1.11")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 

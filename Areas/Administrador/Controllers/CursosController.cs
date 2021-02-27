@@ -72,14 +72,14 @@ namespace SistemaDeControleDeTCCs.Areas.Administrador.Controllers
             if (ModelState.IsValid)
             {
                 _context.Add(curso);
-                _context.LogAuditoria.Add(
+
+					_context.LogAuditoria.Add(
                    new LogAuditoria
                    {
                        EmailUsuario = User.Identity.Name,
                        DetalhesAuditoria = string.Concat("Cadastrou o curso de Id:",
                   curso.Id, "Data de cadastro: ", DateTime.Now.ToLongDateString())
                    });
-
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
@@ -162,8 +162,7 @@ namespace SistemaDeControleDeTCCs.Areas.Administrador.Controllers
                     }
                     TempData.Remove("idCoordenadorAtual");
                     _context.Update(curso);
-
-                    _context.LogAuditoria.Add(
+					_context.LogAuditoria.Add(
                    new LogAuditoria
                    {
                        EmailUsuario = User.Identity.Name,
@@ -234,7 +233,7 @@ namespace SistemaDeControleDeTCCs.Areas.Administrador.Controllers
             var curso = await _context.Cursos.FindAsync(id);
             _context.Cursos.Remove(curso);
 
-            _context.LogAuditoria.Add(
+			_context.LogAuditoria.Add(
                    new LogAuditoria
                    {
                        EmailUsuario = User.Identity.Name,
