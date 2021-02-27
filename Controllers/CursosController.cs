@@ -12,7 +12,6 @@ using SistemaDeControleDeTCCs.Models;
 
 namespace SistemaDeControleDeTCCs.Areas.Administrador.Controllers
 {
-    [Area("Administrador")]
     [Authorize(Policy = "Administrador")]
     public class CursosController : Controller
 
@@ -141,7 +140,7 @@ namespace SistemaDeControleDeTCCs.Areas.Administrador.Controllers
                     //var roleProf = _roleManager.FindByNameAsync(tipoProf.DescTipo).Result;
                     //var roleCoord = _roleManager.FindByNameAsync(tipoCoord.DescTipo).Result;
 
-                    if (TempData["idCoordenadorAtual"].ToString() != null && curso.IdCoordenador != TempData["idCoordenadorAtual"].ToString())
+                    if (TempData["idCoordenadorAtual"] != null && curso.IdCoordenador != TempData["idCoordenadorAtual"].ToString())
                     {
                         Usuario coordenadorAtual = await _context.Usuario.FindAsync(TempData["idCoordenadorAtual"].ToString());
                         coordenadorAtual.TipoUsuario = tipoProf;
@@ -150,7 +149,7 @@ namespace SistemaDeControleDeTCCs.Areas.Administrador.Controllers
                         // Adiciona a Role Nova
                         await _userManager.AddToRoleAsync(coordenadorAtual, tipoProf.DescTipo);
                     }
-                    if (curso.IdCoordenador != null && curso.IdCoordenador != TempData["idCoordenadorAtual"].ToString())
+                    if (curso.IdCoordenador != null && curso.IdCoordenador != TempData["idCoordenadorAtual"])
                     {
                         Usuario novoCoordenador = await _context.Usuario.FindAsync(curso.IdCoordenador);
                         novoCoordenador.TipoUsuario = tipoCoord;

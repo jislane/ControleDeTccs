@@ -10,8 +10,8 @@ using SistemaDeControleDeTCCs.Data;
 namespace SistemaDeControleDeTCCs.Migrations
 {
     [DbContext(typeof(SistemaDeControleDeTCCsContext))]
-    [Migration("20210227002936_Initial")]
-    partial class Initial
+    [Migration("20210227132312_initial")]
+    partial class initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {

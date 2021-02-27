@@ -15,7 +15,6 @@ using SistemaDeControleDeTCCs.Utils;
 
 namespace SistemaDeControleDeTCCs.Controllers
 {
-    [Area("Coordenador")]
     [Authorize(Roles = "Administrador, Coordenador")]
     public class UsuariosController : Controller
     {

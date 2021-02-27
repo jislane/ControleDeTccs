@@ -11,7 +11,6 @@ using SistemaDeControleDeTCCs.Models;
 
 namespace SistemaDeControleDeTCCs.Controllers
 {
-    [Area("Coordenador")]
     [Authorize(Policy = "Coordenador")]
     public class CalendariosController : Controller
     {

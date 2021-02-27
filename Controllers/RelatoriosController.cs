@@ -11,7 +11,6 @@ using SistemaDeControleDeTCCs.Models;
 
 namespace SistemaDeControleDeTCCs.Controllers
 {
-    [Area("Coordenador")]
     [Authorize(Roles = "Coordenador")]
     public class RelatoriosController : Controller
     {
