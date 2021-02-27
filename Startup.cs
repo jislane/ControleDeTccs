@@ -97,7 +97,7 @@ namespace SistemaDeControleDeTCCs
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env, PopularBancoDados popularBanco)
         {
-            if (env.IsDevelopment())
+            if (env.IsDevelopment() || env.EnvironmentName.StartsWith("Development."))
             {
                 app.UseDeveloperExceptionPage();
                 app.UseDatabaseErrorPage();
