@@ -523,559 +523,570 @@ C:\Users\Alex e Grace\source\repos\SistemaDeControleDeTCCs\obj\Debug\netcoreapp3
 C:\Users\Alex e Grace\source\repos\SistemaDeControleDeTCCs\obj\Debug\netcoreapp3.1\staticwebassets\SistemaDeControleDeTCCs.StaticWebAssets.xml
 C:\Users\Alex e Grace\source\repos\SistemaDeControleDeTCCs\obj\Debug\netcoreapp3.1\SistemaDeControleDeTCCs.dll
 C:\Users\Alex e Grace\source\repos\SistemaDeControleDeTCCs\obj\Debug\netcoreapp3.1\SistemaDeControleDeTCCs.pdb
-C:\Users\Thiago Teixeira\source\repos\ControleDeTccs\bin\Debug\netcoreapp3.1\appsettings.Development.json
-C:\Users\Thiago Teixeira\source\repos\ControleDeTccs\bin\Debug\netcoreapp3.1\appsettings.json
-C:\Users\Thiago Teixeira\source\repos\ControleDeTccs\bin\Debug\netcoreapp3.1\SistemaDeControleDeTCCs.StaticWebAssets.xml
-C:\Users\Thiago Teixeira\source\repos\ControleDeTccs\bin\Debug\netcoreapp3.1\SistemaDeControleDeTCCs.exe
-C:\Users\Thiago Teixeira\source\repos\ControleDeTccs\bin\Debug\netcoreapp3.1\SistemaDeControleDeTCCs.deps.json
-C:\Users\Thiago Teixeira\source\repos\ControleDeTccs\bin\Debug\netcoreapp3.1\SistemaDeControleDeTCCs.runtimeconfig.json
-C:\Users\Thiago Teixeira\source\repos\ControleDeTccs\bin\Debug\netcoreapp3.1\SistemaDeControleDeTCCs.runtimeconfig.dev.json
-C:\Users\Thiago Teixeira\source\repos\ControleDeTccs\bin\Debug\netcoreapp3.1\SistemaDeControleDeTCCs.dll
-C:\Users\Thiago Teixeira\source\repos\ControleDeTccs\bin\Debug\netcoreapp3.1\SistemaDeControleDeTCCs.pdb
-C:\Users\Thiago Teixeira\source\repos\ControleDeTccs\bin\Debug\netcoreapp3.1\SistemaDeControleDeTCCs.Views.dll
-C:\Users\Thiago Teixeira\source\repos\ControleDeTccs\bin\Debug\netcoreapp3.1\SistemaDeControleDeTCCs.Views.pdb
-C:\Users\Thiago Teixeira\source\repos\ControleDeTccs\bin\Debug\netcoreapp3.1\BouncyCastle.Crypto.dll
-C:\Users\Thiago Teixeira\source\repos\ControleDeTccs\bin\Debug\netcoreapp3.1\EntityFramework.SqlServer.dll
-C:\Users\Thiago Teixeira\source\repos\ControleDeTccs\bin\Debug\netcoreapp3.1\EntityFramework.dll
-C:\Users\Thiago Teixeira\source\repos\ControleDeTccs\bin\Debug\netcoreapp3.1\itextsharp.dll
-C:\Users\Thiago Teixeira\source\repos\ControleDeTccs\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Cryptography.Internal.dll
-C:\Users\Thiago Teixeira\source\repos\ControleDeTccs\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
-C:\Users\Thiago Teixeira\source\repos\ControleDeTccs\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore.dll
-C:\Users\Thiago Teixeira\source\repos\ControleDeTccs\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
-C:\Users\Thiago Teixeira\source\repos\ControleDeTccs\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Identity.UI.Views.V3.dll
-C:\Users\Thiago Teixeira\source\repos\ControleDeTccs\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Identity.UI.Views.V4.dll
-C:\Users\Thiago Teixeira\source\repos\ControleDeTccs\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Identity.UI.dll
-C:\Users\Thiago Teixeira\source\repos\ControleDeTccs\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Razor.Language.dll
-C:\Users\Thiago Teixeira\source\repos\ControleDeTccs\bin\Debug\netcoreapp3.1\Microsoft.Bcl.AsyncInterfaces.dll
-C:\Users\Thiago Teixeira\source\repos\ControleDeTccs\bin\Debug\netcoreapp3.1\Microsoft.Bcl.HashCode.dll
-C:\Users\Thiago Teixeira\source\repos\ControleDeTccs\bin\Debug\netcoreapp3.1\Microsoft.CodeAnalysis.dll
-C:\Users\Thiago Teixeira\source\repos\ControleDeTccs\bin\Debug\netcoreapp3.1\Microsoft.CodeAnalysis.CSharp.dll
-C:\Users\Thiago Teixeira\source\repos\ControleDeTccs\bin\Debug\netcoreapp3.1\Microsoft.CodeAnalysis.CSharp.Workspaces.dll
-C:\Users\Thiago Teixeira\source\repos\ControleDeTccs\bin\Debug\netcoreapp3.1\Microsoft.CodeAnalysis.Razor.dll
-C:\Users\Thiago Teixeira\source\repos\ControleDeTccs\bin\Debug\netcoreapp3.1\Microsoft.CodeAnalysis.Workspaces.dll
-C:\Users\Thiago Teixeira\source\repos\ControleDeTccs\bin\Debug\netcoreapp3.1\Microsoft.Data.SqlClient.dll
-C:\Users\Thiago Teixeira\source\repos\ControleDeTccs\bin\Debug\netcoreapp3.1\Microsoft.Data.Sqlite.dll
-C:\Users\Thiago Teixeira\source\repos\ControleDeTccs\bin\Debug\netcoreapp3.1\Microsoft.DotNet.PlatformAbstractions.dll
-C:\Users\Thiago Teixeira\source\repos\ControleDeTccs\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.dll
-C:\Users\Thiago Teixeira\source\repos\ControleDeTccs\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Abstractions.dll
-C:\Users\Thiago Teixeira\source\repos\ControleDeTccs\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Design.dll
-C:\Users\Thiago Teixeira\source\repos\ControleDeTccs\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Relational.dll
-C:\Users\Thiago Teixeira\source\repos\ControleDeTccs\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Sqlite.dll
-C:\Users\Thiago Teixeira\source\repos\ControleDeTccs\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.SqlServer.dll
-C:\Users\Thiago Teixeira\source\repos\ControleDeTccs\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Caching.Abstractions.dll
-C:\Users\Thiago Teixeira\source\repos\ControleDeTccs\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Caching.Memory.dll
-C:\Users\Thiago Teixeira\source\repos\ControleDeTccs\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Configuration.dll
-C:\Users\Thiago Teixeira\source\repos\ControleDeTccs\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Configuration.Abstractions.dll
-C:\Users\Thiago Teixeira\source\repos\ControleDeTccs\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Configuration.Binder.dll
-C:\Users\Thiago Teixeira\source\repos\ControleDeTccs\bin\Debug\netcoreapp3.1\Microsoft.Extensions.DependencyInjection.dll
-C:\Users\Thiago Teixeira\source\repos\ControleDeTccs\bin\Debug\netcoreapp3.1\Microsoft.Extensions.DependencyInjection.Abstractions.dll
-C:\Users\Thiago Teixeira\source\repos\ControleDeTccs\bin\Debug\netcoreapp3.1\Microsoft.Extensions.DependencyModel.dll
-C:\Users\Thiago Teixeira\source\repos\ControleDeTccs\bin\Debug\netcoreapp3.1\Microsoft.Extensions.FileProviders.Abstractions.dll
-C:\Users\Thiago Teixeira\source\repos\ControleDeTccs\bin\Debug\netcoreapp3.1\Microsoft.Extensions.FileProviders.Embedded.dll
-C:\Users\Thiago Teixeira\source\repos\ControleDeTccs\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Identity.Core.dll
-C:\Users\Thiago Teixeira\source\repos\ControleDeTccs\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Identity.Stores.dll
-C:\Users\Thiago Teixeira\source\repos\ControleDeTccs\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Logging.dll
-C:\Users\Thiago Teixeira\source\repos\ControleDeTccs\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Logging.Abstractions.dll
-C:\Users\Thiago Teixeira\source\repos\ControleDeTccs\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Options.dll
-C:\Users\Thiago Teixeira\source\repos\ControleDeTccs\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Primitives.dll
-C:\Users\Thiago Teixeira\source\repos\ControleDeTccs\bin\Debug\netcoreapp3.1\Microsoft.Identity.Client.dll
-C:\Users\Thiago Teixeira\source\repos\ControleDeTccs\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.Web.CodeGeneration.dll
-C:\Users\Thiago Teixeira\source\repos\ControleDeTccs\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.Web.CodeGeneration.Contracts.dll
-C:\Users\Thiago Teixeira\source\repos\ControleDeTccs\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.Web.CodeGeneration.Core.dll
-C:\Users\Thiago Teixeira\source\repos\ControleDeTccs\bin\Debug\netcoreapp3.1\dotnet-aspnet-codegenerator-design.dll
-C:\Users\Thiago Teixeira\source\repos\ControleDeTccs\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.Web.CodeGeneration.EntityFrameworkCore.dll
-C:\Users\Thiago Teixeira\source\repos\ControleDeTccs\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.Web.CodeGeneration.Templating.dll
-C:\Users\Thiago Teixeira\source\repos\ControleDeTccs\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.Web.CodeGeneration.Utils.dll
-C:\Users\Thiago Teixeira\source\repos\ControleDeTccs\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.Web.CodeGenerators.Mvc.dll
-C:\Users\Thiago Teixeira\source\repos\ControleDeTccs\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll
-C:\Users\Thiago Teixeira\source\repos\ControleDeTccs\bin\Debug\netcoreapp3.1\NuGet.Frameworks.dll
-C:\Users\Thiago Teixeira\source\repos\ControleDeTccs\bin\Debug\netcoreapp3.1\SQLitePCLRaw.batteries_v2.dll
-C:\Users\Thiago Teixeira\source\repos\ControleDeTccs\bin\Debug\netcoreapp3.1\SQLitePCLRaw.nativelibrary.dll
-C:\Users\Thiago Teixeira\source\repos\ControleDeTccs\bin\Debug\netcoreapp3.1\SQLitePCLRaw.core.dll
-C:\Users\Thiago Teixeira\source\repos\ControleDeTccs\bin\Debug\netcoreapp3.1\SQLitePCLRaw.provider.dynamic_cdecl.dll
-C:\Users\Thiago Teixeira\source\repos\ControleDeTccs\bin\Debug\netcoreapp3.1\System.CodeDom.dll
-C:\Users\Thiago Teixeira\source\repos\ControleDeTccs\bin\Debug\netcoreapp3.1\System.Collections.Immutable.dll
-C:\Users\Thiago Teixeira\source\repos\ControleDeTccs\bin\Debug\netcoreapp3.1\System.Composition.AttributedModel.dll
-C:\Users\Thiago Teixeira\source\repos\ControleDeTccs\bin\Debug\netcoreapp3.1\System.Composition.Convention.dll
-C:\Users\Thiago Teixeira\source\repos\ControleDeTccs\bin\Debug\netcoreapp3.1\System.Composition.Hosting.dll
-C:\Users\Thiago Teixeira\source\repos\ControleDeTccs\bin\Debug\netcoreapp3.1\System.Composition.Runtime.dll
-C:\Users\Thiago Teixeira\source\repos\ControleDeTccs\bin\Debug\netcoreapp3.1\System.Composition.TypedParts.dll
-C:\Users\Thiago Teixeira\source\repos\ControleDeTccs\bin\Debug\netcoreapp3.1\System.Configuration.ConfigurationManager.dll
-C:\Users\Thiago Teixeira\source\repos\ControleDeTccs\bin\Debug\netcoreapp3.1\System.Data.SqlClient.dll
-C:\Users\Thiago Teixeira\source\repos\ControleDeTccs\bin\Debug\netcoreapp3.1\System.Diagnostics.DiagnosticSource.dll
-C:\Users\Thiago Teixeira\source\repos\ControleDeTccs\bin\Debug\netcoreapp3.1\System.Runtime.Caching.dll
-C:\Users\Thiago Teixeira\source\repos\ControleDeTccs\bin\Debug\netcoreapp3.1\System.Security.Cryptography.ProtectedData.dll
-C:\Users\Thiago Teixeira\source\repos\ControleDeTccs\bin\Debug\netcoreapp3.1\System.Text.Json.dll
-C:\Users\Thiago Teixeira\source\repos\ControleDeTccs\bin\Debug\netcoreapp3.1\cs\Microsoft.CodeAnalysis.resources.dll
-C:\Users\Thiago Teixeira\source\repos\ControleDeTccs\bin\Debug\netcoreapp3.1\de\Microsoft.CodeAnalysis.resources.dll
-C:\Users\Thiago Teixeira\source\repos\ControleDeTccs\bin\Debug\netcoreapp3.1\es\Microsoft.CodeAnalysis.resources.dll
-C:\Users\Thiago Teixeira\source\repos\ControleDeTccs\bin\Debug\netcoreapp3.1\fr\Microsoft.CodeAnalysis.resources.dll
-C:\Users\Thiago Teixeira\source\repos\ControleDeTccs\bin\Debug\netcoreapp3.1\it\Microsoft.CodeAnalysis.resources.dll
-C:\Users\Thiago Teixeira\source\repos\ControleDeTccs\bin\Debug\netcoreapp3.1\ja\Microsoft.CodeAnalysis.resources.dll
-C:\Users\Thiago Teixeira\source\repos\ControleDeTccs\bin\Debug\netcoreapp3.1\ko\Microsoft.CodeAnalysis.resources.dll
-C:\Users\Thiago Teixeira\source\repos\ControleDeTccs\bin\Debug\netcoreapp3.1\pl\Microsoft.CodeAnalysis.resources.dll
-C:\Users\Thiago Teixeira\source\repos\ControleDeTccs\bin\Debug\netcoreapp3.1\pt-BR\Microsoft.CodeAnalysis.resources.dll
-C:\Users\Thiago Teixeira\source\repos\ControleDeTccs\bin\Debug\netcoreapp3.1\ru\Microsoft.CodeAnalysis.resources.dll
-C:\Users\Thiago Teixeira\source\repos\ControleDeTccs\bin\Debug\netcoreapp3.1\tr\Microsoft.CodeAnalysis.resources.dll
-C:\Users\Thiago Teixeira\source\repos\ControleDeTccs\bin\Debug\netcoreapp3.1\zh-Hans\Microsoft.CodeAnalysis.resources.dll
-C:\Users\Thiago Teixeira\source\repos\ControleDeTccs\bin\Debug\netcoreapp3.1\zh-Hant\Microsoft.CodeAnalysis.resources.dll
-C:\Users\Thiago Teixeira\source\repos\ControleDeTccs\bin\Debug\netcoreapp3.1\cs\Microsoft.CodeAnalysis.CSharp.resources.dll
-C:\Users\Thiago Teixeira\source\repos\ControleDeTccs\bin\Debug\netcoreapp3.1\de\Microsoft.CodeAnalysis.CSharp.resources.dll
-C:\Users\Thiago Teixeira\source\repos\ControleDeTccs\bin\Debug\netcoreapp3.1\es\Microsoft.CodeAnalysis.CSharp.resources.dll
-C:\Users\Thiago Teixeira\source\repos\ControleDeTccs\bin\Debug\netcoreapp3.1\fr\Microsoft.CodeAnalysis.CSharp.resources.dll
-C:\Users\Thiago Teixeira\source\repos\ControleDeTccs\bin\Debug\netcoreapp3.1\it\Microsoft.CodeAnalysis.CSharp.resources.dll
-C:\Users\Thiago Teixeira\source\repos\ControleDeTccs\bin\Debug\netcoreapp3.1\ja\Microsoft.CodeAnalysis.CSharp.resources.dll
-C:\Users\Thiago Teixeira\source\repos\ControleDeTccs\bin\Debug\netcoreapp3.1\ko\Microsoft.CodeAnalysis.CSharp.resources.dll
-C:\Users\Thiago Teixeira\source\repos\ControleDeTccs\bin\Debug\netcoreapp3.1\pl\Microsoft.CodeAnalysis.CSharp.resources.dll
-C:\Users\Thiago Teixeira\source\repos\ControleDeTccs\bin\Debug\netcoreapp3.1\pt-BR\Microsoft.CodeAnalysis.CSharp.resources.dll
-C:\Users\Thiago Teixeira\source\repos\ControleDeTccs\bin\Debug\netcoreapp3.1\ru\Microsoft.CodeAnalysis.CSharp.resources.dll
-C:\Users\Thiago Teixeira\source\repos\ControleDeTccs\bin\Debug\netcoreapp3.1\tr\Microsoft.CodeAnalysis.CSharp.resources.dll
-C:\Users\Thiago Teixeira\source\repos\ControleDeTccs\bin\Debug\netcoreapp3.1\zh-Hans\Microsoft.CodeAnalysis.CSharp.resources.dll
-C:\Users\Thiago Teixeira\source\repos\ControleDeTccs\bin\Debug\netcoreapp3.1\zh-Hant\Microsoft.CodeAnalysis.CSharp.resources.dll
-C:\Users\Thiago Teixeira\source\repos\ControleDeTccs\bin\Debug\netcoreapp3.1\cs\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
-C:\Users\Thiago Teixeira\source\repos\ControleDeTccs\bin\Debug\netcoreapp3.1\de\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
-C:\Users\Thiago Teixeira\source\repos\ControleDeTccs\bin\Debug\netcoreapp3.1\es\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
-C:\Users\Thiago Teixeira\source\repos\ControleDeTccs\bin\Debug\netcoreapp3.1\fr\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
-C:\Users\Thiago Teixeira\source\repos\ControleDeTccs\bin\Debug\netcoreapp3.1\it\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
-C:\Users\Thiago Teixeira\source\repos\ControleDeTccs\bin\Debug\netcoreapp3.1\ja\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
-C:\Users\Thiago Teixeira\source\repos\ControleDeTccs\bin\Debug\netcoreapp3.1\ko\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
-C:\Users\Thiago Teixeira\source\repos\ControleDeTccs\bin\Debug\netcoreapp3.1\pl\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
-C:\Users\Thiago Teixeira\source\repos\ControleDeTccs\bin\Debug\netcoreapp3.1\pt-BR\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
-C:\Users\Thiago Teixeira\source\repos\ControleDeTccs\bin\Debug\netcoreapp3.1\ru\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
-C:\Users\Thiago Teixeira\source\repos\ControleDeTccs\bin\Debug\netcoreapp3.1\tr\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
-C:\Users\Thiago Teixeira\source\repos\ControleDeTccs\bin\Debug\netcoreapp3.1\zh-Hans\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
-C:\Users\Thiago Teixeira\source\repos\ControleDeTccs\bin\Debug\netcoreapp3.1\zh-Hant\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
-C:\Users\Thiago Teixeira\source\repos\ControleDeTccs\bin\Debug\netcoreapp3.1\cs\Microsoft.CodeAnalysis.Workspaces.resources.dll
-C:\Users\Thiago Teixeira\source\repos\ControleDeTccs\bin\Debug\netcoreapp3.1\de\Microsoft.CodeAnalysis.Workspaces.resources.dll
-C:\Users\Thiago Teixeira\source\repos\ControleDeTccs\bin\Debug\netcoreapp3.1\es\Microsoft.CodeAnalysis.Workspaces.resources.dll
-C:\Users\Thiago Teixeira\source\repos\ControleDeTccs\bin\Debug\netcoreapp3.1\fr\Microsoft.CodeAnalysis.Workspaces.resources.dll
-C:\Users\Thiago Teixeira\source\repos\ControleDeTccs\bin\Debug\netcoreapp3.1\it\Microsoft.CodeAnalysis.Workspaces.resources.dll
-C:\Users\Thiago Teixeira\source\repos\ControleDeTccs\bin\Debug\netcoreapp3.1\ja\Microsoft.CodeAnalysis.Workspaces.resources.dll
-C:\Users\Thiago Teixeira\source\repos\ControleDeTccs\bin\Debug\netcoreapp3.1\ko\Microsoft.CodeAnalysis.Workspaces.resources.dll
-C:\Users\Thiago Teixeira\source\repos\ControleDeTccs\bin\Debug\netcoreapp3.1\pl\Microsoft.CodeAnalysis.Workspaces.resources.dll
-C:\Users\Thiago Teixeira\source\repos\ControleDeTccs\bin\Debug\netcoreapp3.1\pt-BR\Microsoft.CodeAnalysis.Workspaces.resources.dll
-C:\Users\Thiago Teixeira\source\repos\ControleDeTccs\bin\Debug\netcoreapp3.1\ru\Microsoft.CodeAnalysis.Workspaces.resources.dll
-C:\Users\Thiago Teixeira\source\repos\ControleDeTccs\bin\Debug\netcoreapp3.1\tr\Microsoft.CodeAnalysis.Workspaces.resources.dll
-C:\Users\Thiago Teixeira\source\repos\ControleDeTccs\bin\Debug\netcoreapp3.1\zh-Hans\Microsoft.CodeAnalysis.Workspaces.resources.dll
-C:\Users\Thiago Teixeira\source\repos\ControleDeTccs\bin\Debug\netcoreapp3.1\zh-Hant\Microsoft.CodeAnalysis.Workspaces.resources.dll
-C:\Users\Thiago Teixeira\source\repos\ControleDeTccs\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.1\Microsoft.Data.SqlClient.dll
-C:\Users\Thiago Teixeira\source\repos\ControleDeTccs\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.1\Microsoft.Data.SqlClient.dll
-C:\Users\Thiago Teixeira\source\repos\ControleDeTccs\bin\Debug\netcoreapp3.1\runtimes\win-arm64\native\sni.dll
-C:\Users\Thiago Teixeira\source\repos\ControleDeTccs\bin\Debug\netcoreapp3.1\runtimes\win-x64\native\sni.dll
-C:\Users\Thiago Teixeira\source\repos\ControleDeTccs\bin\Debug\netcoreapp3.1\runtimes\win-x86\native\sni.dll
-C:\Users\Thiago Teixeira\source\repos\ControleDeTccs\bin\Debug\netcoreapp3.1\runtimes\alpine-x64\native\libe_sqlite3.so
-C:\Users\Thiago Teixeira\source\repos\ControleDeTccs\bin\Debug\netcoreapp3.1\runtimes\linux-arm\native\libe_sqlite3.so
-C:\Users\Thiago Teixeira\source\repos\ControleDeTccs\bin\Debug\netcoreapp3.1\runtimes\linux-arm64\native\libe_sqlite3.so
-C:\Users\Thiago Teixeira\source\repos\ControleDeTccs\bin\Debug\netcoreapp3.1\runtimes\linux-armel\native\libe_sqlite3.so
-C:\Users\Thiago Teixeira\source\repos\ControleDeTccs\bin\Debug\netcoreapp3.1\runtimes\linux-musl-x64\native\libe_sqlite3.so
-C:\Users\Thiago Teixeira\source\repos\ControleDeTccs\bin\Debug\netcoreapp3.1\runtimes\linux-x64\native\libe_sqlite3.so
-C:\Users\Thiago Teixeira\source\repos\ControleDeTccs\bin\Debug\netcoreapp3.1\runtimes\linux-x86\native\libe_sqlite3.so
-C:\Users\Thiago Teixeira\source\repos\ControleDeTccs\bin\Debug\netcoreapp3.1\runtimes\osx-x64\native\libe_sqlite3.dylib
-C:\Users\Thiago Teixeira\source\repos\ControleDeTccs\bin\Debug\netcoreapp3.1\runtimes\win-arm\native\e_sqlite3.dll
-C:\Users\Thiago Teixeira\source\repos\ControleDeTccs\bin\Debug\netcoreapp3.1\runtimes\win-arm64\native\e_sqlite3.dll
-C:\Users\Thiago Teixeira\source\repos\ControleDeTccs\bin\Debug\netcoreapp3.1\runtimes\win-x64\native\e_sqlite3.dll
-C:\Users\Thiago Teixeira\source\repos\ControleDeTccs\bin\Debug\netcoreapp3.1\runtimes\win-x86\native\e_sqlite3.dll
-C:\Users\Thiago Teixeira\source\repos\ControleDeTccs\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
-C:\Users\Thiago Teixeira\source\repos\ControleDeTccs\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
-C:\Users\Thiago Teixeira\source\repos\ControleDeTccs\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.0\System.Runtime.Caching.dll
-C:\Users\Thiago Teixeira\source\repos\ControleDeTccs\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.0\System.Runtime.Caching.dll
-C:\Users\Thiago Teixeira\source\repos\ControleDeTccs\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
-C:\Users\Thiago Teixeira\source\repos\ControleDeTccs\obj\Debug\netcoreapp3.1\SistemaDeControleDeTCCs.AssemblyInfoInputs.cache
-C:\Users\Thiago Teixeira\source\repos\ControleDeTccs\obj\Debug\netcoreapp3.1\SistemaDeControleDeTCCs.AssemblyInfo.cs
-C:\Users\Thiago Teixeira\source\repos\ControleDeTccs\obj\Debug\netcoreapp3.1\SistemaDeControleDeTCCs.csproj.CoreCompileInputs.cache
-C:\Users\Thiago Teixeira\source\repos\ControleDeTccs\obj\Debug\netcoreapp3.1\SistemaDeControleDeTCCs.MvcApplicationPartsAssemblyInfo.cs
-C:\Users\Thiago Teixeira\source\repos\ControleDeTccs\obj\Debug\netcoreapp3.1\SistemaDeControleDeTCCs.MvcApplicationPartsAssemblyInfo.cache
-C:\Users\Thiago Teixeira\source\repos\ControleDeTccs\obj\Debug\netcoreapp3.1\SistemaDeControleDeTCCs.RazorAssemblyInfo.cache
-C:\Users\Thiago Teixeira\source\repos\ControleDeTccs\obj\Debug\netcoreapp3.1\SistemaDeControleDeTCCs.RazorAssemblyInfo.cs
-C:\Users\Thiago Teixeira\source\repos\ControleDeTccs\obj\Debug\netcoreapp3.1\staticwebassets\SistemaDeControleDeTCCs.StaticWebAssets.Manifest.cache
-C:\Users\Thiago Teixeira\source\repos\ControleDeTccs\obj\Debug\netcoreapp3.1\staticwebassets\SistemaDeControleDeTCCs.StaticWebAssets.xml
-C:\Users\Thiago Teixeira\source\repos\ControleDeTccs\obj\Debug\netcoreapp3.1\scopedcss\bundle\SistemaDeControleDeTCCs.styles.css
-C:\Users\Thiago Teixeira\source\repos\ControleDeTccs\obj\Debug\netcoreapp3.1\SistemaDeControleDeTCCs.TagHelpers.input.cache
-C:\Users\Thiago Teixeira\source\repos\ControleDeTccs\obj\Debug\netcoreapp3.1\SistemaDeControleDeTCCs.TagHelpers.output.cache
-C:\Users\Thiago Teixeira\source\repos\ControleDeTccs\obj\Debug\netcoreapp3.1\SistemaDeControleDeTCCs.RazorCoreGenerate.cache
-C:\Users\Thiago Teixeira\source\repos\ControleDeTccs\obj\Debug\netcoreapp3.1\Razor\Areas\Coordenador\Views\Calendarios\Create.cshtml.g.cs
-C:\Users\Thiago Teixeira\source\repos\ControleDeTccs\obj\Debug\netcoreapp3.1\Razor\Areas\Coordenador\Views\Calendarios\Delete.cshtml.g.cs
-C:\Users\Thiago Teixeira\source\repos\ControleDeTccs\obj\Debug\netcoreapp3.1\Razor\Areas\Coordenador\Views\Calendarios\Details.cshtml.g.cs
-C:\Users\Thiago Teixeira\source\repos\ControleDeTccs\obj\Debug\netcoreapp3.1\Razor\Areas\Coordenador\Views\Calendarios\Edit.cshtml.g.cs
-C:\Users\Thiago Teixeira\source\repos\ControleDeTccs\obj\Debug\netcoreapp3.1\Razor\Areas\Coordenador\Views\Calendarios\Index.cshtml.g.cs
-C:\Users\Thiago Teixeira\source\repos\ControleDeTccs\obj\Debug\netcoreapp3.1\Razor\Areas\Coordenador\Views\Relatorios\Index.cshtml.g.cs
-C:\Users\Thiago Teixeira\source\repos\ControleDeTccs\obj\Debug\netcoreapp3.1\Razor\Areas\Coordenador\Views\Tccs\AddDataLocalApresentacao.cshtml.g.cs
-C:\Users\Thiago Teixeira\source\repos\ControleDeTccs\obj\Debug\netcoreapp3.1\Razor\Areas\Coordenador\Views\Tccs\AddOrEdit.cshtml.g.cs
-C:\Users\Thiago Teixeira\source\repos\ControleDeTccs\obj\Debug\netcoreapp3.1\Razor\Areas\Coordenador\Views\Tccs\Cancelar.cshtml.g.cs
-C:\Users\Thiago Teixeira\source\repos\ControleDeTccs\obj\Debug\netcoreapp3.1\Razor\Areas\Coordenador\Views\Tccs\Delete.cshtml.g.cs
-C:\Users\Thiago Teixeira\source\repos\ControleDeTccs\obj\Debug\netcoreapp3.1\Razor\Areas\Coordenador\Views\Tccs\Index.cshtml.g.cs
-C:\Users\Thiago Teixeira\source\repos\ControleDeTccs\obj\Debug\netcoreapp3.1\Razor\Areas\Coordenador\Views\Usuarios\AddOrEdit.cshtml.g.cs
-C:\Users\Thiago Teixeira\source\repos\ControleDeTccs\obj\Debug\netcoreapp3.1\Razor\Areas\Coordenador\Views\Usuarios\Index.cshtml.g.cs
-C:\Users\Thiago Teixeira\source\repos\ControleDeTccs\obj\Debug\netcoreapp3.1\Razor\Areas\Coordenador\Views\Usuarios\_ViewAll.cshtml.g.cs
-C:\Users\Thiago Teixeira\source\repos\ControleDeTccs\obj\Debug\netcoreapp3.1\Razor\Areas\Coordenador\Views\_ViewImports.cshtml.g.cs
-C:\Users\Thiago Teixeira\source\repos\ControleDeTccs\obj\Debug\netcoreapp3.1\Razor\Areas\Coordenador\Views\_ViewStart.cshtml.g.cs
-C:\Users\Thiago Teixeira\source\repos\ControleDeTccs\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\Account\AccessDenied.cshtml.g.cs
-C:\Users\Thiago Teixeira\source\repos\ControleDeTccs\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\Account\ConfirmEmail.cshtml.g.cs
-C:\Users\Thiago Teixeira\source\repos\ControleDeTccs\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\Account\ConfirmEmailChange.cshtml.g.cs
-C:\Users\Thiago Teixeira\source\repos\ControleDeTccs\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\Account\ExternalLogin.cshtml.g.cs
-C:\Users\Thiago Teixeira\source\repos\ControleDeTccs\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\Account\ForgotPassword.cshtml.g.cs
-C:\Users\Thiago Teixeira\source\repos\ControleDeTccs\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\Account\ForgotPasswordConfirmation.cshtml.g.cs
-C:\Users\Thiago Teixeira\source\repos\ControleDeTccs\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\Account\Lockout.cshtml.g.cs
-C:\Users\Thiago Teixeira\source\repos\ControleDeTccs\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\Account\Login.cshtml.g.cs
-C:\Users\Thiago Teixeira\source\repos\ControleDeTccs\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\Account\LoginWith2fa.cshtml.g.cs
-C:\Users\Thiago Teixeira\source\repos\ControleDeTccs\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\Account\LoginWithRecoveryCode.cshtml.g.cs
-C:\Users\Thiago Teixeira\source\repos\ControleDeTccs\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\Account\Logout.cshtml.g.cs
-C:\Users\Thiago Teixeira\source\repos\ControleDeTccs\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\Account\Manage\ChangePassword.cshtml.g.cs
-C:\Users\Thiago Teixeira\source\repos\ControleDeTccs\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\Account\Manage\DeletePersonalData.cshtml.g.cs
-C:\Users\Thiago Teixeira\source\repos\ControleDeTccs\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\Account\Manage\Disable2fa.cshtml.g.cs
-C:\Users\Thiago Teixeira\source\repos\ControleDeTccs\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\Account\Manage\DownloadPersonalData.cshtml.g.cs
-C:\Users\Thiago Teixeira\source\repos\ControleDeTccs\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\Account\Manage\Email.cshtml.g.cs
-C:\Users\Thiago Teixeira\source\repos\ControleDeTccs\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\Account\Manage\EnableAuthenticator.cshtml.g.cs
-C:\Users\Thiago Teixeira\source\repos\ControleDeTccs\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\Account\Manage\ExternalLogins.cshtml.g.cs
-C:\Users\Thiago Teixeira\source\repos\ControleDeTccs\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\Account\Manage\GenerateRecoveryCodes.cshtml.g.cs
-C:\Users\Thiago Teixeira\source\repos\ControleDeTccs\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\Account\Manage\Index.cshtml.g.cs
-C:\Users\Thiago Teixeira\source\repos\ControleDeTccs\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\Account\Manage\PersonalData.cshtml.g.cs
-C:\Users\Thiago Teixeira\source\repos\ControleDeTccs\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\Account\Manage\ResetAuthenticator.cshtml.g.cs
-C:\Users\Thiago Teixeira\source\repos\ControleDeTccs\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\Account\Manage\SetPassword.cshtml.g.cs
-C:\Users\Thiago Teixeira\source\repos\ControleDeTccs\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\Account\Manage\ShowRecoveryCodes.cshtml.g.cs
-C:\Users\Thiago Teixeira\source\repos\ControleDeTccs\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\Account\Manage\TwoFactorAuthentication.cshtml.g.cs
-C:\Users\Thiago Teixeira\source\repos\ControleDeTccs\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\Account\Manage\_Layout.cshtml.g.cs
-C:\Users\Thiago Teixeira\source\repos\ControleDeTccs\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\Account\Manage\_ManageNav.cshtml.g.cs
-C:\Users\Thiago Teixeira\source\repos\ControleDeTccs\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\Account\Manage\_StatusMessage.cshtml.g.cs
-C:\Users\Thiago Teixeira\source\repos\ControleDeTccs\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\Account\Manage\_ViewImports.cshtml.g.cs
-C:\Users\Thiago Teixeira\source\repos\ControleDeTccs\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\Account\Register.cshtml.g.cs
-C:\Users\Thiago Teixeira\source\repos\ControleDeTccs\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\Account\RegisterConfirmation.cshtml.g.cs
-C:\Users\Thiago Teixeira\source\repos\ControleDeTccs\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\Account\ResendEmailConfirmation.cshtml.g.cs
-C:\Users\Thiago Teixeira\source\repos\ControleDeTccs\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\Account\ResetPassword.cshtml.g.cs
-C:\Users\Thiago Teixeira\source\repos\ControleDeTccs\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\Account\ResetPasswordConfirmation.cshtml.g.cs
-C:\Users\Thiago Teixeira\source\repos\ControleDeTccs\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\Account\_StatusMessage.cshtml.g.cs
-C:\Users\Thiago Teixeira\source\repos\ControleDeTccs\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\Account\_ViewImports.cshtml.g.cs
-C:\Users\Thiago Teixeira\source\repos\ControleDeTccs\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\Error.cshtml.g.cs
-C:\Users\Thiago Teixeira\source\repos\ControleDeTccs\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\_ValidationScriptsPartial.cshtml.g.cs
-C:\Users\Thiago Teixeira\source\repos\ControleDeTccs\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\_ViewImports.cshtml.g.cs
-C:\Users\Thiago Teixeira\source\repos\ControleDeTccs\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\_ViewStart.cshtml.g.cs
-C:\Users\Thiago Teixeira\source\repos\ControleDeTccs\obj\Debug\netcoreapp3.1\Razor\Views\Bancas\Anexo.cshtml.g.cs
-C:\Users\Thiago Teixeira\source\repos\ControleDeTccs\obj\Debug\netcoreapp3.1\Razor\Views\Bancas\Create.cshtml.g.cs
-C:\Users\Thiago Teixeira\source\repos\ControleDeTccs\obj\Debug\netcoreapp3.1\Razor\Views\Bancas\Delete.cshtml.g.cs
-C:\Users\Thiago Teixeira\source\repos\ControleDeTccs\obj\Debug\netcoreapp3.1\Razor\Views\Bancas\Details.cshtml.g.cs
-C:\Users\Thiago Teixeira\source\repos\ControleDeTccs\obj\Debug\netcoreapp3.1\Razor\Views\Bancas\Edit.cshtml.g.cs
-C:\Users\Thiago Teixeira\source\repos\ControleDeTccs\obj\Debug\netcoreapp3.1\Razor\Views\Bancas\Index.cshtml.g.cs
-C:\Users\Thiago Teixeira\source\repos\ControleDeTccs\obj\Debug\netcoreapp3.1\Razor\Views\Bancas\IndexAluno.cshtml.g.cs
-C:\Users\Thiago Teixeira\source\repos\ControleDeTccs\obj\Debug\netcoreapp3.1\Razor\Views\Bancas\Resumo.cshtml.g.cs
-C:\Users\Thiago Teixeira\source\repos\ControleDeTccs\obj\Debug\netcoreapp3.1\Razor\Views\FileTCCs\Create.cshtml.g.cs
-C:\Users\Thiago Teixeira\source\repos\ControleDeTccs\obj\Debug\netcoreapp3.1\Razor\Views\FileTCCs\Delete.cshtml.g.cs
-C:\Users\Thiago Teixeira\source\repos\ControleDeTccs\obj\Debug\netcoreapp3.1\Razor\Views\FileTCCs\Details.cshtml.g.cs
-C:\Users\Thiago Teixeira\source\repos\ControleDeTccs\obj\Debug\netcoreapp3.1\Razor\Views\FileTCCs\Edit.cshtml.g.cs
-C:\Users\Thiago Teixeira\source\repos\ControleDeTccs\obj\Debug\netcoreapp3.1\Razor\Views\FileTCCs\Index.cshtml.g.cs
-C:\Users\Thiago Teixeira\source\repos\ControleDeTccs\obj\Debug\netcoreapp3.1\Razor\Views\Home\Index.cshtml.g.cs
-C:\Users\Thiago Teixeira\source\repos\ControleDeTccs\obj\Debug\netcoreapp3.1\Razor\Views\Home\Privacy.cshtml.g.cs
-C:\Users\Thiago Teixeira\source\repos\ControleDeTccs\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Error.cshtml.g.cs
-C:\Users\Thiago Teixeira\source\repos\ControleDeTccs\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_Layout.cshtml.g.cs
-C:\Users\Thiago Teixeira\source\repos\ControleDeTccs\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_LoginPartial.cshtml.g.cs
-C:\Users\Thiago Teixeira\source\repos\ControleDeTccs\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_ValidationScriptsPartial.cshtml.g.cs
-C:\Users\Thiago Teixeira\source\repos\ControleDeTccs\obj\Debug\netcoreapp3.1\Razor\Views\Status\Create.cshtml.g.cs
-C:\Users\Thiago Teixeira\source\repos\ControleDeTccs\obj\Debug\netcoreapp3.1\Razor\Views\Status\Delete.cshtml.g.cs
-C:\Users\Thiago Teixeira\source\repos\ControleDeTccs\obj\Debug\netcoreapp3.1\Razor\Views\Status\Details.cshtml.g.cs
-C:\Users\Thiago Teixeira\source\repos\ControleDeTccs\obj\Debug\netcoreapp3.1\Razor\Views\Status\Edit.cshtml.g.cs
-C:\Users\Thiago Teixeira\source\repos\ControleDeTccs\obj\Debug\netcoreapp3.1\Razor\Views\Status\Index.cshtml.g.cs
-C:\Users\Thiago Teixeira\source\repos\ControleDeTccs\obj\Debug\netcoreapp3.1\Razor\Views\TipoUsuarios\Create.cshtml.g.cs
-C:\Users\Thiago Teixeira\source\repos\ControleDeTccs\obj\Debug\netcoreapp3.1\Razor\Views\TipoUsuarios\Delete.cshtml.g.cs
-C:\Users\Thiago Teixeira\source\repos\ControleDeTccs\obj\Debug\netcoreapp3.1\Razor\Views\TipoUsuarios\Details.cshtml.g.cs
-C:\Users\Thiago Teixeira\source\repos\ControleDeTccs\obj\Debug\netcoreapp3.1\Razor\Views\TipoUsuarios\Edit.cshtml.g.cs
-C:\Users\Thiago Teixeira\source\repos\ControleDeTccs\obj\Debug\netcoreapp3.1\Razor\Views\TipoUsuarios\Index.cshtml.g.cs
-C:\Users\Thiago Teixeira\source\repos\ControleDeTccs\obj\Debug\netcoreapp3.1\Razor\Views\_ViewImports.cshtml.g.cs
-C:\Users\Thiago Teixeira\source\repos\ControleDeTccs\obj\Debug\netcoreapp3.1\Razor\Views\_ViewStart.cshtml.g.cs
-C:\Users\Thiago Teixeira\source\repos\ControleDeTccs\obj\Debug\netcoreapp3.1\SistemaDeControleDeTCCs.RazorTargetAssemblyInfo.cache
-C:\Users\Thiago Teixeira\source\repos\ControleDeTccs\obj\Debug\netcoreapp3.1\SistemaDeControleDeTCCs.RazorTargetAssemblyInfo.cs
-C:\Users\Thiago Teixeira\source\repos\ControleDeTccs\obj\Debug\netcoreapp3.1\SistemaDeControleDeTCCs.Views.pdb
-C:\Users\Thiago Teixeira\source\repos\ControleDeTccs\obj\Debug\netcoreapp3.1\SistemaDeControleDeTCCs.csproj.CopyComplete
-C:\Users\Thiago Teixeira\source\repos\ControleDeTccs\obj\Debug\netcoreapp3.1\SistemaDeControleDeTCCs.dll
-C:\Users\Thiago Teixeira\source\repos\ControleDeTccs\obj\Debug\netcoreapp3.1\SistemaDeControleDeTCCs.pdb
-C:\Users\Thiago Teixeira\source\repos\ControleDeTccs\obj\Debug\netcoreapp3.1\SistemaDeControleDeTCCs.genruntimeconfig.cache
-C:\Users\Thiago Teixeira\source\repos\ControleDeTccs\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.JsonWebTokens.dll
-C:\Users\Thiago Teixeira\source\repos\ControleDeTccs\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Logging.dll
-C:\Users\Thiago Teixeira\source\repos\ControleDeTccs\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Protocols.dll
-C:\Users\Thiago Teixeira\source\repos\ControleDeTccs\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
-C:\Users\Thiago Teixeira\source\repos\ControleDeTccs\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Tokens.dll
-C:\Users\Thiago Teixeira\source\repos\ControleDeTccs\bin\Debug\netcoreapp3.1\System.IdentityModel.Tokens.Jwt.dll
-C:\Users\Thiago Teixeira\source\repos\ControleDeTccs\obj\Debug\netcoreapp3.1\SistemaDeControleDeTCCs.csprojAssemblyReference.cache
-C:\Users\Zero\Documents\IFS\20202\PROJETO_INTEGRADOR_II\PROJ\ControleDeTccs\bin\Debug\netcoreapp3.1\appsettings.Development.json
-C:\Users\Zero\Documents\IFS\20202\PROJETO_INTEGRADOR_II\PROJ\ControleDeTccs\bin\Debug\netcoreapp3.1\appsettings.json
-C:\Users\Zero\Documents\IFS\20202\PROJETO_INTEGRADOR_II\PROJ\ControleDeTccs\bin\Debug\netcoreapp3.1\Properties\launchSettings.json
-C:\Users\Zero\Documents\IFS\20202\PROJETO_INTEGRADOR_II\PROJ\ControleDeTccs\bin\Debug\netcoreapp3.1\SistemaDeControleDeTCCs.StaticWebAssets.xml
-C:\Users\Zero\Documents\IFS\20202\PROJETO_INTEGRADOR_II\PROJ\ControleDeTccs\bin\Debug\netcoreapp3.1\SistemaDeControleDeTCCs.exe
-C:\Users\Zero\Documents\IFS\20202\PROJETO_INTEGRADOR_II\PROJ\ControleDeTccs\bin\Debug\netcoreapp3.1\SistemaDeControleDeTCCs.deps.json
-C:\Users\Zero\Documents\IFS\20202\PROJETO_INTEGRADOR_II\PROJ\ControleDeTccs\bin\Debug\netcoreapp3.1\SistemaDeControleDeTCCs.runtimeconfig.json
-C:\Users\Zero\Documents\IFS\20202\PROJETO_INTEGRADOR_II\PROJ\ControleDeTccs\bin\Debug\netcoreapp3.1\SistemaDeControleDeTCCs.runtimeconfig.dev.json
-C:\Users\Zero\Documents\IFS\20202\PROJETO_INTEGRADOR_II\PROJ\ControleDeTccs\bin\Debug\netcoreapp3.1\SistemaDeControleDeTCCs.dll
-C:\Users\Zero\Documents\IFS\20202\PROJETO_INTEGRADOR_II\PROJ\ControleDeTccs\bin\Debug\netcoreapp3.1\SistemaDeControleDeTCCs.pdb
-C:\Users\Zero\Documents\IFS\20202\PROJETO_INTEGRADOR_II\PROJ\ControleDeTccs\bin\Debug\netcoreapp3.1\SistemaDeControleDeTCCs.Views.dll
-C:\Users\Zero\Documents\IFS\20202\PROJETO_INTEGRADOR_II\PROJ\ControleDeTccs\bin\Debug\netcoreapp3.1\SistemaDeControleDeTCCs.Views.pdb
-C:\Users\Zero\Documents\IFS\20202\PROJETO_INTEGRADOR_II\PROJ\ControleDeTccs\bin\Debug\netcoreapp3.1\BouncyCastle.Crypto.dll
-C:\Users\Zero\Documents\IFS\20202\PROJETO_INTEGRADOR_II\PROJ\ControleDeTccs\bin\Debug\netcoreapp3.1\EntityFramework.SqlServer.dll
-C:\Users\Zero\Documents\IFS\20202\PROJETO_INTEGRADOR_II\PROJ\ControleDeTccs\bin\Debug\netcoreapp3.1\EntityFramework.dll
-C:\Users\Zero\Documents\IFS\20202\PROJETO_INTEGRADOR_II\PROJ\ControleDeTccs\bin\Debug\netcoreapp3.1\itextsharp.dll
-C:\Users\Zero\Documents\IFS\20202\PROJETO_INTEGRADOR_II\PROJ\ControleDeTccs\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Cryptography.Internal.dll
-C:\Users\Zero\Documents\IFS\20202\PROJETO_INTEGRADOR_II\PROJ\ControleDeTccs\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
-C:\Users\Zero\Documents\IFS\20202\PROJETO_INTEGRADOR_II\PROJ\ControleDeTccs\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore.dll
-C:\Users\Zero\Documents\IFS\20202\PROJETO_INTEGRADOR_II\PROJ\ControleDeTccs\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
-C:\Users\Zero\Documents\IFS\20202\PROJETO_INTEGRADOR_II\PROJ\ControleDeTccs\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Identity.UI.Views.V3.dll
-C:\Users\Zero\Documents\IFS\20202\PROJETO_INTEGRADOR_II\PROJ\ControleDeTccs\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Identity.UI.Views.V4.dll
-C:\Users\Zero\Documents\IFS\20202\PROJETO_INTEGRADOR_II\PROJ\ControleDeTccs\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Identity.UI.dll
-C:\Users\Zero\Documents\IFS\20202\PROJETO_INTEGRADOR_II\PROJ\ControleDeTccs\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Razor.Language.dll
-C:\Users\Zero\Documents\IFS\20202\PROJETO_INTEGRADOR_II\PROJ\ControleDeTccs\bin\Debug\netcoreapp3.1\Microsoft.Bcl.AsyncInterfaces.dll
-C:\Users\Zero\Documents\IFS\20202\PROJETO_INTEGRADOR_II\PROJ\ControleDeTccs\bin\Debug\netcoreapp3.1\Microsoft.Bcl.HashCode.dll
-C:\Users\Zero\Documents\IFS\20202\PROJETO_INTEGRADOR_II\PROJ\ControleDeTccs\bin\Debug\netcoreapp3.1\Microsoft.CodeAnalysis.dll
-C:\Users\Zero\Documents\IFS\20202\PROJETO_INTEGRADOR_II\PROJ\ControleDeTccs\bin\Debug\netcoreapp3.1\Microsoft.CodeAnalysis.CSharp.dll
-C:\Users\Zero\Documents\IFS\20202\PROJETO_INTEGRADOR_II\PROJ\ControleDeTccs\bin\Debug\netcoreapp3.1\Microsoft.CodeAnalysis.CSharp.Workspaces.dll
-C:\Users\Zero\Documents\IFS\20202\PROJETO_INTEGRADOR_II\PROJ\ControleDeTccs\bin\Debug\netcoreapp3.1\Microsoft.CodeAnalysis.Razor.dll
-C:\Users\Zero\Documents\IFS\20202\PROJETO_INTEGRADOR_II\PROJ\ControleDeTccs\bin\Debug\netcoreapp3.1\Microsoft.CodeAnalysis.Workspaces.dll
-C:\Users\Zero\Documents\IFS\20202\PROJETO_INTEGRADOR_II\PROJ\ControleDeTccs\bin\Debug\netcoreapp3.1\Microsoft.Data.SqlClient.dll
-C:\Users\Zero\Documents\IFS\20202\PROJETO_INTEGRADOR_II\PROJ\ControleDeTccs\bin\Debug\netcoreapp3.1\Microsoft.Data.Sqlite.dll
-C:\Users\Zero\Documents\IFS\20202\PROJETO_INTEGRADOR_II\PROJ\ControleDeTccs\bin\Debug\netcoreapp3.1\Microsoft.DotNet.PlatformAbstractions.dll
-C:\Users\Zero\Documents\IFS\20202\PROJETO_INTEGRADOR_II\PROJ\ControleDeTccs\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.dll
-C:\Users\Zero\Documents\IFS\20202\PROJETO_INTEGRADOR_II\PROJ\ControleDeTccs\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Abstractions.dll
-C:\Users\Zero\Documents\IFS\20202\PROJETO_INTEGRADOR_II\PROJ\ControleDeTccs\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Design.dll
-C:\Users\Zero\Documents\IFS\20202\PROJETO_INTEGRADOR_II\PROJ\ControleDeTccs\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Relational.dll
-C:\Users\Zero\Documents\IFS\20202\PROJETO_INTEGRADOR_II\PROJ\ControleDeTccs\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Sqlite.dll
-C:\Users\Zero\Documents\IFS\20202\PROJETO_INTEGRADOR_II\PROJ\ControleDeTccs\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.SqlServer.dll
-C:\Users\Zero\Documents\IFS\20202\PROJETO_INTEGRADOR_II\PROJ\ControleDeTccs\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Caching.Abstractions.dll
-C:\Users\Zero\Documents\IFS\20202\PROJETO_INTEGRADOR_II\PROJ\ControleDeTccs\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Caching.Memory.dll
-C:\Users\Zero\Documents\IFS\20202\PROJETO_INTEGRADOR_II\PROJ\ControleDeTccs\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Configuration.dll
-C:\Users\Zero\Documents\IFS\20202\PROJETO_INTEGRADOR_II\PROJ\ControleDeTccs\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Configuration.Abstractions.dll
-C:\Users\Zero\Documents\IFS\20202\PROJETO_INTEGRADOR_II\PROJ\ControleDeTccs\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Configuration.Binder.dll
-C:\Users\Zero\Documents\IFS\20202\PROJETO_INTEGRADOR_II\PROJ\ControleDeTccs\bin\Debug\netcoreapp3.1\Microsoft.Extensions.DependencyInjection.dll
-C:\Users\Zero\Documents\IFS\20202\PROJETO_INTEGRADOR_II\PROJ\ControleDeTccs\bin\Debug\netcoreapp3.1\Microsoft.Extensions.DependencyInjection.Abstractions.dll
-C:\Users\Zero\Documents\IFS\20202\PROJETO_INTEGRADOR_II\PROJ\ControleDeTccs\bin\Debug\netcoreapp3.1\Microsoft.Extensions.DependencyModel.dll
-C:\Users\Zero\Documents\IFS\20202\PROJETO_INTEGRADOR_II\PROJ\ControleDeTccs\bin\Debug\netcoreapp3.1\Microsoft.Extensions.FileProviders.Abstractions.dll
-C:\Users\Zero\Documents\IFS\20202\PROJETO_INTEGRADOR_II\PROJ\ControleDeTccs\bin\Debug\netcoreapp3.1\Microsoft.Extensions.FileProviders.Embedded.dll
-C:\Users\Zero\Documents\IFS\20202\PROJETO_INTEGRADOR_II\PROJ\ControleDeTccs\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Identity.Core.dll
-C:\Users\Zero\Documents\IFS\20202\PROJETO_INTEGRADOR_II\PROJ\ControleDeTccs\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Identity.Stores.dll
-C:\Users\Zero\Documents\IFS\20202\PROJETO_INTEGRADOR_II\PROJ\ControleDeTccs\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Logging.dll
-C:\Users\Zero\Documents\IFS\20202\PROJETO_INTEGRADOR_II\PROJ\ControleDeTccs\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Logging.Abstractions.dll
-C:\Users\Zero\Documents\IFS\20202\PROJETO_INTEGRADOR_II\PROJ\ControleDeTccs\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Options.dll
-C:\Users\Zero\Documents\IFS\20202\PROJETO_INTEGRADOR_II\PROJ\ControleDeTccs\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Primitives.dll
-C:\Users\Zero\Documents\IFS\20202\PROJETO_INTEGRADOR_II\PROJ\ControleDeTccs\bin\Debug\netcoreapp3.1\Microsoft.Identity.Client.dll
-C:\Users\Zero\Documents\IFS\20202\PROJETO_INTEGRADOR_II\PROJ\ControleDeTccs\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.JsonWebTokens.dll
-C:\Users\Zero\Documents\IFS\20202\PROJETO_INTEGRADOR_II\PROJ\ControleDeTccs\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Logging.dll
-C:\Users\Zero\Documents\IFS\20202\PROJETO_INTEGRADOR_II\PROJ\ControleDeTccs\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Protocols.dll
-C:\Users\Zero\Documents\IFS\20202\PROJETO_INTEGRADOR_II\PROJ\ControleDeTccs\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
-C:\Users\Zero\Documents\IFS\20202\PROJETO_INTEGRADOR_II\PROJ\ControleDeTccs\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Tokens.dll
-C:\Users\Zero\Documents\IFS\20202\PROJETO_INTEGRADOR_II\PROJ\ControleDeTccs\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.Web.CodeGeneration.dll
-C:\Users\Zero\Documents\IFS\20202\PROJETO_INTEGRADOR_II\PROJ\ControleDeTccs\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.Web.CodeGeneration.Contracts.dll
-C:\Users\Zero\Documents\IFS\20202\PROJETO_INTEGRADOR_II\PROJ\ControleDeTccs\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.Web.CodeGeneration.Core.dll
-C:\Users\Zero\Documents\IFS\20202\PROJETO_INTEGRADOR_II\PROJ\ControleDeTccs\bin\Debug\netcoreapp3.1\dotnet-aspnet-codegenerator-design.dll
-C:\Users\Zero\Documents\IFS\20202\PROJETO_INTEGRADOR_II\PROJ\ControleDeTccs\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.Web.CodeGeneration.EntityFrameworkCore.dll
-C:\Users\Zero\Documents\IFS\20202\PROJETO_INTEGRADOR_II\PROJ\ControleDeTccs\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.Web.CodeGeneration.Templating.dll
-C:\Users\Zero\Documents\IFS\20202\PROJETO_INTEGRADOR_II\PROJ\ControleDeTccs\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.Web.CodeGeneration.Utils.dll
-C:\Users\Zero\Documents\IFS\20202\PROJETO_INTEGRADOR_II\PROJ\ControleDeTccs\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.Web.CodeGenerators.Mvc.dll
-C:\Users\Zero\Documents\IFS\20202\PROJETO_INTEGRADOR_II\PROJ\ControleDeTccs\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll
-C:\Users\Zero\Documents\IFS\20202\PROJETO_INTEGRADOR_II\PROJ\ControleDeTccs\bin\Debug\netcoreapp3.1\NuGet.Frameworks.dll
-C:\Users\Zero\Documents\IFS\20202\PROJETO_INTEGRADOR_II\PROJ\ControleDeTccs\bin\Debug\netcoreapp3.1\SQLitePCLRaw.batteries_v2.dll
-C:\Users\Zero\Documents\IFS\20202\PROJETO_INTEGRADOR_II\PROJ\ControleDeTccs\bin\Debug\netcoreapp3.1\SQLitePCLRaw.nativelibrary.dll
-C:\Users\Zero\Documents\IFS\20202\PROJETO_INTEGRADOR_II\PROJ\ControleDeTccs\bin\Debug\netcoreapp3.1\SQLitePCLRaw.core.dll
-C:\Users\Zero\Documents\IFS\20202\PROJETO_INTEGRADOR_II\PROJ\ControleDeTccs\bin\Debug\netcoreapp3.1\SQLitePCLRaw.provider.dynamic_cdecl.dll
-C:\Users\Zero\Documents\IFS\20202\PROJETO_INTEGRADOR_II\PROJ\ControleDeTccs\bin\Debug\netcoreapp3.1\System.CodeDom.dll
-C:\Users\Zero\Documents\IFS\20202\PROJETO_INTEGRADOR_II\PROJ\ControleDeTccs\bin\Debug\netcoreapp3.1\System.Collections.Immutable.dll
-C:\Users\Zero\Documents\IFS\20202\PROJETO_INTEGRADOR_II\PROJ\ControleDeTccs\bin\Debug\netcoreapp3.1\System.Composition.AttributedModel.dll
-C:\Users\Zero\Documents\IFS\20202\PROJETO_INTEGRADOR_II\PROJ\ControleDeTccs\bin\Debug\netcoreapp3.1\System.Composition.Convention.dll
-C:\Users\Zero\Documents\IFS\20202\PROJETO_INTEGRADOR_II\PROJ\ControleDeTccs\bin\Debug\netcoreapp3.1\System.Composition.Hosting.dll
-C:\Users\Zero\Documents\IFS\20202\PROJETO_INTEGRADOR_II\PROJ\ControleDeTccs\bin\Debug\netcoreapp3.1\System.Composition.Runtime.dll
-C:\Users\Zero\Documents\IFS\20202\PROJETO_INTEGRADOR_II\PROJ\ControleDeTccs\bin\Debug\netcoreapp3.1\System.Composition.TypedParts.dll
-C:\Users\Zero\Documents\IFS\20202\PROJETO_INTEGRADOR_II\PROJ\ControleDeTccs\bin\Debug\netcoreapp3.1\System.Configuration.ConfigurationManager.dll
-C:\Users\Zero\Documents\IFS\20202\PROJETO_INTEGRADOR_II\PROJ\ControleDeTccs\bin\Debug\netcoreapp3.1\System.Data.SqlClient.dll
-C:\Users\Zero\Documents\IFS\20202\PROJETO_INTEGRADOR_II\PROJ\ControleDeTccs\bin\Debug\netcoreapp3.1\System.Diagnostics.DiagnosticSource.dll
-C:\Users\Zero\Documents\IFS\20202\PROJETO_INTEGRADOR_II\PROJ\ControleDeTccs\bin\Debug\netcoreapp3.1\System.IdentityModel.Tokens.Jwt.dll
-C:\Users\Zero\Documents\IFS\20202\PROJETO_INTEGRADOR_II\PROJ\ControleDeTccs\bin\Debug\netcoreapp3.1\System.Runtime.Caching.dll
-C:\Users\Zero\Documents\IFS\20202\PROJETO_INTEGRADOR_II\PROJ\ControleDeTccs\bin\Debug\netcoreapp3.1\System.Security.Cryptography.ProtectedData.dll
-C:\Users\Zero\Documents\IFS\20202\PROJETO_INTEGRADOR_II\PROJ\ControleDeTccs\bin\Debug\netcoreapp3.1\System.Text.Json.dll
-C:\Users\Zero\Documents\IFS\20202\PROJETO_INTEGRADOR_II\PROJ\ControleDeTccs\bin\Debug\netcoreapp3.1\cs\Microsoft.CodeAnalysis.resources.dll
-C:\Users\Zero\Documents\IFS\20202\PROJETO_INTEGRADOR_II\PROJ\ControleDeTccs\bin\Debug\netcoreapp3.1\de\Microsoft.CodeAnalysis.resources.dll
-C:\Users\Zero\Documents\IFS\20202\PROJETO_INTEGRADOR_II\PROJ\ControleDeTccs\bin\Debug\netcoreapp3.1\es\Microsoft.CodeAnalysis.resources.dll
-C:\Users\Zero\Documents\IFS\20202\PROJETO_INTEGRADOR_II\PROJ\ControleDeTccs\bin\Debug\netcoreapp3.1\fr\Microsoft.CodeAnalysis.resources.dll
-C:\Users\Zero\Documents\IFS\20202\PROJETO_INTEGRADOR_II\PROJ\ControleDeTccs\bin\Debug\netcoreapp3.1\it\Microsoft.CodeAnalysis.resources.dll
-C:\Users\Zero\Documents\IFS\20202\PROJETO_INTEGRADOR_II\PROJ\ControleDeTccs\bin\Debug\netcoreapp3.1\ja\Microsoft.CodeAnalysis.resources.dll
-C:\Users\Zero\Documents\IFS\20202\PROJETO_INTEGRADOR_II\PROJ\ControleDeTccs\bin\Debug\netcoreapp3.1\ko\Microsoft.CodeAnalysis.resources.dll
-C:\Users\Zero\Documents\IFS\20202\PROJETO_INTEGRADOR_II\PROJ\ControleDeTccs\bin\Debug\netcoreapp3.1\pl\Microsoft.CodeAnalysis.resources.dll
-C:\Users\Zero\Documents\IFS\20202\PROJETO_INTEGRADOR_II\PROJ\ControleDeTccs\bin\Debug\netcoreapp3.1\pt-BR\Microsoft.CodeAnalysis.resources.dll
-C:\Users\Zero\Documents\IFS\20202\PROJETO_INTEGRADOR_II\PROJ\ControleDeTccs\bin\Debug\netcoreapp3.1\ru\Microsoft.CodeAnalysis.resources.dll
-C:\Users\Zero\Documents\IFS\20202\PROJETO_INTEGRADOR_II\PROJ\ControleDeTccs\bin\Debug\netcoreapp3.1\tr\Microsoft.CodeAnalysis.resources.dll
-C:\Users\Zero\Documents\IFS\20202\PROJETO_INTEGRADOR_II\PROJ\ControleDeTccs\bin\Debug\netcoreapp3.1\zh-Hans\Microsoft.CodeAnalysis.resources.dll
-C:\Users\Zero\Documents\IFS\20202\PROJETO_INTEGRADOR_II\PROJ\ControleDeTccs\bin\Debug\netcoreapp3.1\zh-Hant\Microsoft.CodeAnalysis.resources.dll
-C:\Users\Zero\Documents\IFS\20202\PROJETO_INTEGRADOR_II\PROJ\ControleDeTccs\bin\Debug\netcoreapp3.1\cs\Microsoft.CodeAnalysis.CSharp.resources.dll
-C:\Users\Zero\Documents\IFS\20202\PROJETO_INTEGRADOR_II\PROJ\ControleDeTccs\bin\Debug\netcoreapp3.1\de\Microsoft.CodeAnalysis.CSharp.resources.dll
-C:\Users\Zero\Documents\IFS\20202\PROJETO_INTEGRADOR_II\PROJ\ControleDeTccs\bin\Debug\netcoreapp3.1\es\Microsoft.CodeAnalysis.CSharp.resources.dll
-C:\Users\Zero\Documents\IFS\20202\PROJETO_INTEGRADOR_II\PROJ\ControleDeTccs\bin\Debug\netcoreapp3.1\fr\Microsoft.CodeAnalysis.CSharp.resources.dll
-C:\Users\Zero\Documents\IFS\20202\PROJETO_INTEGRADOR_II\PROJ\ControleDeTccs\bin\Debug\netcoreapp3.1\it\Microsoft.CodeAnalysis.CSharp.resources.dll
-C:\Users\Zero\Documents\IFS\20202\PROJETO_INTEGRADOR_II\PROJ\ControleDeTccs\bin\Debug\netcoreapp3.1\ja\Microsoft.CodeAnalysis.CSharp.resources.dll
-C:\Users\Zero\Documents\IFS\20202\PROJETO_INTEGRADOR_II\PROJ\ControleDeTccs\bin\Debug\netcoreapp3.1\ko\Microsoft.CodeAnalysis.CSharp.resources.dll
-C:\Users\Zero\Documents\IFS\20202\PROJETO_INTEGRADOR_II\PROJ\ControleDeTccs\bin\Debug\netcoreapp3.1\pl\Microsoft.CodeAnalysis.CSharp.resources.dll
-C:\Users\Zero\Documents\IFS\20202\PROJETO_INTEGRADOR_II\PROJ\ControleDeTccs\bin\Debug\netcoreapp3.1\pt-BR\Microsoft.CodeAnalysis.CSharp.resources.dll
-C:\Users\Zero\Documents\IFS\20202\PROJETO_INTEGRADOR_II\PROJ\ControleDeTccs\bin\Debug\netcoreapp3.1\ru\Microsoft.CodeAnalysis.CSharp.resources.dll
-C:\Users\Zero\Documents\IFS\20202\PROJETO_INTEGRADOR_II\PROJ\ControleDeTccs\bin\Debug\netcoreapp3.1\tr\Microsoft.CodeAnalysis.CSharp.resources.dll
-C:\Users\Zero\Documents\IFS\20202\PROJETO_INTEGRADOR_II\PROJ\ControleDeTccs\bin\Debug\netcoreapp3.1\zh-Hans\Microsoft.CodeAnalysis.CSharp.resources.dll
-C:\Users\Zero\Documents\IFS\20202\PROJETO_INTEGRADOR_II\PROJ\ControleDeTccs\bin\Debug\netcoreapp3.1\zh-Hant\Microsoft.CodeAnalysis.CSharp.resources.dll
-C:\Users\Zero\Documents\IFS\20202\PROJETO_INTEGRADOR_II\PROJ\ControleDeTccs\bin\Debug\netcoreapp3.1\cs\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
-C:\Users\Zero\Documents\IFS\20202\PROJETO_INTEGRADOR_II\PROJ\ControleDeTccs\bin\Debug\netcoreapp3.1\de\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
-C:\Users\Zero\Documents\IFS\20202\PROJETO_INTEGRADOR_II\PROJ\ControleDeTccs\bin\Debug\netcoreapp3.1\es\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
-C:\Users\Zero\Documents\IFS\20202\PROJETO_INTEGRADOR_II\PROJ\ControleDeTccs\bin\Debug\netcoreapp3.1\fr\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
-C:\Users\Zero\Documents\IFS\20202\PROJETO_INTEGRADOR_II\PROJ\ControleDeTccs\bin\Debug\netcoreapp3.1\it\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
-C:\Users\Zero\Documents\IFS\20202\PROJETO_INTEGRADOR_II\PROJ\ControleDeTccs\bin\Debug\netcoreapp3.1\ja\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
-C:\Users\Zero\Documents\IFS\20202\PROJETO_INTEGRADOR_II\PROJ\ControleDeTccs\bin\Debug\netcoreapp3.1\ko\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
-C:\Users\Zero\Documents\IFS\20202\PROJETO_INTEGRADOR_II\PROJ\ControleDeTccs\bin\Debug\netcoreapp3.1\pl\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
-C:\Users\Zero\Documents\IFS\20202\PROJETO_INTEGRADOR_II\PROJ\ControleDeTccs\bin\Debug\netcoreapp3.1\pt-BR\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
-C:\Users\Zero\Documents\IFS\20202\PROJETO_INTEGRADOR_II\PROJ\ControleDeTccs\bin\Debug\netcoreapp3.1\ru\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
-C:\Users\Zero\Documents\IFS\20202\PROJETO_INTEGRADOR_II\PROJ\ControleDeTccs\bin\Debug\netcoreapp3.1\tr\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
-C:\Users\Zero\Documents\IFS\20202\PROJETO_INTEGRADOR_II\PROJ\ControleDeTccs\bin\Debug\netcoreapp3.1\zh-Hans\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
-C:\Users\Zero\Documents\IFS\20202\PROJETO_INTEGRADOR_II\PROJ\ControleDeTccs\bin\Debug\netcoreapp3.1\zh-Hant\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
-C:\Users\Zero\Documents\IFS\20202\PROJETO_INTEGRADOR_II\PROJ\ControleDeTccs\bin\Debug\netcoreapp3.1\cs\Microsoft.CodeAnalysis.Workspaces.resources.dll
-C:\Users\Zero\Documents\IFS\20202\PROJETO_INTEGRADOR_II\PROJ\ControleDeTccs\bin\Debug\netcoreapp3.1\de\Microsoft.CodeAnalysis.Workspaces.resources.dll
-C:\Users\Zero\Documents\IFS\20202\PROJETO_INTEGRADOR_II\PROJ\ControleDeTccs\bin\Debug\netcoreapp3.1\es\Microsoft.CodeAnalysis.Workspaces.resources.dll
-C:\Users\Zero\Documents\IFS\20202\PROJETO_INTEGRADOR_II\PROJ\ControleDeTccs\bin\Debug\netcoreapp3.1\fr\Microsoft.CodeAnalysis.Workspaces.resources.dll
-C:\Users\Zero\Documents\IFS\20202\PROJETO_INTEGRADOR_II\PROJ\ControleDeTccs\bin\Debug\netcoreapp3.1\it\Microsoft.CodeAnalysis.Workspaces.resources.dll
-C:\Users\Zero\Documents\IFS\20202\PROJETO_INTEGRADOR_II\PROJ\ControleDeTccs\bin\Debug\netcoreapp3.1\ja\Microsoft.CodeAnalysis.Workspaces.resources.dll
-C:\Users\Zero\Documents\IFS\20202\PROJETO_INTEGRADOR_II\PROJ\ControleDeTccs\bin\Debug\netcoreapp3.1\ko\Microsoft.CodeAnalysis.Workspaces.resources.dll
-C:\Users\Zero\Documents\IFS\20202\PROJETO_INTEGRADOR_II\PROJ\ControleDeTccs\bin\Debug\netcoreapp3.1\pl\Microsoft.CodeAnalysis.Workspaces.resources.dll
-C:\Users\Zero\Documents\IFS\20202\PROJETO_INTEGRADOR_II\PROJ\ControleDeTccs\bin\Debug\netcoreapp3.1\pt-BR\Microsoft.CodeAnalysis.Workspaces.resources.dll
-C:\Users\Zero\Documents\IFS\20202\PROJETO_INTEGRADOR_II\PROJ\ControleDeTccs\bin\Debug\netcoreapp3.1\ru\Microsoft.CodeAnalysis.Workspaces.resources.dll
-C:\Users\Zero\Documents\IFS\20202\PROJETO_INTEGRADOR_II\PROJ\ControleDeTccs\bin\Debug\netcoreapp3.1\tr\Microsoft.CodeAnalysis.Workspaces.resources.dll
-C:\Users\Zero\Documents\IFS\20202\PROJETO_INTEGRADOR_II\PROJ\ControleDeTccs\bin\Debug\netcoreapp3.1\zh-Hans\Microsoft.CodeAnalysis.Workspaces.resources.dll
-C:\Users\Zero\Documents\IFS\20202\PROJETO_INTEGRADOR_II\PROJ\ControleDeTccs\bin\Debug\netcoreapp3.1\zh-Hant\Microsoft.CodeAnalysis.Workspaces.resources.dll
-C:\Users\Zero\Documents\IFS\20202\PROJETO_INTEGRADOR_II\PROJ\ControleDeTccs\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.1\Microsoft.Data.SqlClient.dll
-C:\Users\Zero\Documents\IFS\20202\PROJETO_INTEGRADOR_II\PROJ\ControleDeTccs\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.1\Microsoft.Data.SqlClient.dll
-C:\Users\Zero\Documents\IFS\20202\PROJETO_INTEGRADOR_II\PROJ\ControleDeTccs\bin\Debug\netcoreapp3.1\runtimes\win-arm64\native\sni.dll
-C:\Users\Zero\Documents\IFS\20202\PROJETO_INTEGRADOR_II\PROJ\ControleDeTccs\bin\Debug\netcoreapp3.1\runtimes\win-x64\native\sni.dll
-C:\Users\Zero\Documents\IFS\20202\PROJETO_INTEGRADOR_II\PROJ\ControleDeTccs\bin\Debug\netcoreapp3.1\runtimes\win-x86\native\sni.dll
-C:\Users\Zero\Documents\IFS\20202\PROJETO_INTEGRADOR_II\PROJ\ControleDeTccs\bin\Debug\netcoreapp3.1\runtimes\alpine-x64\native\libe_sqlite3.so
-C:\Users\Zero\Documents\IFS\20202\PROJETO_INTEGRADOR_II\PROJ\ControleDeTccs\bin\Debug\netcoreapp3.1\runtimes\linux-arm\native\libe_sqlite3.so
-C:\Users\Zero\Documents\IFS\20202\PROJETO_INTEGRADOR_II\PROJ\ControleDeTccs\bin\Debug\netcoreapp3.1\runtimes\linux-arm64\native\libe_sqlite3.so
-C:\Users\Zero\Documents\IFS\20202\PROJETO_INTEGRADOR_II\PROJ\ControleDeTccs\bin\Debug\netcoreapp3.1\runtimes\linux-armel\native\libe_sqlite3.so
-C:\Users\Zero\Documents\IFS\20202\PROJETO_INTEGRADOR_II\PROJ\ControleDeTccs\bin\Debug\netcoreapp3.1\runtimes\linux-musl-x64\native\libe_sqlite3.so
-C:\Users\Zero\Documents\IFS\20202\PROJETO_INTEGRADOR_II\PROJ\ControleDeTccs\bin\Debug\netcoreapp3.1\runtimes\linux-x64\native\libe_sqlite3.so
-C:\Users\Zero\Documents\IFS\20202\PROJETO_INTEGRADOR_II\PROJ\ControleDeTccs\bin\Debug\netcoreapp3.1\runtimes\linux-x86\native\libe_sqlite3.so
-C:\Users\Zero\Documents\IFS\20202\PROJETO_INTEGRADOR_II\PROJ\ControleDeTccs\bin\Debug\netcoreapp3.1\runtimes\osx-x64\native\libe_sqlite3.dylib
-C:\Users\Zero\Documents\IFS\20202\PROJETO_INTEGRADOR_II\PROJ\ControleDeTccs\bin\Debug\netcoreapp3.1\runtimes\win-arm\native\e_sqlite3.dll
-C:\Users\Zero\Documents\IFS\20202\PROJETO_INTEGRADOR_II\PROJ\ControleDeTccs\bin\Debug\netcoreapp3.1\runtimes\win-arm64\native\e_sqlite3.dll
-C:\Users\Zero\Documents\IFS\20202\PROJETO_INTEGRADOR_II\PROJ\ControleDeTccs\bin\Debug\netcoreapp3.1\runtimes\win-x64\native\e_sqlite3.dll
-C:\Users\Zero\Documents\IFS\20202\PROJETO_INTEGRADOR_II\PROJ\ControleDeTccs\bin\Debug\netcoreapp3.1\runtimes\win-x86\native\e_sqlite3.dll
-C:\Users\Zero\Documents\IFS\20202\PROJETO_INTEGRADOR_II\PROJ\ControleDeTccs\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
-C:\Users\Zero\Documents\IFS\20202\PROJETO_INTEGRADOR_II\PROJ\ControleDeTccs\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
-C:\Users\Zero\Documents\IFS\20202\PROJETO_INTEGRADOR_II\PROJ\ControleDeTccs\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.0\System.Runtime.Caching.dll
-C:\Users\Zero\Documents\IFS\20202\PROJETO_INTEGRADOR_II\PROJ\ControleDeTccs\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.0\System.Runtime.Caching.dll
-C:\Users\Zero\Documents\IFS\20202\PROJETO_INTEGRADOR_II\PROJ\ControleDeTccs\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
-C:\Users\Zero\Documents\IFS\20202\PROJETO_INTEGRADOR_II\PROJ\ControleDeTccs\obj\Debug\netcoreapp3.1\SistemaDeControleDeTCCs.AssemblyInfoInputs.cache
-C:\Users\Zero\Documents\IFS\20202\PROJETO_INTEGRADOR_II\PROJ\ControleDeTccs\obj\Debug\netcoreapp3.1\SistemaDeControleDeTCCs.AssemblyInfo.cs
-C:\Users\Zero\Documents\IFS\20202\PROJETO_INTEGRADOR_II\PROJ\ControleDeTccs\obj\Debug\netcoreapp3.1\SistemaDeControleDeTCCs.csproj.CoreCompileInputs.cache
-C:\Users\Zero\Documents\IFS\20202\PROJETO_INTEGRADOR_II\PROJ\ControleDeTccs\obj\Debug\netcoreapp3.1\SistemaDeControleDeTCCs.MvcApplicationPartsAssemblyInfo.cs
-C:\Users\Zero\Documents\IFS\20202\PROJETO_INTEGRADOR_II\PROJ\ControleDeTccs\obj\Debug\netcoreapp3.1\SistemaDeControleDeTCCs.MvcApplicationPartsAssemblyInfo.cache
-C:\Users\Zero\Documents\IFS\20202\PROJETO_INTEGRADOR_II\PROJ\ControleDeTccs\obj\Debug\netcoreapp3.1\SistemaDeControleDeTCCs.RazorAssemblyInfo.cache
-C:\Users\Zero\Documents\IFS\20202\PROJETO_INTEGRADOR_II\PROJ\ControleDeTccs\obj\Debug\netcoreapp3.1\SistemaDeControleDeTCCs.RazorAssemblyInfo.cs
-C:\Users\Zero\Documents\IFS\20202\PROJETO_INTEGRADOR_II\PROJ\ControleDeTccs\obj\Debug\netcoreapp3.1\SistemaDeControleDeTCCs.TagHelpers.input.cache
-C:\Users\Zero\Documents\IFS\20202\PROJETO_INTEGRADOR_II\PROJ\ControleDeTccs\obj\Debug\netcoreapp3.1\SistemaDeControleDeTCCs.TagHelpers.output.cache
-C:\Users\Zero\Documents\IFS\20202\PROJETO_INTEGRADOR_II\PROJ\ControleDeTccs\obj\Debug\netcoreapp3.1\SistemaDeControleDeTCCs.RazorCoreGenerate.cache
-C:\Users\Zero\Documents\IFS\20202\PROJETO_INTEGRADOR_II\PROJ\ControleDeTccs\obj\Debug\netcoreapp3.1\Razor\Areas\Coordenador\Views\Calendarios\Create.cshtml.g.cs
-C:\Users\Zero\Documents\IFS\20202\PROJETO_INTEGRADOR_II\PROJ\ControleDeTccs\obj\Debug\netcoreapp3.1\Razor\Areas\Coordenador\Views\Calendarios\Delete.cshtml.g.cs
-C:\Users\Zero\Documents\IFS\20202\PROJETO_INTEGRADOR_II\PROJ\ControleDeTccs\obj\Debug\netcoreapp3.1\Razor\Areas\Coordenador\Views\Calendarios\Details.cshtml.g.cs
-C:\Users\Zero\Documents\IFS\20202\PROJETO_INTEGRADOR_II\PROJ\ControleDeTccs\obj\Debug\netcoreapp3.1\Razor\Areas\Coordenador\Views\Calendarios\Edit.cshtml.g.cs
-C:\Users\Zero\Documents\IFS\20202\PROJETO_INTEGRADOR_II\PROJ\ControleDeTccs\obj\Debug\netcoreapp3.1\Razor\Areas\Coordenador\Views\Calendarios\Index.cshtml.g.cs
-C:\Users\Zero\Documents\IFS\20202\PROJETO_INTEGRADOR_II\PROJ\ControleDeTccs\obj\Debug\netcoreapp3.1\Razor\Areas\Coordenador\Views\Relatorios\Index.cshtml.g.cs
-C:\Users\Zero\Documents\IFS\20202\PROJETO_INTEGRADOR_II\PROJ\ControleDeTccs\obj\Debug\netcoreapp3.1\Razor\Areas\Coordenador\Views\Tccs\AddDataLocalApresentacao.cshtml.g.cs
-C:\Users\Zero\Documents\IFS\20202\PROJETO_INTEGRADOR_II\PROJ\ControleDeTccs\obj\Debug\netcoreapp3.1\Razor\Areas\Coordenador\Views\Tccs\AddOrEdit.cshtml.g.cs
-C:\Users\Zero\Documents\IFS\20202\PROJETO_INTEGRADOR_II\PROJ\ControleDeTccs\obj\Debug\netcoreapp3.1\Razor\Areas\Coordenador\Views\Tccs\Cancelar.cshtml.g.cs
-C:\Users\Zero\Documents\IFS\20202\PROJETO_INTEGRADOR_II\PROJ\ControleDeTccs\obj\Debug\netcoreapp3.1\Razor\Areas\Coordenador\Views\Tccs\Delete.cshtml.g.cs
-C:\Users\Zero\Documents\IFS\20202\PROJETO_INTEGRADOR_II\PROJ\ControleDeTccs\obj\Debug\netcoreapp3.1\Razor\Areas\Coordenador\Views\Tccs\Index.cshtml.g.cs
-C:\Users\Zero\Documents\IFS\20202\PROJETO_INTEGRADOR_II\PROJ\ControleDeTccs\obj\Debug\netcoreapp3.1\Razor\Areas\Coordenador\Views\Usuarios\AddOrEdit.cshtml.g.cs
-C:\Users\Zero\Documents\IFS\20202\PROJETO_INTEGRADOR_II\PROJ\ControleDeTccs\obj\Debug\netcoreapp3.1\Razor\Areas\Coordenador\Views\Usuarios\Index.cshtml.g.cs
-C:\Users\Zero\Documents\IFS\20202\PROJETO_INTEGRADOR_II\PROJ\ControleDeTccs\obj\Debug\netcoreapp3.1\Razor\Areas\Coordenador\Views\Usuarios\_ViewAll.cshtml.g.cs
-C:\Users\Zero\Documents\IFS\20202\PROJETO_INTEGRADOR_II\PROJ\ControleDeTccs\obj\Debug\netcoreapp3.1\Razor\Areas\Coordenador\Views\_ViewImports.cshtml.g.cs
-C:\Users\Zero\Documents\IFS\20202\PROJETO_INTEGRADOR_II\PROJ\ControleDeTccs\obj\Debug\netcoreapp3.1\Razor\Areas\Coordenador\Views\_ViewStart.cshtml.g.cs
-C:\Users\Zero\Documents\IFS\20202\PROJETO_INTEGRADOR_II\PROJ\ControleDeTccs\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\Account\AccessDenied.cshtml.g.cs
-C:\Users\Zero\Documents\IFS\20202\PROJETO_INTEGRADOR_II\PROJ\ControleDeTccs\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\Account\ConfirmEmail.cshtml.g.cs
-C:\Users\Zero\Documents\IFS\20202\PROJETO_INTEGRADOR_II\PROJ\ControleDeTccs\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\Account\ConfirmEmailChange.cshtml.g.cs
-C:\Users\Zero\Documents\IFS\20202\PROJETO_INTEGRADOR_II\PROJ\ControleDeTccs\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\Account\ExternalLogin.cshtml.g.cs
-C:\Users\Zero\Documents\IFS\20202\PROJETO_INTEGRADOR_II\PROJ\ControleDeTccs\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\Account\ForgotPassword.cshtml.g.cs
-C:\Users\Zero\Documents\IFS\20202\PROJETO_INTEGRADOR_II\PROJ\ControleDeTccs\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\Account\ForgotPasswordConfirmation.cshtml.g.cs
-C:\Users\Zero\Documents\IFS\20202\PROJETO_INTEGRADOR_II\PROJ\ControleDeTccs\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\Account\Lockout.cshtml.g.cs
-C:\Users\Zero\Documents\IFS\20202\PROJETO_INTEGRADOR_II\PROJ\ControleDeTccs\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\Account\Login.cshtml.g.cs
-C:\Users\Zero\Documents\IFS\20202\PROJETO_INTEGRADOR_II\PROJ\ControleDeTccs\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\Account\LoginWith2fa.cshtml.g.cs
-C:\Users\Zero\Documents\IFS\20202\PROJETO_INTEGRADOR_II\PROJ\ControleDeTccs\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\Account\LoginWithRecoveryCode.cshtml.g.cs
-C:\Users\Zero\Documents\IFS\20202\PROJETO_INTEGRADOR_II\PROJ\ControleDeTccs\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\Account\Logout.cshtml.g.cs
-C:\Users\Zero\Documents\IFS\20202\PROJETO_INTEGRADOR_II\PROJ\ControleDeTccs\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\Account\Manage\ChangePassword.cshtml.g.cs
-C:\Users\Zero\Documents\IFS\20202\PROJETO_INTEGRADOR_II\PROJ\ControleDeTccs\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\Account\Manage\DeletePersonalData.cshtml.g.cs
-C:\Users\Zero\Documents\IFS\20202\PROJETO_INTEGRADOR_II\PROJ\ControleDeTccs\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\Account\Manage\Disable2fa.cshtml.g.cs
-C:\Users\Zero\Documents\IFS\20202\PROJETO_INTEGRADOR_II\PROJ\ControleDeTccs\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\Account\Manage\DownloadPersonalData.cshtml.g.cs
-C:\Users\Zero\Documents\IFS\20202\PROJETO_INTEGRADOR_II\PROJ\ControleDeTccs\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\Account\Manage\Email.cshtml.g.cs
-C:\Users\Zero\Documents\IFS\20202\PROJETO_INTEGRADOR_II\PROJ\ControleDeTccs\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\Account\Manage\EnableAuthenticator.cshtml.g.cs
-C:\Users\Zero\Documents\IFS\20202\PROJETO_INTEGRADOR_II\PROJ\ControleDeTccs\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\Account\Manage\ExternalLogins.cshtml.g.cs
-C:\Users\Zero\Documents\IFS\20202\PROJETO_INTEGRADOR_II\PROJ\ControleDeTccs\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\Account\Manage\GenerateRecoveryCodes.cshtml.g.cs
-C:\Users\Zero\Documents\IFS\20202\PROJETO_INTEGRADOR_II\PROJ\ControleDeTccs\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\Account\Manage\Index.cshtml.g.cs
-C:\Users\Zero\Documents\IFS\20202\PROJETO_INTEGRADOR_II\PROJ\ControleDeTccs\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\Account\Manage\PersonalData.cshtml.g.cs
-C:\Users\Zero\Documents\IFS\20202\PROJETO_INTEGRADOR_II\PROJ\ControleDeTccs\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\Account\Manage\ResetAuthenticator.cshtml.g.cs
-C:\Users\Zero\Documents\IFS\20202\PROJETO_INTEGRADOR_II\PROJ\ControleDeTccs\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\Account\Manage\SetPassword.cshtml.g.cs
-C:\Users\Zero\Documents\IFS\20202\PROJETO_INTEGRADOR_II\PROJ\ControleDeTccs\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\Account\Manage\ShowRecoveryCodes.cshtml.g.cs
-C:\Users\Zero\Documents\IFS\20202\PROJETO_INTEGRADOR_II\PROJ\ControleDeTccs\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\Account\Manage\TwoFactorAuthentication.cshtml.g.cs
-C:\Users\Zero\Documents\IFS\20202\PROJETO_INTEGRADOR_II\PROJ\ControleDeTccs\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\Account\Manage\_Layout.cshtml.g.cs
-C:\Users\Zero\Documents\IFS\20202\PROJETO_INTEGRADOR_II\PROJ\ControleDeTccs\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\Account\Manage\_ManageNav.cshtml.g.cs
-C:\Users\Zero\Documents\IFS\20202\PROJETO_INTEGRADOR_II\PROJ\ControleDeTccs\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\Account\Manage\_StatusMessage.cshtml.g.cs
-C:\Users\Zero\Documents\IFS\20202\PROJETO_INTEGRADOR_II\PROJ\ControleDeTccs\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\Account\Manage\_ViewImports.cshtml.g.cs
-C:\Users\Zero\Documents\IFS\20202\PROJETO_INTEGRADOR_II\PROJ\ControleDeTccs\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\Account\Register.cshtml.g.cs
-C:\Users\Zero\Documents\IFS\20202\PROJETO_INTEGRADOR_II\PROJ\ControleDeTccs\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\Account\RegisterConfirmation.cshtml.g.cs
-C:\Users\Zero\Documents\IFS\20202\PROJETO_INTEGRADOR_II\PROJ\ControleDeTccs\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\Account\ResendEmailConfirmation.cshtml.g.cs
-C:\Users\Zero\Documents\IFS\20202\PROJETO_INTEGRADOR_II\PROJ\ControleDeTccs\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\Account\ResetPassword.cshtml.g.cs
-C:\Users\Zero\Documents\IFS\20202\PROJETO_INTEGRADOR_II\PROJ\ControleDeTccs\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\Account\ResetPasswordConfirmation.cshtml.g.cs
-C:\Users\Zero\Documents\IFS\20202\PROJETO_INTEGRADOR_II\PROJ\ControleDeTccs\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\Account\_StatusMessage.cshtml.g.cs
-C:\Users\Zero\Documents\IFS\20202\PROJETO_INTEGRADOR_II\PROJ\ControleDeTccs\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\Account\_ViewImports.cshtml.g.cs
-C:\Users\Zero\Documents\IFS\20202\PROJETO_INTEGRADOR_II\PROJ\ControleDeTccs\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\Error.cshtml.g.cs
-C:\Users\Zero\Documents\IFS\20202\PROJETO_INTEGRADOR_II\PROJ\ControleDeTccs\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\_ValidationScriptsPartial.cshtml.g.cs
-C:\Users\Zero\Documents\IFS\20202\PROJETO_INTEGRADOR_II\PROJ\ControleDeTccs\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\_ViewImports.cshtml.g.cs
-C:\Users\Zero\Documents\IFS\20202\PROJETO_INTEGRADOR_II\PROJ\ControleDeTccs\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\_ViewStart.cshtml.g.cs
-C:\Users\Zero\Documents\IFS\20202\PROJETO_INTEGRADOR_II\PROJ\ControleDeTccs\obj\Debug\netcoreapp3.1\Razor\Views\Bancas\Anexo.cshtml.g.cs
-C:\Users\Zero\Documents\IFS\20202\PROJETO_INTEGRADOR_II\PROJ\ControleDeTccs\obj\Debug\netcoreapp3.1\Razor\Views\Bancas\Create.cshtml.g.cs
-C:\Users\Zero\Documents\IFS\20202\PROJETO_INTEGRADOR_II\PROJ\ControleDeTccs\obj\Debug\netcoreapp3.1\Razor\Views\Bancas\Delete.cshtml.g.cs
-C:\Users\Zero\Documents\IFS\20202\PROJETO_INTEGRADOR_II\PROJ\ControleDeTccs\obj\Debug\netcoreapp3.1\Razor\Views\Bancas\Details.cshtml.g.cs
-C:\Users\Zero\Documents\IFS\20202\PROJETO_INTEGRADOR_II\PROJ\ControleDeTccs\obj\Debug\netcoreapp3.1\Razor\Views\Bancas\Edit.cshtml.g.cs
-C:\Users\Zero\Documents\IFS\20202\PROJETO_INTEGRADOR_II\PROJ\ControleDeTccs\obj\Debug\netcoreapp3.1\Razor\Views\Bancas\Index.cshtml.g.cs
-C:\Users\Zero\Documents\IFS\20202\PROJETO_INTEGRADOR_II\PROJ\ControleDeTccs\obj\Debug\netcoreapp3.1\Razor\Views\Bancas\IndexAluno.cshtml.g.cs
-C:\Users\Zero\Documents\IFS\20202\PROJETO_INTEGRADOR_II\PROJ\ControleDeTccs\obj\Debug\netcoreapp3.1\Razor\Views\Bancas\Resumo.cshtml.g.cs
-C:\Users\Zero\Documents\IFS\20202\PROJETO_INTEGRADOR_II\PROJ\ControleDeTccs\obj\Debug\netcoreapp3.1\Razor\Views\FileTCCs\Create.cshtml.g.cs
-C:\Users\Zero\Documents\IFS\20202\PROJETO_INTEGRADOR_II\PROJ\ControleDeTccs\obj\Debug\netcoreapp3.1\Razor\Views\FileTCCs\Delete.cshtml.g.cs
-C:\Users\Zero\Documents\IFS\20202\PROJETO_INTEGRADOR_II\PROJ\ControleDeTccs\obj\Debug\netcoreapp3.1\Razor\Views\FileTCCs\Details.cshtml.g.cs
-C:\Users\Zero\Documents\IFS\20202\PROJETO_INTEGRADOR_II\PROJ\ControleDeTccs\obj\Debug\netcoreapp3.1\Razor\Views\FileTCCs\Edit.cshtml.g.cs
-C:\Users\Zero\Documents\IFS\20202\PROJETO_INTEGRADOR_II\PROJ\ControleDeTccs\obj\Debug\netcoreapp3.1\Razor\Views\FileTCCs\Index.cshtml.g.cs
-C:\Users\Zero\Documents\IFS\20202\PROJETO_INTEGRADOR_II\PROJ\ControleDeTccs\obj\Debug\netcoreapp3.1\Razor\Views\Home\Index.cshtml.g.cs
-C:\Users\Zero\Documents\IFS\20202\PROJETO_INTEGRADOR_II\PROJ\ControleDeTccs\obj\Debug\netcoreapp3.1\Razor\Views\Home\Privacy.cshtml.g.cs
-C:\Users\Zero\Documents\IFS\20202\PROJETO_INTEGRADOR_II\PROJ\ControleDeTccs\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Error.cshtml.g.cs
-C:\Users\Zero\Documents\IFS\20202\PROJETO_INTEGRADOR_II\PROJ\ControleDeTccs\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_Layout.cshtml.g.cs
-C:\Users\Zero\Documents\IFS\20202\PROJETO_INTEGRADOR_II\PROJ\ControleDeTccs\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_LoginPartial.cshtml.g.cs
-C:\Users\Zero\Documents\IFS\20202\PROJETO_INTEGRADOR_II\PROJ\ControleDeTccs\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_ValidationScriptsPartial.cshtml.g.cs
-C:\Users\Zero\Documents\IFS\20202\PROJETO_INTEGRADOR_II\PROJ\ControleDeTccs\obj\Debug\netcoreapp3.1\Razor\Views\Status\Create.cshtml.g.cs
-C:\Users\Zero\Documents\IFS\20202\PROJETO_INTEGRADOR_II\PROJ\ControleDeTccs\obj\Debug\netcoreapp3.1\Razor\Views\Status\Delete.cshtml.g.cs
-C:\Users\Zero\Documents\IFS\20202\PROJETO_INTEGRADOR_II\PROJ\ControleDeTccs\obj\Debug\netcoreapp3.1\Razor\Views\Status\Details.cshtml.g.cs
-C:\Users\Zero\Documents\IFS\20202\PROJETO_INTEGRADOR_II\PROJ\ControleDeTccs\obj\Debug\netcoreapp3.1\Razor\Views\Status\Edit.cshtml.g.cs
-C:\Users\Zero\Documents\IFS\20202\PROJETO_INTEGRADOR_II\PROJ\ControleDeTccs\obj\Debug\netcoreapp3.1\Razor\Views\Status\Index.cshtml.g.cs
-C:\Users\Zero\Documents\IFS\20202\PROJETO_INTEGRADOR_II\PROJ\ControleDeTccs\obj\Debug\netcoreapp3.1\Razor\Views\TipoUsuarios\Create.cshtml.g.cs
-C:\Users\Zero\Documents\IFS\20202\PROJETO_INTEGRADOR_II\PROJ\ControleDeTccs\obj\Debug\netcoreapp3.1\Razor\Views\TipoUsuarios\Delete.cshtml.g.cs
-C:\Users\Zero\Documents\IFS\20202\PROJETO_INTEGRADOR_II\PROJ\ControleDeTccs\obj\Debug\netcoreapp3.1\Razor\Views\TipoUsuarios\Details.cshtml.g.cs
-C:\Users\Zero\Documents\IFS\20202\PROJETO_INTEGRADOR_II\PROJ\ControleDeTccs\obj\Debug\netcoreapp3.1\Razor\Views\TipoUsuarios\Edit.cshtml.g.cs
-C:\Users\Zero\Documents\IFS\20202\PROJETO_INTEGRADOR_II\PROJ\ControleDeTccs\obj\Debug\netcoreapp3.1\Razor\Views\TipoUsuarios\Index.cshtml.g.cs
-C:\Users\Zero\Documents\IFS\20202\PROJETO_INTEGRADOR_II\PROJ\ControleDeTccs\obj\Debug\netcoreapp3.1\Razor\Views\_ViewImports.cshtml.g.cs
-C:\Users\Zero\Documents\IFS\20202\PROJETO_INTEGRADOR_II\PROJ\ControleDeTccs\obj\Debug\netcoreapp3.1\Razor\Views\_ViewStart.cshtml.g.cs
-C:\Users\Zero\Documents\IFS\20202\PROJETO_INTEGRADOR_II\PROJ\ControleDeTccs\obj\Debug\netcoreapp3.1\SistemaDeControleDeTCCs.RazorTargetAssemblyInfo.cache
-C:\Users\Zero\Documents\IFS\20202\PROJETO_INTEGRADOR_II\PROJ\ControleDeTccs\obj\Debug\netcoreapp3.1\SistemaDeControleDeTCCs.RazorTargetAssemblyInfo.cs
-C:\Users\Zero\Documents\IFS\20202\PROJETO_INTEGRADOR_II\PROJ\ControleDeTccs\obj\Debug\netcoreapp3.1\SistemaDeControleDeTCCs.Views.pdb
-C:\Users\Zero\Documents\IFS\20202\PROJETO_INTEGRADOR_II\PROJ\ControleDeTccs\obj\Debug\netcoreapp3.1\SistemaDeControleDeTCCs.csproj.CopyComplete
-C:\Users\Zero\Documents\IFS\20202\PROJETO_INTEGRADOR_II\PROJ\ControleDeTccs\obj\Debug\netcoreapp3.1\staticwebassets\SistemaDeControleDeTCCs.StaticWebAssets.Manifest.cache
-C:\Users\Zero\Documents\IFS\20202\PROJETO_INTEGRADOR_II\PROJ\ControleDeTccs\obj\Debug\netcoreapp3.1\staticwebassets\SistemaDeControleDeTCCs.StaticWebAssets.xml
-C:\Users\Zero\Documents\IFS\20202\PROJETO_INTEGRADOR_II\PROJ\ControleDeTccs\obj\Debug\netcoreapp3.1\SistemaDeControleDeTCCs.dll
-C:\Users\Zero\Documents\IFS\20202\PROJETO_INTEGRADOR_II\PROJ\ControleDeTccs\obj\Debug\netcoreapp3.1\SistemaDeControleDeTCCs.pdb
-C:\Users\Zero\Documents\IFS\20202\PROJETO_INTEGRADOR_II\PROJ\ControleDeTccs\obj\Debug\netcoreapp3.1\SistemaDeControleDeTCCs.genruntimeconfig.cache
-C:\Users\Zero\Documents\IFS\20202\PROJETO_INTEGRADOR_II\PROJ\ControleDeTccs\obj\Debug\netcoreapp3.1\SistemaDeControleDeTCCs.csprojAssemblyReference.cache
-C:\Users\Zero\Documents\IFS\20202\PROJETO_INTEGRADOR_II\PROJ\ControleDeTccs\obj\Debug\netcoreapp3.1\Razor\Areas\Administrador\Views\Cursos\Create.cshtml.g.cs
-C:\Users\Zero\Documents\IFS\20202\PROJETO_INTEGRADOR_II\PROJ\ControleDeTccs\obj\Debug\netcoreapp3.1\Razor\Areas\Administrador\Views\Cursos\Delete.cshtml.g.cs
-C:\Users\Zero\Documents\IFS\20202\PROJETO_INTEGRADOR_II\PROJ\ControleDeTccs\obj\Debug\netcoreapp3.1\Razor\Areas\Administrador\Views\Cursos\Details.cshtml.g.cs
-C:\Users\Zero\Documents\IFS\20202\PROJETO_INTEGRADOR_II\PROJ\ControleDeTccs\obj\Debug\netcoreapp3.1\Razor\Areas\Administrador\Views\Cursos\Edit.cshtml.g.cs
-C:\Users\Zero\Documents\IFS\20202\PROJETO_INTEGRADOR_II\PROJ\ControleDeTccs\obj\Debug\netcoreapp3.1\Razor\Areas\Administrador\Views\Cursos\Index.cshtml.g.cs
-C:\Users\Zero\Documents\IFS\20202\PROJETO_INTEGRADOR_II\PROJ\ControleDeTccs\obj\Debug\netcoreapp3.1\Razor\Areas\Administrador\Views\_ViewImports.cshtml.g.cs
-C:\Users\Zero\Documents\IFS\20202\PROJETO_INTEGRADOR_II\PROJ\ControleDeTccs\obj\Debug\netcoreapp3.1\Razor\Areas\Administrador\Views\_ViewStart.cshtml.g.cs
-C:\Users\Thiago Teixeira\source\repos\ControleDeTccs\obj\Debug\netcoreapp3.1\Razor\Areas\Administrador\Views\Cursos\Create.cshtml.g.cs
-C:\Users\Thiago Teixeira\source\repos\ControleDeTccs\obj\Debug\netcoreapp3.1\Razor\Areas\Administrador\Views\Cursos\Delete.cshtml.g.cs
-C:\Users\Thiago Teixeira\source\repos\ControleDeTccs\obj\Debug\netcoreapp3.1\Razor\Areas\Administrador\Views\Cursos\Details.cshtml.g.cs
-C:\Users\Thiago Teixeira\source\repos\ControleDeTccs\obj\Debug\netcoreapp3.1\Razor\Areas\Administrador\Views\Cursos\Edit.cshtml.g.cs
-C:\Users\Thiago Teixeira\source\repos\ControleDeTccs\obj\Debug\netcoreapp3.1\Razor\Areas\Administrador\Views\Cursos\Index.cshtml.g.cs
-C:\Users\Thiago Teixeira\source\repos\ControleDeTccs\obj\Debug\netcoreapp3.1\Razor\Areas\Administrador\Views\_ViewImports.cshtml.g.cs
-C:\Users\Thiago Teixeira\source\repos\ControleDeTccs\obj\Debug\netcoreapp3.1\Razor\Areas\Administrador\Views\_ViewStart.cshtml.g.cs
+C:\Users\R&M\Documents\Controle TCC\ControleDeTccs\bin\Debug\netcoreapp3.1\appsettings.Development.json
+C:\Users\R&M\Documents\Controle TCC\ControleDeTccs\bin\Debug\netcoreapp3.1\appsettings.json
+C:\Users\R&M\Documents\Controle TCC\ControleDeTccs\bin\Debug\netcoreapp3.1\Properties\launchSettings.json
+C:\Users\R&M\Documents\Controle TCC\ControleDeTccs\bin\Debug\netcoreapp3.1\SistemaDeControleDeTCCs.StaticWebAssets.xml
+C:\Users\R&M\Documents\Controle TCC\ControleDeTccs\bin\Debug\netcoreapp3.1\SistemaDeControleDeTCCs.exe
+C:\Users\R&M\Documents\Controle TCC\ControleDeTccs\bin\Debug\netcoreapp3.1\SistemaDeControleDeTCCs.deps.json
+C:\Users\R&M\Documents\Controle TCC\ControleDeTccs\bin\Debug\netcoreapp3.1\SistemaDeControleDeTCCs.runtimeconfig.json
+C:\Users\R&M\Documents\Controle TCC\ControleDeTccs\bin\Debug\netcoreapp3.1\SistemaDeControleDeTCCs.runtimeconfig.dev.json
+C:\Users\R&M\Documents\Controle TCC\ControleDeTccs\bin\Debug\netcoreapp3.1\SistemaDeControleDeTCCs.dll
+C:\Users\R&M\Documents\Controle TCC\ControleDeTccs\bin\Debug\netcoreapp3.1\BouncyCastle.Crypto.dll
+C:\Users\R&M\Documents\Controle TCC\ControleDeTccs\bin\Debug\netcoreapp3.1\EntityFramework.SqlServer.dll
+C:\Users\R&M\Documents\Controle TCC\ControleDeTccs\bin\Debug\netcoreapp3.1\EntityFramework.dll
+C:\Users\R&M\Documents\Controle TCC\ControleDeTccs\bin\Debug\netcoreapp3.1\itextsharp.dll
+C:\Users\R&M\Documents\Controle TCC\ControleDeTccs\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Cryptography.Internal.dll
+C:\Users\R&M\Documents\Controle TCC\ControleDeTccs\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
+C:\Users\R&M\Documents\Controle TCC\ControleDeTccs\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore.dll
+C:\Users\R&M\Documents\Controle TCC\ControleDeTccs\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
+C:\Users\R&M\Documents\Controle TCC\ControleDeTccs\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Identity.UI.Views.V3.dll
+C:\Users\R&M\Documents\Controle TCC\ControleDeTccs\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Identity.UI.Views.V4.dll
+C:\Users\R&M\Documents\Controle TCC\ControleDeTccs\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Identity.UI.dll
+C:\Users\R&M\Documents\Controle TCC\ControleDeTccs\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Razor.Language.dll
+C:\Users\R&M\Documents\Controle TCC\ControleDeTccs\bin\Debug\netcoreapp3.1\Microsoft.Bcl.AsyncInterfaces.dll
+C:\Users\R&M\Documents\Controle TCC\ControleDeTccs\bin\Debug\netcoreapp3.1\Microsoft.Bcl.HashCode.dll
+C:\Users\R&M\Documents\Controle TCC\ControleDeTccs\bin\Debug\netcoreapp3.1\Microsoft.CodeAnalysis.dll
+C:\Users\R&M\Documents\Controle TCC\ControleDeTccs\bin\Debug\netcoreapp3.1\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\R&M\Documents\Controle TCC\ControleDeTccs\bin\Debug\netcoreapp3.1\Microsoft.CodeAnalysis.CSharp.Workspaces.dll
+C:\Users\R&M\Documents\Controle TCC\ControleDeTccs\bin\Debug\netcoreapp3.1\Microsoft.CodeAnalysis.Razor.dll
+C:\Users\R&M\Documents\Controle TCC\ControleDeTccs\bin\Debug\netcoreapp3.1\Microsoft.CodeAnalysis.Workspaces.dll
+C:\Users\R&M\Documents\Controle TCC\ControleDeTccs\bin\Debug\netcoreapp3.1\Microsoft.Data.SqlClient.dll
+C:\Users\R&M\Documents\Controle TCC\ControleDeTccs\bin\Debug\netcoreapp3.1\Microsoft.Data.Sqlite.dll
+C:\Users\R&M\Documents\Controle TCC\ControleDeTccs\bin\Debug\netcoreapp3.1\Microsoft.DotNet.PlatformAbstractions.dll
+C:\Users\R&M\Documents\Controle TCC\ControleDeTccs\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.dll
+C:\Users\R&M\Documents\Controle TCC\ControleDeTccs\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Abstractions.dll
+C:\Users\R&M\Documents\Controle TCC\ControleDeTccs\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Design.dll
+C:\Users\R&M\Documents\Controle TCC\ControleDeTccs\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Relational.dll
+C:\Users\R&M\Documents\Controle TCC\ControleDeTccs\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Sqlite.dll
+C:\Users\R&M\Documents\Controle TCC\ControleDeTccs\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.SqlServer.dll
+C:\Users\R&M\Documents\Controle TCC\ControleDeTccs\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Caching.Abstractions.dll
+C:\Users\R&M\Documents\Controle TCC\ControleDeTccs\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Caching.Memory.dll
+C:\Users\R&M\Documents\Controle TCC\ControleDeTccs\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Configuration.dll
+C:\Users\R&M\Documents\Controle TCC\ControleDeTccs\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Configuration.Abstractions.dll
+C:\Users\R&M\Documents\Controle TCC\ControleDeTccs\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Configuration.Binder.dll
+C:\Users\R&M\Documents\Controle TCC\ControleDeTccs\bin\Debug\netcoreapp3.1\Microsoft.Extensions.DependencyInjection.dll
+C:\Users\R&M\Documents\Controle TCC\ControleDeTccs\bin\Debug\netcoreapp3.1\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Users\R&M\Documents\Controle TCC\ControleDeTccs\bin\Debug\netcoreapp3.1\Microsoft.Extensions.DependencyModel.dll
+C:\Users\R&M\Documents\Controle TCC\ControleDeTccs\bin\Debug\netcoreapp3.1\Microsoft.Extensions.FileProviders.Abstractions.dll
+C:\Users\R&M\Documents\Controle TCC\ControleDeTccs\bin\Debug\netcoreapp3.1\Microsoft.Extensions.FileProviders.Embedded.dll
+C:\Users\R&M\Documents\Controle TCC\ControleDeTccs\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Identity.Core.dll
+C:\Users\R&M\Documents\Controle TCC\ControleDeTccs\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Identity.Stores.dll
+C:\Users\R&M\Documents\Controle TCC\ControleDeTccs\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Logging.dll
+C:\Users\R&M\Documents\Controle TCC\ControleDeTccs\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Logging.Abstractions.dll
+C:\Users\R&M\Documents\Controle TCC\ControleDeTccs\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Options.dll
+C:\Users\R&M\Documents\Controle TCC\ControleDeTccs\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Primitives.dll
+C:\Users\R&M\Documents\Controle TCC\ControleDeTccs\bin\Debug\netcoreapp3.1\Microsoft.Identity.Client.dll
+C:\Users\R&M\Documents\Controle TCC\ControleDeTccs\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\Users\R&M\Documents\Controle TCC\ControleDeTccs\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Logging.dll
+C:\Users\R&M\Documents\Controle TCC\ControleDeTccs\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Protocols.dll
+C:\Users\R&M\Documents\Controle TCC\ControleDeTccs\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+C:\Users\R&M\Documents\Controle TCC\ControleDeTccs\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Tokens.dll
+C:\Users\R&M\Documents\Controle TCC\ControleDeTccs\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.Web.CodeGeneration.dll
+C:\Users\R&M\Documents\Controle TCC\ControleDeTccs\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.Web.CodeGeneration.Contracts.dll
+C:\Users\R&M\Documents\Controle TCC\ControleDeTccs\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.Web.CodeGeneration.Core.dll
+C:\Users\R&M\Documents\Controle TCC\ControleDeTccs\bin\Debug\netcoreapp3.1\dotnet-aspnet-codegenerator-design.dll
+C:\Users\R&M\Documents\Controle TCC\ControleDeTccs\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.Web.CodeGeneration.EntityFrameworkCore.dll
+C:\Users\R&M\Documents\Controle TCC\ControleDeTccs\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.Web.CodeGeneration.Templating.dll
+C:\Users\R&M\Documents\Controle TCC\ControleDeTccs\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.Web.CodeGeneration.Utils.dll
+C:\Users\R&M\Documents\Controle TCC\ControleDeTccs\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.Web.CodeGenerators.Mvc.dll
+C:\Users\R&M\Documents\Controle TCC\ControleDeTccs\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll
+C:\Users\R&M\Documents\Controle TCC\ControleDeTccs\bin\Debug\netcoreapp3.1\NuGet.Frameworks.dll
+C:\Users\R&M\Documents\Controle TCC\ControleDeTccs\bin\Debug\netcoreapp3.1\SQLitePCLRaw.batteries_v2.dll
+C:\Users\R&M\Documents\Controle TCC\ControleDeTccs\bin\Debug\netcoreapp3.1\SQLitePCLRaw.nativelibrary.dll
+C:\Users\R&M\Documents\Controle TCC\ControleDeTccs\bin\Debug\netcoreapp3.1\SQLitePCLRaw.core.dll
+C:\Users\R&M\Documents\Controle TCC\ControleDeTccs\bin\Debug\netcoreapp3.1\SQLitePCLRaw.provider.dynamic_cdecl.dll
+C:\Users\R&M\Documents\Controle TCC\ControleDeTccs\bin\Debug\netcoreapp3.1\System.CodeDom.dll
+C:\Users\R&M\Documents\Controle TCC\ControleDeTccs\bin\Debug\netcoreapp3.1\System.Collections.Immutable.dll
+C:\Users\R&M\Documents\Controle TCC\ControleDeTccs\bin\Debug\netcoreapp3.1\System.Composition.AttributedModel.dll
+C:\Users\R&M\Documents\Controle TCC\ControleDeTccs\bin\Debug\netcoreapp3.1\System.Composition.Convention.dll
+C:\Users\R&M\Documents\Controle TCC\ControleDeTccs\bin\Debug\netcoreapp3.1\System.Composition.Hosting.dll
+C:\Users\R&M\Documents\Controle TCC\ControleDeTccs\bin\Debug\netcoreapp3.1\System.Composition.Runtime.dll
+C:\Users\R&M\Documents\Controle TCC\ControleDeTccs\bin\Debug\netcoreapp3.1\System.Composition.TypedParts.dll
+C:\Users\R&M\Documents\Controle TCC\ControleDeTccs\bin\Debug\netcoreapp3.1\System.Configuration.ConfigurationManager.dll
+C:\Users\R&M\Documents\Controle TCC\ControleDeTccs\bin\Debug\netcoreapp3.1\System.Data.SqlClient.dll
+C:\Users\R&M\Documents\Controle TCC\ControleDeTccs\bin\Debug\netcoreapp3.1\System.Diagnostics.DiagnosticSource.dll
+C:\Users\R&M\Documents\Controle TCC\ControleDeTccs\bin\Debug\netcoreapp3.1\System.IdentityModel.Tokens.Jwt.dll
+C:\Users\R&M\Documents\Controle TCC\ControleDeTccs\bin\Debug\netcoreapp3.1\System.Runtime.Caching.dll
+C:\Users\R&M\Documents\Controle TCC\ControleDeTccs\bin\Debug\netcoreapp3.1\System.Security.Cryptography.ProtectedData.dll
+C:\Users\R&M\Documents\Controle TCC\ControleDeTccs\bin\Debug\netcoreapp3.1\System.Text.Json.dll
+C:\Users\R&M\Documents\Controle TCC\ControleDeTccs\bin\Debug\netcoreapp3.1\cs\Microsoft.CodeAnalysis.resources.dll
+C:\Users\R&M\Documents\Controle TCC\ControleDeTccs\bin\Debug\netcoreapp3.1\de\Microsoft.CodeAnalysis.resources.dll
+C:\Users\R&M\Documents\Controle TCC\ControleDeTccs\bin\Debug\netcoreapp3.1\es\Microsoft.CodeAnalysis.resources.dll
+C:\Users\R&M\Documents\Controle TCC\ControleDeTccs\bin\Debug\netcoreapp3.1\fr\Microsoft.CodeAnalysis.resources.dll
+C:\Users\R&M\Documents\Controle TCC\ControleDeTccs\bin\Debug\netcoreapp3.1\it\Microsoft.CodeAnalysis.resources.dll
+C:\Users\R&M\Documents\Controle TCC\ControleDeTccs\bin\Debug\netcoreapp3.1\ja\Microsoft.CodeAnalysis.resources.dll
+C:\Users\R&M\Documents\Controle TCC\ControleDeTccs\bin\Debug\netcoreapp3.1\ko\Microsoft.CodeAnalysis.resources.dll
+C:\Users\R&M\Documents\Controle TCC\ControleDeTccs\bin\Debug\netcoreapp3.1\pl\Microsoft.CodeAnalysis.resources.dll
+C:\Users\R&M\Documents\Controle TCC\ControleDeTccs\bin\Debug\netcoreapp3.1\pt-BR\Microsoft.CodeAnalysis.resources.dll
+C:\Users\R&M\Documents\Controle TCC\ControleDeTccs\bin\Debug\netcoreapp3.1\ru\Microsoft.CodeAnalysis.resources.dll
+C:\Users\R&M\Documents\Controle TCC\ControleDeTccs\bin\Debug\netcoreapp3.1\tr\Microsoft.CodeAnalysis.resources.dll
+C:\Users\R&M\Documents\Controle TCC\ControleDeTccs\bin\Debug\netcoreapp3.1\zh-Hans\Microsoft.CodeAnalysis.resources.dll
+C:\Users\R&M\Documents\Controle TCC\ControleDeTccs\bin\Debug\netcoreapp3.1\zh-Hant\Microsoft.CodeAnalysis.resources.dll
+C:\Users\R&M\Documents\Controle TCC\ControleDeTccs\bin\Debug\netcoreapp3.1\cs\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\R&M\Documents\Controle TCC\ControleDeTccs\bin\Debug\netcoreapp3.1\de\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\R&M\Documents\Controle TCC\ControleDeTccs\bin\Debug\netcoreapp3.1\es\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\R&M\Documents\Controle TCC\ControleDeTccs\bin\Debug\netcoreapp3.1\fr\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\R&M\Documents\Controle TCC\ControleDeTccs\bin\Debug\netcoreapp3.1\it\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\R&M\Documents\Controle TCC\ControleDeTccs\bin\Debug\netcoreapp3.1\ja\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\R&M\Documents\Controle TCC\ControleDeTccs\bin\Debug\netcoreapp3.1\ko\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\R&M\Documents\Controle TCC\ControleDeTccs\bin\Debug\netcoreapp3.1\pl\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\R&M\Documents\Controle TCC\ControleDeTccs\bin\Debug\netcoreapp3.1\pt-BR\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\R&M\Documents\Controle TCC\ControleDeTccs\bin\Debug\netcoreapp3.1\ru\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\R&M\Documents\Controle TCC\ControleDeTccs\bin\Debug\netcoreapp3.1\tr\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\R&M\Documents\Controle TCC\ControleDeTccs\bin\Debug\netcoreapp3.1\zh-Hans\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\R&M\Documents\Controle TCC\ControleDeTccs\bin\Debug\netcoreapp3.1\zh-Hant\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\R&M\Documents\Controle TCC\ControleDeTccs\bin\Debug\netcoreapp3.1\cs\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\R&M\Documents\Controle TCC\ControleDeTccs\bin\Debug\netcoreapp3.1\de\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\R&M\Documents\Controle TCC\ControleDeTccs\bin\Debug\netcoreapp3.1\es\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\R&M\Documents\Controle TCC\ControleDeTccs\bin\Debug\netcoreapp3.1\fr\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\R&M\Documents\Controle TCC\ControleDeTccs\bin\Debug\netcoreapp3.1\it\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\R&M\Documents\Controle TCC\ControleDeTccs\bin\Debug\netcoreapp3.1\ja\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\R&M\Documents\Controle TCC\ControleDeTccs\bin\Debug\netcoreapp3.1\ko\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\R&M\Documents\Controle TCC\ControleDeTccs\bin\Debug\netcoreapp3.1\pl\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\R&M\Documents\Controle TCC\ControleDeTccs\bin\Debug\netcoreapp3.1\pt-BR\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\R&M\Documents\Controle TCC\ControleDeTccs\bin\Debug\netcoreapp3.1\ru\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\R&M\Documents\Controle TCC\ControleDeTccs\bin\Debug\netcoreapp3.1\tr\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\R&M\Documents\Controle TCC\ControleDeTccs\bin\Debug\netcoreapp3.1\zh-Hans\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\R&M\Documents\Controle TCC\ControleDeTccs\bin\Debug\netcoreapp3.1\zh-Hant\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\R&M\Documents\Controle TCC\ControleDeTccs\bin\Debug\netcoreapp3.1\cs\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\R&M\Documents\Controle TCC\ControleDeTccs\bin\Debug\netcoreapp3.1\de\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\R&M\Documents\Controle TCC\ControleDeTccs\bin\Debug\netcoreapp3.1\es\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\R&M\Documents\Controle TCC\ControleDeTccs\bin\Debug\netcoreapp3.1\fr\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\R&M\Documents\Controle TCC\ControleDeTccs\bin\Debug\netcoreapp3.1\it\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\R&M\Documents\Controle TCC\ControleDeTccs\bin\Debug\netcoreapp3.1\ja\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\R&M\Documents\Controle TCC\ControleDeTccs\bin\Debug\netcoreapp3.1\ko\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\R&M\Documents\Controle TCC\ControleDeTccs\bin\Debug\netcoreapp3.1\pl\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\R&M\Documents\Controle TCC\ControleDeTccs\bin\Debug\netcoreapp3.1\pt-BR\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\R&M\Documents\Controle TCC\ControleDeTccs\bin\Debug\netcoreapp3.1\ru\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\R&M\Documents\Controle TCC\ControleDeTccs\bin\Debug\netcoreapp3.1\tr\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\R&M\Documents\Controle TCC\ControleDeTccs\bin\Debug\netcoreapp3.1\zh-Hans\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\R&M\Documents\Controle TCC\ControleDeTccs\bin\Debug\netcoreapp3.1\zh-Hant\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\R&M\Documents\Controle TCC\ControleDeTccs\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.1\Microsoft.Data.SqlClient.dll
+C:\Users\R&M\Documents\Controle TCC\ControleDeTccs\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.1\Microsoft.Data.SqlClient.dll
+C:\Users\R&M\Documents\Controle TCC\ControleDeTccs\bin\Debug\netcoreapp3.1\runtimes\win-arm64\native\sni.dll
+C:\Users\R&M\Documents\Controle TCC\ControleDeTccs\bin\Debug\netcoreapp3.1\runtimes\win-x64\native\sni.dll
+C:\Users\R&M\Documents\Controle TCC\ControleDeTccs\bin\Debug\netcoreapp3.1\runtimes\win-x86\native\sni.dll
+C:\Users\R&M\Documents\Controle TCC\ControleDeTccs\bin\Debug\netcoreapp3.1\runtimes\alpine-x64\native\libe_sqlite3.so
+C:\Users\R&M\Documents\Controle TCC\ControleDeTccs\bin\Debug\netcoreapp3.1\runtimes\linux-arm\native\libe_sqlite3.so
+C:\Users\R&M\Documents\Controle TCC\ControleDeTccs\bin\Debug\netcoreapp3.1\runtimes\linux-arm64\native\libe_sqlite3.so
+C:\Users\R&M\Documents\Controle TCC\ControleDeTccs\bin\Debug\netcoreapp3.1\runtimes\linux-armel\native\libe_sqlite3.so
+C:\Users\R&M\Documents\Controle TCC\ControleDeTccs\bin\Debug\netcoreapp3.1\runtimes\linux-musl-x64\native\libe_sqlite3.so
+C:\Users\R&M\Documents\Controle TCC\ControleDeTccs\bin\Debug\netcoreapp3.1\runtimes\linux-x64\native\libe_sqlite3.so
+C:\Users\R&M\Documents\Controle TCC\ControleDeTccs\bin\Debug\netcoreapp3.1\runtimes\linux-x86\native\libe_sqlite3.so
+C:\Users\R&M\Documents\Controle TCC\ControleDeTccs\bin\Debug\netcoreapp3.1\runtimes\osx-x64\native\libe_sqlite3.dylib
+C:\Users\R&M\Documents\Controle TCC\ControleDeTccs\bin\Debug\netcoreapp3.1\runtimes\win-arm\native\e_sqlite3.dll
+C:\Users\R&M\Documents\Controle TCC\ControleDeTccs\bin\Debug\netcoreapp3.1\runtimes\win-arm64\native\e_sqlite3.dll
+C:\Users\R&M\Documents\Controle TCC\ControleDeTccs\bin\Debug\netcoreapp3.1\runtimes\win-x64\native\e_sqlite3.dll
+C:\Users\R&M\Documents\Controle TCC\ControleDeTccs\bin\Debug\netcoreapp3.1\runtimes\win-x86\native\e_sqlite3.dll
+C:\Users\R&M\Documents\Controle TCC\ControleDeTccs\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\Users\R&M\Documents\Controle TCC\ControleDeTccs\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\Users\R&M\Documents\Controle TCC\ControleDeTccs\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.0\System.Runtime.Caching.dll
+C:\Users\R&M\Documents\Controle TCC\ControleDeTccs\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.0\System.Runtime.Caching.dll
+C:\Users\R&M\Documents\Controle TCC\ControleDeTccs\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
+C:\Users\R&M\Documents\Controle TCC\ControleDeTccs\obj\Debug\netcoreapp3.1\SistemaDeControleDeTCCs.csprojAssemblyReference.cache
+C:\Users\R&M\Documents\Controle TCC\ControleDeTccs\obj\Debug\netcoreapp3.1\SistemaDeControleDeTCCs.AssemblyInfoInputs.cache
+C:\Users\R&M\Documents\Controle TCC\ControleDeTccs\obj\Debug\netcoreapp3.1\SistemaDeControleDeTCCs.AssemblyInfo.cs
+C:\Users\R&M\Documents\Controle TCC\ControleDeTccs\obj\Debug\netcoreapp3.1\SistemaDeControleDeTCCs.RazorAssemblyInfo.cache
+C:\Users\R&M\Documents\Controle TCC\ControleDeTccs\obj\Debug\netcoreapp3.1\SistemaDeControleDeTCCs.RazorAssemblyInfo.cs
+C:\Users\R&M\Documents\Controle TCC\ControleDeTccs\obj\Debug\netcoreapp3.1\SistemaDeControleDeTCCs.TagHelpers.input.cache
+C:\Users\R&M\Documents\Controle TCC\ControleDeTccs\obj\Debug\netcoreapp3.1\SistemaDeControleDeTCCs.TagHelpers.output.cache
+C:\Users\R&M\Documents\Controle TCC\ControleDeTccs\obj\Debug\netcoreapp3.1\SistemaDeControleDeTCCs.RazorCoreGenerate.cache
+C:\Users\R&M\Documents\Controle TCC\ControleDeTccs\obj\Debug\netcoreapp3.1\Razor\Areas\Coordenador\Views\Calendarios\Create.cshtml.g.cs
+C:\Users\R&M\Documents\Controle TCC\ControleDeTccs\obj\Debug\netcoreapp3.1\Razor\Areas\Coordenador\Views\Calendarios\Delete.cshtml.g.cs
+C:\Users\R&M\Documents\Controle TCC\ControleDeTccs\obj\Debug\netcoreapp3.1\Razor\Areas\Coordenador\Views\Calendarios\Details.cshtml.g.cs
+C:\Users\R&M\Documents\Controle TCC\ControleDeTccs\obj\Debug\netcoreapp3.1\Razor\Areas\Coordenador\Views\Calendarios\Edit.cshtml.g.cs
+C:\Users\R&M\Documents\Controle TCC\ControleDeTccs\obj\Debug\netcoreapp3.1\Razor\Areas\Coordenador\Views\Calendarios\Index.cshtml.g.cs
+C:\Users\R&M\Documents\Controle TCC\ControleDeTccs\obj\Debug\netcoreapp3.1\Razor\Areas\Coordenador\Views\Relatorios\Index.cshtml.g.cs
+C:\Users\R&M\Documents\Controle TCC\ControleDeTccs\obj\Debug\netcoreapp3.1\Razor\Areas\Coordenador\Views\Tccs\AddDataLocalApresentacao.cshtml.g.cs
+C:\Users\R&M\Documents\Controle TCC\ControleDeTccs\obj\Debug\netcoreapp3.1\Razor\Areas\Coordenador\Views\Tccs\AddOrEdit.cshtml.g.cs
+C:\Users\R&M\Documents\Controle TCC\ControleDeTccs\obj\Debug\netcoreapp3.1\Razor\Areas\Coordenador\Views\Tccs\Cancelar.cshtml.g.cs
+C:\Users\R&M\Documents\Controle TCC\ControleDeTccs\obj\Debug\netcoreapp3.1\Razor\Areas\Coordenador\Views\Tccs\Delete.cshtml.g.cs
+C:\Users\R&M\Documents\Controle TCC\ControleDeTccs\obj\Debug\netcoreapp3.1\Razor\Areas\Coordenador\Views\Tccs\Index.cshtml.g.cs
+C:\Users\R&M\Documents\Controle TCC\ControleDeTccs\obj\Debug\netcoreapp3.1\Razor\Areas\Coordenador\Views\Usuarios\AddOrEdit.cshtml.g.cs
+C:\Users\R&M\Documents\Controle TCC\ControleDeTccs\obj\Debug\netcoreapp3.1\Razor\Areas\Coordenador\Views\Usuarios\Index.cshtml.g.cs
+C:\Users\R&M\Documents\Controle TCC\ControleDeTccs\obj\Debug\netcoreapp3.1\Razor\Areas\Coordenador\Views\Usuarios\_ViewAll.cshtml.g.cs
+C:\Users\R&M\Documents\Controle TCC\ControleDeTccs\obj\Debug\netcoreapp3.1\Razor\Areas\Coordenador\Views\_ViewImports.cshtml.g.cs
+C:\Users\R&M\Documents\Controle TCC\ControleDeTccs\obj\Debug\netcoreapp3.1\Razor\Areas\Coordenador\Views\_ViewStart.cshtml.g.cs
+C:\Users\R&M\Documents\Controle TCC\ControleDeTccs\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\Account\AccessDenied.cshtml.g.cs
+C:\Users\R&M\Documents\Controle TCC\ControleDeTccs\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\Account\ConfirmEmail.cshtml.g.cs
+C:\Users\R&M\Documents\Controle TCC\ControleDeTccs\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\Account\ConfirmEmailChange.cshtml.g.cs
+C:\Users\R&M\Documents\Controle TCC\ControleDeTccs\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\Account\ExternalLogin.cshtml.g.cs
+C:\Users\R&M\Documents\Controle TCC\ControleDeTccs\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\Account\ForgotPassword.cshtml.g.cs
+C:\Users\R&M\Documents\Controle TCC\ControleDeTccs\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\Account\ForgotPasswordConfirmation.cshtml.g.cs
+C:\Users\R&M\Documents\Controle TCC\ControleDeTccs\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\Account\Lockout.cshtml.g.cs
+C:\Users\R&M\Documents\Controle TCC\ControleDeTccs\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\Account\Login.cshtml.g.cs
+C:\Users\R&M\Documents\Controle TCC\ControleDeTccs\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\Account\LoginWith2fa.cshtml.g.cs
+C:\Users\R&M\Documents\Controle TCC\ControleDeTccs\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\Account\LoginWithRecoveryCode.cshtml.g.cs
+C:\Users\R&M\Documents\Controle TCC\ControleDeTccs\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\Account\Logout.cshtml.g.cs
+C:\Users\R&M\Documents\Controle TCC\ControleDeTccs\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\Account\Manage\ChangePassword.cshtml.g.cs
+C:\Users\R&M\Documents\Controle TCC\ControleDeTccs\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\Account\Manage\DeletePersonalData.cshtml.g.cs
+C:\Users\R&M\Documents\Controle TCC\ControleDeTccs\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\Account\Manage\Disable2fa.cshtml.g.cs
+C:\Users\R&M\Documents\Controle TCC\ControleDeTccs\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\Account\Manage\DownloadPersonalData.cshtml.g.cs
+C:\Users\R&M\Documents\Controle TCC\ControleDeTccs\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\Account\Manage\Email.cshtml.g.cs
+C:\Users\R&M\Documents\Controle TCC\ControleDeTccs\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\Account\Manage\EnableAuthenticator.cshtml.g.cs
+C:\Users\R&M\Documents\Controle TCC\ControleDeTccs\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\Account\Manage\ExternalLogins.cshtml.g.cs
+C:\Users\R&M\Documents\Controle TCC\ControleDeTccs\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\Account\Manage\GenerateRecoveryCodes.cshtml.g.cs
+C:\Users\R&M\Documents\Controle TCC\ControleDeTccs\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\Account\Manage\Index.cshtml.g.cs
+C:\Users\R&M\Documents\Controle TCC\ControleDeTccs\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\Account\Manage\PersonalData.cshtml.g.cs
+C:\Users\R&M\Documents\Controle TCC\ControleDeTccs\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\Account\Manage\ResetAuthenticator.cshtml.g.cs
+C:\Users\R&M\Documents\Controle TCC\ControleDeTccs\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\Account\Manage\SetPassword.cshtml.g.cs
+C:\Users\R&M\Documents\Controle TCC\ControleDeTccs\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\Account\Manage\ShowRecoveryCodes.cshtml.g.cs
+C:\Users\R&M\Documents\Controle TCC\ControleDeTccs\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\Account\Manage\TwoFactorAuthentication.cshtml.g.cs
+C:\Users\R&M\Documents\Controle TCC\ControleDeTccs\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\Account\Manage\_Layout.cshtml.g.cs
+C:\Users\R&M\Documents\Controle TCC\ControleDeTccs\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\Account\Manage\_ManageNav.cshtml.g.cs
+C:\Users\R&M\Documents\Controle TCC\ControleDeTccs\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\Account\Manage\_StatusMessage.cshtml.g.cs
+C:\Users\R&M\Documents\Controle TCC\ControleDeTccs\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\Account\Manage\_ViewImports.cshtml.g.cs
+C:\Users\R&M\Documents\Controle TCC\ControleDeTccs\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\Account\Register.cshtml.g.cs
+C:\Users\R&M\Documents\Controle TCC\ControleDeTccs\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\Account\RegisterConfirmation.cshtml.g.cs
+C:\Users\R&M\Documents\Controle TCC\ControleDeTccs\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\Account\ResendEmailConfirmation.cshtml.g.cs
+C:\Users\R&M\Documents\Controle TCC\ControleDeTccs\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\Account\ResetPassword.cshtml.g.cs
+C:\Users\R&M\Documents\Controle TCC\ControleDeTccs\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\Account\ResetPasswordConfirmation.cshtml.g.cs
+C:\Users\R&M\Documents\Controle TCC\ControleDeTccs\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\Account\_StatusMessage.cshtml.g.cs
+C:\Users\R&M\Documents\Controle TCC\ControleDeTccs\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\Account\_ViewImports.cshtml.g.cs
+C:\Users\R&M\Documents\Controle TCC\ControleDeTccs\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\Error.cshtml.g.cs
+C:\Users\R&M\Documents\Controle TCC\ControleDeTccs\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\_ValidationScriptsPartial.cshtml.g.cs
+C:\Users\R&M\Documents\Controle TCC\ControleDeTccs\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\_ViewImports.cshtml.g.cs
+C:\Users\R&M\Documents\Controle TCC\ControleDeTccs\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\_ViewStart.cshtml.g.cs
+C:\Users\R&M\Documents\Controle TCC\ControleDeTccs\obj\Debug\netcoreapp3.1\Razor\Views\Bancas\Anexo.cshtml.g.cs
+C:\Users\R&M\Documents\Controle TCC\ControleDeTccs\obj\Debug\netcoreapp3.1\Razor\Views\Bancas\Create.cshtml.g.cs
+C:\Users\R&M\Documents\Controle TCC\ControleDeTccs\obj\Debug\netcoreapp3.1\Razor\Views\Bancas\Delete.cshtml.g.cs
+C:\Users\R&M\Documents\Controle TCC\ControleDeTccs\obj\Debug\netcoreapp3.1\Razor\Views\Bancas\Details.cshtml.g.cs
+C:\Users\R&M\Documents\Controle TCC\ControleDeTccs\obj\Debug\netcoreapp3.1\Razor\Views\Bancas\Edit.cshtml.g.cs
+C:\Users\R&M\Documents\Controle TCC\ControleDeTccs\obj\Debug\netcoreapp3.1\Razor\Views\Bancas\Index.cshtml.g.cs
+C:\Users\R&M\Documents\Controle TCC\ControleDeTccs\obj\Debug\netcoreapp3.1\Razor\Views\Bancas\IndexAluno.cshtml.g.cs
+C:\Users\R&M\Documents\Controle TCC\ControleDeTccs\obj\Debug\netcoreapp3.1\Razor\Views\Bancas\Resumo.cshtml.g.cs
+C:\Users\R&M\Documents\Controle TCC\ControleDeTccs\obj\Debug\netcoreapp3.1\Razor\Views\FileTCCs\Create.cshtml.g.cs
+C:\Users\R&M\Documents\Controle TCC\ControleDeTccs\obj\Debug\netcoreapp3.1\Razor\Views\FileTCCs\Delete.cshtml.g.cs
+C:\Users\R&M\Documents\Controle TCC\ControleDeTccs\obj\Debug\netcoreapp3.1\Razor\Views\FileTCCs\Details.cshtml.g.cs
+C:\Users\R&M\Documents\Controle TCC\ControleDeTccs\obj\Debug\netcoreapp3.1\Razor\Views\FileTCCs\Edit.cshtml.g.cs
+C:\Users\R&M\Documents\Controle TCC\ControleDeTccs\obj\Debug\netcoreapp3.1\Razor\Views\FileTCCs\Index.cshtml.g.cs
+C:\Users\R&M\Documents\Controle TCC\ControleDeTccs\obj\Debug\netcoreapp3.1\Razor\Views\Home\Index.cshtml.g.cs
+C:\Users\R&M\Documents\Controle TCC\ControleDeTccs\obj\Debug\netcoreapp3.1\Razor\Views\Home\Privacy.cshtml.g.cs
+C:\Users\R&M\Documents\Controle TCC\ControleDeTccs\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Error.cshtml.g.cs
+C:\Users\R&M\Documents\Controle TCC\ControleDeTccs\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_Layout.cshtml.g.cs
+C:\Users\R&M\Documents\Controle TCC\ControleDeTccs\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_LoginPartial.cshtml.g.cs
+C:\Users\R&M\Documents\Controle TCC\ControleDeTccs\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_ValidationScriptsPartial.cshtml.g.cs
+C:\Users\R&M\Documents\Controle TCC\ControleDeTccs\obj\Debug\netcoreapp3.1\Razor\Views\Status\Create.cshtml.g.cs
+C:\Users\R&M\Documents\Controle TCC\ControleDeTccs\obj\Debug\netcoreapp3.1\Razor\Views\Status\Delete.cshtml.g.cs
+C:\Users\R&M\Documents\Controle TCC\ControleDeTccs\obj\Debug\netcoreapp3.1\Razor\Views\Status\Details.cshtml.g.cs
+C:\Users\R&M\Documents\Controle TCC\ControleDeTccs\obj\Debug\netcoreapp3.1\Razor\Views\Status\Edit.cshtml.g.cs
+C:\Users\R&M\Documents\Controle TCC\ControleDeTccs\obj\Debug\netcoreapp3.1\Razor\Views\Status\Index.cshtml.g.cs
+C:\Users\R&M\Documents\Controle TCC\ControleDeTccs\obj\Debug\netcoreapp3.1\Razor\Views\TipoUsuarios\Create.cshtml.g.cs
+C:\Users\R&M\Documents\Controle TCC\ControleDeTccs\obj\Debug\netcoreapp3.1\Razor\Views\TipoUsuarios\Delete.cshtml.g.cs
+C:\Users\R&M\Documents\Controle TCC\ControleDeTccs\obj\Debug\netcoreapp3.1\Razor\Views\TipoUsuarios\Details.cshtml.g.cs
+C:\Users\R&M\Documents\Controle TCC\ControleDeTccs\obj\Debug\netcoreapp3.1\Razor\Views\TipoUsuarios\Edit.cshtml.g.cs
+C:\Users\R&M\Documents\Controle TCC\ControleDeTccs\obj\Debug\netcoreapp3.1\Razor\Views\TipoUsuarios\Index.cshtml.g.cs
+C:\Users\R&M\Documents\Controle TCC\ControleDeTccs\obj\Debug\netcoreapp3.1\Razor\Views\_ViewImports.cshtml.g.cs
+C:\Users\R&M\Documents\Controle TCC\ControleDeTccs\obj\Debug\netcoreapp3.1\Razor\Views\_ViewStart.cshtml.g.cs
+C:\Users\R&M\Documents\Controle TCC\ControleDeTccs\obj\Debug\netcoreapp3.1\SistemaDeControleDeTCCs.RazorTargetAssemblyInfo.cache
+C:\Users\R&M\Documents\Controle TCC\ControleDeTccs\obj\Debug\netcoreapp3.1\SistemaDeControleDeTCCs.RazorTargetAssemblyInfo.cs
+C:\Users\R&M\Documents\Controle TCC\ControleDeTccs\obj\Debug\netcoreapp3.1\SistemaDeControleDeTCCs.csproj.CopyComplete
+C:\Users\R&M\Documents\Controle TCC\ControleDeTccs\obj\Debug\netcoreapp3.1\staticwebassets\SistemaDeControleDeTCCs.StaticWebAssets.Manifest.cache
+C:\Users\R&M\Documents\Controle TCC\ControleDeTccs\obj\Debug\netcoreapp3.1\staticwebassets\SistemaDeControleDeTCCs.StaticWebAssets.xml
+C:\Users\R&M\Documents\Controle TCC\ControleDeTccs\obj\Debug\netcoreapp3.1\SistemaDeControleDeTCCs.genruntimeconfig.cache
+C:\Users\R&M\Documents\Controle TCC\ControleDeTccs\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.InMemory.dll
+C:\Users\R&M\Documents\Controle TCC\ControleDeTccs\bin\Debug\netcoreapp3.1\SistemaDeControleDeTCCs.pdb
+C:\Users\R&M\Documents\Controle TCC\ControleDeTccs\bin\Debug\netcoreapp3.1\SistemaDeControleDeTCCs.Views.dll
+C:\Users\R&M\Documents\Controle TCC\ControleDeTccs\bin\Debug\netcoreapp3.1\SistemaDeControleDeTCCs.Views.pdb
+C:\Users\R&M\Documents\Controle TCC\ControleDeTccs\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Relational.Design.dll
+C:\Users\R&M\Documents\Controle TCC\ControleDeTccs\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.SqlServer.Design.dll
+C:\Users\R&M\Documents\Controle TCC\ControleDeTccs\obj\Debug\netcoreapp3.1\SistemaDeControleDeTCCs.Views.pdb
+C:\Users\R&M\Documents\Controle TCC\ControleDeTccs\obj\Debug\netcoreapp3.1\SistemaDeControleDeTCCs.dll
+C:\Users\R&M\Documents\Controle TCC\ControleDeTccs\obj\Debug\netcoreapp3.1\SistemaDeControleDeTCCs.pdb
+C:\Users\R&M\Documents\Controle TCC\ControleDeTccs\bin\Debug\netcoreapp3.1\KissLog.dll
+C:\Users\R&M\Documents\Controle TCC\ControleDeTccs\bin\Debug\netcoreapp3.1\KissLog.AspNetCore.dll
+C:\Users\R&M\Documents\Controle TCC\ControleDeTccs\bin\Debug\netcoreapp3.1\KissLog.CloudListeners.dll
+C:\Users\R&M\Documents\Controle TCC\ControleDeTccs\obj\Debug\netcoreapp3.1\SistemaDeControleDeTCCs.csproj.CoreCompileInputs.cache
+C:\Users\R&M\Documents\Controle TCC\ControleDeTccs\obj\Debug\netcoreapp3.1\SistemaDeControleDeTCCs.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\R&M\Documents\Controle TCC\ControleDeTccs\obj\Debug\netcoreapp3.1\SistemaDeControleDeTCCs.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\R&M\Documents\Controle TCC\ControleDeTccs\obj\Debug\netcoreapp3.1\Razor\Views\Logger\Index.cshtml.g.cs
+C:\Users\Full Plus\source\repos\manasses-ifs\ControleDeTccs\obj\Debug\netcoreapp3.1\SistemaDeControleDeTCCs.AssemblyInfoInputs.cache
+C:\Users\Full Plus\source\repos\manasses-ifs\ControleDeTccs\obj\Debug\netcoreapp3.1\SistemaDeControleDeTCCs.AssemblyInfo.cs
+C:\Users\Full Plus\source\repos\manasses-ifs\ControleDeTccs\obj\Debug\netcoreapp3.1\SistemaDeControleDeTCCs.csproj.CoreCompileInputs.cache
+C:\Users\Full Plus\source\repos\manasses-ifs\ControleDeTccs\obj\Debug\netcoreapp3.1\SistemaDeControleDeTCCs.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\Full Plus\source\repos\manasses-ifs\ControleDeTccs\obj\Debug\netcoreapp3.1\SistemaDeControleDeTCCs.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\Full Plus\source\repos\manasses-ifs\ControleDeTccs\obj\Debug\netcoreapp3.1\SistemaDeControleDeTCCs.RazorAssemblyInfo.cache
+C:\Users\Full Plus\source\repos\manasses-ifs\ControleDeTccs\obj\Debug\netcoreapp3.1\SistemaDeControleDeTCCs.RazorAssemblyInfo.cs
+E:\Desktop\Controle de TCC\ControleDeTccs\bin\Debug\netcoreapp3.1\appsettings.Development.json
+E:\Desktop\Controle de TCC\ControleDeTccs\bin\Debug\netcoreapp3.1\appsettings.json
+E:\Desktop\Controle de TCC\ControleDeTccs\bin\Debug\netcoreapp3.1\SistemaDeControleDeTCCs.StaticWebAssets.xml
+E:\Desktop\Controle de TCC\ControleDeTccs\bin\Debug\netcoreapp3.1\SistemaDeControleDeTCCs.exe
+E:\Desktop\Controle de TCC\ControleDeTccs\bin\Debug\netcoreapp3.1\SistemaDeControleDeTCCs.deps.json
+E:\Desktop\Controle de TCC\ControleDeTccs\bin\Debug\netcoreapp3.1\SistemaDeControleDeTCCs.runtimeconfig.json
+E:\Desktop\Controle de TCC\ControleDeTccs\bin\Debug\netcoreapp3.1\SistemaDeControleDeTCCs.runtimeconfig.dev.json
+E:\Desktop\Controle de TCC\ControleDeTccs\bin\Debug\netcoreapp3.1\SistemaDeControleDeTCCs.dll
+E:\Desktop\Controle de TCC\ControleDeTccs\bin\Debug\netcoreapp3.1\SistemaDeControleDeTCCs.pdb
+E:\Desktop\Controle de TCC\ControleDeTccs\bin\Debug\netcoreapp3.1\SistemaDeControleDeTCCs.Views.dll
+E:\Desktop\Controle de TCC\ControleDeTccs\bin\Debug\netcoreapp3.1\SistemaDeControleDeTCCs.Views.pdb
+E:\Desktop\Controle de TCC\ControleDeTccs\bin\Debug\netcoreapp3.1\BouncyCastle.Crypto.dll
+E:\Desktop\Controle de TCC\ControleDeTccs\bin\Debug\netcoreapp3.1\EntityFramework.SqlServer.dll
+E:\Desktop\Controle de TCC\ControleDeTccs\bin\Debug\netcoreapp3.1\EntityFramework.dll
+E:\Desktop\Controle de TCC\ControleDeTccs\bin\Debug\netcoreapp3.1\itextsharp.dll
+E:\Desktop\Controle de TCC\ControleDeTccs\bin\Debug\netcoreapp3.1\KissLog.dll
+E:\Desktop\Controle de TCC\ControleDeTccs\bin\Debug\netcoreapp3.1\KissLog.AspNetCore.dll
+E:\Desktop\Controle de TCC\ControleDeTccs\bin\Debug\netcoreapp3.1\KissLog.CloudListeners.dll
+E:\Desktop\Controle de TCC\ControleDeTccs\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Cryptography.Internal.dll
+E:\Desktop\Controle de TCC\ControleDeTccs\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
+E:\Desktop\Controle de TCC\ControleDeTccs\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore.dll
+E:\Desktop\Controle de TCC\ControleDeTccs\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
+E:\Desktop\Controle de TCC\ControleDeTccs\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Identity.UI.Views.V3.dll
+E:\Desktop\Controle de TCC\ControleDeTccs\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Identity.UI.Views.V4.dll
+E:\Desktop\Controle de TCC\ControleDeTccs\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Identity.UI.dll
+E:\Desktop\Controle de TCC\ControleDeTccs\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Razor.Language.dll
+E:\Desktop\Controle de TCC\ControleDeTccs\bin\Debug\netcoreapp3.1\Microsoft.Bcl.AsyncInterfaces.dll
+E:\Desktop\Controle de TCC\ControleDeTccs\bin\Debug\netcoreapp3.1\Microsoft.Bcl.HashCode.dll
+E:\Desktop\Controle de TCC\ControleDeTccs\bin\Debug\netcoreapp3.1\Microsoft.CodeAnalysis.dll
+E:\Desktop\Controle de TCC\ControleDeTccs\bin\Debug\netcoreapp3.1\Microsoft.CodeAnalysis.CSharp.dll
+E:\Desktop\Controle de TCC\ControleDeTccs\bin\Debug\netcoreapp3.1\Microsoft.CodeAnalysis.CSharp.Workspaces.dll
+E:\Desktop\Controle de TCC\ControleDeTccs\bin\Debug\netcoreapp3.1\Microsoft.CodeAnalysis.Razor.dll
+E:\Desktop\Controle de TCC\ControleDeTccs\bin\Debug\netcoreapp3.1\Microsoft.CodeAnalysis.Workspaces.dll
+E:\Desktop\Controle de TCC\ControleDeTccs\bin\Debug\netcoreapp3.1\Microsoft.Data.SqlClient.dll
+E:\Desktop\Controle de TCC\ControleDeTccs\bin\Debug\netcoreapp3.1\Microsoft.Data.Sqlite.dll
+E:\Desktop\Controle de TCC\ControleDeTccs\bin\Debug\netcoreapp3.1\Microsoft.DotNet.PlatformAbstractions.dll
+E:\Desktop\Controle de TCC\ControleDeTccs\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.dll
+E:\Desktop\Controle de TCC\ControleDeTccs\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Abstractions.dll
+E:\Desktop\Controle de TCC\ControleDeTccs\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Design.dll
+E:\Desktop\Controle de TCC\ControleDeTccs\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Relational.dll
+E:\Desktop\Controle de TCC\ControleDeTccs\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Sqlite.dll
+E:\Desktop\Controle de TCC\ControleDeTccs\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.SqlServer.dll
+E:\Desktop\Controle de TCC\ControleDeTccs\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Caching.Abstractions.dll
+E:\Desktop\Controle de TCC\ControleDeTccs\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Caching.Memory.dll
+E:\Desktop\Controle de TCC\ControleDeTccs\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Configuration.dll
+E:\Desktop\Controle de TCC\ControleDeTccs\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Configuration.Abstractions.dll
+E:\Desktop\Controle de TCC\ControleDeTccs\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Configuration.Binder.dll
+E:\Desktop\Controle de TCC\ControleDeTccs\bin\Debug\netcoreapp3.1\Microsoft.Extensions.DependencyInjection.dll
+E:\Desktop\Controle de TCC\ControleDeTccs\bin\Debug\netcoreapp3.1\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+E:\Desktop\Controle de TCC\ControleDeTccs\bin\Debug\netcoreapp3.1\Microsoft.Extensions.DependencyModel.dll
+E:\Desktop\Controle de TCC\ControleDeTccs\bin\Debug\netcoreapp3.1\Microsoft.Extensions.FileProviders.Abstractions.dll
+E:\Desktop\Controle de TCC\ControleDeTccs\bin\Debug\netcoreapp3.1\Microsoft.Extensions.FileProviders.Embedded.dll
+E:\Desktop\Controle de TCC\ControleDeTccs\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Identity.Core.dll
+E:\Desktop\Controle de TCC\ControleDeTccs\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Identity.Stores.dll
+E:\Desktop\Controle de TCC\ControleDeTccs\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Logging.dll
+E:\Desktop\Controle de TCC\ControleDeTccs\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Logging.Abstractions.dll
+E:\Desktop\Controle de TCC\ControleDeTccs\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Options.dll
+E:\Desktop\Controle de TCC\ControleDeTccs\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Primitives.dll
+E:\Desktop\Controle de TCC\ControleDeTccs\bin\Debug\netcoreapp3.1\Microsoft.Identity.Client.dll
+E:\Desktop\Controle de TCC\ControleDeTccs\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.JsonWebTokens.dll
+E:\Desktop\Controle de TCC\ControleDeTccs\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Logging.dll
+E:\Desktop\Controle de TCC\ControleDeTccs\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Protocols.dll
+E:\Desktop\Controle de TCC\ControleDeTccs\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+E:\Desktop\Controle de TCC\ControleDeTccs\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Tokens.dll
+E:\Desktop\Controle de TCC\ControleDeTccs\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.Web.CodeGeneration.dll
+E:\Desktop\Controle de TCC\ControleDeTccs\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.Web.CodeGeneration.Contracts.dll
+E:\Desktop\Controle de TCC\ControleDeTccs\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.Web.CodeGeneration.Core.dll
+E:\Desktop\Controle de TCC\ControleDeTccs\bin\Debug\netcoreapp3.1\dotnet-aspnet-codegenerator-design.dll
+E:\Desktop\Controle de TCC\ControleDeTccs\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.Web.CodeGeneration.EntityFrameworkCore.dll
+E:\Desktop\Controle de TCC\ControleDeTccs\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.Web.CodeGeneration.Templating.dll
+E:\Desktop\Controle de TCC\ControleDeTccs\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.Web.CodeGeneration.Utils.dll
+E:\Desktop\Controle de TCC\ControleDeTccs\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.Web.CodeGenerators.Mvc.dll
+E:\Desktop\Controle de TCC\ControleDeTccs\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll
+E:\Desktop\Controle de TCC\ControleDeTccs\bin\Debug\netcoreapp3.1\NuGet.Frameworks.dll
+E:\Desktop\Controle de TCC\ControleDeTccs\bin\Debug\netcoreapp3.1\SQLitePCLRaw.batteries_v2.dll
+E:\Desktop\Controle de TCC\ControleDeTccs\bin\Debug\netcoreapp3.1\SQLitePCLRaw.nativelibrary.dll
+E:\Desktop\Controle de TCC\ControleDeTccs\bin\Debug\netcoreapp3.1\SQLitePCLRaw.core.dll
+E:\Desktop\Controle de TCC\ControleDeTccs\bin\Debug\netcoreapp3.1\SQLitePCLRaw.provider.dynamic_cdecl.dll
+E:\Desktop\Controle de TCC\ControleDeTccs\bin\Debug\netcoreapp3.1\System.CodeDom.dll
+E:\Desktop\Controle de TCC\ControleDeTccs\bin\Debug\netcoreapp3.1\System.Collections.Immutable.dll
+E:\Desktop\Controle de TCC\ControleDeTccs\bin\Debug\netcoreapp3.1\System.Composition.AttributedModel.dll
+E:\Desktop\Controle de TCC\ControleDeTccs\bin\Debug\netcoreapp3.1\System.Composition.Convention.dll
+E:\Desktop\Controle de TCC\ControleDeTccs\bin\Debug\netcoreapp3.1\System.Composition.Hosting.dll
+E:\Desktop\Controle de TCC\ControleDeTccs\bin\Debug\netcoreapp3.1\System.Composition.Runtime.dll
+E:\Desktop\Controle de TCC\ControleDeTccs\bin\Debug\netcoreapp3.1\System.Composition.TypedParts.dll
+E:\Desktop\Controle de TCC\ControleDeTccs\bin\Debug\netcoreapp3.1\System.Configuration.ConfigurationManager.dll
+E:\Desktop\Controle de TCC\ControleDeTccs\bin\Debug\netcoreapp3.1\System.Data.SqlClient.dll
+E:\Desktop\Controle de TCC\ControleDeTccs\bin\Debug\netcoreapp3.1\System.Diagnostics.DiagnosticSource.dll
+E:\Desktop\Controle de TCC\ControleDeTccs\bin\Debug\netcoreapp3.1\System.IdentityModel.Tokens.Jwt.dll
+E:\Desktop\Controle de TCC\ControleDeTccs\bin\Debug\netcoreapp3.1\System.Runtime.Caching.dll
+E:\Desktop\Controle de TCC\ControleDeTccs\bin\Debug\netcoreapp3.1\System.Security.Cryptography.ProtectedData.dll
+E:\Desktop\Controle de TCC\ControleDeTccs\bin\Debug\netcoreapp3.1\System.Text.Json.dll
+E:\Desktop\Controle de TCC\ControleDeTccs\bin\Debug\netcoreapp3.1\cs\Microsoft.CodeAnalysis.resources.dll
+E:\Desktop\Controle de TCC\ControleDeTccs\bin\Debug\netcoreapp3.1\de\Microsoft.CodeAnalysis.resources.dll
+E:\Desktop\Controle de TCC\ControleDeTccs\bin\Debug\netcoreapp3.1\es\Microsoft.CodeAnalysis.resources.dll
+E:\Desktop\Controle de TCC\ControleDeTccs\bin\Debug\netcoreapp3.1\fr\Microsoft.CodeAnalysis.resources.dll
+E:\Desktop\Controle de TCC\ControleDeTccs\bin\Debug\netcoreapp3.1\it\Microsoft.CodeAnalysis.resources.dll
+E:\Desktop\Controle de TCC\ControleDeTccs\bin\Debug\netcoreapp3.1\ja\Microsoft.CodeAnalysis.resources.dll
+E:\Desktop\Controle de TCC\ControleDeTccs\bin\Debug\netcoreapp3.1\ko\Microsoft.CodeAnalysis.resources.dll
+E:\Desktop\Controle de TCC\ControleDeTccs\bin\Debug\netcoreapp3.1\pl\Microsoft.CodeAnalysis.resources.dll
+E:\Desktop\Controle de TCC\ControleDeTccs\bin\Debug\netcoreapp3.1\pt-BR\Microsoft.CodeAnalysis.resources.dll
+E:\Desktop\Controle de TCC\ControleDeTccs\bin\Debug\netcoreapp3.1\ru\Microsoft.CodeAnalysis.resources.dll
+E:\Desktop\Controle de TCC\ControleDeTccs\bin\Debug\netcoreapp3.1\tr\Microsoft.CodeAnalysis.resources.dll
+E:\Desktop\Controle de TCC\ControleDeTccs\bin\Debug\netcoreapp3.1\zh-Hans\Microsoft.CodeAnalysis.resources.dll
+E:\Desktop\Controle de TCC\ControleDeTccs\bin\Debug\netcoreapp3.1\zh-Hant\Microsoft.CodeAnalysis.resources.dll
+E:\Desktop\Controle de TCC\ControleDeTccs\bin\Debug\netcoreapp3.1\cs\Microsoft.CodeAnalysis.CSharp.resources.dll
+E:\Desktop\Controle de TCC\ControleDeTccs\bin\Debug\netcoreapp3.1\de\Microsoft.CodeAnalysis.CSharp.resources.dll
+E:\Desktop\Controle de TCC\ControleDeTccs\bin\Debug\netcoreapp3.1\es\Microsoft.CodeAnalysis.CSharp.resources.dll
+E:\Desktop\Controle de TCC\ControleDeTccs\bin\Debug\netcoreapp3.1\fr\Microsoft.CodeAnalysis.CSharp.resources.dll
+E:\Desktop\Controle de TCC\ControleDeTccs\bin\Debug\netcoreapp3.1\it\Microsoft.CodeAnalysis.CSharp.resources.dll
+E:\Desktop\Controle de TCC\ControleDeTccs\bin\Debug\netcoreapp3.1\ja\Microsoft.CodeAnalysis.CSharp.resources.dll
+E:\Desktop\Controle de TCC\ControleDeTccs\bin\Debug\netcoreapp3.1\ko\Microsoft.CodeAnalysis.CSharp.resources.dll
+E:\Desktop\Controle de TCC\ControleDeTccs\bin\Debug\netcoreapp3.1\pl\Microsoft.CodeAnalysis.CSharp.resources.dll
+E:\Desktop\Controle de TCC\ControleDeTccs\bin\Debug\netcoreapp3.1\pt-BR\Microsoft.CodeAnalysis.CSharp.resources.dll
+E:\Desktop\Controle de TCC\ControleDeTccs\bin\Debug\netcoreapp3.1\ru\Microsoft.CodeAnalysis.CSharp.resources.dll
+E:\Desktop\Controle de TCC\ControleDeTccs\bin\Debug\netcoreapp3.1\tr\Microsoft.CodeAnalysis.CSharp.resources.dll
+E:\Desktop\Controle de TCC\ControleDeTccs\bin\Debug\netcoreapp3.1\zh-Hans\Microsoft.CodeAnalysis.CSharp.resources.dll
+E:\Desktop\Controle de TCC\ControleDeTccs\bin\Debug\netcoreapp3.1\zh-Hant\Microsoft.CodeAnalysis.CSharp.resources.dll
+E:\Desktop\Controle de TCC\ControleDeTccs\bin\Debug\netcoreapp3.1\cs\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+E:\Desktop\Controle de TCC\ControleDeTccs\bin\Debug\netcoreapp3.1\de\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+E:\Desktop\Controle de TCC\ControleDeTccs\bin\Debug\netcoreapp3.1\es\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+E:\Desktop\Controle de TCC\ControleDeTccs\bin\Debug\netcoreapp3.1\fr\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+E:\Desktop\Controle de TCC\ControleDeTccs\bin\Debug\netcoreapp3.1\it\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+E:\Desktop\Controle de TCC\ControleDeTccs\bin\Debug\netcoreapp3.1\ja\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+E:\Desktop\Controle de TCC\ControleDeTccs\bin\Debug\netcoreapp3.1\ko\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+E:\Desktop\Controle de TCC\ControleDeTccs\bin\Debug\netcoreapp3.1\pl\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+E:\Desktop\Controle de TCC\ControleDeTccs\bin\Debug\netcoreapp3.1\pt-BR\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+E:\Desktop\Controle de TCC\ControleDeTccs\bin\Debug\netcoreapp3.1\ru\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+E:\Desktop\Controle de TCC\ControleDeTccs\bin\Debug\netcoreapp3.1\tr\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+E:\Desktop\Controle de TCC\ControleDeTccs\bin\Debug\netcoreapp3.1\zh-Hans\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+E:\Desktop\Controle de TCC\ControleDeTccs\bin\Debug\netcoreapp3.1\zh-Hant\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+E:\Desktop\Controle de TCC\ControleDeTccs\bin\Debug\netcoreapp3.1\cs\Microsoft.CodeAnalysis.Workspaces.resources.dll
+E:\Desktop\Controle de TCC\ControleDeTccs\bin\Debug\netcoreapp3.1\de\Microsoft.CodeAnalysis.Workspaces.resources.dll
+E:\Desktop\Controle de TCC\ControleDeTccs\bin\Debug\netcoreapp3.1\es\Microsoft.CodeAnalysis.Workspaces.resources.dll
+E:\Desktop\Controle de TCC\ControleDeTccs\bin\Debug\netcoreapp3.1\fr\Microsoft.CodeAnalysis.Workspaces.resources.dll
+E:\Desktop\Controle de TCC\ControleDeTccs\bin\Debug\netcoreapp3.1\it\Microsoft.CodeAnalysis.Workspaces.resources.dll
+E:\Desktop\Controle de TCC\ControleDeTccs\bin\Debug\netcoreapp3.1\ja\Microsoft.CodeAnalysis.Workspaces.resources.dll
+E:\Desktop\Controle de TCC\ControleDeTccs\bin\Debug\netcoreapp3.1\ko\Microsoft.CodeAnalysis.Workspaces.resources.dll
+E:\Desktop\Controle de TCC\ControleDeTccs\bin\Debug\netcoreapp3.1\pl\Microsoft.CodeAnalysis.Workspaces.resources.dll
+E:\Desktop\Controle de TCC\ControleDeTccs\bin\Debug\netcoreapp3.1\pt-BR\Microsoft.CodeAnalysis.Workspaces.resources.dll
+E:\Desktop\Controle de TCC\ControleDeTccs\bin\Debug\netcoreapp3.1\ru\Microsoft.CodeAnalysis.Workspaces.resources.dll
+E:\Desktop\Controle de TCC\ControleDeTccs\bin\Debug\netcoreapp3.1\tr\Microsoft.CodeAnalysis.Workspaces.resources.dll
+E:\Desktop\Controle de TCC\ControleDeTccs\bin\Debug\netcoreapp3.1\zh-Hans\Microsoft.CodeAnalysis.Workspaces.resources.dll
+E:\Desktop\Controle de TCC\ControleDeTccs\bin\Debug\netcoreapp3.1\zh-Hant\Microsoft.CodeAnalysis.Workspaces.resources.dll
+E:\Desktop\Controle de TCC\ControleDeTccs\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.1\Microsoft.Data.SqlClient.dll
+E:\Desktop\Controle de TCC\ControleDeTccs\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.1\Microsoft.Data.SqlClient.dll
+E:\Desktop\Controle de TCC\ControleDeTccs\bin\Debug\netcoreapp3.1\runtimes\win-arm64\native\sni.dll
+E:\Desktop\Controle de TCC\ControleDeTccs\bin\Debug\netcoreapp3.1\runtimes\win-x64\native\sni.dll
+E:\Desktop\Controle de TCC\ControleDeTccs\bin\Debug\netcoreapp3.1\runtimes\win-x86\native\sni.dll
+E:\Desktop\Controle de TCC\ControleDeTccs\bin\Debug\netcoreapp3.1\runtimes\alpine-x64\native\libe_sqlite3.so
+E:\Desktop\Controle de TCC\ControleDeTccs\bin\Debug\netcoreapp3.1\runtimes\linux-arm\native\libe_sqlite3.so
+E:\Desktop\Controle de TCC\ControleDeTccs\bin\Debug\netcoreapp3.1\runtimes\linux-arm64\native\libe_sqlite3.so
+E:\Desktop\Controle de TCC\ControleDeTccs\bin\Debug\netcoreapp3.1\runtimes\linux-armel\native\libe_sqlite3.so
+E:\Desktop\Controle de TCC\ControleDeTccs\bin\Debug\netcoreapp3.1\runtimes\linux-musl-x64\native\libe_sqlite3.so
+E:\Desktop\Controle de TCC\ControleDeTccs\bin\Debug\netcoreapp3.1\runtimes\linux-x64\native\libe_sqlite3.so
+E:\Desktop\Controle de TCC\ControleDeTccs\bin\Debug\netcoreapp3.1\runtimes\linux-x86\native\libe_sqlite3.so
+E:\Desktop\Controle de TCC\ControleDeTccs\bin\Debug\netcoreapp3.1\runtimes\osx-x64\native\libe_sqlite3.dylib
+E:\Desktop\Controle de TCC\ControleDeTccs\bin\Debug\netcoreapp3.1\runtimes\win-arm\native\e_sqlite3.dll
+E:\Desktop\Controle de TCC\ControleDeTccs\bin\Debug\netcoreapp3.1\runtimes\win-arm64\native\e_sqlite3.dll
+E:\Desktop\Controle de TCC\ControleDeTccs\bin\Debug\netcoreapp3.1\runtimes\win-x64\native\e_sqlite3.dll
+E:\Desktop\Controle de TCC\ControleDeTccs\bin\Debug\netcoreapp3.1\runtimes\win-x86\native\e_sqlite3.dll
+E:\Desktop\Controle de TCC\ControleDeTccs\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
+E:\Desktop\Controle de TCC\ControleDeTccs\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
+E:\Desktop\Controle de TCC\ControleDeTccs\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.0\System.Runtime.Caching.dll
+E:\Desktop\Controle de TCC\ControleDeTccs\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.0\System.Runtime.Caching.dll
+E:\Desktop\Controle de TCC\ControleDeTccs\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
+E:\Desktop\Controle de TCC\ControleDeTccs\obj\Debug\netcoreapp3.1\SistemaDeControleDeTCCs.csprojAssemblyReference.cache
+E:\Desktop\Controle de TCC\ControleDeTccs\obj\Debug\netcoreapp3.1\SistemaDeControleDeTCCs.AssemblyInfoInputs.cache
+E:\Desktop\Controle de TCC\ControleDeTccs\obj\Debug\netcoreapp3.1\SistemaDeControleDeTCCs.AssemblyInfo.cs
+E:\Desktop\Controle de TCC\ControleDeTccs\obj\Debug\netcoreapp3.1\SistemaDeControleDeTCCs.csproj.CoreCompileInputs.cache
+E:\Desktop\Controle de TCC\ControleDeTccs\obj\Debug\netcoreapp3.1\SistemaDeControleDeTCCs.MvcApplicationPartsAssemblyInfo.cs
+E:\Desktop\Controle de TCC\ControleDeTccs\obj\Debug\netcoreapp3.1\SistemaDeControleDeTCCs.MvcApplicationPartsAssemblyInfo.cache
+E:\Desktop\Controle de TCC\ControleDeTccs\obj\Debug\netcoreapp3.1\SistemaDeControleDeTCCs.RazorAssemblyInfo.cache
+E:\Desktop\Controle de TCC\ControleDeTccs\obj\Debug\netcoreapp3.1\SistemaDeControleDeTCCs.RazorAssemblyInfo.cs
+E:\Desktop\Controle de TCC\ControleDeTccs\obj\Debug\netcoreapp3.1\staticwebassets\SistemaDeControleDeTCCs.StaticWebAssets.Manifest.cache
+E:\Desktop\Controle de TCC\ControleDeTccs\obj\Debug\netcoreapp3.1\staticwebassets\SistemaDeControleDeTCCs.StaticWebAssets.xml
+E:\Desktop\Controle de TCC\ControleDeTccs\obj\Debug\netcoreapp3.1\scopedcss\bundle\SistemaDeControleDeTCCs.styles.css
+E:\Desktop\Controle de TCC\ControleDeTccs\obj\Debug\netcoreapp3.1\SistemaDeControleDeTCCs.TagHelpers.input.cache
+E:\Desktop\Controle de TCC\ControleDeTccs\obj\Debug\netcoreapp3.1\SistemaDeControleDeTCCs.TagHelpers.output.cache
+E:\Desktop\Controle de TCC\ControleDeTccs\obj\Debug\netcoreapp3.1\SistemaDeControleDeTCCs.RazorCoreGenerate.cache
+E:\Desktop\Controle de TCC\ControleDeTccs\obj\Debug\netcoreapp3.1\Razor\Areas\Administrador\Views\Cursos\Create.cshtml.g.cs
+E:\Desktop\Controle de TCC\ControleDeTccs\obj\Debug\netcoreapp3.1\Razor\Areas\Administrador\Views\Cursos\Delete.cshtml.g.cs
+E:\Desktop\Controle de TCC\ControleDeTccs\obj\Debug\netcoreapp3.1\Razor\Areas\Administrador\Views\Cursos\Details.cshtml.g.cs
+E:\Desktop\Controle de TCC\ControleDeTccs\obj\Debug\netcoreapp3.1\Razor\Areas\Administrador\Views\Cursos\Edit.cshtml.g.cs
+E:\Desktop\Controle de TCC\ControleDeTccs\obj\Debug\netcoreapp3.1\Razor\Areas\Administrador\Views\Cursos\Index.cshtml.g.cs
+E:\Desktop\Controle de TCC\ControleDeTccs\obj\Debug\netcoreapp3.1\Razor\Areas\Administrador\Views\_ViewImports.cshtml.g.cs
+E:\Desktop\Controle de TCC\ControleDeTccs\obj\Debug\netcoreapp3.1\Razor\Areas\Administrador\Views\_ViewStart.cshtml.g.cs
+E:\Desktop\Controle de TCC\ControleDeTccs\obj\Debug\netcoreapp3.1\Razor\Areas\Coordenador\Views\Calendarios\Create.cshtml.g.cs
+E:\Desktop\Controle de TCC\ControleDeTccs\obj\Debug\netcoreapp3.1\Razor\Areas\Coordenador\Views\Calendarios\Delete.cshtml.g.cs
+E:\Desktop\Controle de TCC\ControleDeTccs\obj\Debug\netcoreapp3.1\Razor\Areas\Coordenador\Views\Calendarios\Details.cshtml.g.cs
+E:\Desktop\Controle de TCC\ControleDeTccs\obj\Debug\netcoreapp3.1\Razor\Areas\Coordenador\Views\Calendarios\Edit.cshtml.g.cs
+E:\Desktop\Controle de TCC\ControleDeTccs\obj\Debug\netcoreapp3.1\Razor\Areas\Coordenador\Views\Calendarios\Index.cshtml.g.cs
+E:\Desktop\Controle de TCC\ControleDeTccs\obj\Debug\netcoreapp3.1\Razor\Areas\Coordenador\Views\Relatorios\Index.cshtml.g.cs
+E:\Desktop\Controle de TCC\ControleDeTccs\obj\Debug\netcoreapp3.1\Razor\Areas\Coordenador\Views\Tccs\AddDataLocalApresentacao.cshtml.g.cs
+E:\Desktop\Controle de TCC\ControleDeTccs\obj\Debug\netcoreapp3.1\Razor\Areas\Coordenador\Views\Tccs\AddOrEdit.cshtml.g.cs
+E:\Desktop\Controle de TCC\ControleDeTccs\obj\Debug\netcoreapp3.1\Razor\Areas\Coordenador\Views\Tccs\Cancelar.cshtml.g.cs
+E:\Desktop\Controle de TCC\ControleDeTccs\obj\Debug\netcoreapp3.1\Razor\Areas\Coordenador\Views\Tccs\Delete.cshtml.g.cs
+E:\Desktop\Controle de TCC\ControleDeTccs\obj\Debug\netcoreapp3.1\Razor\Areas\Coordenador\Views\Tccs\Index.cshtml.g.cs
+E:\Desktop\Controle de TCC\ControleDeTccs\obj\Debug\netcoreapp3.1\Razor\Areas\Coordenador\Views\Usuarios\AddOrEdit.cshtml.g.cs
+E:\Desktop\Controle de TCC\ControleDeTccs\obj\Debug\netcoreapp3.1\Razor\Areas\Coordenador\Views\Usuarios\Index.cshtml.g.cs
+E:\Desktop\Controle de TCC\ControleDeTccs\obj\Debug\netcoreapp3.1\Razor\Areas\Coordenador\Views\Usuarios\_ViewAll.cshtml.g.cs
+E:\Desktop\Controle de TCC\ControleDeTccs\obj\Debug\netcoreapp3.1\Razor\Areas\Coordenador\Views\_ViewImports.cshtml.g.cs
+E:\Desktop\Controle de TCC\ControleDeTccs\obj\Debug\netcoreapp3.1\Razor\Areas\Coordenador\Views\_ViewStart.cshtml.g.cs
+E:\Desktop\Controle de TCC\ControleDeTccs\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\Account\AccessDenied.cshtml.g.cs
+E:\Desktop\Controle de TCC\ControleDeTccs\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\Account\ConfirmEmail.cshtml.g.cs
+E:\Desktop\Controle de TCC\ControleDeTccs\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\Account\ConfirmEmailChange.cshtml.g.cs
+E:\Desktop\Controle de TCC\ControleDeTccs\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\Account\ExternalLogin.cshtml.g.cs
+E:\Desktop\Controle de TCC\ControleDeTccs\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\Account\ForgotPassword.cshtml.g.cs
+E:\Desktop\Controle de TCC\ControleDeTccs\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\Account\ForgotPasswordConfirmation.cshtml.g.cs
+E:\Desktop\Controle de TCC\ControleDeTccs\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\Account\Lockout.cshtml.g.cs
+E:\Desktop\Controle de TCC\ControleDeTccs\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\Account\Login.cshtml.g.cs
+E:\Desktop\Controle de TCC\ControleDeTccs\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\Account\LoginWith2fa.cshtml.g.cs
+E:\Desktop\Controle de TCC\ControleDeTccs\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\Account\LoginWithRecoveryCode.cshtml.g.cs
+E:\Desktop\Controle de TCC\ControleDeTccs\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\Account\Logout.cshtml.g.cs
+E:\Desktop\Controle de TCC\ControleDeTccs\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\Account\Manage\ChangePassword.cshtml.g.cs
+E:\Desktop\Controle de TCC\ControleDeTccs\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\Account\Manage\DeletePersonalData.cshtml.g.cs
+E:\Desktop\Controle de TCC\ControleDeTccs\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\Account\Manage\Disable2fa.cshtml.g.cs
+E:\Desktop\Controle de TCC\ControleDeTccs\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\Account\Manage\DownloadPersonalData.cshtml.g.cs
+E:\Desktop\Controle de TCC\ControleDeTccs\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\Account\Manage\Email.cshtml.g.cs
+E:\Desktop\Controle de TCC\ControleDeTccs\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\Account\Manage\EnableAuthenticator.cshtml.g.cs
+E:\Desktop\Controle de TCC\ControleDeTccs\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\Account\Manage\ExternalLogins.cshtml.g.cs
+E:\Desktop\Controle de TCC\ControleDeTccs\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\Account\Manage\GenerateRecoveryCodes.cshtml.g.cs
+E:\Desktop\Controle de TCC\ControleDeTccs\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\Account\Manage\Index.cshtml.g.cs
+E:\Desktop\Controle de TCC\ControleDeTccs\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\Account\Manage\PersonalData.cshtml.g.cs
+E:\Desktop\Controle de TCC\ControleDeTccs\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\Account\Manage\ResetAuthenticator.cshtml.g.cs
+E:\Desktop\Controle de TCC\ControleDeTccs\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\Account\Manage\SetPassword.cshtml.g.cs
+E:\Desktop\Controle de TCC\ControleDeTccs\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\Account\Manage\ShowRecoveryCodes.cshtml.g.cs
+E:\Desktop\Controle de TCC\ControleDeTccs\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\Account\Manage\TwoFactorAuthentication.cshtml.g.cs
+E:\Desktop\Controle de TCC\ControleDeTccs\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\Account\Manage\_Layout.cshtml.g.cs
+E:\Desktop\Controle de TCC\ControleDeTccs\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\Account\Manage\_ManageNav.cshtml.g.cs
+E:\Desktop\Controle de TCC\ControleDeTccs\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\Account\Manage\_StatusMessage.cshtml.g.cs
+E:\Desktop\Controle de TCC\ControleDeTccs\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\Account\Manage\_ViewImports.cshtml.g.cs
+E:\Desktop\Controle de TCC\ControleDeTccs\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\Account\Register.cshtml.g.cs
+E:\Desktop\Controle de TCC\ControleDeTccs\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\Account\RegisterConfirmation.cshtml.g.cs
+E:\Desktop\Controle de TCC\ControleDeTccs\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\Account\ResendEmailConfirmation.cshtml.g.cs
+E:\Desktop\Controle de TCC\ControleDeTccs\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\Account\ResetPassword.cshtml.g.cs
+E:\Desktop\Controle de TCC\ControleDeTccs\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\Account\ResetPasswordConfirmation.cshtml.g.cs
+E:\Desktop\Controle de TCC\ControleDeTccs\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\Account\_StatusMessage.cshtml.g.cs
+E:\Desktop\Controle de TCC\ControleDeTccs\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\Account\_ViewImports.cshtml.g.cs
+E:\Desktop\Controle de TCC\ControleDeTccs\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\Error.cshtml.g.cs
+E:\Desktop\Controle de TCC\ControleDeTccs\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\_ValidationScriptsPartial.cshtml.g.cs
+E:\Desktop\Controle de TCC\ControleDeTccs\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\_ViewImports.cshtml.g.cs
+E:\Desktop\Controle de TCC\ControleDeTccs\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\_ViewStart.cshtml.g.cs
+E:\Desktop\Controle de TCC\ControleDeTccs\obj\Debug\netcoreapp3.1\Razor\Views\Bancas\Anexo.cshtml.g.cs
+E:\Desktop\Controle de TCC\ControleDeTccs\obj\Debug\netcoreapp3.1\Razor\Views\Bancas\Create.cshtml.g.cs
+E:\Desktop\Controle de TCC\ControleDeTccs\obj\Debug\netcoreapp3.1\Razor\Views\Bancas\Delete.cshtml.g.cs
+E:\Desktop\Controle de TCC\ControleDeTccs\obj\Debug\netcoreapp3.1\Razor\Views\Bancas\Details.cshtml.g.cs
+E:\Desktop\Controle de TCC\ControleDeTccs\obj\Debug\netcoreapp3.1\Razor\Views\Bancas\Edit.cshtml.g.cs
+E:\Desktop\Controle de TCC\ControleDeTccs\obj\Debug\netcoreapp3.1\Razor\Views\Bancas\Index.cshtml.g.cs
+E:\Desktop\Controle de TCC\ControleDeTccs\obj\Debug\netcoreapp3.1\Razor\Views\Bancas\IndexAluno.cshtml.g.cs
+E:\Desktop\Controle de TCC\ControleDeTccs\obj\Debug\netcoreapp3.1\Razor\Views\Bancas\Resumo.cshtml.g.cs
+E:\Desktop\Controle de TCC\ControleDeTccs\obj\Debug\netcoreapp3.1\Razor\Views\FileTCCs\Create.cshtml.g.cs
+E:\Desktop\Controle de TCC\ControleDeTccs\obj\Debug\netcoreapp3.1\Razor\Views\FileTCCs\Delete.cshtml.g.cs
+E:\Desktop\Controle de TCC\ControleDeTccs\obj\Debug\netcoreapp3.1\Razor\Views\FileTCCs\Details.cshtml.g.cs
+E:\Desktop\Controle de TCC\ControleDeTccs\obj\Debug\netcoreapp3.1\Razor\Views\FileTCCs\Edit.cshtml.g.cs
+E:\Desktop\Controle de TCC\ControleDeTccs\obj\Debug\netcoreapp3.1\Razor\Views\FileTCCs\Index.cshtml.g.cs
+E:\Desktop\Controle de TCC\ControleDeTccs\obj\Debug\netcoreapp3.1\Razor\Views\Home\Index.cshtml.g.cs
+E:\Desktop\Controle de TCC\ControleDeTccs\obj\Debug\netcoreapp3.1\Razor\Views\Home\Privacy.cshtml.g.cs
+E:\Desktop\Controle de TCC\ControleDeTccs\obj\Debug\netcoreapp3.1\Razor\Views\Logger\Index.cshtml.g.cs
+E:\Desktop\Controle de TCC\ControleDeTccs\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Error.cshtml.g.cs
+E:\Desktop\Controle de TCC\ControleDeTccs\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_Layout.cshtml.g.cs
+E:\Desktop\Controle de TCC\ControleDeTccs\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_LoginPartial.cshtml.g.cs
+E:\Desktop\Controle de TCC\ControleDeTccs\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_ValidationScriptsPartial.cshtml.g.cs
+E:\Desktop\Controle de TCC\ControleDeTccs\obj\Debug\netcoreapp3.1\Razor\Views\Status\Create.cshtml.g.cs
+E:\Desktop\Controle de TCC\ControleDeTccs\obj\Debug\netcoreapp3.1\Razor\Views\Status\Delete.cshtml.g.cs
+E:\Desktop\Controle de TCC\ControleDeTccs\obj\Debug\netcoreapp3.1\Razor\Views\Status\Details.cshtml.g.cs
+E:\Desktop\Controle de TCC\ControleDeTccs\obj\Debug\netcoreapp3.1\Razor\Views\Status\Edit.cshtml.g.cs
+E:\Desktop\Controle de TCC\ControleDeTccs\obj\Debug\netcoreapp3.1\Razor\Views\Status\Index.cshtml.g.cs
+E:\Desktop\Controle de TCC\ControleDeTccs\obj\Debug\netcoreapp3.1\Razor\Views\TipoUsuarios\Create.cshtml.g.cs
+E:\Desktop\Controle de TCC\ControleDeTccs\obj\Debug\netcoreapp3.1\Razor\Views\TipoUsuarios\Delete.cshtml.g.cs
+E:\Desktop\Controle de TCC\ControleDeTccs\obj\Debug\netcoreapp3.1\Razor\Views\TipoUsuarios\Details.cshtml.g.cs
+E:\Desktop\Controle de TCC\ControleDeTccs\obj\Debug\netcoreapp3.1\Razor\Views\TipoUsuarios\Edit.cshtml.g.cs
+E:\Desktop\Controle de TCC\ControleDeTccs\obj\Debug\netcoreapp3.1\Razor\Views\TipoUsuarios\Index.cshtml.g.cs
+E:\Desktop\Controle de TCC\ControleDeTccs\obj\Debug\netcoreapp3.1\Razor\Views\_ViewImports.cshtml.g.cs
+E:\Desktop\Controle de TCC\ControleDeTccs\obj\Debug\netcoreapp3.1\Razor\Views\_ViewStart.cshtml.g.cs
+E:\Desktop\Controle de TCC\ControleDeTccs\obj\Debug\netcoreapp3.1\SistemaDeControleDeTCCs.RazorTargetAssemblyInfo.cache
+E:\Desktop\Controle de TCC\ControleDeTccs\obj\Debug\netcoreapp3.1\SistemaDeControleDeTCCs.RazorTargetAssemblyInfo.cs
+E:\Desktop\Controle de TCC\ControleDeTccs\obj\Debug\netcoreapp3.1\SistemaDeControleDeTCCs.Views.pdb
+E:\Desktop\Controle de TCC\ControleDeTccs\obj\Debug\netcoreapp3.1\SistemaDeControleDeTCCs.csproj.CopyComplete
+E:\Desktop\Controle de TCC\ControleDeTccs\obj\Debug\netcoreapp3.1\SistemaDeControleDeTCCs.dll
+E:\Desktop\Controle de TCC\ControleDeTccs\obj\Debug\netcoreapp3.1\SistemaDeControleDeTCCs.pdb
+E:\Desktop\Controle de TCC\ControleDeTccs\obj\Debug\netcoreapp3.1\SistemaDeControleDeTCCs.genruntimeconfig.cache

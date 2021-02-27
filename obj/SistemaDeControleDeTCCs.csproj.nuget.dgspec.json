@@ -1,20 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Thiago Teixeira\\source\\repos\\ControleDeTccs\\SistemaDeControleDeTCCs.csproj": {}
+    "E:\\Desktop\\Controle de TCC\\ControleDeTccs\\SistemaDeControleDeTCCs.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Thiago Teixeira\\source\\repos\\ControleDeTccs\\SistemaDeControleDeTCCs.csproj": {
+    "E:\\Desktop\\Controle de TCC\\ControleDeTccs\\SistemaDeControleDeTCCs.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Thiago Teixeira\\source\\repos\\ControleDeTccs\\SistemaDeControleDeTCCs.csproj",
+        "projectUniqueName": "E:\\Desktop\\Controle de TCC\\ControleDeTccs\\SistemaDeControleDeTCCs.csproj",
         "projectName": "SistemaDeControleDeTCCs",
-        "projectPath": "C:\\Users\\Thiago Teixeira\\source\\repos\\ControleDeTccs\\SistemaDeControleDeTCCs.csproj",
-        "packagesPath": "C:\\Users\\Thiago Teixeira\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Thiago Teixeira\\source\\repos\\ControleDeTccs\\obj\\",
+        "projectPath": "E:\\Desktop\\Controle de TCC\\ControleDeTccs\\SistemaDeControleDeTCCs.csproj",
+        "packagesPath": "C:\\Users\\Full Plus\\.nuget\\packages\\",
+        "outputPath": "E:\\Desktop\\Controle de TCC\\ControleDeTccs\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
         "configFilePaths": [
-          "C:\\Users\\Thiago Teixeira\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Full Plus\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -43,6 +46,10 @@
             "EntityFramework": {
               "target": "Package",
               "version": "[6.4.4, )"
+            },
+            "KissLog.AspNetCore": {
+              "target": "Package",
+              "version": "[4.1.0, )"
             },
             "Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore": {
               "target": "Package",

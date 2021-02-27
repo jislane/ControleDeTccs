@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace SistemaDeControleDeTCCs.Migrations
 {
-    public partial class InitialCreate : Migration
+    public partial class Initial : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -50,6 +50,20 @@ namespace SistemaDeControleDeTCCs.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Campus", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "LogAuditoria",
+                columns: table => new
+                {
+                    Id = table.Column<int>(nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    DetalhesAuditoria = table.Column<string>(nullable: true),
+                    EmailUsuario = table.Column<string>(nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_LogAuditoria", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
@@ -492,6 +506,9 @@ namespace SistemaDeControleDeTCCs.Migrations
 
             migrationBuilder.DropTable(
                 name: "FileTCC");
+
+            migrationBuilder.DropTable(
+                name: "LogAuditoria");
 
             migrationBuilder.DropTable(
                 name: "AspNetRoles");

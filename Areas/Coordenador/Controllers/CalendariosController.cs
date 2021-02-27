@@ -25,12 +25,19 @@ namespace SistemaDeControleDeTCCs.Controllers
         // GET: Calendarios
         public async Task<IActionResult> Index()
         {
+            _context.LogAuditoria.Add(
+               new LogAuditoria
+               {
+                   EmailUsuario = User.Identity.Name,
+                   DetalhesAuditoria = "Entrou na tela de listagem de calendarios"
+               });
             return View(await _context.Calendario.OrderByDescending(x => x.Ativo).ThenByDescending(x => x.Ano).ThenByDescending(x => x.Semestre).ToListAsync());
         }
 
         // GET: Calendarios/Details/5
         public async Task<IActionResult> Details(int? id)
         {
+            
             if (id == null)
             {
                 return NotFound();
@@ -43,12 +50,24 @@ namespace SistemaDeControleDeTCCs.Controllers
                 return NotFound();
             }
 
+           
+
             return View(calendario);
         }
 
         // GET: Calendarios/Create
         public IActionResult Create()
         {
+            _context.LogAuditoria.Add(
+               new LogAuditoria
+               {
+                   EmailUsuario = User.Identity.Name,
+                   DetalhesAuditoria = "Entrou na tela de cadastro de calendarios"
+               });
+
+            _context.SaveChanges();
+
+
             return View();
         }
 
@@ -61,20 +80,33 @@ namespace SistemaDeControleDeTCCs.Controllers
         {
             if (ModelState.IsValid)
             {
-                if(_context.Calendario.Where(x => x.Ano == calendario.Ano && x.Semestre == calendario.Semestre).ToList().Count > 0)
+                if (_context.Calendario.Where(x => x.Ano == calendario.Ano && x.Semestre == calendario.Semestre).ToList().Count > 0)
                 {
                     TempData["Error"] = "Operação cancelada! Já existe um Calendário de banca cadastrado para o ano " + calendario.Ano + "." + calendario.Semestre;
                     return View(calendario);
-                } else if (calendario.Ativo && _context.Calendario.Where(x => x.Ativo == true).ToList().Count > 0)
+                }
+                else if (calendario.Ativo && _context.Calendario.Where(x => x.Ativo == true).ToList().Count > 0)
                 {
                     TempData["Error"] = "Operação cancelada! Não é possível ter mais de um calendário de banca ativo simultaneamente.";
                     return View(calendario);
                 }
 
+                _context.LogAuditoria.Add(
+                new LogAuditoria
+                {
+                    EmailUsuario = User.Identity.Name,
+                    DetalhesAuditoria = string.Concat("Cadastrou um calendario:",
+                    calendario.CalendarioId, "Data de cadastro: ", DateTime.Now.ToLongDateString())
+                });
+
                 _context.Add(calendario);
                 await _context.SaveChangesAsync();
                 TempData["Success"] = "Calendário de banca cadastrado com sucesso.";
                 return RedirectToAction(nameof(Index));
+
+                
+
+                _context.SaveChanges();
             }
             return View(calendario);
         }
@@ -89,9 +121,21 @@ namespace SistemaDeControleDeTCCs.Controllers
 
             var calendario = await _context.Calendario.FindAsync(id);
             if (calendario == null)
+
+
             {
                 return NotFound();
             }
+
+            _context.LogAuditoria.Add(
+                new LogAuditoria
+                {
+                    EmailUsuario = User.Identity.Name,
+                    DetalhesAuditoria = "Entrou na tela de edição de calendarios:"
+
+                });
+
+
             return View(calendario);
         }
 
@@ -106,6 +150,14 @@ namespace SistemaDeControleDeTCCs.Controllers
             {
                 return NotFound();
             }
+
+            _context.LogAuditoria.Add(
+               new LogAuditoria
+               {
+                   EmailUsuario = User.Identity.Name,
+                   DetalhesAuditoria = string.Concat("Editou o calendario:",
+                   calendario.CalendarioId, "Data da edição: ", DateTime.Now.ToLongDateString())
+               });
 
             if (ModelState.IsValid)
             {
@@ -136,6 +188,8 @@ namespace SistemaDeControleDeTCCs.Controllers
                         throw;
                     }
                 }
+               
+
                 TempData["Success"] = "Calendário de banca alterado com sucesso.";
                 return RedirectToAction(nameof(Index));
             }
@@ -167,9 +221,20 @@ namespace SistemaDeControleDeTCCs.Controllers
         {
             var calendario = await _context.Calendario.FindAsync(id);
             _context.Calendario.Remove(calendario);
+
+            _context.LogAuditoria.Add(
+            new LogAuditoria
+            {
+                EmailUsuario = User.Identity.Name,
+                DetalhesAuditoria = string.Concat("Deletou o calendario:",
+                   calendario.CalendarioId, "Data da deleção: ", DateTime.Now.ToLongDateString())
+            });
+
             await _context.SaveChangesAsync();
             TempData["Success"] = "Calendário de banca excluído com sucesso.";
             return RedirectToAction(nameof(Index));
+
+
         }
 
         private bool CalendarioExists(int id)

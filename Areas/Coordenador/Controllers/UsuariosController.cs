@@ -59,6 +59,7 @@ namespace SistemaDeControleDeTCCs.Controllers
             {
                 ViewBag.TipoUsuario = new SelectList(_context.TipoUsuario.Where(x => x.TipoUsuarioId == 1 || x.TipoUsuarioId == 4 || x.TipoUsuarioId == 5 || x.TipoUsuarioId == 6).OrderBy(x => x.DescTipo).ToList(), "TipoUsuarioId", "DescTipo");
             }
+
             return View(usuarios.OrderBy(x => x.Nome));
         }
 
@@ -98,7 +99,7 @@ namespace SistemaDeControleDeTCCs.Controllers
                     {
                         ModelState.AddModelError(String.Empty,
                             "O usuário que você está tentando alterar é um usuário administrador e apenas outro administrador pode realizar esta modificação");
-                        
+
                         return AddOrEdit(userTemp.Id);
                     }
                     var typeUser = userTemp.TipoUsuarioId;
@@ -111,9 +112,18 @@ namespace SistemaDeControleDeTCCs.Controllers
                     userTemp.TipoUsuarioId = usuario.TipoUsuarioId;
 
                     // Atualiza o usuário
+
+                    _context.LogAuditoria.Add(
+                       new LogAuditoria
+                       {
+                           EmailUsuario = User.Identity.Name,
+                           DetalhesAuditoria = string.Concat("Atualizou o usuário de ID:",
+                           usuario.Id, "Data da atualização: ", DateTime.Now.ToLongDateString())
+                       });
                     await _userManager.UpdateAsync(userTemp);
 
-                    if (typeUser != usuario.TipoUsuarioId) {
+                    if (typeUser != usuario.TipoUsuarioId)
+                    {
                         var nameTipoUsuarioOld = _context.TipoUsuario.Find(typeUser).DescTipo;
                         // Obtem as Role nova e antiga do usuário
                         var nameTipoUsuarioNew = _context.TipoUsuario.Find(usuario.TipoUsuarioId).DescTipo;
@@ -128,9 +138,21 @@ namespace SistemaDeControleDeTCCs.Controllers
                 }
                 else
                 {
+                   
                     _context.Add(usuario);
+
+                    _context.LogAuditoria.Add(
+                        new LogAuditoria
+                        {
+                            EmailUsuario = User.Identity.Name,
+                            DetalhesAuditoria = string.Concat("Cadastrou o usuário de ID:",
+                       usuario.Id, "Data de cadastro: ", DateTime.Now.ToLongDateString())
+                        });
+
                     var senha = KeyGenerator.GetUniqueKey(8);
+
                     await _context.SaveChangesAsync();
+
                     usuario.TipoUsuario = _context.TipoUsuario.Where(x => x.TipoUsuarioId == usuario.TipoUsuarioId).FirstOrDefault();
                     //_senderEmail.EnviarSenhaParaUsuarioViaEmail(usuario, senha);
                 }
@@ -148,6 +170,14 @@ namespace SistemaDeControleDeTCCs.Controllers
         {
             var usuario = await _context.Users.FindAsync(id);
             _context.Users.Remove(usuario);
+
+            _context.LogAuditoria.Add(
+                          new LogAuditoria
+                          {
+                              EmailUsuario = User.Identity.Name,
+                              DetalhesAuditoria = string.Concat("Removeu o usuário de ID:",
+                         usuario.Id, "Data da remoção: ", DateTime.Now.ToLongDateString())
+                          });
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
