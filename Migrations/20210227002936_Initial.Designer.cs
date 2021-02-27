@@ -10,14 +10,14 @@ using SistemaDeControleDeTCCs.Data;
 namespace SistemaDeControleDeTCCs.Migrations
 {
     [DbContext(typeof(SistemaDeControleDeTCCsContext))]
-    [Migration("20210217235522_InitialCreate")]
-    partial class InitialCreate
+    [Migration("20210227002936_Initial")]
+    partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "3.1.9")
+                .HasAnnotation("ProductVersion", "3.1.11")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
@@ -298,6 +298,27 @@ namespace SistemaDeControleDeTCCs.Migrations
                     b.HasIndex("TccId");
 
                     b.ToTable("FileTCC");
+                });
+
+            modelBuilder.Entity("SistemaDeControleDeTCCs.Models.LogAuditoria", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnName("Id")
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("DetalhesAuditoria")
+                        .HasColumnName("DetalhesAuditoria")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("EmailUsuario")
+                        .HasColumnName("EmailUsuario")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("LogAuditoria");
                 });
 
             modelBuilder.Entity("SistemaDeControleDeTCCs.Models.Status", b =>

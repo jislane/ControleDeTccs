@@ -63,10 +63,18 @@ body {
     margin-bottom: 60px;
     font-family: 'Roboto', sans-serif;
 }
+.pb-3 {
+    margin-bottom: 60px;
+}
+
+.btnAdd{
+    margin-bottom: 20px;
+}
+
 .footer {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  white-space: nowrap;
-  line-height: 60px; /* Vertically center the text there */
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    white-space: nowrap;
+    line-height: 60px; /*Vertically center the text there */
 }

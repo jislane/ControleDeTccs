@@ -3,12 +3,9 @@
 @{
     ViewData["Title"] = "Usuários";
 }
-<h1>Usuários</h1>
+
+<h1>@ViewData["Title"]</h1>
 <a class="btn btn-outline-success btnAdd" id="register" asp-area="Identity" asp-page="/Account/Register"><i class="fa fa-user-plus" aria-hidden="true"></i> Novo</a>
-<p></p>
-@*<a class="btn btn-primary popup" data-url="/Identity/Account/Register" data-toggle="modal" data-target="#modal-create-edit-user" id="UserModel">Add New User <i class="fa fa-plus"></i></a>
-    <partial name="_Modal" />
-    <p></p>*@
 
 <table id="tabela" class="table table-bordered table-hover">
     <thead>
