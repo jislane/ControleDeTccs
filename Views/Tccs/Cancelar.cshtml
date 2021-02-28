@@ -1,0 +1,32 @@
+﻿@model SistemaDeControleDeTCCs.Models.Tcc
+
+@{
+    ViewData["Title"] = "Cancelar TCC";
+}
+
+<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+</button>
+
+<h2>@ViewData["Title"]</h2>
+
+<h5>Tem certeza de que deseja cancelar este TCC?</h5>
+<div>
+    <hr />
+    <div class="form-row">
+        <div class="form-group col-md-12">
+            <b>@Html.DisplayNameFor(model => model.Tema)</b> <br />
+            <p>@Html.DisplayFor(model => model.Tema)</p>
+        </div>
+        <div class="form-group col-md-12">
+            <b>Discente</b> <br />
+            <p>@Html.DisplayFor(model => model.Usuario.Nome) @Html.DisplayFor(model => model.Usuario.Sobrenome)</p>
+        </div>
+    </div>
+
+    <form asp-action="Cancelar">
+        <input type="hidden" asp-for="TccId" />
+        <input type="submit" value="Cancelar TCC" class="btn btn-outline-danger btn-block" />
+        @*<a class="btn btn-outline-secondary" href="#" data-dismiss="modal">Voltar</a>*@
+    </form>
+</div>

@@ -1,0 +1,65 @@
+﻿@model SistemaDeControleDeTCCs.Models.Tcc
+
+@{
+    ViewData["Title"] = "Excluir TCC";
+}
+
+<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+</button>
+
+<h2>@ViewData["Title"]</h2>
+
+<h5>Tem certeza de que deseja excluir?</h5>
+<div>
+    <hr />
+    <div>
+        <b>@Html.DisplayNameFor(model => model.Tema)</b> <br />
+        <p>@Html.DisplayFor(model => model.Tema)</p>
+    </div>
+    @*<div class="form-row">
+            <div class="form-group col-md-8">
+                <b>@Html.DisplayNameFor(model => model.Usuario.Nome)</b> <br />
+                <p>@Html.DisplayFor(model => model.Usuario.Nome)</p>
+            </div>
+            <div class="form-group col-md-4">
+                <b>@Html.DisplayNameFor(model => model.Usuario.Sobrenome)</b> <br />
+                <p>@Html.DisplayFor(model => model.Usuario.Sobrenome)</p>
+            </div>
+        </div>
+        @foreach (var b in Model.Banca.Where(x => x.TipoUsuario.DescTipo.ToLower().Equals("orientador") && x.TccId == item.TccId))
+        {
+            <div>
+                @Html.DisplayFor(model => b.Usuario.Nome) @Html.DisplayFor(model => b.Usuario.Sobrenome)
+            </div>
+        }
+        <div class="form-row">
+            <div class="form-group col-md-8">
+                <b>@Html.DisplayNameFor(model => model.Status.DescStatus)</b> <br />
+                <p>@Html.DisplayFor(model => model.Status.DescStatus)</p>
+            </div>
+        </div>
+        <div>
+            @if (model.DataApresentacao != null)
+            {
+                string dtApresentacao = item.DataApresentacao.Value.Date.ToString("dd/MM/yyyy");
+                @Html.DisplayFor(model => dtApresentacao)
+            }
+            else
+            {
+                <p>Sem data</p>
+            }
+        </div>
+        <div class="form-row">
+            <div class="form-group col-md-4">
+                <b>@Html.DisplayNameFor(model => model.Status)</b> <br />
+                <p>@Html.DisplayFor(model => model.Status)</p>
+            </div>
+        </div>*@
+
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="TccId" />
+        <input type="submit" value="Deletar" class="btn btn-danger" /> |
+        <a class="btn btn-primary" href="#" data-dismiss="modal">Cancelar</a>
+    </form>
+</div>

@@ -1,0 +1,74 @@
+﻿@model SistemaDeControleDeTCCs.Models.ViewModels.UsuarioViewModel
+
+@{
+    ViewData["Title"] = "Cadastrar/Editar Usuários";
+}
+<h1>Cadastrar/Editar Usuários</h1>
+
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="AddOrEdit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Usuario.Id" />
+            <div class="form-row">
+                <div class="form-group col-md-12">
+                    <label asp-for="Usuario.TipoUsuarioId" class="control-label"></label>
+                    <select asp-for="Usuario.TipoUsuarioId" asp-items="@(new SelectList(Model.TiposUsuario,"TipoUsuarioId","DescTipo"))" class="form-control">
+                        <option value="">Selecione</option>
+                    </select>
+                    <span asp-validation-for="Usuario.TipoUsuarioId" class="text-danger"></span>
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label asp-for="Usuario.Nome" class="control-label"></label>
+                    <input asp-for="Usuario.Nome" class="form-control" />
+                    <span asp-validation-for="Usuario.Nome" class="text-danger"></span>
+                </div>
+                <div class="form-group col-md-6">
+                    <label asp-for="Usuario.Sobrenome" class="control-label"></label>
+                    <input asp-for="Usuario.Sobrenome" class="form-control" />
+                    <span asp-validation-for="Usuario.Sobrenome" class="text-danger"></span>
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label asp-for="Usuario.Matricula" class="control-label"></label>
+                    <input asp-for="Usuario.Matricula" class="form-control" />
+                    <span asp-validation-for="Usuario.Matricula" class="text-danger"></span>
+                </div>
+                <div class="form-group col-md-6">
+                    <label asp-for="Usuario.Cpf" class="control-label"></label>
+                    <input asp-for="Usuario.Cpf" class="form-control" />
+                    <span asp-validation-for="Usuario.Cpf" class="text-danger"></span>
+                </div>
+            </div>
+
+                <div class="form-group">
+                    <label asp-for="Usuario.PhoneNumber" class="control-label"></label>
+                    <input asp-for="Usuario.PhoneNumber" class="form-control" />
+                    <span asp-validation-for="Usuario.PhoneNumber" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Usuario.Email" class="control-label"></label>
+                    <input asp-for="Usuario.Email" class="form-control" />
+                    <span asp-validation-for="Usuario.Email" class="text-danger"></span>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <button type="submit" class="btn btn-outline-success btn-block"><i class="fa fa-floppy-o" aria-hidden="true"></i> Salvar</button>
+                    </div>
+                    <div class="form-group col-md-6">
+                        <a asp-action="Index" class="btn btn-outline-secondary btn-block"><i class="fa fa-list" aria-hidden="true"></i> Cancelar</a>
+                    </div>
+                </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

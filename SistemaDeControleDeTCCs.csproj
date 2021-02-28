@@ -5,12 +5,12 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Remove="Areas\Coordenador\Views\Tccs\Delete.cshtml.cs" />
+    <Compile Remove="Views\Tccs\Delete.cshtml.cs" />
   </ItemGroup>
 
   <ItemGroup>
-    <Content Remove="Areas\Coordenador\Views\Usuarios\Index1.cshtml" />
-    <Content Remove="Areas\Coordenador\Views\Usuarios\_AddOrEdit.cshtml" />
+    <Content Remove="Views\Usuarios\Index1.cshtml" />
+    <Content Remove="Views\Usuarios\_AddOrEdit.cshtml" />
     <Content Remove="Views\Shared\_Modal.cshtml" />
     <Content Remove="wwwroot\js\Teste.js" />
   </ItemGroup>
@@ -19,12 +19,12 @@
 		<PackageReference Include="EntityFramework" Version="6.4.4" />
 		<PackageReference Include="iTextSharp" Version="5.5.13.2" />
 		<PackageReference Include="KissLog.AspNetCore" Version="4.1.0" />
-		<PackageReference Include="Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore" Version="3.1.9" />
-		<PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="3.1.10" />
+		<PackageReference Include="Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore" Version="3.1.12" />
+		<PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="3.1.12" />
 		<PackageReference Include="Microsoft.AspNetCore.Identity.UI" Version="3.1.10" />
 		<PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="3.1.11" />
-		<PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="3.1.11" />
-		<PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="3.1.11">
+		<PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="3.1.12" />
+		<PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="3.1.12">
 			<PrivateAssets>all</PrivateAssets>
 			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
 		</PackageReference>
@@ -34,11 +34,6 @@
   <ItemGroup>
     <None Include="wwwroot\Imagens\ifs-instituto-federal-de-educacao-ciencia-e-tecnologia-de-sergipe.png" />
     <None Include="wwwroot\js\site.js" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Areas\Administrador\Data\" />
-    <Folder Include="Areas\Administrador\Models\" />
   </ItemGroup>
 
 
