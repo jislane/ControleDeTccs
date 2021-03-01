@@ -131,6 +131,14 @@ namespace SistemaDeControleDeTCCs.Controllers
             banca.Usuario = _context.Usuario.Find(banca.UsuarioId);
 
             _context.Add(banca);
+
+            _context.LogAuditoria.Add(
+                    new LogAuditoria
+                    {
+                        EmailUsuario = User.Identity.Name,
+                        DetalhesAuditoria = string.Concat("Cadastrou a banca de Id:",
+                   banca.BancaId, "Data de cadastro: ", DateTime.Now.ToLongDateString())
+                    });
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
 
@@ -172,6 +180,14 @@ namespace SistemaDeControleDeTCCs.Controllers
                 try
                 {
                     _context.Update(banca);
+
+                    _context.LogAuditoria.Add(
+                    new LogAuditoria
+                    {
+                        EmailUsuario = User.Identity.Name,
+                        DetalhesAuditoria = string.Concat("Atualizou a banca de Id:",
+                   banca.BancaId, "Data da atualização: ", DateTime.Now.ToLongDateString())
+                    });
                     await _context.SaveChangesAsync();
                 }
                 catch (DbUpdateConcurrencyException)
@@ -221,6 +237,14 @@ namespace SistemaDeControleDeTCCs.Controllers
         {
             var banca = await _context.Banca.FindAsync(id);
             _context.Banca.Remove(banca);
+
+            _context.LogAuditoria.Add(
+                    new LogAuditoria
+                    {
+                        EmailUsuario = User.Identity.Name,
+                        DetalhesAuditoria = string.Concat("Removeu a banca de Id:",
+                   banca.BancaId, "Data da exclusão: ", DateTime.Now.ToLongDateString())
+                    });
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
@@ -370,6 +394,14 @@ namespace SistemaDeControleDeTCCs.Controllers
                 result.Nota = notas / resultTemp.Count;
                 result.StatusId = result.Nota >= 6 ? _context.Status.Where(x => x.DescStatus.ToLower().Equals("aprovado")).Select(x => x.StatusId).FirstOrDefault() : _context.Status.Where(x => x.DescStatus.ToLower().Equals("reprovado")).Select(x => x.StatusId).FirstOrDefault();
                 _context.Update(result);
+
+                _context.LogAuditoria.Add(
+                    new LogAuditoria
+                    {
+                        EmailUsuario = User.Identity.Name,
+                        DetalhesAuditoria = string.Concat("Atualizou as notas:",
+                   notas, "Data de cadastro: ", DateTime.Now.ToLongDateString())
+                    });
                 _context.SaveChanges();
             }
         }
