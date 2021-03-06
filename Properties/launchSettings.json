@@ -1,4 +1,4 @@
-﻿{
+{
   "iisSettings": {
     "windowsAuthentication": false, 
     "anonymousAuthentication": true, 
@@ -30,6 +30,13 @@
             "environmentVariables": {
                 "ASPNETCORE_ENVIRONMENT": "Development.Ariel"
             }
-        }
+        },
+    "ENVIRONMENT-Thiago": {
+      "commandName": "IISExpress",
+      "launchBrowser": true,
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development.Thiago"
+      }
+    }
     }
 }

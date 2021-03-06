@@ -3,15 +3,13 @@
 @{
     ViewData["Title"] = "Cadastrar Novo Usuário";
     var tiposUsuarios = (List<SistemaDeControleDeTCCs.Models.TipoUsuario>)ViewData["tiposUsuarios"];
+    var cursos = (List<SistemaDeControleDeTCCs.Models.Curso>)ViewData["cursos"];
 }
 
 <h1>@ViewData["Title"]</h1>
 <div class="row">
     <div class="col-md-6">
         <form asp-route-returnUrl="@Model.ReturnUrl" method="post">
-            @*<h4>Criar uma nova conta.</h4>*@
-            <hr />
-            @*<div asp-validation-summary="All" class="text-danger"></div>*@
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <partial name="_StatusMessage" for="StatusMessage" />
             <div class="form-row">
@@ -21,6 +19,15 @@
                         <option value="">Selecione</option>
                     </select>
                     <span asp-validation-for="Input.TipoUsuarioId" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-12">
+                    <label asp-for="Input.IdCurso" class="control-label"></label>
+                    <select asp-for="Input.IdCurso" asp-items='new SelectList(cursos,"Id","Nome")' class="form-control">
+                        <option value="">Selecione</option>
+                    </select>
+                    <span asp-validation-for="Input.IdCurso" class="text-danger"></span>
                 </div>
             </div>
             <div class="form-row">

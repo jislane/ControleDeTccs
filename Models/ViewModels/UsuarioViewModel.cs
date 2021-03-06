@@ -9,5 +9,6 @@ namespace SistemaDeControleDeTCCs.Models.ViewModels
     {
         public Usuario Usuario { get; set; }
         public ICollection<TipoUsuario> TiposUsuario { get; set; }
+        public ICollection<Curso> Cursos { get; set; }
     }
 }

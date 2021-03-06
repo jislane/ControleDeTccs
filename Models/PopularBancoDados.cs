@@ -105,8 +105,12 @@ namespace SistemaDeControleDeTCCs.Models
             var CampusGlo = new Campus { Nome = "Campus Glória", Endereco = "Glória" };
             _context.Campus.AddRange(CampusLag, CampusIta, CampusEst, CampusAju, CampusGlo);
 
-            var CursoBsi = new Curso { Nome = "Bacharelado", Sigla = "BSI", CodEmec = 00001, Campus = CampusLag };
-            _context.Cursos.AddRange(CursoBsi);
+            var CursoBsi = new Curso { Nome = "Sistemas", Sigla = "BSI", CodEmec = 00001, Campus = CampusLag };
+            var CursoFis = new Curso { Nome = "Fisica", Sigla = "FIS", CodEmec = 00002, Campus = CampusIta };
+            var CursoAut = new Curso { Nome = "Automação", Sigla = "AUT", CodEmec = 00003, Campus = CampusEst };
+            var CursoMat = new Curso { Nome = "Matemática", Sigla = "MAT", CodEmec = 00004, Campus = CampusAju };
+            var CursoEng = new Curso { Nome = "Engenharia", Sigla = "ENG", CodEmec = 00005, Campus = CampusGlo };
+            _context.Cursos.AddRange(CursoBsi, CursoFis, CursoAut, CursoMat, CursoEng);
 
             var statusPendente = new Status { DescStatus = "Cadastrado" };
             var statusHomologadoTCC = new Status { DescStatus = "Pré-Homologado" };
@@ -274,7 +278,7 @@ namespace SistemaDeControleDeTCCs.Models
                 Cpf = "05447800241",
                 TipoUsuario = tipoUsuarioAluno,
                 PhoneNumber = "99999999999",
-                Curso = CursoBsi
+                Curso = CursoAut
             };
             var userAna = new Usuario
             {
@@ -293,7 +297,7 @@ namespace SistemaDeControleDeTCCs.Models
                 Cpf = "15787601551",
                 TipoUsuario = tipoUsuarioAluno,
                 PhoneNumber = "99999999999",
-                Curso = CursoBsi
+                Curso = CursoFis
             };
             var userMateus = new Usuario
             {
@@ -312,7 +316,7 @@ namespace SistemaDeControleDeTCCs.Models
                 Cpf = "04263417322",
                 TipoUsuario = tipoUsuarioAluno,
                 PhoneNumber = "99999999999",
-                Curso = CursoBsi
+                Curso = CursoEng
             };
             var userHelena = new Usuario
             {
@@ -331,7 +335,7 @@ namespace SistemaDeControleDeTCCs.Models
                 Cpf = "12364289838",
                 TipoUsuario = tipoUsuarioAluno,
                 PhoneNumber = "99999999999",
-                Curso = CursoBsi
+                Curso = CursoMat
             };
             _context.Usuario.AddRange(userAdm, userCatuxe, userWillian, userAlex, userAna, userJislane, userGilson, userGlauco, userJean, userMateus, userHelena);
 
