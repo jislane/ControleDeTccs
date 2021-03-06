@@ -1,13 +1,13 @@
 ﻿@model SistemaDeControleDeTCCs.Models.Curso
 
 @{
-    ViewData["Title"] = "Edit";
+    ViewData["Title"] = "Editar";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h1>Edit</h1>
-
-<h4>Curso</h4>
+<h1>@ViewData["Title"]</h1>
+<br />
+<h4>Curso: @Html.DisplayFor(model => model.Nome)</h4>
 <hr />
 <div class="row">
     <div class="col-md-4">
@@ -39,14 +39,14 @@
                 <select asp-for="IdCampus" class="form-control" asp-items="ViewBag.IdCampus"></select>
                 <span asp-validation-for="IdCampus" class="text-danger"></span>
             </div>
-            <div class="form-group">
-                <input type="submit" value="Save" class="btn btn-primary" />
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <button type="submit" class="btn btn-outline-success btn-block"><i class="fa fa-floppy-o" aria-hidden="true"></i> Salvar</button>
+                </div>
+                <div class="form-group col-md-6">
+                    <a asp-action="Index" class="btn btn-outline-secondary btn-block"><i class="bi bi-arrow-return-left" aria-hidden="true"></i> Voltar</a>
+                </div>
             </div>
         </form>
     </div>
 </div>
-
-<div>
-    <a asp-action="Index">Back to List</a>
-</div>
-

@@ -1,12 +1,12 @@
 ﻿@model SistemaDeControleDeTCCs.Models.Curso
 
 @{
-    ViewData["Title"] = "Create";
+    ViewData["Title"] = "Cadastrar";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h1>Create</h1>
-
+<h1>@ViewData["Title"]</h1>
+<br />
 <h4>Curso</h4>
 <hr />
 <div class="row">
@@ -29,21 +29,21 @@
                 <span asp-validation-for="CodEmec" class="text-danger"></span>
             </div>
             <!-- <div class="form-group">
-                <label asp-for="IdCoordenador" class="control-label"></label>
-                <select asp-for="IdCoordenador" class ="form-control" asp-items="ViewBag.IdCoordenador"></select>
-            </div> -->
+        <label asp-for="IdCoordenador" class="control-label"></label>
+        <select asp-for="IdCoordenador" class ="form-control" asp-items="ViewBag.IdCoordenador"></select>
+    </div> -->
             <div class="form-group">
                 <label asp-for="IdCampus" class="control-label"></label>
-                <select asp-for="IdCampus" class ="form-control" asp-items="ViewBag.IdCampus"></select>
+                <select asp-for="IdCampus" class="form-control" asp-items="ViewBag.IdCampus"></select>
             </div>
-            <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <button type="submit" class="btn btn-outline-success btn-block"><i class="fa fa-floppy-o" aria-hidden="true"></i> Salvar</button>
+                </div>
+                <div class="form-group col-md-6">
+                    <a asp-action="Index" class="btn btn-outline-secondary btn-block"><i class="bi bi-arrow-return-left" aria-hidden="true"></i> Voltar</a>
+                </div>
             </div>
         </form>
     </div>
 </div>
-
-<div>
-    <a asp-action="Index">Back to List</a>
-</div>
-

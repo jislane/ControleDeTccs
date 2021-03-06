@@ -34,10 +34,13 @@
                 Nome Completo
             </th>
             <th>
+                CPF
+            </th>
+            <th>
                 Matrícula
             </th>
             <th>
-                CPF
+                Curso
             </th>
             <th>
                 Telefone
@@ -61,10 +64,13 @@
                     @Html.DisplayFor(modelItem => item.Nome) @Html.DisplayFor(modelItem => item.Sobrenome)
                 </td>
                 <td>
+                    @Html.DisplayFor(modelItem => item.Cpf)
+                </td>
+                <td>
                     @Html.DisplayFor(modelItem => item.Matricula)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.Cpf)
+                    @Html.DisplayFor(modelItem => item.Curso.Nome)
                 </td>
                 <td>
                     @Html.DisplayFor(modelItem => item.PhoneNumber)
