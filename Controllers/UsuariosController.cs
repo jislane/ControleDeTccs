@@ -37,7 +37,7 @@ namespace SistemaDeControleDeTCCs.Controllers
         // GET: Usuarios
         public IActionResult Index(string filterNome, string filterMatriculaCPF, int filterTipoUsuario)
         {
-            List<Usuario> usuarios = _context.Usuario.Include(u => u.TipoUsuario).ToList();
+            List<Usuario> usuarios = _context.Usuario.Include(u => u.TipoUsuario).Include(u => u.Curso).ToList();
             // filtros
             if (!string.IsNullOrEmpty(filterNome))
             {
@@ -80,7 +80,7 @@ namespace SistemaDeControleDeTCCs.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> AddOrEdit([Bind("Id,Nome,Sobrenome,Matricula,Cpf,PhoneNumber,Email,TipoUsuarioId")] Usuario usuario)
+        public async Task<IActionResult> AddOrEdit([Bind("Id,Nome,Sobrenome,Matricula,Cpf,PhoneNumber,Email,TipoUsuarioId,IdCurso")] Usuario usuario)
         {
 
             if (ModelState.IsValid)
@@ -109,6 +109,7 @@ namespace SistemaDeControleDeTCCs.Controllers
                     userTemp.PhoneNumber = usuario.PhoneNumber;
                     userTemp.Email = usuario.Email;
                     userTemp.TipoUsuarioId = usuario.TipoUsuarioId;
+                    userTemp.IdCurso = usuario.IdCurso;
 
                     // Atualiza o usuário
 

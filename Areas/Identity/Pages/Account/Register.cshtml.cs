@@ -79,6 +79,10 @@ namespace SistemaDeControleDeTCCs.Areas.Identity.Pages.Account
             [Required(ErrorMessage = "O {0} é obrigatório", AllowEmptyStrings = false)]
             public int TipoUsuarioId { get; set; }
 
+            [Display(Name = "Curso")]
+            [Required(ErrorMessage = "O {0} é obrigatório", AllowEmptyStrings = false)]
+            public int IdCurso { get; set; }
+
             [Display(Name = "Telefone")]
             public string PhoneNumber { get; set; }
 
@@ -103,6 +107,7 @@ namespace SistemaDeControleDeTCCs.Areas.Identity.Pages.Account
         {
             // pass the TipoUsuario List using ViewData
             ViewData["tiposUsuarios"] = _context.TipoUsuario.OrderBy(x => x.DescTipo).Where(x => x.DescTipo.Contains("Aluno") || x.DescTipo.Contains("Professor") || x.DescTipo.Contains("Coordenador")).ToList();
+            ViewData["cursos"] = _context.Cursos.OrderBy(x => x.Nome).ToList();
             ReturnUrl = returnUrl;
             ExternalLogins = (await _signInManager.GetExternalAuthenticationSchemesAsync()).ToList();
         }
@@ -128,7 +133,8 @@ namespace SistemaDeControleDeTCCs.Areas.Identity.Pages.Account
                     Matricula = Input.Matricula,
                     Cpf = Input.Cpf,
                     PhoneNumber = Input.PhoneNumber,
-                    TipoUsuarioId = Input.TipoUsuarioId
+                    TipoUsuarioId = Input.TipoUsuarioId,
+                    IdCurso = Input.IdCurso
                 };
 
                 var senha = KeyGenerator.GetUniqueKey(8);
@@ -166,6 +172,7 @@ namespace SistemaDeControleDeTCCs.Areas.Identity.Pages.Account
 
                     StatusMessage = "Conta criada e enviado e-mail com a senha de acesso.";
                     user.TipoUsuario = _context.TipoUsuario.Where(x => x.TipoUsuarioId == user.TipoUsuarioId).FirstOrDefault();
+                    user.Curso = _context.Cursos.Where(x => x.Id == user.IdCurso).FirstOrDefault();
                     _senderEmail.EnviarSenhaParaUsuarioViaEmail(user, senha);
                     //_logger.LogInformation("User created a new account with password ("+ senha +").");
                     return RedirectToPage();
