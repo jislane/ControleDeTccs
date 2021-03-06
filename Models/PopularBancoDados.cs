@@ -14,7 +14,68 @@ namespace SistemaDeControleDeTCCs.Models
             _context = context;
         }
 
-        public void Popular()
+        public void PopularProducao()
+        {
+            if (_context.TipoUsuario.Any())
+            {
+                return;
+            }
+
+            var roleAdm = new IdentityRole { Name = "Administrador", NormalizedName = "ADMINISTRADOR" };
+            var roleAluno = new IdentityRole { Name = "Aluno", NormalizedName = "ALUNO" };
+            var roleProf = new IdentityRole { Name = "Professor", NormalizedName = "PROFESSOR" };
+            var roleCoord = new IdentityRole { Name = "Coordenador", NormalizedName = "COORDENADOR" };
+
+            _context.Roles.AddRange(roleAdm, roleProf, roleCoord, roleAluno);
+
+            var tipoUsuarioAdm = new TipoUsuario { DescTipo = "Administrador" };
+            var tipoUsuarioAluno = new TipoUsuario { DescTipo = "Aluno" };
+            var tipoUsuarioProf = new TipoUsuario { DescTipo = "Professor" };
+            var tipoUsuarioCoord = new TipoUsuario { DescTipo = "Coordenador" };
+            var tipoUsuarioOrientador = new TipoUsuario { DescTipo = "Orientador" };
+            var tipoUsuarioCoorientador = new TipoUsuario { DescTipo = "Coorientador" };
+            var tipoUsuarioMembroBanca = new TipoUsuario { DescTipo = "Membro da Banca" };
+            _context.TipoUsuario.AddRange(tipoUsuarioAdm, tipoUsuarioAluno, tipoUsuarioCoord, tipoUsuarioCoorientador, tipoUsuarioMembroBanca, tipoUsuarioOrientador, tipoUsuarioProf);
+
+            var CampusLag = new Campus { Nome = "Campus Lagarto", Endereco = "Lagarto" };
+
+            var CursoBsi = new Curso { Nome = "Bacharelado", Sigla = "BSI", CodEmec = 00001, Campus = CampusLag };
+            _context.Cursos.AddRange(CursoBsi);
+
+            var userAdm = new Usuario
+            {
+                UserName = "admin@ifs.edu.br",
+                NormalizedUserName = "admin@ifs.edu.br",
+                Email = "admin@ifs.edu.br",
+                NormalizedEmail = "admin@ifs.edu.br",
+                Nome = "Administrador",
+                Sobrenome = "do Sistema",
+                PasswordHash = "AQAAAAEAACcQAAAAEHWjbOIHqtSUeaxyCj/PR6rYwJ/xgW8jl8TYjeC4+iDj4EsSkQogl1TYPTRDpUA/5g==",
+                SecurityStamp = "WCSIGCB6MEQY4LMWJ7VFWYC43BJ6GNBD",
+                ConcurrencyStamp = "4f1ea59f-a987-45cf-abe6-d9e456b43fae",
+                LockoutEnabled = true,
+                AccessFailedCount = 1,
+                Matricula = "0",
+                TipoUsuario = tipoUsuarioAdm,
+                Cpf = "99999999999",
+                PhoneNumber = "99999999999",
+                Curso = CursoBsi
+
+            };
+
+            _context.Usuario.AddRange(userAdm);
+
+            var rowAdm = new IdentityUserRole<string>();
+            rowAdm.UserId = userAdm.Id;
+            rowAdm.RoleId = roleAdm.Id;
+ 
+            _context.UserRoles.AddRange(rowAdm);
+
+            _context.SaveChanges();
+        }
+
+
+            public void Popular()
         {
             if (_context.TipoUsuario.Any())
             {
