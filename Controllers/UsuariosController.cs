@@ -37,7 +37,16 @@ namespace SistemaDeControleDeTCCs.Controllers
         // GET: Usuarios
         public IActionResult Index(string filterNome, string filterMatriculaCPF, int filterTipoUsuario)
         {
-            List<Usuario> usuarios = _context.Usuario.Include(u => u.TipoUsuario).Include(u => u.Curso).ToList();
+            List<Usuario> usuarios;
+            if (User.IsInRole("Administrador"))
+            {
+                usuarios = _context.Usuario.Include(u => u.TipoUsuario).Include(u => u.Curso).ToList();
+            }
+            else {
+                usuarios = _context.Usuario.Include(u => u.TipoUsuario)
+                    .Include(u => u.Curso).Where(u => !u.TipoUsuario.DescTipo.Equals("Administrador")).ToList() ;
+            }
+               
             // filtros
             if (!string.IsNullOrEmpty(filterNome))
             {
@@ -65,13 +74,29 @@ namespace SistemaDeControleDeTCCs.Controllers
         // GET: Usuarios/Create
         public IActionResult AddOrEdit(string id)
         {
-            var tiposUsuarios = _context.TipoUsuario.OrderBy(x => x.DescTipo).Where(x => x.DescTipo.Contains("Aluno") || x.DescTipo.Contains("Professor") || x.DescTipo.Contains("Coordenador")).ToList();
+
+            var  tiposUsuarios = _context.TipoUsuario
+                .OrderBy(x => x.DescTipo)
+                .Where(x => x.DescTipo.Contains("Aluno") || x.DescTipo.Contains("Professor"))
+                .ToList();
+           
+            
             var usuario = new Usuario();
             if (id != null)
             {
-                usuario = _context.Usuario.Find(id);
+                usuario = _context.Usuario
+                    .Include(u => u.Curso)
+                    .ThenInclude(c => c.Campus)
+                    .Where(u => u.Id == id)
+                    .First();
+                //usuario = _context.Usuario.Find(id);
             }
-            var viewModel = new UsuarioViewModel { TiposUsuario = tiposUsuarios, Usuario = usuario };
+            var cursos = _context.Cursos
+                .Where(c => c.IdCampus == usuario.Curso.IdCampus).ToList();
+            var viewModel = new UsuarioViewModel { TiposUsuario = tiposUsuarios
+                ,Usuario = usuario 
+                , Cursos = cursos
+            };
             return View(viewModel);
         }
 
