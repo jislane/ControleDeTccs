@@ -18,7 +18,7 @@ namespace SistemaDeControleDeTCCs.Models
 
         [DisplayName("Sobrenome")]
         [Required(ErrorMessage = "O campo {0} é obrigatorio.")]
-        [MinLength(6, ErrorMessage = "{0} inválido!")]
+        //[MinLength(6, ErrorMessage = "{0} inválido!")]
         public string Sobrenome { get; set; }
 
         [DisplayName("Matrícula")]

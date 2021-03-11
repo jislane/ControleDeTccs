@@ -11,6 +11,10 @@
         <form asp-action="AddOrEdit">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <input type="hidden" asp-for="Usuario.Id" />
+            <div class="form-group">
+                <label class="control-label">Campus</label>
+                <div disabled class="form-control">@Model.Usuario.Curso.Campus.Nome</div>
+            </div>
             <div class="form-row">
                 <div class="form-group col-md-12">
                     <label asp-for="Usuario.TipoUsuarioId" class="control-label"></label>

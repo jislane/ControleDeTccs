@@ -121,6 +121,9 @@ namespace SistemaDeControleDeTCCs.Areas.Identity.Pages.Account
             //var nameTipoUsuario = "Aluno";
             var role = _roleManager.FindByNameAsync(nameTipoUsuario).Result;
 
+            ViewData["tiposUsuarios"] = _context.TipoUsuario.OrderBy(x => x.DescTipo).Where(x => x.DescTipo.Contains("Aluno") || x.DescTipo.Contains("Professor") || x.DescTipo.Contains("Coordenador")).ToList();
+            ViewData["cursos"] = _context.Cursos.OrderBy(x => x.Nome).ToList();
+
             ExternalLogins = (await _signInManager.GetExternalAuthenticationSchemesAsync()).ToList();
             if (true)
             {
