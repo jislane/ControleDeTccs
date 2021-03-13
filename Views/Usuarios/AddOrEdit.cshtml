@@ -1,9 +1,9 @@
 ﻿@model SistemaDeControleDeTCCs.Models.ViewModels.UsuarioViewModel
 
 @{
-    ViewData["Title"] = "Cadastrar/Editar Usuários";
+    ViewData["Title"] = "Editar Usuários";
 }
-<h1>Cadastrar/Editar Usuários</h1>
+<h1>@ViewData["Title"]</h1>
 
 <hr />
 <div class="row">
@@ -58,7 +58,6 @@
                     <span asp-validation-for="Usuario.Cpf" class="text-danger"></span>
                 </div>
             </div>
-
             <div class="form-group">
                 <label asp-for="Usuario.PhoneNumber" class="control-label"></label>
                 <input asp-for="Usuario.PhoneNumber" class="form-control" />
@@ -74,7 +73,7 @@
                     <button type="submit" class="btn btn-outline-success btn-block"><i class="fa fa-floppy-o" aria-hidden="true"></i> Salvar</button>
                 </div>
                 <div class="form-group col-md-6">
-                    <a asp-action="Index" class="btn btn-outline-secondary btn-block"><i class="bi bi-arrow-return-left" aria-hidden="true"></i> Voltar</a>
+                    <a asp-action="Index" class="btn btn-outline-secondary btn-block"><i class="fa fa-reply" aria-hidden="true"></i> Voltar</a>
                 </div>
             </div>
         </form>

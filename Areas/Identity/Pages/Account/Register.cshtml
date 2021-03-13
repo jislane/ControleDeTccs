@@ -1,14 +1,16 @@
 ﻿@page
 @model RegisterModel
 @{
-    ViewData["Title"] = "Cadastrar Novo Usuário";
+    ViewData["Title"] = "Cadastrar Usuário";
     var tiposUsuarios = (List<SistemaDeControleDeTCCs.Models.TipoUsuario>)ViewData["tiposUsuarios"];
     var cursos = (List<SistemaDeControleDeTCCs.Models.Curso>)ViewData["cursos"];
 }
 
 <h1>@ViewData["Title"]</h1>
+
+<hr />
 <div class="row">
-    <div class="col-md-6">
+    <div class="col-md-4">
         <form asp-route-returnUrl="@Model.ReturnUrl" method="post">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <partial name="_StatusMessage" for="StatusMessage" />
@@ -65,11 +67,11 @@
                 <span asp-validation-for="Input.PhoneNumber" class="text-danger"></span>
             </div>
             <div class="form-row">
-                <div>
-                    <button type="submit" class="btn btn-outline-success"><i class="fa fa-floppy-o" aria-hidden="true"></i> Salvar</button>
+                <div class="form-group col-md-6">
+                    <button type="submit" class="btn btn-outline-success btn-block"><i class="fa fa-floppy-o" aria-hidden="true"></i> Salvar</button>
                 </div>
-                <div>
-                    <a asp-action="Index" asp-area="Coordenador" asp-controller="Usuarios" class="btn btn-outline-secondary"><i class="fa fa-list" aria-hidden="true"></i> Voltar para a lista</a>
+                <div class="form-group col-md-6">
+                    <a asp-action="Index" asp-area="Coordenador" asp-controller="Usuarios" class="btn btn-outline-secondary btn-block"><i class="fa fa-reply" aria-hidden="true"></i> Voltar</a>
                 </div>
             </div>
         </form>

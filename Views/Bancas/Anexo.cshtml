@@ -8,42 +8,42 @@
 
 <h1>@ViewData["Title"]</h1>
 <hr />
-    <div class="col-md-4">
-        <form asp-action="SaveFile" method="post" enctype="multipart/form-data">
-            <input type="hidden" value="@ViewBag.TccId" name="TccId" id="TccId" />
-            <div class="form-group">
-                @if (User.IsInRole("Aluno"))
-                {
-                    <label>Arquivo(pdf)</label>
-                    <input type="file" name="arquivos" id="arquivos" accept="application/pdf">
-                }
-            </div>
-            <div class="form-row">
-                @if (User.IsInRole("Aluno"))
-                {
-                    <input type="submit" value="Salvar" class="btn btn-outline-success" />
-                }
-            </div>
-        </form>
-    </div>
-    <div>
-        <table id="tabelaBancaAnexo" class="table table-bordered table-hover">
-            <thead>
-                <tr>
-                    <th>
-                        Data/Hora Cadastro
-                    </th>
-                    <th>
-                        Nome Arquivo
-                    </th>
-                    <th>
-                        Ação
-                    </th>
-                </tr>
-            </thead>
-            <tbody>
-                @foreach (var item in Model)
-                {
+<div class="col-md-4">
+    <form asp-action="SaveFile" method="post" enctype="multipart/form-data">
+        <input type="hidden" value="@ViewBag.TccId" name="TccId" id="TccId" />
+        <div class="form-group">
+            @if (User.IsInRole("Aluno"))
+            {
+                <label>Arquivo(pdf)</label>
+                <input type="file" name="arquivos" id="arquivos" accept="application/pdf">
+            }
+        </div>
+        <div class="form-row">
+            @if (User.IsInRole("Aluno"))
+            {
+                <input type="submit" value="Salvar" class="btn btn-outline-success" />
+            }
+        </div>
+    </form>
+</div>
+<div>
+    <table id="tabelaBancaAnexo" class="table table-bordered table-hover">
+        <thead>
+            <tr>
+                <th>
+                    Data/Hora Cadastro
+                </th>
+                <th>
+                    Nome Arquivo
+                </th>
+                <th>
+                    Ação
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
                 <tr>
                     <td>
                         @Html.DisplayFor(modelItem => item.DataCadastro)
@@ -55,24 +55,25 @@
                         <a title="Baixar" class="btn btn-outline-primary btn-sm" asp-action="Download" asp-controller="FileTCCs" asp-route-id="@item.Id"><i class="fa fa-download" aria-hidden="true"></i></a> |
                         <a title="Excluir" class="btn btn-outline-danger btn-sm" asp-action="Delete" asp-controller="FileTCCs" asp-route-id="@item.Id"><i class="fa fa-trash" aria-hidden="true"></i></a>
                     </td>
-                </tr>          
-                }
-            </tbody>
-        </table>  
-        <div>
-            <a asp-action="Index" class="btn btn-outline-secondary"><i class="fa fa-list" aria-hidden="true"></i> Voltar para a lista</a>
-        </div>
+                </tr>
+
+            }
+        </tbody>
+    </table>
+    <div>
+        <a asp-action="Index" class="btn btn-outline-secondary"><i class="fa fa-reply" aria-hidden="true"></i> Voltar</a>
     </div>
+</div>
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-    <link rel="stylesheet" href="//cdn.datatables.net/1.10.22/css/jquery.dataTables.min.css" />
-    <script src="//cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+<script src="//cdn.datatables.net/1.10.24/js/jquery.dataTables.min.js"></script>
+<script src="//cdn.datatables.net/1.10.24/js/dataTables.bootstrap4.min.js"></script>
 
-    @section scripts{
-        @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.css" />
-        <link rel="stylesheet" href="https://cdn.datatables.net/1.10.22/css/dataTables.bootstrap4.min.css" />
-        <script>
+@section scripts{
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.css" />
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.22/css/dataTables.bootstrap4.min.css" />
+    <script>
         $(document).ready(function () {
             $('#tabelaBancaAnexo').DataTable({
                 "language": {
@@ -82,7 +83,7 @@
                     "infoEmpty": "Nenhum registro disponível",
                     "sLoadingRecords": "Carregando...",
                     "sProcessing": "Processando...",
-                    "infoFiltered": "(filtrados de _MAX_ registros)",
+                    "infoFiltered": "(Filtrados de _MAX_ registros)",
                     "sSearch": "Buscar: ",
                     "oPaginate": {
                         "sNext": "Próximo",
@@ -93,5 +94,5 @@
                 }
             });
         });
-        </script>
-    }
+    </script>
+}

@@ -6,7 +6,7 @@
 }
 
 <h1>@ViewData["Title"]</h1>
-<a asp-action="Create" class="btn btn-outline-success btnAdd"><i class="bi bi-plus-square" aria-hidden="true"></i> Novo</a>
+<a asp-action="Create" class="btn btn-outline-success btnAdd"><i class="fa fa-book" aria-hidden="true"></i> Novo</a>
 
 <table id="tabela" class="table table-bordered table-hover">
     <thead>
@@ -55,11 +55,11 @@
                 <td>
                     @Html.DisplayFor(modelItem => item.Campus.Endereco)
                 </td>
-                <td>
-                    <a title="Editar" class="btn btn-outline-primary btn-sm" asp-action="Edit" asp-route-id="@item.Id"><i class="fa fa-pencil fa-fw" aria-hidden="true"></i></a> |
-                    <a title="Informações" class="btn btn-outline-secondary btn-sm" asp-action="Details" asp-route-id="@item.Id"><i class="fa fa-info fa-fw" aria-hidden="true"></i></a> |
+                <td style="width:150px; text-align:center">
+                    <a title="Editar" class="btn btn-outline-primary btn-sm" asp-action="Edit" asp-route-id="@item.Id"><i class="fa fa-pencil" aria-hidden="true"></i></a> |
+                    <a title="Informações" class="btn btn-outline-secondary btn-sm" style="padding-left: 0.8rem; padding-right: 0.7rem;" asp-action="Details" asp-route-id="@item.Id"><i class="fa fa-info" aria-hidden="true"></i></a> |
                     <a title="Excluir" class="btn btn-outline-danger btn-sm" ml-1 onclick="return confirm('Tem certeza que quer deletar este registro?')" asp-action="Delete" asp-route-id="@item.Id">
-                        <i class="fa fa-trash fa-fw" aria-hidden="true"></i>
+                        <i class="fa fa-trash" aria-hidden="true"></i>
                     </a>
                 </td>
             </tr>
@@ -67,10 +67,9 @@
     </tbody>
 </table>
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-<link rel="stylesheet" href="//cdn.datatables.net/1.10.22/css/jquery.dataTables.min.css" />
-<script src="//cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js"></script>
-
+<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+<script src="//cdn.datatables.net/1.10.24/js/jquery.dataTables.min.js"></script>
+<script src="//cdn.datatables.net/1.10.24/js/dataTables.bootstrap4.min.js"></script>
 
 @section scripts{
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.css" />
@@ -85,7 +84,7 @@
                     "infoEmpty": "Nenhum registro disponível",
                     "sLoadingRecords": "Carregando...",
                     "sProcessing": "Processando...",
-                    "infoFiltered": "(filtrados de _MAX_ registros)",
+                    "infoFiltered": "(Filtrados de _MAX_ registros)",
                     "sSearch": "Buscar: ",
                     "oPaginate": {
                         "sNext": "Próximo",
