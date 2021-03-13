@@ -71,10 +71,7 @@ body {
 .btnAdd {
     margin-top: 20px;
     margin-bottom: 20px;
-}
-
-.btn-outline-success {
-    margin-right: 20px;
+    margin-left: 92%;
 }
 
 .footer {
