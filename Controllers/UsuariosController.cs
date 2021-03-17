@@ -187,7 +187,10 @@ namespace SistemaDeControleDeTCCs.Controllers
             .Where(x => x.Value.Errors.Count > 0)
             .Select(x => new { x.Key, x.Value.Errors })
             .ToArray();
-            return View(usuario);
+
+            //TODO: Refatorar para caso aconteça algum erro os dados alterados não sejam perdidos
+            //e adicionar as mensagens na view.
+            return RedirectToAction(nameof(AddOrEdit), new { id = usuario.Id });
         }
 
         // GET: Usuarios/Delete/5

@@ -1,13 +1,11 @@
 ﻿@model SistemaDeControleDeTCCs.Models.Curso
 
 @{
-    ViewData["Title"] = "Cadastrar";
+    ViewData["Title"] = "Cadastrar Curso";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
 <h1>@ViewData["Title"]</h1>
-<br />
-<h4>Curso</h4>
 <hr />
 <div class="row">
     <div class="col-md-4">
@@ -41,7 +39,7 @@
                     <button type="submit" class="btn btn-outline-success btn-block"><i class="fa fa-floppy-o" aria-hidden="true"></i> Salvar</button>
                 </div>
                 <div class="form-group col-md-6">
-                    <a asp-action="Index" class="btn btn-outline-secondary btn-block"><i class="bi bi-arrow-return-left" aria-hidden="true"></i> Voltar</a>
+                    <a asp-action="Index" class="btn btn-outline-secondary btn-block"><i class="fa fa-reply" aria-hidden="true"></i> Voltar</a>
                 </div>
             </div>
         </form>
