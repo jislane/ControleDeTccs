@@ -36,24 +36,20 @@ namespace SistemaDeControleDeTCCs.Models
         public string UsuarioId { get; set; }
 
         [DisplayName("Resumo")]
-        [Required(ErrorMessage = "O campo {0} é obrigatorio.")]
         public string Resumo { get; set; }
 
         [Display(Name = "Data de Apresentação")]
         [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}")]
-        [Required(ErrorMessage = "O campo {0} é obrigatorio.")]
         public DateTime? DataApresentacao { get; set; }
 
         [Display(Name = "Data de Finalização")]
         [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}")]
-        [Required(ErrorMessage = "O campo {0} é obrigatorio.")]
         public DateTime? DataFinalizacao { get; set; }
         
         [Display(Name = "Nota")]
         public double? Nota { get; set; }
 
         [Display(Name = "Local da Apresentação")]
-        [Required(ErrorMessage = "O campo {0} é obrigatorio.")]
         public string LocalApresentacao { get; set; }
 
         public Curso Curso { get; set; }
