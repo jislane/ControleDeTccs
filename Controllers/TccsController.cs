@@ -101,11 +101,12 @@ namespace SistemaDeControleDeTCCs.Controllers
 
 
         [Authorize(Roles = "Coordenador")]
-        public IActionResult AddOrEdit(int id = 0)
+        public IActionResult AddOrEdit(int id)
         {
           
             Tcc tcc = new Tcc();
             Usuario orientador = new Usuario();
+           
             if (id != 0)
             {
                 _context.Tccs.Include(t => t.Curso).Include(t => t.Usuario) ;
@@ -132,6 +133,16 @@ namespace SistemaDeControleDeTCCs.Controllers
 
             if (ModelState.IsValid)
             {
+                var c = _context.Cursos.Find(tcc.IdCurso);
+                var dis = _context.Usuario.Where(u => u.Id == tcc.UsuarioId && u.IdCurso == tcc.IdCurso).ToList();
+                var or = _context.Usuario.Where(u => u.Id == idOrientador && u.IdCurso == tcc.IdCurso).ToList();
+                if (dis.Count == 0 || or.Count == 0) {
+                    ModelState.AddModelError(string.Empty, "Os dados Informados são inválidos.");
+                    if (tcc.TccId == 0)
+                        return AddOrEdit(0);
+                    return AddOrEdit(tcc.TccId);
+                }
+
                 if (tcc.TccId == 0)
                 {
                     tcc.DataDeCadastro = DateTime.Now;
@@ -170,7 +181,7 @@ namespace SistemaDeControleDeTCCs.Controllers
                     _context.Update(tcc);
                     await _context.SaveChangesAsync();
                     //Adiconarndo o orientador a Banca
-                    Banca banca = _context.Banca.Where(x => x.Tcc.TccId == tcc.TccId).Single();
+                    Banca banca = _context.Banca.Where(x => x.Tcc.TccId == tcc.TccId).First();
                     banca.Tcc = tcc;
                     banca.TipoUsuario = _context.TipoUsuario.Where(x => x.DescTipo.ToLower().Equals("orientador")).Single();
                     banca.Usuario = _context.Usuario.Where(x => x.Id == idOrientador).Single();
@@ -195,7 +206,8 @@ namespace SistemaDeControleDeTCCs.Controllers
             return View(tcc);
         }
 
-        [Authorize(Roles = "Professor")]
+        [Authorize(Roles = "Professor,Coordenador")]
+        [HttpGet]
         public IActionResult AddDataLocalApresentacao(int id = 0)
         {
             Tcc tcc = new Tcc();
@@ -231,7 +243,7 @@ namespace SistemaDeControleDeTCCs.Controllers
             return View(tcc);
         }
 
-        [Authorize(Roles = "Professor")]
+        [Authorize(Roles = "Professor,Coordenador")]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> AddDataLocalApresentacao(Tcc tccAtualizado, IList<int> checkNotificaMembrosBanca)

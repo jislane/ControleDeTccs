@@ -16,14 +16,11 @@ namespace SistemaDeControleDeTCCs.Controllers
     public class BancasController : Controller
     {
 
-        private IHostingEnvironment _appEnvironment;
-
         private readonly SistemaDeControleDeTCCsContext _context;
 
-        public BancasController(SistemaDeControleDeTCCsContext context, IHostingEnvironment env)
+        public BancasController(SistemaDeControleDeTCCsContext context)
         {
             _context = context;
-            _appEnvironment = env;
         }
 
         // GET: Bancas
@@ -34,12 +31,15 @@ namespace SistemaDeControleDeTCCs.Controllers
             List<Banca> result = new List<Banca>();
             if (User.IsInRole("Coordenador"))
             {
-                result = await _context.Banca.Where(x => x.TipoUsuarioId == 7).OrderByDescending(x => x.DataDeCadastro).ToListAsync();
+                result = await _context.Banca.Where(x => x.TipoUsuario.DescTipo.ToLower().Equals("orientador"))
+                    .OrderByDescending(x => x.DataDeCadastro).ToListAsync();
             }
             else if (User.IsInRole("Professor"))
             {
                 string userId = _context.Users.FirstOrDefault(p => p.UserName == User.Identity.Name).Id;
-                result = await _context.Banca.Where(x => x.TipoUsuarioId == 7 && x.UsuarioId == userId).OrderByDescending(x => x.DataDeCadastro).ToListAsync();
+                result = await _context.Banca.Where(x => x.TipoUsuario.DescTipo.ToLower().Equals("orientador")
+                        && x.UsuarioId == userId)
+                    .OrderByDescending(x => x.DataDeCadastro).ToListAsync();
             }
             else if (User.IsInRole("Aluno"))
             {
@@ -47,7 +47,9 @@ namespace SistemaDeControleDeTCCs.Controllers
                 var tccList = await _context.Tccs.Where(t => t.UsuarioId == userId).ToListAsync();
                 foreach (var item in tccList)
                 {
-                    result.Add(await _context.Banca.Where(b => b.TccId == item.TccId && b.TipoUsuarioId == 7).OrderByDescending(x => x.DataDeCadastro).FirstAsync());
+                    result.Add(await _context.Banca.Where(b => b.TccId == item.TccId
+                            && b.TipoUsuario.DescTipo.ToLower().Equals("orientador"))
+                        .OrderByDescending(x => x.DataDeCadastro).FirstAsync());
                 }
             }
 
@@ -113,8 +115,21 @@ namespace SistemaDeControleDeTCCs.Controllers
         public IActionResult Create(int id)
         {
             ViewData["TccId"] = id;
-            ViewData["TipoUsuarioId"] = new SelectList(_context.TipoUsuario.Where(x => x.TipoUsuarioId == 5 || x.TipoUsuarioId == 3 || x.TipoUsuarioId == 1 || x.TipoUsuarioId == 2).OrderBy(x => x.DescTipo), "TipoUsuarioId", "DescTipo");
-            ViewData["UsuarioId"] = new SelectList(_context.Usuario.Where(x => x.TipoUsuarioId == 5 || x.TipoUsuarioId == 3 || x.TipoUsuarioId == 1 || x.TipoUsuarioId == 2).OrderBy(x => x.Nome), "Id", "Nome");
+            ViewData["TipoUsuarioId"] = new 
+                SelectList(_context.TipoUsuario
+                .Where(x => !x.DescTipo.ToLower().Equals("administrador")
+                    && !x.DescTipo.ToLower().Equals("orientador")
+                    && !x.DescTipo.ToLower().Equals("aluno")
+                    )
+                .OrderBy(x => x.DescTipo), "TipoUsuarioId", "DescTipo");
+            ViewData["UsuarioId"] = new SelectList(_context
+                .Usuario
+                .Where(u => u.Curso.IdCampus == _context.Tccs.Where(t => t.TccId == id).Include(t => t.Curso).First().Curso.IdCampus)
+                .Where(x => !x.TipoUsuario.DescTipo.ToLower().Equals("administrador")
+                    && !x.TipoUsuario.DescTipo.ToLower().Equals("orientador")
+                    && !x.TipoUsuario.DescTipo.ToLower().Equals("aluno")
+                )
+                .OrderBy(x => x.Nome), "Id", "Nome");
             return View();
         }
 
@@ -355,6 +370,8 @@ namespace SistemaDeControleDeTCCs.Controllers
                 {
                     if (count == 1)
                     {
+                        if (Nota_1 != null)
+                            continue;
                         notas += Nota_1.Value;
                         item.Nota = Nota_1;
                         _context.Update(item);
@@ -362,6 +379,8 @@ namespace SistemaDeControleDeTCCs.Controllers
                     }
                     if (count == 2)
                     {
+                        if (Nota_2 != null)
+                            continue;
                         notas += Nota_2.Value;
                         item.Nota = Nota_2;
                         _context.Update(item);
@@ -369,6 +388,8 @@ namespace SistemaDeControleDeTCCs.Controllers
                     }
                     if (count == 3)
                     {
+                        if (Nota_3 != null)
+                            continue;
                         notas += Nota_3.Value;
                         item.Nota = Nota_3;
                         _context.Update(item);
@@ -376,6 +397,8 @@ namespace SistemaDeControleDeTCCs.Controllers
                     }
                     if (count == 4)
                     {
+                        if (Nota_4 != null)
+                            continue;
                         notas += Nota_4.Value;
                         item.Nota = Nota_4;
                         _context.Update(item);
@@ -383,6 +406,8 @@ namespace SistemaDeControleDeTCCs.Controllers
                     }
                     if (count == 5)
                     {
+                        if (Nota_5 != null)
+                            continue;
                         notas += Nota_5.Value;
                         item.Nota = Nota_5;
                         _context.Update(item);

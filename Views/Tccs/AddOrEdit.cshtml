@@ -30,7 +30,8 @@
 <div class="row">
     <div class="col-md-4">
         <form asp-action="AddOrEdit">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div asp-validation-summary="ModelOnly" class="text-danger">
+            </div>
             <input type="hidden" asp-for="Tcc.TccId" />
             <input type="hidden" asp-for="Tcc.DataDeCadastro" />
             <div class="form-group">
@@ -46,7 +47,7 @@
                         Campus c = ViewBag.campusSelected;
                         if (c != null)
                         {
-                             <option value="@c.Id">@c.Nome</option>
+                            <option value="@c.Id">@c.Nome</option>
                         }
                         else
                         {
@@ -99,7 +100,7 @@
                         {
                             Usuario u = ViewBag.orientadorAtual;
 
-                          <option selected value="@u.Id">@u.Nome</option>
+                            <option selected value="@u.Id">@u.Nome</option>
                         }
 
 
