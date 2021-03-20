@@ -51,12 +51,11 @@
                     <td>
                         @Html.DisplayFor(modelItem => item.Name)
                     </td>
-                    <td align="center">
+                    <td class="columnAcao">
                         <a title="Baixar" class="btn btn-outline-primary btn-sm" asp-action="Download" asp-controller="FileTCCs" asp-route-id="@item.Id"><i class="fa fa-download" aria-hidden="true"></i></a> |
                         <a title="Excluir" class="btn btn-outline-danger btn-sm" asp-action="Delete" asp-controller="FileTCCs" asp-route-id="@item.Id"><i class="fa fa-trash" aria-hidden="true"></i></a>
                     </td>
                 </tr>
-
             }
         </tbody>
     </table>

@@ -15,18 +15,12 @@
             </th>
             <th>
                 Nome
-            </th>
-            <th>
-                CPF
-            </th>
+            </th> 
             <th>
                 Matrícula
             </th>
             <th>
                 Curso
-            </th>
-            <th>
-                Telefone
             </th>
             <th>
                 E-mail
@@ -47,22 +41,17 @@
                     @Html.DisplayFor(modelItem => item.Nome) @Html.DisplayFor(modelItem => item.Sobrenome)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.Cpf)
-                </td>
-                <td>
                     @Html.DisplayFor(modelItem => item.Matricula)
                 </td>
                 <td>
                     @Html.DisplayFor(modelItem => item.Curso.Nome)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.PhoneNumber)
-                </td>
-                <td>
                     @Html.DisplayFor(modelItem => item.Email)
                 </td>
-                <td style="width:150px; text-align:center">
+                <td class="columnAcao">
                     <a title="Editar" class="btn btn-outline-primary btn-sm" asp-action="AddOrEdit" asp-route-id="@item.Id"><i class="fa fa-pencil" aria-hidden="true"></i></a> |
+                    <a title="Informações" class="btn btn-outline-secondary btn-sm" style="padding-left: 0.8rem; padding-right: 0.7rem;" asp-action="Details" asp-route-id="@item.Id"><i class="fa fa-info" aria-hidden="true"></i></a> |
                     <a title="Resetar senha" class="btn btn-outline-warning btn-sm" asp-action="Reset" asp-route-id="@item.UserName"><i class="fa fa-key" aria-hidden="true"></i></a> |
                     <a title="Excluir" class="btn btn-outline-danger btn-sm" ml-1 onclick="return confirm('Tem certeza que quer deletar este registro?')" asp-action="Delete" asp-route-id="@item.Id">
                         <i class="fa fa-trash" aria-hidden="true"></i>
