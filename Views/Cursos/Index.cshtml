@@ -55,7 +55,7 @@
                 <td>
                     @Html.DisplayFor(modelItem => item.Campus.Endereco)
                 </td>
-                <td style="width:150px; text-align:center">
+                <td class="columnAcao">
                     <a title="Editar" class="btn btn-outline-primary btn-sm" asp-action="Edit" asp-route-id="@item.Id"><i class="fa fa-pencil" aria-hidden="true"></i></a> |
                     <a title="Informações" class="btn btn-outline-secondary btn-sm" style="padding-left: 0.8rem; padding-right: 0.7rem;" asp-action="Details" asp-route-id="@item.Id"><i class="fa fa-info" aria-hidden="true"></i></a> |
                     <a title="Excluir" class="btn btn-outline-danger btn-sm" ml-1 onclick="return confirm('Tem certeza que quer deletar este registro?')" asp-action="Delete" asp-route-id="@item.Id">

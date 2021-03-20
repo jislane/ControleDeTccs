@@ -8,9 +8,8 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"]SistemaDeControleDeTCCs</title>
-    <link rel="stylesheet" href="~/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" />
+    <link rel="stylesheet" href="~/css/bootstrap.min.css" />
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="https://kit.fontawesome.com/832f1d49a9.js" crossorigin="anonymous"></script>
 </head>
@@ -18,7 +17,7 @@
     <header>
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-transparent border-bottom box-shadow mb-3">
             <div class="container">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">Sistema de Controle de TCC's</a>
+                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index"><img src="~/img/ControleTCC-IFS-Menu.png"></a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -37,7 +36,7 @@
                             @if (User.IsInRole("Administrador") || User.IsInRole("Coordenador"))
                             {
                                 <li class="nav-item">
-                                    <a class="nav-link text-dark"  asp-area="" asp-controller="Usuarios" asp-action="Index">Usuários</a>
+                                    <a class="nav-link text-dark" asp-area="" asp-controller="Usuarios" asp-action="Index">Usuários</a>
                                 </li>
                             }
                             @if (User.IsInRole("Coordenador"))
@@ -85,7 +84,7 @@
     </div>
     <footer class="border-top footer text-muted">
         <div class="container">
-            &copy; 2020 - Controle de TCC's - IFS
+            &copy; 2021 - Controle de TCC's - IFS
         </div>
     </footer>
     <script src="~/js/bootstrap.bundle.min.js"></script>

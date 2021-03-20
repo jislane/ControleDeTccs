@@ -210,6 +210,27 @@ namespace SistemaDeControleDeTCCs.Controllers
             return RedirectToAction(nameof(Index));
         }
 
+        // GET: Usuarios/Cursos/Details/5
+        public async Task<IActionResult> Details(string id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            var usuario = await _context.Usuario
+                .Include(u => u.TipoUsuario)
+                .Include(u => u.Curso)
+                .FirstOrDefaultAsync(m => m.Id == id);
+
+            if (usuario == null)
+            {
+                return NotFound();
+            }
+
+            return View(usuario);
+        }
+
         public async Task<IActionResult> Reset(string id)
         {
             Usuario usuario = await _userManager.FindByNameAsync(id);
