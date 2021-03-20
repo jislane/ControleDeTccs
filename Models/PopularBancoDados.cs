@@ -28,7 +28,7 @@ namespace SistemaDeControleDeTCCs.Models
 
             _context.Roles.AddRange(roleAdm, roleProf, roleCoord, roleAluno);
 
-            var tipoUsuarioAdm = new TipoUsuario { DescTipo = "Administrador" };
+            var tipoUsuarioAdm = new TipoUsuario { DescTipo = "Administrador"};
             var tipoUsuarioAluno = new TipoUsuario { DescTipo = "Aluno" };
             var tipoUsuarioProf = new TipoUsuario { DescTipo = "Professor" };
             var tipoUsuarioCoord = new TipoUsuario { DescTipo = "Coordenador" };

@@ -34,6 +34,8 @@ namespace SistemaDeControleDeTCCs
 
         {
 
+            services.AddControllersWithViews().AddRazorRuntimeCompilation();
+
             services.AddControllersWithViews();
             services.AddDbContext<SistemaDeControleDeTCCsContext>(options =>
                     options.UseSqlServer(Configuration.GetConnectionString("SistemaDeControleDeTCCsContextConnection")));
