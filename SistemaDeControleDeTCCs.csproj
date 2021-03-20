@@ -22,6 +22,7 @@
 		<PackageReference Include="Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore" Version="3.1.12" />
 		<PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="3.1.12" />
 		<PackageReference Include="Microsoft.AspNetCore.Identity.UI" Version="3.1.10" />
+		<PackageReference Include="Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation" Version="3.1.12" />
 		<PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="3.1.11" />
 		<PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="3.1.12" />
 		<PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="3.1.12">
@@ -35,6 +36,8 @@
     <None Include="wwwroot\Imagens\ifs-instituto-federal-de-educacao-ciencia-e-tecnologia-de-sergipe.png" />
     <None Include="wwwroot\js\site.js" />
   </ItemGroup>
+
+  <ProjectExtensions><VisualStudio><UserProperties properties_4servicedependencies_4sistemadecontroledetccs_x0020_-_x0020_web_x0020_deploy_4profile_1arm_1json__JsonSchema="" /></VisualStudio></ProjectExtensions>
 
 
 
