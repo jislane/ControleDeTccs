@@ -195,28 +195,8 @@ namespace SistemaDeControleDeTCCs.Controllers
             return View(calendario);
         }
 
-        // GET: Calendarios/Delete/5
-        public async Task<IActionResult> Delete(int? id)
-        {
-            if (id == null)
-            {
-                return NotFound();
-            }
-
-            var calendario = await _context.Calendario
-                .FirstOrDefaultAsync(m => m.CalendarioId == id);
-            if (calendario == null)
-            {
-                return NotFound();
-            }
-
-            return PartialView(calendario);
-        }
-
-        // POST: Calendarios/Delete/5
-        [HttpPost, ActionName("Delete")]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> DeleteConfirmed(int id)
+        //GET: Calendarios/Delete/5
+        public async Task<IActionResult> Delete(int id)
         {
             var calendario = await _context.Calendario.FindAsync(id);
             _context.Calendario.Remove(calendario);
@@ -232,8 +212,6 @@ namespace SistemaDeControleDeTCCs.Controllers
             await _context.SaveChangesAsync();
             TempData["Success"] = "Calendário de banca excluído com sucesso.";
             return RedirectToAction(nameof(Index));
-
-
         }
 
         private bool CalendarioExists(int id)
