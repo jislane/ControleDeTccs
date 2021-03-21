@@ -99,7 +99,7 @@ namespace SistemaDeControleDeTCCs.Areas.Identity.Pages.Account
                 }
                 else
                 {
-                    ModelState.AddModelError(string.Empty, "Tentativa de login inválida.");
+                    ModelState.AddModelError(string.Empty, "E-mail ou senha inválidos, tente novamente.");
                     return Page();
                 }
             }
