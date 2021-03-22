@@ -1,6 +1,7 @@
 ﻿@page
 @model LoginModel
-
+@inject SignInManager<SistemaDeControleDeTCCs.Models.Usuario> SignInManager
+    
 <!doctype html>
 <html lang="pt-br">
 <head>
@@ -11,30 +12,62 @@
     <link rel="stylesheet" href="~/css/Pagina-Login.css" />
     <title>Página de Login</title>
 </head>
-<body id="id_fundo">
-    <div class="card" id="id_telaLogin" style="width: 18rem;">
-        <div class="card-body" id="id_card">
-            <h5 class="card-title text-center"><b>Insira suas credenciais</b></h5>
-            <span class="text-danger field-validation-error">@Html.ValidationSummary(true)</span>
-            <form id="account" method="post">
-                <div class="form-label-group">
-                    <i class="fa fa-envelope-o" aria-hidden="true"></i>
-                    <label asp-for="Input.Email"></label>
-                    <input asp-for="Input.Email" class="form-control fas fa-at" />
-                    <span asp-validation-for="Input.Email" class="text-danger"></span>
-                </div>
-
-                <div class="form-label-group">
-                    <i class="fa fa-key" aria-hidden="true"></i>
-                    <label asp-for="Input.Password"></label>
-                    <input asp-for="Input.Password" class="form-control" />
-                    <span asp-validation-for="Input.Password" class="text-danger"></span>
-                    <p></p>
-                </div>
-                <button class="btn btn-sm btn btn-outline-primary btn-block" type="submit"><i class="fa fa-sign-in" aria-hidden="true"></i> Entrar</button>
-            </form>
+<body>
+    @{
+        if (SignInManager.IsSignedIn(User))
+        {
+            
+        <div style=" text-align: center;">
+            <h3>O Usuário já está Logado</h3>
+            <h4>Redirecionando para a tela de incio em </h4>
+            <br />
+            <br />
+            <br />
+            <h1 id="count"></h1>
+            <script>
+                var i = 5;
+                var myVar = setInterval(myTimer, 1000);
+                function myTimer(){
+                    $("#count").get()[0].textContent = i;
+                    if (i <= 0) {
+                        clearInterval(myVar);
+                        location.replace("/");
+                    } else {
+                        i--;
+                    }
+                }
+            </script>
         </div>
-    </div>
+        }
+        else
+        {
+            <div class="card" id="id_telaLogin" style="width: 18rem;">
+                <div class="card-body" id="id_card">
+                    <h5 class="card-title text-center"><b>Insira suas credenciais</b></h5>
+                    <span class="text-danger field-validation-error text-center">@Html.ValidationSummary(true)</span>
+                    <form id="account" method="post">
+                        <div class="form-label-group">
+                            <i class="fa fa-envelope-o" aria-hidden="true"></i>
+                            <label asp-for="Input.Email"></label>
+                            <input asp-for="Input.Email" class="form-control fas fa-at" />
+                            <span asp-validation-for="Input.Email" class="text-danger"></span>
+                        </div>
+                        <div class="form-label-group">
+                            <i class="fa fa-key" aria-hidden="true"></i>
+                            <label asp-for="Input.Password"></label>
+                            <input asp-for="Input.Password" class="form-control" />
+                            <span asp-validation-for="Input.Password" class="text-danger"></span>
+                            <p></p>
+                        </div>
+                        <button class="btn btn-sm btn btn-outline-primary btn-block" type="submit"><i class="fa fa-sign-in" aria-hidden="true"></i> Entrar</button>
+                    </form>
+                </div>
+            </div>
+        }
+
+    }
+
+
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>

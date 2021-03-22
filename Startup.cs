@@ -34,6 +34,8 @@ namespace SistemaDeControleDeTCCs
 
         {
 
+            services.AddControllersWithViews().AddRazorRuntimeCompilation();
+
             services.AddControllersWithViews();
             services.AddDbContext<SistemaDeControleDeTCCsContext>(options =>
                     options.UseSqlServer(Configuration.GetConnectionString("SistemaDeControleDeTCCsContextConnection")));
@@ -41,6 +43,7 @@ namespace SistemaDeControleDeTCCs
             services.AddIdentity<Usuario, IdentityRole>().AddEntityFrameworkStores<SistemaDeControleDeTCCsContext>().AddDefaultTokenProviders();
             services.AddRazorPages();
             services.AddMvc();
+
 
             services.AddAuthorization(options =>
             {
@@ -53,7 +56,10 @@ namespace SistemaDeControleDeTCCs
                 options.AddPolicy("Aluno",
                     builder => builder.RequireRole("Aluno"));
             });
-
+            services.ConfigureApplicationCookie(options => {
+                options.LoginPath = "/Identity/Account/Login";
+                options.AccessDeniedPath = "/Identity/Account/AccessDenied";
+            });
             services.Configure<IdentityOptions>(options =>
             {
                 options.Password.RequireDigit = false;

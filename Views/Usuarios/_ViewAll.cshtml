@@ -78,7 +78,7 @@
                 <td>
                     @Html.DisplayFor(modelItem => item.Email)
                 </td>
-                <td style="width:150px; text-align:center">
+                <td class="columnAcao">
                     <a title="Editar" class="btn btn-outline-primary btn-sm btnEditar" asp-action="AddOrEdit" asp-route-id="@item.Id"><i class="fa fa-pencil" aria-hidden="true"></i></a> |
                     <a title="Resetar senha" class="btn btn-outline-warning btn-sm" asp-action="Reset" asp-route-id="@item.UserName"><i class="fa fa-key" aria-hidden="true"></i></a> |
                     <a title="Excluir" class="btn btn-outline-danger btn-sm" ml-1 onclick="return confirm('Tem certeza que quer deletar este registro?')" asp-action="Delete" asp-route-id="@item.Id">

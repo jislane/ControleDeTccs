@@ -273,11 +273,11 @@ namespace SistemaDeControleDeTCCs.Migrations
                     DataDeCadastro = table.Column<DateTime>(nullable: false),
                     StatusId = table.Column<int>(nullable: false),
                     UsuarioId = table.Column<string>(nullable: false),
-                    Resumo = table.Column<string>(nullable: false),
-                    DataApresentacao = table.Column<DateTime>(nullable: false),
-                    DataFinalizacao = table.Column<DateTime>(nullable: false),
+                    Resumo = table.Column<string>(nullable: true),
+                    DataApresentacao = table.Column<DateTime>(nullable: true),
+                    DataFinalizacao = table.Column<DateTime>(nullable: true),
                     Nota = table.Column<double>(nullable: true),
-                    LocalApresentacao = table.Column<string>(nullable: false),
+                    LocalApresentacao = table.Column<string>(nullable: true),
                     IdCurso = table.Column<int>(nullable: false)
                 },
                 constraints: table =>

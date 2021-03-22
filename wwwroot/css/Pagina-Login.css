@@ -1,13 +1,22 @@
 ﻿#id_telaLogin {
-width: 350px;
-position: absolute;
-top: 50%;
-left: 50%;
-transform: translate(-50%, -50%);
-box-shadow: 1px 5px 30px rgb(195, 195, 195);
+    width: 350px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 1px 5px 30px rgb(195, 195, 195);
 }
+
 #id_fundo {
     background-color: rgb(243, 243, 243);
+}
+
+label {
+    margin-top: .5rem;
+}
+
+.form-control{
+    font-family:'Roboto', sans-serif;
 }
 
 .validation-summary-errors ul {

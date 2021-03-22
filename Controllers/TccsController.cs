@@ -1,13 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Data.Entity;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.Internal;
 using SistemaDeControleDeTCCs.Data;
 using SistemaDeControleDeTCCs.Models;
 using SistemaDeControleDeTCCs.Models.ViewModels;
@@ -101,34 +99,50 @@ namespace SistemaDeControleDeTCCs.Controllers
 
         }
 
+
         [Authorize(Roles = "Coordenador")]
-        public IActionResult AddOrEdit(int id = 0)
+        public IActionResult AddOrEdit(int id)
         {
-            List<Usuario> discentes = _context.Usuario.Where(x => x.TipoUsuario.DescTipo.Contains("Aluno")).ToList();
+          
             Tcc tcc = new Tcc();
             Usuario orientador = new Usuario();
+           
             if (id != 0)
             {
-                tcc = _context.Tccs.Find(id);
-                string orientadorId = _context.Banca.Where(x => x.TccId == tcc.TccId && x.TipoUsuario.DescTipo.ToLower().Equals("orientador")).Select(x => x.UsuarioId).FirstOrDefault();
-                ViewBag.ProfessorList = new SelectList(_context.Usuario.Where(x => x.TipoUsuarioId.Equals(5) || x.TipoUsuarioId.Equals(1)).OrderBy(x => x.Nome), "Id", "Nome", orientadorId);
+                _context.Tccs.Include(t => t.Curso).Include(t => t.Usuario) ;
+                tcc = _context.Tccs.Include(t => t.Curso).Include(t => t.Usuario)
+                    .Where(t => t.TccId == id).First();
+                Usuario orientadorAtual = _context.Banca
+                    .Include(b => b.Usuario)
+                    .Where(x => x.TccId == tcc.TccId && x.TipoUsuario.DescTipo.ToLower().Equals("orientador"))
+                    .Select(x => x.Usuario).FirstOrDefault();
+                ViewBag.orientadorAtual = orientadorAtual;
+                ViewBag.campusSelected = _context.Campus.Find(tcc.Curso.IdCampus);
             }
-            else
-            {
-                ViewBag.ProfessorList = new SelectList(_context.Usuario.Where(x => x.TipoUsuarioId.Equals(5) || x.TipoUsuarioId.Equals(1)).OrderBy(x => x.Nome), "Id", "Nome");
-            }
-            TccViewModel viewModel = new TccViewModel { Usuarios = discentes, Tcc = tcc };
+            ViewBag.Campus = new SelectList(_context.Campus.ToList(), "Id", "Nome");
+            TccViewModel viewModel = new TccViewModel {Tcc = tcc };
             return View(viewModel);
         }
 
+       
         [Authorize(Roles = "Coordenador")]
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> AddOrEdit(string OrientadorId, [Bind("TccId,Tema,UsuarioId,DataDeCadastro")] Tcc tcc)
+        public async Task<IActionResult> AddOrEdit(string idOrientador, [Bind("TccId,IdCurso, Tema,UsuarioId,DataDeCadastro")] Tcc tcc)
         {
 
             if (ModelState.IsValid)
             {
+                var c = _context.Cursos.Find(tcc.IdCurso);
+                var dis = _context.Usuario.Where(u => u.Id == tcc.UsuarioId && u.IdCurso == tcc.IdCurso).ToList();
+                var or = _context.Usuario.Where(u => u.Id == idOrientador && u.IdCurso == tcc.IdCurso).ToList();
+                if (dis.Count == 0 || or.Count == 0) {
+                    ModelState.AddModelError(string.Empty, "Os dados Informados são inválidos.");
+                    if (tcc.TccId == 0)
+                        return AddOrEdit(0);
+                    return AddOrEdit(tcc.TccId);
+                }
+
                 if (tcc.TccId == 0)
                 {
                     tcc.DataDeCadastro = DateTime.Now;
@@ -138,8 +152,11 @@ namespace SistemaDeControleDeTCCs.Controllers
                     //Adiconarndo o orientador a Banca
                     Banca banca = new Banca();
                     banca.Tcc = tcc;
-                    banca.TipoUsuario = _context.TipoUsuario.Where(x => x.TipoUsuarioId == 7).Single();
-                    banca.Usuario = _context.Usuario.Where(x => x.Id == OrientadorId).Single();
+                    banca.TipoUsuario = _context
+                        .TipoUsuario
+                        .Where(x => x.DescTipo.ToLower().Equals("orientador"))
+                        .Single();
+                    banca.Usuario = _context.Usuario.Where(x => x.Id == idOrientador).Single();
                     banca.DataDeCadastro = DateTime.Now;
                     _context.Add(banca);
 
@@ -164,10 +181,10 @@ namespace SistemaDeControleDeTCCs.Controllers
                     _context.Update(tcc);
                     await _context.SaveChangesAsync();
                     //Adiconarndo o orientador a Banca
-                    Banca banca = _context.Banca.Where(x => x.Tcc.TccId == tcc.TccId && x.TipoUsuario.TipoUsuarioId == 7).Single();
+                    Banca banca = _context.Banca.Where(x => x.Tcc.TccId == tcc.TccId).First();
                     banca.Tcc = tcc;
-                    banca.TipoUsuario = _context.TipoUsuario.Where(x => x.TipoUsuarioId == 7).Single();
-                    banca.Usuario = _context.Usuario.Where(x => x.Id == OrientadorId).Single();
+                    banca.TipoUsuario = _context.TipoUsuario.Where(x => x.DescTipo.ToLower().Equals("orientador")).Single();
+                    banca.Usuario = _context.Usuario.Where(x => x.Id == idOrientador).Single();
                     banca.DataDeCadastro = DateTime.Now;
                     _context.Update(banca);
 
@@ -189,7 +206,8 @@ namespace SistemaDeControleDeTCCs.Controllers
             return View(tcc);
         }
 
-        [Authorize(Roles = "Professor")]
+        [Authorize(Roles = "Professor,Coordenador")]
+        [HttpGet]
         public IActionResult AddDataLocalApresentacao(int id = 0)
         {
             Tcc tcc = new Tcc();
@@ -225,7 +243,7 @@ namespace SistemaDeControleDeTCCs.Controllers
             return View(tcc);
         }
 
-        [Authorize(Roles = "Professor")]
+        [Authorize(Roles = "Professor,Coordenador")]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> AddDataLocalApresentacao(Tcc tccAtualizado, IList<int> checkNotificaMembrosBanca)
@@ -337,8 +355,93 @@ namespace SistemaDeControleDeTCCs.Controllers
 
         public IActionResult Resumo(int? id)
         {
-
             return View("Resumo", _context.Tccs.Where(t => t.TccId == id).ToList());
         }
+
+
+        // JSONs
+
+
+        [HttpGet]
+        public JsonResult GetDiscentes(int idCurso, String? nome)
+        {
+
+            if (nome != null)
+            {
+                return Json(_context
+                    .Usuario
+                    .Where(u => u.IdCurso == idCurso)
+                    .Where(u => u.TipoUsuario.DescTipo == "Aluno")
+                    .Where(u => u.Nome.ToLower().Contains(nome.ToLower()))
+                    .Select(u => new { Nome = u.Nome, Id = u.Id })
+                    .Take(10).ToList());
+            }
+            else
+            {
+                return Json(_context
+                    .Usuario
+                    .Where(u => u.IdCurso == idCurso)
+                    .Where(u => u.Nome.ToLower().Contains(nome.ToLower()))
+                    .Select(u => new { Nome = u.Nome, Id = u.Id })
+                    .Take(10).ToList());
+            }
+
+
+        }
+        [HttpGet]
+        public JsonResult GetOrientadores(int idCampus, String? nome)
+        {
+            if (nome != null)
+            {
+                return Json(_context
+                    .Usuario
+                    .Where(u => u.Curso.IdCampus == idCampus)
+                    .Where(u => u.TipoUsuario.DescTipo == "Professor" 
+                        || u.TipoUsuario.DescTipo == "Professor")
+                    .Where(u => u.Nome.ToLower().Contains(nome.ToLower()))
+                    .Select(u => new { Nome = u.Nome, Id = u.Id })
+                    .Take(10).ToList());
+            }
+            else
+            {
+                return Json(_context
+                    .Usuario
+                    .Where(u => u.Curso.IdCampus == idCampus)
+                    .Where(u => u.TipoUsuario.DescTipo == "Professor"
+                        || u.TipoUsuario.DescTipo == "Professor")
+                    .Select(u => new { Nome = u.Nome, Id = u.Id })
+                    .Take(10).ToList());
+            }
+            
+        }
+
+        public JsonResult GetCursos(int idCampus, String? nome)
+        {
+            if (nome != null)
+            {
+                return Json(_context
+                    .Cursos
+                    .Where(c => c.IdCampus == idCampus)
+                    .Where(c => c.Nome.ToLower().Contains(nome.ToLower()))
+                    .Select(c => new
+                    {
+                        Nome = c.Nome,
+                        Id = c.Id
+                    })
+                    .Take(10).ToList());
+            }
+            else {
+                return Json(_context
+                    .Cursos
+                    .Where(c => c.IdCampus == idCampus)
+                    .Select(c => new {
+                        Nome = c.Nome,
+                        Id = c.Id
+                    })
+                    .Take(10).ToList());
+            }
+            
+        }
     }
+
 }

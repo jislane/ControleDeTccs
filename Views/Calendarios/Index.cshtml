@@ -69,9 +69,11 @@
                 <td class="text-center">
                     @Html.DisplayFor(modelItem => item.Ativo)
                 </td>
-                <td>
+                <td class="columnAcao">
                     <a title="Editar" class="btn btn-outline-primary btn-sm" asp-action="Edit" asp-route-id="@item.CalendarioId"><i class="fa fa-pencil" aria-hidden="true"></i></a> |
-                    <a title="Excluir" href="#" data-value="@item.CalendarioId" class="btnDelete btn-outline-danger btn-sm"><i class="fa fa-trash-alt fa-lg"></i> </a>
+                    <a title="Excluir" class="btn btn-outline-danger btn-sm" ml-1 onclick="return confirm('Tem certeza que quer deletar este registro?')" asp-action="Delete" asp-route-id="@item.CalendarioId">
+                        <i class="fa fa-trash" aria-hidden="true"></i>
+                    </a>
                 </td>
             </tr>
         }

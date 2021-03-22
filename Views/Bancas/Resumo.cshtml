@@ -11,34 +11,22 @@
     <div class="col-md-4">
         <form asp-action="ResumoEdit" method="post" enctype="multipart/form-data" class="was-validated">
             <input type="hidden" asp-for="TccId" />
-            @*<div class="form-group">
-                <label asp-for="Resumo" class="control-label"></label>
-                <textarea asp-for="Resumo" rows="10" cols="100"></textarea>
-                <span asp-validation-for="Resumo" class="text-danger"></span>
-            </div>*@
             <div class="mb-3">
                 <label asp-for="Resumo" class="control-label"></label>
                 <textarea asp-for="Resumo" class="form-control is-invalid" id="validationTextarea" placeholder="digite aqui..." required></textarea>
                 <span asp-validation-for="Resumo" class="text-danger"></span>
             </div>
             <div class="form-row">
-                <div>
+                <div class="form-group col-md-6">
                     <button type="submit" class="btn btn-outline-success"><i class="fa fa-floppy-o" aria-hidden="true"></i> Salvar</button>
                 </div>
-                <div>
+                <div class="form-group col-md-6">
                     <a asp-action="Index" class="btn btn-outline-secondary"><i class="fa fa-reply" aria-hidden="true"></i> Voltar</a>
                 </div>
             </div>
-            @*<div class="form-group">
-                <input type="submit" value="Salvar" class="btn btn-primary" />
-            </div>*@
         </form>
     </div>
 </div>
-
-@*<div>
-    <a asp-action="Index">Voltar para lista</a>
-</div>*@
 
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}

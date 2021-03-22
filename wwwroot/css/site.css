@@ -68,6 +68,11 @@ body {
     margin-bottom: 60px;
 }
 
+.columnAcao {
+    width: 170px;
+    text-align: center
+}
+
 .btnAdd {
     margin-top: 20px;
     margin-bottom: 20px;

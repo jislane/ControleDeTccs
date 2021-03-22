@@ -343,28 +343,24 @@ namespace SistemaDeControleDeTCCs.Migrations
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<DateTime?>("DataApresentacao")
-                        .IsRequired()
                         .HasColumnType("datetime2");
 
                     b.Property<DateTime>("DataDeCadastro")
                         .HasColumnType("datetime2");
 
                     b.Property<DateTime?>("DataFinalizacao")
-                        .IsRequired()
                         .HasColumnType("datetime2");
 
                     b.Property<int>("IdCurso")
                         .HasColumnType("int");
 
                     b.Property<string>("LocalApresentacao")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<double?>("Nota")
                         .HasColumnType("float");
 
                     b.Property<string>("Resumo")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("StatusId")
