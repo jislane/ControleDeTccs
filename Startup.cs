@@ -44,6 +44,7 @@ namespace SistemaDeControleDeTCCs
             services.AddRazorPages();
             services.AddMvc();
 
+
             services.AddAuthorization(options =>
             {
                 options.AddPolicy("Professor",
@@ -55,7 +56,10 @@ namespace SistemaDeControleDeTCCs
                 options.AddPolicy("Aluno",
                     builder => builder.RequireRole("Aluno"));
             });
-
+            services.ConfigureApplicationCookie(options => {
+                options.LoginPath = "/Identity/Account/Login";
+                options.AccessDeniedPath = "/Identity/Account/AccessDenied";
+            });
             services.Configure<IdentityOptions>(options =>
             {
                 options.Password.RequireDigit = false;

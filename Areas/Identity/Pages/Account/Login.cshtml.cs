@@ -59,6 +59,7 @@ namespace SistemaDeControleDeTCCs.Areas.Identity.Pages.Account
 
         public async Task OnGetAsync(string returnUrl = null)
         {
+
             if (!string.IsNullOrEmpty(ErrorMessage))
             {
                 ModelState.AddModelError(string.Empty, ErrorMessage);
@@ -99,7 +100,7 @@ namespace SistemaDeControleDeTCCs.Areas.Identity.Pages.Account
                 }
                 else
                 {
-                    ModelState.AddModelError(string.Empty, "Tentativa de login inválida.");
+                    ModelState.AddModelError(string.Empty, "E-mail ou senha inválidos, tente novamente.");
                     return Page();
                 }
             }
