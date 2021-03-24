@@ -1,7 +1,7 @@
 ﻿@model IEnumerable<SistemaDeControleDeTCCs.Models.Banca>
 
 @{
-    ViewData["Title"] = "Bancas";
+    ViewData["Title"] = "Banca";
     //Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
@@ -64,7 +64,7 @@
                 </td>
                 <td class="columnAcao">
                     @*<a asp-action="Edit" asp-route-id="@item.BancaId">Edit</a> |*@
-                    <a title="Informações" class="btn btn-outline-info btn-sm" asp-action="Details" asp-route-id="@item.BancaId"><i class="fa fa-info-circle" aria-hidden="true"></i></a> |
+                    <a title="Informações" class="btn btn-outline-info btn-sm" asp-action="Details" asp-route-id="@item.TccId"><i class="fa fa-info-circle" aria-hidden="true"></i></a> |
                     <a title="Adicionar Membro" class="btn btn-outline-success btn-sm" asp-action="Create" asp-route-id="@item.TccId"><i class="fa fa-user-plus" aria-hidden="true"></i></a>
                     @if (item.Tcc.StatusId == 3 || item.Tcc.StatusId == 4 || item.Tcc.StatusId == 5)
                     {

@@ -10,6 +10,8 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using SistemaDeControleDeTCCs.Data;
 using SistemaDeControleDeTCCs.Models;
+using SistemaDeControleDeTCCs.Models.ViewModels;
+using SistemaDeControleDeTCCs.Utils;
 
 namespace SistemaDeControleDeTCCs.Controllers
 {
@@ -72,44 +74,137 @@ namespace SistemaDeControleDeTCCs.Controllers
 
         // GET: Bancas/Details/5
 
-        public async Task<IActionResult> Details(int? id, double? Nota_1, double? Nota_2, double? Nota_3, double? Nota_4, double? Nota_5, string? DataApresentacao, string? LocalApresentacao)
+        // o id é o id do Tcc
+        public async Task<IActionResult> Details(int? id)
         {
+
             if (id == null)
             {
                 return NotFound();
             }
+            Tcc tcc = _context.Tccs.Find(id);
 
-            var banca = await _context.Banca
-                .Include(b => b.Tcc)
-                .Include(b => b.TipoUsuario)
-                .Include(b => b.Usuario)
-                .FirstOrDefaultAsync(m => m.BancaId == id);
-            banca.Tcc.Usuario = _context.Usuario.Find(banca.Tcc.UsuarioId);
+            BancaViewModel bancaViewModel = new BancaViewModel();
 
-            AtualizarNotas(Nota_1, Nota_2, Nota_3, Nota_4, Nota_5, banca.TccId);
+                bancaViewModel.Membros = new List<Banca>();
+                bancaViewModel.Membros.Add(_context.Banca
+                    .Include(b => b.Tcc)
+                    .Include(b => b.TipoUsuario)
+                    .Include(b => b.Usuario)
+                    .Where(b => b.TccId == tcc.TccId)
+                    .Where(b => b.TipoUsuario.DescTipo.ToLower().Equals("orientador"))
+                    .Select(b => new Banca {
+                        BancaId = b.BancaId,
+                        Tcc = b.Tcc,
+                        DataDeCadastro = b.DataDeCadastro,
+                        Nota = b.Nota,
+                        TipoUsuario = b.TipoUsuario,
+                        TccId = b.TccId,
+                        TipoUsuarioId = b.TipoUsuarioId,
+                        UsuarioId = b.UsuarioId,
+                        Usuario = new Usuario {
+                            Id = b.UsuarioId,
+                            Nome = b.Usuario.Nome
+                        }
+                    })
+                    .First()
+                );
 
-
-            List<Banca> resultTemp = _context.Banca.Where(b => b.TccId == banca.TccId).OrderBy(b => b.BancaId).ToList();
-            List<Banca> result = new List<Banca>();
-
-
-
-            foreach (var item in resultTemp)
-            {
-                item.Usuario = _context.Usuario.Find(item.UsuarioId);
-                item.TipoUsuario = _context.TipoUsuario.Find(item.TipoUsuarioId);
-                result.Add(item);
-            }
-
-            ViewBag.menbrosBanca = result;
-
-            if (banca == null)
-            {
+                bancaViewModel.Membros.AddRange(_context.Banca
+                    .Include(b => b.TipoUsuario)
+                    .Include(b => b.Usuario)
+                    .Where(b => b.TccId == tcc.TccId)
+                    .Where(b => !b.TipoUsuario.DescTipo.ToLower().Equals("orientador"))
+                    .Select(b => new Banca
+                    {
+                        Nota = b.Nota,
+                        TipoUsuario = b.TipoUsuario,
+                        UsuarioId = b.UsuarioId,
+                        BancaId = b.BancaId,
+                        Usuario = new Usuario
+                        {
+                            Id = b.UsuarioId,
+                            Nome = b.Usuario.Nome
+                        }
+                    })
+                .ToList());
+         
+            if (bancaViewModel.Membros == null) {
                 return NotFound();
             }
+            bancaViewModel.BancaId = id.Value;
 
-            return View(banca);
+                return View(bancaViewModel);
         }
+
+        [HttpPost]
+        // o id é o id do Tcc
+        public JsonResult Details(int id, [FromBody] List<NotaMembroBanca> notas)
+        {
+           // [FromBody] System.Text.Json.JsonElement entity
+            if (id == 0 || notas == null)
+            {
+                return new JsonResult("Faltando Dados")
+                {
+                    StatusCode = 400
+                };
+
+            }
+            bool isValid = isvalidNotas(notas);
+            if (!isValid) {
+                return new JsonResult("Notas incorretas, favor conferir!")
+                {
+                    StatusCode = 400
+                };
+            }
+            var notaTcc = AtualizarNotas(id, notas);
+            return new JsonResult(new {notaTcc = notaTcc })
+            {
+                StatusCode = 200
+                
+            };
+
+        }
+
+        /* public async Task<IActionResult> Details(int? id, double? Nota_1, double? Nota_2, double? Nota_3, double? Nota_4, double? Nota_5, string? DataApresentacao, string? LocalApresentacao, List<SistemaDeControleDeTCCs.Utils.NotaMembroBanca>? notasMembros)
+         {
+             if (id == null)
+             {
+                 return NotFound();
+             }
+
+             var banca = await _context.Banca
+                 .Include(b => b.Tcc)
+                 .Include(b => b.TipoUsuario)
+                 .Include(b => b.Usuario)
+                 .FirstOrDefaultAsync(m => m.BancaId == id);
+             banca.Tcc.Usuario = _context.Usuario.Find(banca.Tcc.UsuarioId);
+
+             AtualizarNotas(Nota_1, Nota_2, Nota_3, Nota_4, Nota_5, banca.TccId);
+
+
+             List<Banca> resultTemp = _context.Banca.Where(b => b.TccId == banca.TccId).OrderBy(b => b.BancaId).ToList();
+             List<Banca> result = new List<Banca>();
+
+
+
+             foreach (var item in resultTemp)
+             {
+                 item.Usuario = _context.Usuario.Find(item.UsuarioId);
+                 item.TipoUsuario = _context.TipoUsuario.Find(item.TipoUsuarioId);
+                 result.Add(item);
+             }
+
+             ViewBag.menbrosBanca = result;
+
+             if (banca == null)
+             {
+                 return NotFound();
+             }
+
+             return View(banca);
+         }
+        */
 
         // GET: Bancas/Create
         public IActionResult Create(int id)
@@ -370,48 +465,58 @@ namespace SistemaDeControleDeTCCs.Controllers
                 {
                     if (count == 1)
                     {
-                        if (Nota_1 != null)
-                            continue;
-                        notas += Nota_1.Value;
-                        item.Nota = Nota_1;
-                        _context.Update(item);
-                        _context.SaveChanges();
+                        if (Nota_1 != null) {
+                            notas += Nota_1.Value;
+                            item.Nota = Nota_1;
+                            _context.Update(item);
+                            _context.SaveChanges();
+                        }
+                           
+                       
                     }
                     if (count == 2)
                     {
-                        if (Nota_2 != null)
-                            continue;
-                        notas += Nota_2.Value;
-                        item.Nota = Nota_2;
-                        _context.Update(item);
-                        _context.SaveChanges();
+                        if (Nota_2 != null) 
+                        {
+                            notas += Nota_2.Value;
+                            item.Nota = Nota_2;
+                            _context.Update(item);
+                            _context.SaveChanges();
+                        }
+                        
                     }
                     if (count == 3)
                     {
                         if (Nota_3 != null)
-                            continue;
-                        notas += Nota_3.Value;
-                        item.Nota = Nota_3;
-                        _context.Update(item);
-                        _context.SaveChanges();
+                        {
+                            notas += Nota_3.Value;
+                            item.Nota = Nota_3;
+                            _context.Update(item);
+                            _context.SaveChanges();
+                        }
+                           
+                        
                     }
                     if (count == 4)
                     {
-                        if (Nota_4 != null)
-                            continue;
-                        notas += Nota_4.Value;
-                        item.Nota = Nota_4;
-                        _context.Update(item);
-                        _context.SaveChanges();
+                        if (Nota_4 != null) {
+                            notas += Nota_4.Value;
+                            item.Nota = Nota_4;
+                            _context.Update(item);
+                            _context.SaveChanges();
+                        }
+                        
                     }
                     if (count == 5)
                     {
-                        if (Nota_5 != null)
-                            continue;
-                        notas += Nota_5.Value;
-                        item.Nota = Nota_5;
-                        _context.Update(item);
-                        _context.SaveChanges();
+                        if (Nota_5 != null) {
+                            notas += Nota_5.Value;
+                            item.Nota = Nota_5;
+                            _context.Update(item);
+                            _context.SaveChanges();
+                        }
+                            
+                       
                     }
                     count++;
                 }
@@ -429,6 +534,52 @@ namespace SistemaDeControleDeTCCs.Controllers
                     });
                 _context.SaveChanges();
             }
+        }
+
+        private  double AtualizarNotas(int tccId, List<NotaMembroBanca> notas)
+        {
+            var resultTemp = _context.Banca.Where(b => b.TccId == tccId);
+            var soma = 0.0;
+            var tccID = 0;
+            foreach (var b in notas)
+            {
+                var c = resultTemp.Where(u => u.UsuarioId.Equals("cc856c71-b6f1-407d-bf0f-001c9315d67c"));
+
+                var banca = resultTemp.Where(u => u.UsuarioId.Equals(b.MembroBanca)).First();
+                if (banca != null) {
+                    if (b.Nota == null) 
+                    {
+                        soma += 0;
+                    }
+                    else
+                    {
+                        soma += b.Nota.Value;
+                    }
+                    if (tccID == 0)
+                        tccID = banca.TccId;
+                    banca.Nota = b.Nota;
+                    _context.Update(banca);
+                }
+
+            }
+            var result = _context.Tccs.Where(t => t.TccId == tccID).First();
+            result.Nota = soma / resultTemp.Count();
+            _context.SaveChanges();
+            return soma / resultTemp.Count();
+        }
+
+
+        private bool isvalidNotas(List<NotaMembroBanca> notas)
+        {
+            foreach (var nM in notas)
+            {
+                if (nM.Nota == null) {
+                    continue;
+                }
+                if (nM.Nota < 0 || nM.Nota > 10)
+                    return false;
+            }
+            return true;
         }
     }
 }

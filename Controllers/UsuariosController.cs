@@ -37,35 +37,40 @@ namespace SistemaDeControleDeTCCs.Controllers
         // GET: Usuarios
         public IActionResult Index(string filterNome, string filterMatriculaCPF, int filterTipoUsuario)
         {
-            List<Usuario> usuarios;
+            List<Usuario> usuarios = new List<Usuario>();
+            IQueryable<Usuario> query;
             if (User.IsInRole("Administrador"))
             {
-                usuarios = _context.Usuario.Include(u => u.TipoUsuario).Include(u => u.Curso).ToList();
+                query = _context.Usuario.Include(u => u.TipoUsuario).Include(u => u.Curso);
             }
             else {
-                usuarios = _context.Usuario.Include(u => u.TipoUsuario)
-                    .Include(u => u.Curso).Where(u => !u.TipoUsuario.DescTipo.Equals("Administrador")).ToList() ;
+                query = _context.Usuario.Include(u => u.TipoUsuario)
+                    .Include(u => u.Curso).Where(u => !u.TipoUsuario.DescTipo.Equals("Administrador")) ;
             }
                
             // filtros
             if (!string.IsNullOrEmpty(filterNome))
             {
-                usuarios = usuarios.Where(x => x.Nome.ToUpper().Contains(filterNome.ToUpper())).ToList();
+                usuarios = query.Where(x => x.Nome.ToUpper().Contains(filterNome.ToUpper())).ToList();
                 ViewData["filterNome"] = filterNome;
             }
             if (!string.IsNullOrEmpty(filterMatriculaCPF))
             {
-                usuarios = usuarios.Where(x => x.Cpf.Contains(filterMatriculaCPF) || x.Matricula.Contains(filterMatriculaCPF)).ToList();
+                usuarios = query.Where(x => x.Cpf.Contains(filterMatriculaCPF) || x.Matricula.Contains(filterMatriculaCPF)).ToList();
                 ViewData["filterMatriculaCPF"] = filterMatriculaCPF;
             }
             if (filterTipoUsuario > 0)
             {
-                usuarios = usuarios.Where(x => x.TipoUsuarioId == filterTipoUsuario).ToList();
+                usuarios = query.Where(x => x.TipoUsuarioId == filterTipoUsuario).ToList();
                 ViewBag.TipoUsuario = new SelectList(_context.TipoUsuario.Where(x => x.TipoUsuarioId == 1 || x.TipoUsuarioId == 4 || x.TipoUsuarioId == 5 || x.TipoUsuarioId == 6).OrderBy(x => x.DescTipo).ToList(), "TipoUsuarioId", "DescTipo", filterTipoUsuario);
             }
             else
             {
                 ViewBag.TipoUsuario = new SelectList(_context.TipoUsuario.Where(x => x.TipoUsuarioId == 1 || x.TipoUsuarioId == 4 || x.TipoUsuarioId == 5 || x.TipoUsuarioId == 6).OrderBy(x => x.DescTipo).ToList(), "TipoUsuarioId", "DescTipo");
+            }
+            if(usuarios.Count == 0)
+            {
+                usuarios = query.ToList();
             }
 
             return View(usuarios.OrderBy(x => x.Nome));
