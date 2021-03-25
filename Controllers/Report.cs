@@ -56,7 +56,11 @@ namespace SistemaDeControleDeTCCs.Controllers
 
                 doc.Close();
             }
-            catch { }
+            catch(Exception e)
+
+            {
+                Console.WriteLine(e.Message);
+            }
             finally
             {
                 doc = null;
@@ -162,7 +166,7 @@ namespace SistemaDeControleDeTCCs.Controllers
                 table.SetWidths(sizes);
 
                 #region Coluna TNE
-                Image foot = Image.GetInstance(BasePath + @"\wwwroot\img\IFS---horizontal-01.png");
+                Image foot = Image.GetInstance(BasePath + @"\wwwroot\img\ControleTCC-IFS-Menu.png");
                 foot.ScalePercent(60);
 
                 PdfPCell cell = new PdfPCell(foot);
@@ -222,7 +226,7 @@ namespace SistemaDeControleDeTCCs.Controllers
                 }
                 else
                 {
-                    foot = Image.GetInstance(BasePath + @"\wwwroot\img\logoCBSI--88.png");
+                    foot = Image.GetInstance(BasePath + @"\wwwroot\img\logoCBSI.png");
                 }
                 foot.ScalePercent(60);
 
