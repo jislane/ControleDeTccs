@@ -20,7 +20,7 @@ using SistemaDeControleDeTCCs.Utils;
 
 namespace SistemaDeControleDeTCCs.Areas.Identity.Pages.Account
 {
-    [AllowAnonymous]
+    [Authorize(Roles = "Administrador, Coordenador")]
     public class RegisterModel : PageModel
     {
         private readonly SignInManager<Usuario> _signInManager;
@@ -106,7 +106,7 @@ namespace SistemaDeControleDeTCCs.Areas.Identity.Pages.Account
         public async Task OnGetAsync(string returnUrl = null)
         {
             // pass the TipoUsuario List using ViewData
-            ViewData["tiposUsuarios"] = _context.TipoUsuario.OrderBy(x => x.DescTipo).Where(x => x.DescTipo.Contains("Aluno") || x.DescTipo.Contains("Professor") || x.DescTipo.Contains("Coordenador")).ToList();
+            ViewData["tiposUsuarios"] = _context.TipoUsuario.OrderBy(x => x.DescTipo).Where(x => x.DescTipo.Contains("Aluno") || x.DescTipo.Contains("Professor")).ToList();
             ViewData["cursos"] = _context.Cursos.OrderBy(x => x.Nome).ToList();
             ReturnUrl = returnUrl;
             ExternalLogins = (await _signInManager.GetExternalAuthenticationSchemesAsync()).ToList();
