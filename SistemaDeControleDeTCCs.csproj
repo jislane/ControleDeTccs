@@ -2,7 +2,18 @@
 
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
+    <AssemblyVersion>1.0.0.1</AssemblyVersion>
+    <FileVersion>1.0.0.1</FileVersion>
+    <Version>1.0.0.1</Version>
+    <OutputType>WinExe</OutputType>
   </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="wwwroot\Imagens\**" />
+    <Content Remove="wwwroot\Imagens\**" />
+    <EmbeddedResource Remove="wwwroot\Imagens\**" />
+    <None Remove="wwwroot\Imagens\**" />
+  </ItemGroup>
 
   <ItemGroup>
     <Compile Remove="Views\Tccs\Delete.cshtml.cs" />
@@ -33,7 +44,6 @@
 	</ItemGroup>
 
   <ItemGroup>
-    <None Include="wwwroot\Imagens\ifs-instituto-federal-de-educacao-ciencia-e-tecnologia-de-sergipe.png" />
     <None Include="wwwroot\js\site.js" />
   </ItemGroup>
 

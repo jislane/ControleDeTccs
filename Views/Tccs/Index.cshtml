@@ -39,31 +39,6 @@
 <h1>@ViewData["Title"]</h1>
 <a asp-action="AddOrEdit" class="btn btn-outline-success btnAdd"><i class="fa fa-book" aria-hidden="true"></i> Novo</a>
 
-<!--
-    <form asp-action="Index" method="get">
-    <div>
-        <p>
-            Tema:
-            <input type="text" name="filterTema" value="@ViewData["filterTema"]" />
-            Discente:
-            <select asp-items="@ViewBag.Discente" id="filterDiscente" name="filterDiscente">
-                <option value="">Selecione</option>
-            </select>
-            Status:
-            <select asp-items="@ViewBag.Status" id="filterStatus" name="filterStatus">
-                <option value="">Selecione</option>
-            </select>
-            Semestre:
-            <select asp-items="@ViewBag.Semestre" id="filterSemestre" name="filterSemestre">
-                <option value="">Selecione</option>
-            </select>
-            <input type="submit" value="Pesquisar" class="btn btn-primary" /> |
-            <a asp-action="Index">Limpar filtros</a>
-        </p>
-    </div>
-</form>
--->
-
 <table id="tabelaTcc" class="table table-bordered table-hover">
     <thead>
         <tr>
@@ -118,7 +93,6 @@
                     }
                 </td>
                 <td class="columnAcao">
-
                     @if (item.StatusId == 3 || item.StatusId == 4 || item.StatusId == 5)
                     {
                         <a class="btn btn-outline-primary btn-sm" asp-action="AddOrEdit" asp-route-id="@item.TccId" title="Editar"><i class="fa fa-pencil" aria-hidden="true"></i></a> <text>|</text>
