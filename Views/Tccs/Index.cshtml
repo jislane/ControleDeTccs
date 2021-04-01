@@ -93,11 +93,13 @@
                     }
                 </td>
                 <td class="columnAcao">
-                    @if (item.StatusId == 3 || item.StatusId == 4 || item.StatusId == 5)
+                    @if (item.Status.DescStatus.Equals("Homologado Banca") || item.Status.DescStatus.Equals("Pré-Homologado") || item.Status.DescStatus.Equals("Cadastrado"))
                     {
                         <a class="btn btn-outline-primary btn-sm" asp-action="AddOrEdit" asp-route-id="@item.TccId" title="Editar"><i class="fa fa-pencil" aria-hidden="true"></i></a> <text>|</text>
-                        <a href="#" data-value="@item.TccId" class="btn btn-outline-warning btn-sm btnCancelar" ml-1><i class="fa fa-times" title="Cancelar" aria-hidden="true"></i></a> <text>|</text>
-                        <a asp-action="Delete" asp-route-id="@item.TccId" title="Excluir" class="btn btn-outline-danger btn-sm" ml-1 onclick="return confirm('Tem certeza que quer deletar este registro?')"> <i class="fa fa-trash" aria-hidden="true"></i></a>
+                        <a asp-action="Cancelar" asp-route-id="@item.TccId" title="Cancelar" class="btn btn-outline-warning btn-sm" ml-1 onclick="return confirm('Tem certeza que quer cancelar este registro?')">
+                            <i class="fa fa-times" aria-hidden="true"></i></a> <text>|</text>
+                        <a asp-action="Delete" asp-route-id="@item.TccId" title="Excluir" class="btn btn-outline-danger btn-sm" ml-1 onclick="return confirm('Tem certeza que quer deletar este registro?')">
+                            <i class="fa fa-trash" aria-hidden="true"></i></a>
                     }
                 </td>
             </tr>
