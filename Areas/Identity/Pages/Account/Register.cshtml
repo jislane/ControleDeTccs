@@ -52,8 +52,8 @@
                 </div>
                 <div class="form-group col-md-6">
                     <label asp-for="Input.Cpf" class="control-label"></label>
-                    <input asp-for="Input.Cpf" class="form-control" />
-                    <span asp-validation-for="Input.Cpf" class="text-danger"></span>
+                    <input asp-for="Input.Cpf" class="form-control" id="inputCPF" />
+                    <span id="inputCPFMessageError" asp-validation-for="Input.Cpf" class="text-danger"> </span>
                 </div>
             </div>
             <div class="form-group">
@@ -68,7 +68,7 @@
             </div>
             <div class="form-row">
                 <div class="form-group col-md-6">
-                    <button type="submit" class="btn btn-outline-success btn-block"><i class="fa fa-floppy-o" aria-hidden="true"></i> Salvar</button>
+                    <button id="btsalvar" type="submit" class="btn btn-outline-success btn-block"><i class="fa fa-floppy-o" aria-hidden="true"></i> Salvar</button>
                 </div>
                 <div class="form-group col-md-6">
                     <a asp-action="Index" asp-area="Coordenador" asp-controller="Usuarios" class="btn btn-outline-secondary btn-block"><i class="fa fa-reply" aria-hidden="true"></i> Voltar</a>
@@ -77,6 +77,7 @@
         </form>
     </div>
 </div>
+
 
 @section Scripts {
     <partial name="_ValidationScriptsPartial" />

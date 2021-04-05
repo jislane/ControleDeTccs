@@ -73,6 +73,8 @@ namespace SistemaDeControleDeTCCs.Areas.Identity.Pages.Account
             public string Matricula { get; set; }
 
             [Display(Name = "CPF")]
+            [Required(ErrorMessage = "A {0} é obrigatória", AllowEmptyStrings = false)]
+            [ValidacaoPersonalizadaCPF(ErrorMessage = "CPF inválido")]
             public string Cpf { get; set; }
 
             [Display(Name = "Tipo de Usuário")]
@@ -116,6 +118,7 @@ namespace SistemaDeControleDeTCCs.Areas.Identity.Pages.Account
         {
             returnUrl = returnUrl ?? Url.Content("~/");
 
+
             // search role
             var nameTipoUsuario = _context.TipoUsuario.Find(Input.TipoUsuarioId).DescTipo;
             //var nameTipoUsuario = "Aluno";
@@ -125,8 +128,19 @@ namespace SistemaDeControleDeTCCs.Areas.Identity.Pages.Account
             ViewData["cursos"] = _context.Cursos.OrderBy(x => x.Nome).ToList();
 
             ExternalLogins = (await _signInManager.GetExternalAuthenticationSchemesAsync()).ToList();
-            if (true)
+
+            var u = await _userManager.FindByNameAsync(Input.Email);
+            if (u != null)
             {
+                ModelState.AddModelError(string.Empty, "O e-mail já encontra-se cadastrado no sistema");
+            }
+            // Existe dois erro no model que é o da senha que não está sendo informada
+            // Existe um bug em ValidacaoPersonalizadaCPF no campo do cpf, talvez seja js faltando
+            // o  bug consiste que a requisição é enviada mesmo com cpf inválido
+            // por isso essa condição
+            if (ModelState.ErrorCount < 3)
+            {
+                
                 var user = new Usuario
                 {
                     UserName = Input.Email,
@@ -183,6 +197,7 @@ namespace SistemaDeControleDeTCCs.Areas.Identity.Pages.Account
                 foreach (var error in result.Errors)
                 {
                     ModelState.AddModelError(string.Empty, error.Description);
+
                 }
             }
 
