@@ -15,9 +15,15 @@
             <th>
                 @Html.DisplayNameFor(model => model.Tcc)
             </th>
-            <th>Orientador</th>
-            <th>Aluno</th>
-            <th>Ação</th>
+            <th>
+                Orientador
+            </th>
+            <th>
+                Aluno
+            </th>
+            <th>
+                Ação
+            </th>
         </tr>
     </thead>
     <tbody>
@@ -37,8 +43,8 @@
                     @Html.DisplayFor(modelItem => item.Tcc.Usuario.Nome) @Html.DisplayFor(modelItem => item.Tcc.Usuario.Sobrenome)
                 </td>
                 <td class="columnAcao">
-                    <a class="btn btn-outline-primary btn-sm" asp-action="Resumo" asp-route-id="@item.TccId"><i class="fa fa-pencil-square-o" aria-hidden="true"> Resumo</i></a> |
-                    <a class="btn btn-outline-success btn-sm" asp-action="Anexo" asp-route-id="@item.TccId"><i class="fa fa-upload" aria-hidden="true"> PDF</i></a>
+                    <a class="btn btn-outline-secondary btn-sm" asp-action="Resumo" asp-route-id="@item.TccId"><i class="fa fa-align-justify" aria-hidden="true"> Resumo</i></a> |
+                    <a class="btn btn-outline-primary btn-sm" asp-action="Anexo" asp-route-id="@item.TccId"><i class=" fa fa-file-pdf-o" aria-hidden="true"> PDF</i></a>
                 </td>
             </tr>
         }
