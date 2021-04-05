@@ -26,6 +26,10 @@ a {
 
 /* Sticky footer styles
 -------------------------------------------------- */
+header {
+    background-color: #71c837
+}
+
 html {
   font-size: 14px;
 }
