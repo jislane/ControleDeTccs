@@ -108,7 +108,17 @@ namespace SistemaDeControleDeTCCs.Areas.Identity.Pages.Account
         public async Task OnGetAsync(string returnUrl = null)
         {
             // pass the TipoUsuario List using ViewData
-            ViewData["tiposUsuarios"] = _context.TipoUsuario.OrderBy(x => x.DescTipo).Where(x => x.DescTipo.Contains("Aluno") || x.DescTipo.Contains("Professor")).ToList();
+            if (User.IsInRole("Administrador")) {
+                ViewData["tiposUsuarios"] = _context.TipoUsuario.OrderBy(x => x.DescTipo).Where(x => x.DescTipo.Contains("Aluno")
+                || x.DescTipo.Contains("Professor")
+                || x.DescTipo.Contains("Administrador")).ToList();
+            }
+            else
+            {
+                ViewData["tiposUsuarios"] = _context.TipoUsuario.OrderBy(x => x.DescTipo).Where(x => x.DescTipo.Contains("Aluno") || x.DescTipo.Contains("Professor")).ToList();
+
+            }
+            
             ViewData["cursos"] = _context.Cursos.OrderBy(x => x.Nome).ToList();
             ReturnUrl = returnUrl;
             ExternalLogins = (await _signInManager.GetExternalAuthenticationSchemesAsync()).ToList();
@@ -124,7 +134,17 @@ namespace SistemaDeControleDeTCCs.Areas.Identity.Pages.Account
             //var nameTipoUsuario = "Aluno";
             var role = _roleManager.FindByNameAsync(nameTipoUsuario).Result;
 
-            ViewData["tiposUsuarios"] = _context.TipoUsuario.OrderBy(x => x.DescTipo).Where(x => x.DescTipo.Contains("Aluno") || x.DescTipo.Contains("Professor") || x.DescTipo.Contains("Coordenador")).ToList();
+            if (User.IsInRole("Administrador"))
+            {
+                ViewData["tiposUsuarios"] = _context.TipoUsuario.OrderBy(x => x.DescTipo).Where(x => x.DescTipo.Contains("Aluno")
+                || x.DescTipo.Contains("Professor")
+                || x.DescTipo.Contains("Administrador")).ToList();
+            }
+            else
+            {
+                ViewData["tiposUsuarios"] = _context.TipoUsuario.OrderBy(x => x.DescTipo).Where(x => x.DescTipo.Contains("Aluno") || x.DescTipo.Contains("Professor")).ToList();
+
+            }
             ViewData["cursos"] = _context.Cursos.OrderBy(x => x.Nome).ToList();
 
             ExternalLogins = (await _signInManager.GetExternalAuthenticationSchemesAsync()).ToList();
