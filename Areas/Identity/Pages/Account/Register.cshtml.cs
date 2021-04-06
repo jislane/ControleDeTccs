@@ -148,7 +148,7 @@ namespace SistemaDeControleDeTCCs.Areas.Identity.Pages.Account
                     Nome = Input.Nome,
                     Sobrenome = Input.Sobrenome,
                     Matricula = Input.Matricula,
-                    Cpf = Input.Cpf,
+                    Cpf = ValidateCpf.RemoveNaoNumericos(Input.Cpf),
                     PhoneNumber = Input.PhoneNumber,
                     TipoUsuarioId = Input.TipoUsuarioId,
                     IdCurso = Input.IdCurso

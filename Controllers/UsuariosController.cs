@@ -113,6 +113,13 @@ namespace SistemaDeControleDeTCCs.Controllers
         public async Task<IActionResult> AddOrEdit([Bind("Id,Nome,Sobrenome,Matricula,Cpf,PhoneNumber,Email,TipoUsuarioId,IdCurso")] Usuario usuario)
         {
 
+            if (usuario.Email == null || usuario.Email.Length == 0 ||
+                !(new System.ComponentModel.DataAnnotations.EmailAddressAttribute())
+                .IsValid(usuario.Email)) {
+                ModelState.AddModelError("usuario.Email", "Informe um e-mail válido");
+            }
+            
+            usuario.Cpf = ValidateCpf.RemoveNaoNumericos(usuario.Cpf);
             if (ModelState.IsValid)
             {
                 if (usuario.Id != null)
@@ -193,9 +200,8 @@ namespace SistemaDeControleDeTCCs.Controllers
             .Select(x => new { x.Key, x.Value.Errors })
             .ToArray();
 
-            //TODO: Refatorar para caso aconteça algum erro os dados alterados não sejam perdidos
-            //e adicionar as mensagens na view.
-            return RedirectToAction(nameof(AddOrEdit), new { id = usuario.Id });
+            return AddOrEdit(usuario.Id);
+            //return RedirectToAction(nameof(AddOrEdit), new { id = usuario.Id });
         }
 
         // GET: Usuarios/Delete/5
