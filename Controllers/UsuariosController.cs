@@ -171,13 +171,7 @@ namespace SistemaDeControleDeTCCs.Controllers
 
                     // Atualiza o usuário
 
-                    _context.LogAuditoria.Add(
-                       new LogAuditoria
-                       {
-                           EmailUsuario = User.Identity.Name,
-                           DetalhesAuditoria = string.Concat("Atualizou o usuário de ID:",
-                           usuario.Id, "Data da atualização: ", DateTime.Now.ToLongDateString())
-                       });
+                    
                     await _userManager.UpdateAsync(userTemp);
 
                     if (typeUser != usuario.TipoUsuarioId)
@@ -199,14 +193,7 @@ namespace SistemaDeControleDeTCCs.Controllers
                    
                     _context.Add(usuario);
 
-                    _context.LogAuditoria.Add(
-                        new LogAuditoria
-                        {
-                            EmailUsuario = User.Identity.Name,
-                            DetalhesAuditoria = string.Concat("Cadastrou o usuário de ID:",
-                       usuario.Id, "Data de cadastro: ", DateTime.Now.ToLongDateString())
-                        });
-
+                    
                     var senha = KeyGenerator.GetUniqueKey(8);
 
                     await _context.SaveChangesAsync();
@@ -242,13 +229,16 @@ namespace SistemaDeControleDeTCCs.Controllers
             }
 
             _context.Users.Remove(usuario);
-
+                        
             _context.LogAuditoria.Add(
                           new LogAuditoria
                           {
                               EmailUsuario = User.Identity.Name,
+                              Ip = System.Net.Dns.GetHostEntry(System.Net.Dns.GetHostName()).AddressList[1].ToString(),
+                              Date = DateTime.Now.ToLongDateString(),
                               DetalhesAuditoria = string.Concat("Removeu o usuário de ID:",
-                         usuario.Id, "Data da remoção: ", DateTime.Now.ToLongDateString())
+                         usuario.Id),
+                             
                           });
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
