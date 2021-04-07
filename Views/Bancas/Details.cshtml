@@ -1,114 +1,259 @@
-﻿@model SistemaDeControleDeTCCs.Models.Banca
+﻿@model SistemaDeControleDeTCCs.Models.ViewModels.BancaViewModel
+
 
 @{
-    ViewData["Title"] = "Details";
+    ViewData["Title"] = "Banca";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h1>Detalhes da Banca</h1>
+<style>
+    .popoup-info {
+        position: relative;
+        float: right;
+        margin-right: 2em;
+        margin-top: 10px;
+        width: 280px;
+        text-align: center;
+        padding: 20px;
+        border-radius: 10px;
+    }
+    .displya-none {
+        display: none
+    }
+    .box-red{
+        background-color: orangered;
+    }
+    .box-green {
+        background-color: forestgreen;
+    }
+    .box-gray {
+        background-color: lightgray;
+    }
+
+    .loader {
+        float: left;
+  border: 5px solid #f3f3f3;
+  border-radius: 50%;
+  border-top: 5px solid #3498db;
+  width: 30px;
+  height: 30px;
+  -webkit-animation: spin 2s linear infinite; /* Safari */
+  animation: spin 2s linear infinite;
+}
+
+/* Safari */
+@@-webkit-keyframes spin {
+  0% { -webkit-transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); }
+}
+
+@@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+    #msg {
+        height: 30px;
+        align-content: center;
+        margin-bottom: 10px;
+    }
+
+</style>
+
 
 <div>
-    <hr />
-    <dl class="row">
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.DataDeCadastro)
+    <div>
+        <h1 style="float: left;">Detalhes da Banca</h1>
+        <div>
+            <a asp-action="Index" style="float: right; margin-top:1em;" class="btn btn-outline-secondary"><i class="fa fa-reply" aria-hidden="true"></i> Voltar</a>
+        </div>
+
+    </div>
+    <div style="clear: both;">
+        <hr />
+        <br />
+    </div>
+    <div class="popoup-info displya-none" id="message-info">
+        <div class="loader displya-none "></div>
+        <div id="msg"></div>
+    </div>
+
+
+    <dl class="row" style="clear: both;">
+
+        <span style="display: none;" data-js="tcc-id">@Model.Membros[0].TccId</span>
+        <dt class="col-sm-4">
+            @Html.DisplayNameFor(model => model.Membros[0].DataDeCadastro)
         </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.DataDeCadastro)
+        <dd class="col-sm-8">
+            @Html.DisplayFor(model => model.Membros[0].DataDeCadastro)
         </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Tcc.Tema)
+        <dt class="col-sm-4">
+            @Html.DisplayNameFor(model => model.Membros[0].Tcc.Tema)
         </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Tcc.Tema)
+        <dd class="col-sm-8">
+            @Html.DisplayFor(model => model.Membros[0].Tcc.Tema)
         </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Tcc.Resumo)
+        <dt class="col-sm-4">
+            @Html.DisplayNameFor(model => model.Membros[0].Tcc.Resumo)
         </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Tcc.Resumo)
+        <dd class="col-sm-8">
+            @Html.DisplayFor(model => model.Membros[0].Tcc.Resumo)
         </dd>
-        <dt class="col-sm-2">
+        <dt class="col-sm-4">
             Aluno:
         </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Tcc.Usuario.Nome) @Html.DisplayFor(model => model.Tcc.Usuario.Sobrenome)
+        <dd class="col-sm-8">
+            @Html.DisplayFor(model => model.Membros[0].Tcc.Usuario.Nome) @Html.DisplayFor(model => model.Membros[0].Tcc.Usuario.Sobrenome)
         </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Tcc.DataApresentacao)
+        <dt class="col-sm-4">
+            @Html.DisplayNameFor(model => model.Membros[0].Tcc.DataApresentacao)
         </dt>
-        <dd class="col-sm-10">
-            @if (Model.Tcc.DataApresentacao == null)
+        <dd class="col-sm-8">
+            @if (Model.Membros[0].Tcc.DataApresentacao == null)
             {
                 <p>A definir</p>
             }
             else
             {
-                @Html.DisplayFor(model => model.Tcc.DataApresentacao)
+                @Html.DisplayFor(model => model.Membros[0].Tcc.DataApresentacao)
             }
         </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Tcc.LocalApresentacao)
+        <dt class="col-sm-4">
+            @Html.DisplayNameFor(model => model.Membros[0].Tcc.LocalApresentacao)
         </dt>
-        <dd class="col-sm-10">
-            @if (Model.Tcc.LocalApresentacao == null)
+        <dd class="col-sm-8">
+            @if (Model.Membros[0].Tcc.LocalApresentacao == null)
             {
                 <p>A definir</p>
             }
             else
             {
-                @Html.DisplayFor(model => model.Tcc.LocalApresentacao)
+                @Html.DisplayFor(model => model.Membros[0].Tcc.LocalApresentacao)
             }
         </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Nota)
+        <dt class="col-sm-4">
+            @Html.DisplayNameFor(model => model.Membros[0].Nota)
         </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Tcc.Nota)
+        <dd class="col-sm-8" id="nota-tcc">
+            @Html.DisplayFor(model => model.Membros[0].Tcc.Nota)
         </dd>
-        <dt class="col-sm-2">
-            Membros banca
-        </dt>
-        <dd>
-            <form method="post">
-                <table border="0" cellspacing="10" cellpadding="10">
-                    <tbody>
-                        @if (ViewBag.menbrosBanca != null)
-                        {
-                            if (ViewBag.menbrosBanca.Count > 0)
-                            {
-                                int count = 0;
 
-                                @foreach (var item in ViewBag.menbrosBanca as List<Banca>)
-                                {
-                                    count++;
-                                    <tr>
-                                        <td> <input value="@item.Nota" class="form-control" placeholder="Atribua a nota!" name="Nota_@count" id="Nota_@count" /></td>
-                                        <td> @item.Usuario.Nome @item.Usuario.Sobrenome</td>
-                                        <td> @item.TipoUsuario.DescTipo</td>
-                                        <td>
-                                            @if (item.TipoUsuario.TipoUsuarioId != 7)
-                                            {<a asp-action="Delete" asp-route-id="@item.BancaId" class="btn btn-outline-danger btn-sm" ml-1 onclick="return confirm('Tem certeza que quer excluir este pparticipante?')"> <i class="fa fa-trash" aria-hidden="true"></i> Excluir</a>}
-                                        </td>
-                                    </tr>
-
-                                }
-
-                            }
-                        }
-                    <tr>
-                        <td><button type="submit" class="btn btn-outline-success"><i class="fa fa-floppy-o" aria-hidden="true"></i> Salvar</button></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                    </tbody>
-                </table>
-            </form>
-        </dd>
     </dl>
+    <hr />
+    <h4 class="col-sm-8">
+        Membros da banca
+    </h4>
+
+    <form method="post">
+        <table border="0" cellspacing="10" cellpadding="10">
+            <thead>
+                <tr>
+                    <th>Membro</th>
+                    <th>Função</th>
+                    <th>Nota</th>
+                    <th>Excluir Membro</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model.Membros)
+                {
+                    <tr>
+                        <td style="display: none;" data-js="user">@item.UsuarioId</td>
+                        <td> @item.Usuario.Nome @item.Usuario.Sobrenome</td>
+                        <td> @item.TipoUsuario.DescTipo</td>
+                        <td>
+                            <input value="@item.Nota" class="form-control"
+                                   data-js="nota-@item.UsuarioId"
+                                   placeholder="Atribua a nota!" asp-for="@item.Nota" />
+                        </td>
+                        <td>
+                            @if (!item.TipoUsuario.DescTipo.ToLower().Equals("orientador"))
+                            {<a asp-action="Delete" asp-route-id="@item.BancaId" class="btn btn-outline-danger btn-sm" ml-1 onclick="return confirm('Tem certeza que quer excluir este pparticipante?')"> <i class="fa fa-trash" aria-hidden="true"></i> Excluir</a>}
+                        </td>
+                    </tr>
+                }
+                <tr>
+                    <td><button id="button" type="submit" class="btn btn-outline-success" asp-for="t"><i class="fa fa-floppy-o" aria-hidden="true"></i> Salvar Notas</buttonid="button"></td>
+
+                </tr>
+            </tbody>
+        </table>
+    </form>
 </div>
-<div>
-    @*<a asp-action="Edit" asp-route-id="@Model.BancaId">Edit</a> |*@
-    <a asp-action="Index" class="btn btn-outline-secondary"><i class="fa fa-list" aria-hidden="true"></i> Voltar para a lista</a>
-</div>
+
+<script>
+    (function () {
+        $("#nota-tcc").get()[0].textContent = parseFloat($("#nota-tcc").get()[0].textContent.replace(",", ".")).toFixed(2);
+
+        var $info = $("#message-info").get()[0];
+        var $loading = $("#message-info .loader").get()[0];
+        var $msg = $("#message-info #msg").get()[0];
+
+
+        function getNotasMembros() {
+            var lis = []
+            $("[data-js=user]").get().forEach(function (item) {
+                var v = $("[data-js=nota-" + item.textContent + "]").get()[0].value;
+                lis.push({
+                    membroBanca: item.textContent,
+                    nota: parseFloat(v)
+                });
+            });
+            return lis;
+        }
+        function sendData(values) {
+            if (values) {
+                var idBanca = $("[data-js=tcc-id]").get()[0].textContent;
+                $.ajax({
+                    url: "/Bancas/Details/" + idBanca,
+                    type: "POST",
+                    data: JSON.stringify(values),
+                    contentType: "application/json; charset=utf-8",
+                    dataType: "json",
+                    success: function (retorno) {
+                        var idBanca = $("#nota-tcc")[0].textContent = retorno.notaTcc.toFixed(2);
+                        console.log("OK");
+                        $info.classList.remove("box-gray");
+                        $info.classList.remove("box-red");
+                        $info.classList.add("box-green");
+                        $loading.classList.add("displya-none");
+                        $msg.textContent = "Salvo com Sucesso ..."
+                        setTimeout(function () {
+                            $info.classList.add("displya-none");
+                        }, 5000);
+                    },
+                    error: function (r) {
+                        console.log("FAIL");
+                        $info.classList.remove("box-gray");
+                        $info.classList.remove("box-green");
+                        $info.classList.add("box-red");
+                        $loading.classList.add("displya-none");
+                        $msg.textContent = "Falha ao salvar: " + r.responseText;
+                        debugger;
+                        setTimeout(function () {
+                            $info.classList.add("displya-none");
+                        }, 5000);
+                    }
+                });
+            }
+
+        }
+
+        $("#button").click(function (e) {
+            $info.classList.remove("displya-none");
+            $info.classList.remove("box-red");
+            $info.classList.remove("box-green");
+            $info.classList.add("box-gray");
+            $loading.classList.remove("displya-none");
+            $msg.textContent = "Salvando ..."
+
+            e.preventDefault()
+            sendData(getNotasMembros());
+
+        });
+
+    })();
+    
+
+</script>
+@*Fazer Requisição Via AJAX|*@

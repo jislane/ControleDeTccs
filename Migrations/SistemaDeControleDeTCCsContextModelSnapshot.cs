@@ -15,7 +15,7 @@ namespace SistemaDeControleDeTCCs.Migrations
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "3.1.11")
+                .HasAnnotation("ProductVersion", "3.1.12")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
@@ -249,11 +249,11 @@ namespace SistemaDeControleDeTCCs.Migrations
 
                     b.Property<string>("Nome")
                         .IsRequired()
-                        .HasColumnType("nvarchar(30)");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Sigla")
                         .IsRequired()
-                        .HasColumnType("nvarchar(10)");
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
 
@@ -343,28 +343,24 @@ namespace SistemaDeControleDeTCCs.Migrations
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<DateTime?>("DataApresentacao")
-                        .IsRequired()
                         .HasColumnType("datetime2");
 
                     b.Property<DateTime>("DataDeCadastro")
                         .HasColumnType("datetime2");
 
                     b.Property<DateTime?>("DataFinalizacao")
-                        .IsRequired()
                         .HasColumnType("datetime2");
 
                     b.Property<int>("IdCurso")
                         .HasColumnType("int");
 
                     b.Property<string>("LocalApresentacao")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<double?>("Nota")
                         .HasColumnType("float");
 
                     b.Property<string>("Resumo")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("StatusId")

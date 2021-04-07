@@ -34,6 +34,8 @@ namespace SistemaDeControleDeTCCs
 
         {
 
+            services.AddControllersWithViews().AddRazorRuntimeCompilation();
+
             services.AddControllersWithViews();
             services.AddDbContext<SistemaDeControleDeTCCsContext>(options =>
                     options.UseSqlServer(Configuration.GetConnectionString("SistemaDeControleDeTCCsContextConnection")));
@@ -41,6 +43,7 @@ namespace SistemaDeControleDeTCCs
             services.AddIdentity<Usuario, IdentityRole>().AddEntityFrameworkStores<SistemaDeControleDeTCCsContext>().AddDefaultTokenProviders();
             services.AddRazorPages();
             services.AddMvc();
+
 
             services.AddAuthorization(options =>
             {
@@ -53,7 +56,10 @@ namespace SistemaDeControleDeTCCs
                 options.AddPolicy("Aluno",
                     builder => builder.RequireRole("Aluno"));
             });
-
+            services.ConfigureApplicationCookie(options => {
+                options.LoginPath = "/Identity/Account/Login";
+                options.AccessDeniedPath = "/Identity/Account/AccessDenied";
+            });
             services.Configure<IdentityOptions>(options =>
             {
                 options.Password.RequireDigit = false;
@@ -97,7 +103,7 @@ namespace SistemaDeControleDeTCCs
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env, PopularBancoDados popularBanco)
         {
-            if (env.IsDevelopment())
+            if (env.IsDevelopment() || env.EnvironmentName.StartsWith("Development."))
             {
                 app.UseDeveloperExceptionPage();
                 app.UseDatabaseErrorPage();
@@ -106,6 +112,7 @@ namespace SistemaDeControleDeTCCs
             else
             {
                 app.UseExceptionHandler("/Home/Error");
+                popularBanco.PopularProducao();
                 //app.UseExceptionHandler("/Logger/Index");
                 app.UseHsts();
             }

@@ -1,7 +1,7 @@
 ﻿@model IEnumerable<SistemaDeControleDeTCCs.Models.Banca>
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Banca";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
@@ -15,40 +15,45 @@
             <th>
                 @Html.DisplayNameFor(model => model.Tcc)
             </th>
-            <th>Orientador</th>
-            <th>Aluno</th>
-            <th>Ação</th>
+            <th>
+                Orientador
+            </th>
+            <th>
+                Aluno
+            </th>
+            <th>
+                Ação
+            </th>
         </tr>
     </thead>
     <tbody>
         @foreach (var item in Model)
         {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.DataDeCadastro)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Tcc.Tema)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Usuario.Nome) @Html.DisplayFor(modelItem => item.Usuario.Sobrenome)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Tcc.Usuario.Nome) @Html.DisplayFor(modelItem => item.Tcc.Usuario.Sobrenome)
-            </td>
-            <td>
-                <a class="btn btn-outline-primary btn-sm" asp-action="Resumo" asp-route-id="@item.TccId"><i class="fa fa-pencil-square-o" aria-hidden="true"> Resumo</i>
-                </a> |
-                <a class="btn btn-outline-success btn-sm" asp-action="Anexo" asp-route-id="@item.TccId"><i class="fa fa-upload" aria-hidden="true"> PDF</i></a>
-            </td>
-        </tr>
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DataDeCadastro)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Tcc.Tema)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Usuario.Nome) @Html.DisplayFor(modelItem => item.Usuario.Sobrenome)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Tcc.Usuario.Nome) @Html.DisplayFor(modelItem => item.Tcc.Usuario.Sobrenome)
+                </td>
+                <td class="columnAcao">
+                    <a class="btn btn-outline-secondary btn-sm" asp-action="Resumo" asp-route-id="@item.TccId"><i class="fa fa-align-justify" aria-hidden="true"> Resumo</i></a> |
+                    <a class="btn btn-outline-primary btn-sm" asp-action="Anexo" asp-route-id="@item.TccId"><i class=" fa fa-file-pdf-o" aria-hidden="true"> PDF</i></a>
+                </td>
+            </tr>
         }
     </tbody>
 </table>
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-<link rel="stylesheet" href="//cdn.datatables.net/1.10.22/css/jquery.dataTables.min.css" />
-<script src="//cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+<script src="//cdn.datatables.net/1.10.24/js/jquery.dataTables.min.js"></script>
+<script src="//cdn.datatables.net/1.10.24/js/dataTables.bootstrap4.min.js"></script>
 
 @section scripts{
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.css" />
@@ -61,7 +66,16 @@
                     "zeroRecords": "Registro não localizado!",
                     "info": "Mostrando página _PAGE_ de _PAGES_",
                     "infoEmpty": "Nenhum registro disponível",
-                    "infoFiltered": "(filtrados de _MAX_ registros)"
+                    "sLoadingRecords": "Carregando...",
+                    "sProcessing": "Processando...",
+                    "infoFiltered": "(Filtrados de _MAX_ registros)",
+                    "sSearch": "Buscar: ",
+                    "oPaginate": {
+                        "sNext": "Próximo",
+                        "sPrevious": "Anterior",
+                        "sFirst": "Primeiro",
+                        "sLast": "Último"
+                    }
                 }
             });
         });
