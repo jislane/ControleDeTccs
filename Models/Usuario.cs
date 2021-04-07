@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Identity;
+using SistemaDeControleDeTCCs.Utils;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -29,6 +30,7 @@ namespace SistemaDeControleDeTCCs.Models
         [DisplayName("CPF")]
         [Column(TypeName = "nvarchar(11)")]
         [Required(ErrorMessage = "O campo {0} é obrigatorio.")]
+        [ValidacaoPersonalizadaCPF(ErrorMessage = "CPF inválido")]
         public string Cpf { get; set; }
 
         public TipoUsuario TipoUsuario { get; set; }

@@ -14,12 +14,10 @@ namespace SistemaDeControleDeTCCs.Models
         public int Id { get; set; }
 
         [DisplayName("Nome")]
-        [Column(TypeName = "nvarchar(30)")]
         [Required(ErrorMessage = "O campo {0} é obrigatorio.")]
         public string Nome { get; set; }
 
         [DisplayName("Sigla")]
-        [Column(TypeName = "nvarchar(10)")]
         [Required(ErrorMessage = "O campo {0} é obrigatorio.")]
         public string Sigla { get; set; }
         
