@@ -246,7 +246,7 @@ namespace SistemaDeControleDeTCCs.Controllers
                   new LogAuditoria
                   {
                       EmailUsuario = User.Identity.Name,
-                      Ip = System.Net.Dns.GetHostEntry(System.Net.Dns.GetHostName()).AddressList[1].ToString(),
+                      Ip = Request.HttpContext.Connection.RemoteIpAddress.ToString(),
                       Date = DateTime.Now.ToLongDateString(),
                       DetalhesAuditoria = "Cadastrou banca",
                       IdItem =  (banca.BancaId.ToString())
@@ -299,7 +299,7 @@ namespace SistemaDeControleDeTCCs.Controllers
                   new LogAuditoria
                   {
                       EmailUsuario = User.Identity.Name,
-                      Ip = System.Net.Dns.GetHostEntry(System.Net.Dns.GetHostName()).AddressList[1].ToString(),
+                      Ip = Request.HttpContext.Connection.RemoteIpAddress.ToString(),
                       Date = DateTime.Now.ToLongDateString(),
                       DetalhesAuditoria = "Atualizou banca",
                       IdItem = (banca.BancaId.ToString())
@@ -359,7 +359,7 @@ namespace SistemaDeControleDeTCCs.Controllers
                   new LogAuditoria
                   {
                       EmailUsuario = User.Identity.Name,
-                      Ip = System.Net.Dns.GetHostEntry(System.Net.Dns.GetHostName()).AddressList[1].ToString(),
+                      Ip = Request.HttpContext.Connection.RemoteIpAddress.ToString(),
                       Date = DateTime.Now.ToLongDateString(),
                       DetalhesAuditoria = "Removeu banca",
                       IdItem = (banca.BancaId.ToString())
@@ -539,7 +539,7 @@ namespace SistemaDeControleDeTCCs.Controllers
                   new LogAuditoria
                   {
                       EmailUsuario = User.Identity.Name,
-                      Ip = System.Net.Dns.GetHostEntry(System.Net.Dns.GetHostName()).AddressList[1].ToString(),
+                      Ip = Request.HttpContext.Connection.RemoteIpAddress.ToString(),
                       Date = DateTime.Now.ToLongDateString(),
                       DetalhesAuditoria = "Cadastrou a nota",
                       IdItem = notas.ToString()

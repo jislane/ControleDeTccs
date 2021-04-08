@@ -7,7 +7,7 @@
 <h1>@ViewData["Title"]</h1>
 <div asp-validation-summary="ModelOnly" class="text-danger"></div>
 <a class="btn btn-outline-success btnAdd" id="register" asp-area="Identity" asp-page="/Account/Register"><i class="fa fa-user-plus" aria-hidden="true"></i> Novo</a>
-<table id="tabela" class="table table-bordered table-hover">
+<table id="tabela" class="table table-bordered table-hover display responsive nowrap" style="width:100%">
     <thead>
         <tr>
             <th>
@@ -54,18 +54,17 @@
                     <a title="Informações" class="btn btn-outline-secondary btn-sm" style="padding-left: 0.8rem; padding-right: 0.7rem;" asp-action="Details" asp-route-id="@item.Id"><i class="fa fa-info" aria-hidden="true"></i></a> |
                     <a title="Resetar senha" class="btn btn-outline-warning btn-sm" asp-action="Reset" asp-route-id="@item.UserName"><i class="fa fa-key" aria-hidden="true"></i></a>
                     @{
-                        if(!item.TipoUsuario.DescTipo.Equals("Administrador"))
+                        if (!item.TipoUsuario.DescTipo.Equals("Administrador"))
                         {
-                           <span> | </span><a title="Excluir"
-                       
-                       class="btn btn-outline-danger btn-sm" 
-                       ml-1 onclick="return confirm('Tem certeza que quer deletar este registro?')" 
-                       asp-action="Delete" asp-route-id="@item.Id">
-                        <i class="fa fa-trash" aria-hidden="true"></i>
-                    </a> 
+                            <span> | </span><a title="Excluir"
+                                               class="btn btn-outline-danger btn-sm"
+                                               ml-1 onclick="return confirm('Tem certeza que quer deletar este registro?')"
+                                               asp-action="Delete" asp-route-id="@item.Id">
+                                <i class="fa fa-trash" aria-hidden="true"></i>
+                            </a>
                         }
                     }
-                    
+
                 </td>
             </tr>
         }
@@ -74,14 +73,17 @@
 
 <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
 <script src="//cdn.datatables.net/1.10.24/js/jquery.dataTables.min.js"></script>
+<script src="//cdn.datatables.net/responsive/2.2.7/js/dataTables.responsive.min.js"></script>
 <script src="//cdn.datatables.net/1.10.24/js/dataTables.bootstrap4.min.js"></script>
 
 @section scripts{
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.css" />
     <link rel="stylesheet" href="https://cdn.datatables.net/1.10.22/css/dataTables.bootstrap4.min.css" />
+    <link rel="stylesheet" href="https://cdn.datatables.net/responsive/2.2.7/css/responsive.dataTables.min.css" />
     <script>
         $(document).ready(function () {
             $('#tabela').DataTable({
+                responsive: true,
                 "language": {
                     "lengthMenu": "Mostrando _MENU_ registros por página",
                     "zeroRecords": "Registro não localizado!",
