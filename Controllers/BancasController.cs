@@ -243,12 +243,16 @@ namespace SistemaDeControleDeTCCs.Controllers
             _context.Add(banca);
 
             _context.LogAuditoria.Add(
-                    new LogAuditoria
-                    {
-                        EmailUsuario = User.Identity.Name,
-                        DetalhesAuditoria = string.Concat("Cadastrou a banca de Id:",
-                   banca.BancaId, "Data de cadastro: ", DateTime.Now.ToLongDateString())
-                    });
+                  new LogAuditoria
+                  {
+                      EmailUsuario = User.Identity.Name,
+                      Ip = System.Net.Dns.GetHostEntry(System.Net.Dns.GetHostName()).AddressList[1].ToString(),
+                      Date = DateTime.Now.ToLongDateString(),
+                      DetalhesAuditoria = "Cadastrou banca",
+                      IdItem =  (banca.BancaId.ToString())
+
+                  });
+            
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
 
@@ -292,12 +296,15 @@ namespace SistemaDeControleDeTCCs.Controllers
                     _context.Update(banca);
 
                     _context.LogAuditoria.Add(
-                    new LogAuditoria
-                    {
-                        EmailUsuario = User.Identity.Name,
-                        DetalhesAuditoria = string.Concat("Atualizou a banca de Id:",
-                   banca.BancaId, "Data da atualização: ", DateTime.Now.ToLongDateString())
-                    });
+                  new LogAuditoria
+                  {
+                      EmailUsuario = User.Identity.Name,
+                      Ip = System.Net.Dns.GetHostEntry(System.Net.Dns.GetHostName()).AddressList[1].ToString(),
+                      Date = DateTime.Now.ToLongDateString(),
+                      DetalhesAuditoria = "Atualizou banca",
+                      IdItem = (banca.BancaId.ToString())
+
+                  });
                     await _context.SaveChangesAsync();
                 }
                 catch (DbUpdateConcurrencyException)
@@ -349,12 +356,15 @@ namespace SistemaDeControleDeTCCs.Controllers
             _context.Banca.Remove(banca);
 
             _context.LogAuditoria.Add(
-                    new LogAuditoria
-                    {
-                        EmailUsuario = User.Identity.Name,
-                        DetalhesAuditoria = string.Concat("Removeu a banca de Id:",
-                   banca.BancaId, "Data da exclusão: ", DateTime.Now.ToLongDateString())
-                    });
+                  new LogAuditoria
+                  {
+                      EmailUsuario = User.Identity.Name,
+                      Ip = System.Net.Dns.GetHostEntry(System.Net.Dns.GetHostName()).AddressList[1].ToString(),
+                      Date = DateTime.Now.ToLongDateString(),
+                      DetalhesAuditoria = "Removeu banca",
+                      IdItem = (banca.BancaId.ToString())
+
+                  });
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
@@ -526,12 +536,16 @@ namespace SistemaDeControleDeTCCs.Controllers
                 _context.Update(result);
 
                 _context.LogAuditoria.Add(
-                    new LogAuditoria
-                    {
-                        EmailUsuario = User.Identity.Name,
-                        DetalhesAuditoria = string.Concat("Atualizou as notas:",
-                   notas, "Data de cadastro: ", DateTime.Now.ToLongDateString())
-                    });
+                  new LogAuditoria
+                  {
+                      EmailUsuario = User.Identity.Name,
+                      Ip = System.Net.Dns.GetHostEntry(System.Net.Dns.GetHostName()).AddressList[1].ToString(),
+                      Date = DateTime.Now.ToLongDateString(),
+                      DetalhesAuditoria = "Cadastrou a nota",
+                      IdItem = notas.ToString()
+
+                  });
+                
                 _context.SaveChanges();
             }
         }

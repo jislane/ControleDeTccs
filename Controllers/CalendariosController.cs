@@ -91,12 +91,15 @@ namespace SistemaDeControleDeTCCs.Controllers
                 }
 
                 _context.LogAuditoria.Add(
-                new LogAuditoria
-                {
-                    EmailUsuario = User.Identity.Name,
-                    DetalhesAuditoria = string.Concat("Cadastrou um calendario:",
-                    calendario.CalendarioId, "Data de cadastro: ", DateTime.Now.ToLongDateString())
-                });
+                   new LogAuditoria
+                   {
+                       EmailUsuario = User.Identity.Name,
+                       Ip = System.Net.Dns.GetHostEntry(System.Net.Dns.GetHostName()).AddressList[1].ToString(),
+                       Date = DateTime.Now.ToLongDateString(),
+                       DetalhesAuditoria = "Cadastrou um calendario",
+                       IdItem = calendario.CalendarioId.ToString()
+
+                   });
 
                 _context.Add(calendario);
                 await _context.SaveChangesAsync();
@@ -151,12 +154,14 @@ namespace SistemaDeControleDeTCCs.Controllers
             }
 
             _context.LogAuditoria.Add(
-               new LogAuditoria
-               {
-                   EmailUsuario = User.Identity.Name,
-                   DetalhesAuditoria = string.Concat("Editou o calendario:",
-                   calendario.CalendarioId, "Data da edição: ", DateTime.Now.ToLongDateString())
-               });
+                  new LogAuditoria
+                  {
+                      EmailUsuario = User.Identity.Name,
+                      Ip = System.Net.Dns.GetHostEntry(System.Net.Dns.GetHostName()).AddressList[1].ToString(),
+                      Date = DateTime.Now.ToLongDateString(),
+                      DetalhesAuditoria = "Editou o calendario",
+                      IdItem = calendario.CalendarioId.ToString()
+                  });
 
             if (ModelState.IsValid)
             {
@@ -202,12 +207,15 @@ namespace SistemaDeControleDeTCCs.Controllers
             _context.Calendario.Remove(calendario);
 
             _context.LogAuditoria.Add(
-            new LogAuditoria
-            {
-                EmailUsuario = User.Identity.Name,
-                DetalhesAuditoria = string.Concat("Deletou o calendario:",
-                   calendario.CalendarioId, "Data da deleção: ", DateTime.Now.ToLongDateString())
-            });
+                  new LogAuditoria
+                  {
+                      EmailUsuario = User.Identity.Name,
+                      Ip = System.Net.Dns.GetHostEntry(System.Net.Dns.GetHostName()).AddressList[1].ToString(),
+                      Date = DateTime.Now.ToLongDateString(),
+                      DetalhesAuditoria = "Removeu o calendario",
+                      IdItem=calendario.CalendarioId.ToString()
+
+                  }) ;
 
             await _context.SaveChangesAsync();
             TempData["Success"] = "Calendário de banca excluído com sucesso.";

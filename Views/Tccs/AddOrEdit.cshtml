@@ -62,7 +62,7 @@
                 <select asp-for="Tcc.IdCurso"
                         id="select-curso"
                         class="form-control"
-                        required>
+                        >
                     @{
                         if (Model.Tcc.IdCurso != 0)
                         {
@@ -78,7 +78,7 @@
                 <select asp-for="Tcc.UsuarioId"
                         id="select-discente"
                         class="form-control"
-                        required>
+                        >
                     @{
                         if (Model.Tcc.UsuarioId != null)
                         {
@@ -94,7 +94,7 @@
                 <select asp-for="@idOrientador"
                         class="form-control"
                         id="select-orientador"
-                        required>
+                        >
                     @{
                         if (Model.Tcc.UsuarioId != null)
                         {

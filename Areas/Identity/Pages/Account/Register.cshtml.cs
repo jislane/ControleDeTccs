@@ -73,6 +73,8 @@ namespace SistemaDeControleDeTCCs.Areas.Identity.Pages.Account
             public string Matricula { get; set; }
 
             [Display(Name = "CPF")]
+            [Required(ErrorMessage = "O {0} é obrigatório", AllowEmptyStrings = false)]
+            [ValidacaoPersonalizadaCPF(ErrorMessage = "CPF inválido")]
             public string Cpf { get; set; }
 
             [Display(Name = "Tipo de Usuário")]
@@ -106,7 +108,17 @@ namespace SistemaDeControleDeTCCs.Areas.Identity.Pages.Account
         public async Task OnGetAsync(string returnUrl = null)
         {
             // pass the TipoUsuario List using ViewData
-            ViewData["tiposUsuarios"] = _context.TipoUsuario.OrderBy(x => x.DescTipo).Where(x => x.DescTipo.Contains("Aluno") || x.DescTipo.Contains("Professor")).ToList();
+            if (User.IsInRole("Administrador")) {
+                ViewData["tiposUsuarios"] = _context.TipoUsuario.OrderBy(x => x.DescTipo).Where(x => x.DescTipo.Contains("Aluno")
+                || x.DescTipo.Contains("Professor")
+                || x.DescTipo.Contains("Administrador")).ToList();
+            }
+            else
+            {
+                ViewData["tiposUsuarios"] = _context.TipoUsuario.OrderBy(x => x.DescTipo).Where(x => x.DescTipo.Contains("Aluno") || x.DescTipo.Contains("Professor")).ToList();
+
+            }
+            
             ViewData["cursos"] = _context.Cursos.OrderBy(x => x.Nome).ToList();
             ReturnUrl = returnUrl;
             ExternalLogins = (await _signInManager.GetExternalAuthenticationSchemesAsync()).ToList();
@@ -116,17 +128,39 @@ namespace SistemaDeControleDeTCCs.Areas.Identity.Pages.Account
         {
             returnUrl = returnUrl ?? Url.Content("~/");
 
+
             // search role
             var nameTipoUsuario = _context.TipoUsuario.Find(Input.TipoUsuarioId).DescTipo;
             //var nameTipoUsuario = "Aluno";
             var role = _roleManager.FindByNameAsync(nameTipoUsuario).Result;
 
-            ViewData["tiposUsuarios"] = _context.TipoUsuario.OrderBy(x => x.DescTipo).Where(x => x.DescTipo.Contains("Aluno") || x.DescTipo.Contains("Professor") || x.DescTipo.Contains("Coordenador")).ToList();
+            if (User.IsInRole("Administrador"))
+            {
+                ViewData["tiposUsuarios"] = _context.TipoUsuario.OrderBy(x => x.DescTipo).Where(x => x.DescTipo.Contains("Aluno")
+                || x.DescTipo.Contains("Professor")
+                || x.DescTipo.Contains("Administrador")).ToList();
+            }
+            else
+            {
+                ViewData["tiposUsuarios"] = _context.TipoUsuario.OrderBy(x => x.DescTipo).Where(x => x.DescTipo.Contains("Aluno") || x.DescTipo.Contains("Professor")).ToList();
+
+            }
             ViewData["cursos"] = _context.Cursos.OrderBy(x => x.Nome).ToList();
 
             ExternalLogins = (await _signInManager.GetExternalAuthenticationSchemesAsync()).ToList();
-            if (true)
+
+            var u = await _userManager.FindByNameAsync(Input.Email);
+            if (u != null)
             {
+                ModelState.AddModelError(string.Empty, "O e-mail já encontra-se cadastrado no sistema");
+            }
+            // Existe dois erro no model que é o da senha que não está sendo informada
+            // Existe um bug em ValidacaoPersonalizadaCPF no campo do cpf, talvez seja js faltando
+            // o  bug consiste que a requisição é enviada mesmo com cpf inválido
+            // por isso essa condição
+            if (ModelState.ErrorCount < 3)
+            {
+                
                 var user = new Usuario
                 {
                     UserName = Input.Email,
@@ -134,7 +168,7 @@ namespace SistemaDeControleDeTCCs.Areas.Identity.Pages.Account
                     Nome = Input.Nome,
                     Sobrenome = Input.Sobrenome,
                     Matricula = Input.Matricula,
-                    Cpf = Input.Cpf,
+                    Cpf = ValidateCpf.RemoveNaoNumericos(Input.Cpf),
                     PhoneNumber = Input.PhoneNumber,
                     TipoUsuarioId = Input.TipoUsuarioId,
                     IdCurso = Input.IdCurso
@@ -172,6 +206,18 @@ namespace SistemaDeControleDeTCCs.Areas.Identity.Pages.Account
                         return LocalRedirect(returnUrl);
                     }
                     */
+                    _context.LogAuditoria.Add(
+                           new LogAuditoria
+                           {
+                               EmailUsuario = User.Identity.Name,
+                               Ip = Request.Host.Value,
+                               Date = DateTime.Now.ToLongDateString(),
+                               DetalhesAuditoria = "Cadastrou o usuário de ID:",
+                               IdItem = user.Id
+
+                           });
+
+                    _context.SaveChanges();
 
                     StatusMessage = "Conta criada e enviado e-mail com a senha de acesso.";
                     user.TipoUsuario = _context.TipoUsuario.Where(x => x.TipoUsuarioId == user.TipoUsuarioId).FirstOrDefault();
@@ -183,6 +229,7 @@ namespace SistemaDeControleDeTCCs.Areas.Identity.Pages.Account
                 foreach (var error in result.Errors)
                 {
                     ModelState.AddModelError(string.Empty, error.Description);
+
                 }
             }
 

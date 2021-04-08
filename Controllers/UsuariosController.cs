@@ -72,6 +72,12 @@ namespace SistemaDeControleDeTCCs.Controllers
             {
                 usuarios = query.ToList();
             }
+            if (TempData["erro_del"] != null && TempData["erro_del"].ToString().Length > 0) 
+            {
+                ModelState.AddModelError(String.Empty,
+                    TempData["erro_del"].ToString());
+            }
+           
 
             return View(usuarios.OrderBy(x => x.Nome));
         }
@@ -80,12 +86,19 @@ namespace SistemaDeControleDeTCCs.Controllers
         public IActionResult AddOrEdit(string id)
         {
 
-            var  tiposUsuarios = _context.TipoUsuario
-                .OrderBy(x => x.DescTipo)
-                .Where(x => x.DescTipo.Contains("Aluno") || x.DescTipo.Contains("Professor"))
-                .ToList();
-           
-            
+            List<TipoUsuario> tiposUsuarios = null;
+            if (User.IsInRole("Administrador"))
+            {
+                tiposUsuarios = _context.TipoUsuario.OrderBy(x => x.DescTipo).Where(x => x.DescTipo.Contains("Aluno")
+                || x.DescTipo.Contains("Professor")
+                || x.DescTipo.Contains("Administrador")).ToList();
+            }
+            else
+            {
+                tiposUsuarios = _context.TipoUsuario.OrderBy(x => x.DescTipo).Where(x => x.DescTipo.Contains("Aluno") || x.DescTipo.Contains("Professor")).ToList();
+
+            }
+
             var usuario = new Usuario();
             if (id != null)
             {
@@ -113,6 +126,13 @@ namespace SistemaDeControleDeTCCs.Controllers
         public async Task<IActionResult> AddOrEdit([Bind("Id,Nome,Sobrenome,Matricula,Cpf,PhoneNumber,Email,TipoUsuarioId,IdCurso")] Usuario usuario)
         {
 
+            if (usuario.Email == null || usuario.Email.Length == 0 ||
+                !(new System.ComponentModel.DataAnnotations.EmailAddressAttribute())
+                .IsValid(usuario.Email)) {
+                ModelState.AddModelError("usuario.Email", "Informe um e-mail válido");
+            }
+            
+            usuario.Cpf = ValidateCpf.RemoveNaoNumericos(usuario.Cpf);
             if (ModelState.IsValid)
             {
                 if (usuario.Id != null)
@@ -131,6 +151,14 @@ namespace SistemaDeControleDeTCCs.Controllers
 
                         return AddOrEdit(userTemp.Id);
                     }
+                    if (userTemp.TipoUsuarioId == admId
+                       && usuario.TipoUsuarioId != admId)
+                    {
+                        ModelState.AddModelError(String.Empty,
+                            "Não é possível modificar o tipo de usuários que são administradores");
+
+                        return AddOrEdit(userTemp.Id);
+                    }
                     var typeUser = userTemp.TipoUsuarioId;
                     userTemp.Nome = usuario.Nome;
                     userTemp.Sobrenome = usuario.Sobrenome;
@@ -142,15 +170,19 @@ namespace SistemaDeControleDeTCCs.Controllers
                     userTemp.IdCurso = usuario.IdCurso;
 
                     // Atualiza o usuário
-
                     _context.LogAuditoria.Add(
-                       new LogAuditoria
-                       {
-                           EmailUsuario = User.Identity.Name,
-                           DetalhesAuditoria = string.Concat("Atualizou o usuário de ID:",
-                           usuario.Id, "Data da atualização: ", DateTime.Now.ToLongDateString())
-                       });
+                         new LogAuditoria
+                         {
+                             EmailUsuario = User.Identity.Name,
+                             Ip = System.Net.Dns.GetHostEntry(System.Net.Dns.GetHostName()).AddressList[1].ToString(),
+                             Date = DateTime.Now.ToLongDateString(),
+                             DetalhesAuditoria = string.Concat("Atualizou o usuário de ID:",
+                        usuario.Id),
+
+                         });
+
                     await _userManager.UpdateAsync(userTemp);
+                    await _context.SaveChangesAsync();
 
                     if (typeUser != usuario.TipoUsuarioId)
                     {
@@ -171,16 +203,20 @@ namespace SistemaDeControleDeTCCs.Controllers
                    
                     _context.Add(usuario);
 
+                    
+                    var senha = KeyGenerator.GetUniqueKey(8);
+
                     _context.LogAuditoria.Add(
                         new LogAuditoria
                         {
                             EmailUsuario = User.Identity.Name,
+                            Ip = Request.Host.Value,
+                            Date = DateTime.Now.ToLongDateString(),
                             DetalhesAuditoria = string.Concat("Cadastrou o usuário de ID:",
-                       usuario.Id, "Data de cadastro: ", DateTime.Now.ToLongDateString())
+                       usuario.Id),
+                            
                         });
-
-                    var senha = KeyGenerator.GetUniqueKey(8);
-
+                    
                     await _context.SaveChangesAsync();
 
                     usuario.TipoUsuario = _context.TipoUsuario.Where(x => x.TipoUsuarioId == usuario.TipoUsuarioId).FirstOrDefault();
@@ -193,23 +229,37 @@ namespace SistemaDeControleDeTCCs.Controllers
             .Select(x => new { x.Key, x.Value.Errors })
             .ToArray();
 
-            //TODO: Refatorar para caso aconteça algum erro os dados alterados não sejam perdidos
-            //e adicionar as mensagens na view.
-            return RedirectToAction(nameof(AddOrEdit), new { id = usuario.Id });
+            return AddOrEdit(usuario.Id);
+            //return RedirectToAction(nameof(AddOrEdit), new { id = usuario.Id });
         }
 
         // GET: Usuarios/Delete/5
         public async Task<IActionResult> Delete(string id)
         {
-            var usuario = await _context.Users.FindAsync(id);
-            _context.Users.Remove(usuario);
+            
+            var usuario =  _context.Users.Include(u => u.TipoUsuario).Where(u => u.Id == id).First();
+            if(usuario == null)
+            {
+                return NotFound();
+            }
+            if (usuario.TipoUsuario.DescTipo.Equals("Administrador"))
+            {
+                
+                TempData["erro_del"] = "O usuário que você está tentando alterar é um usuário administrador e não é permitida essa transação.";
+                return RedirectToAction(nameof(Index));
+            }
 
+            _context.Users.Remove(usuario);
+                        
             _context.LogAuditoria.Add(
                           new LogAuditoria
                           {
                               EmailUsuario = User.Identity.Name,
-                              DetalhesAuditoria = string.Concat("Removeu o usuário de ID:",
-                         usuario.Id, "Data da remoção: ", DateTime.Now.ToLongDateString())
+                              Ip = Request.Host.Value,
+                              Date = DateTime.Now.ToLongDateString(),
+                              DetalhesAuditoria =  "Removeu o usuário de ID:",
+                              IdItem = usuario.Id,
+                             
                           });
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));

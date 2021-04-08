@@ -33,6 +33,7 @@ namespace SistemaDeControleDeTCCs
         public void ConfigureServices(IServiceCollection services)
 
         {
+            
 
             services.AddControllersWithViews().AddRazorRuntimeCompilation();
 
@@ -43,7 +44,6 @@ namespace SistemaDeControleDeTCCs
             services.AddIdentity<Usuario, IdentityRole>().AddEntityFrameworkStores<SistemaDeControleDeTCCsContext>().AddDefaultTokenProviders();
             services.AddRazorPages();
             services.AddMvc();
-
 
             services.AddAuthorization(options =>
             {
@@ -59,6 +59,10 @@ namespace SistemaDeControleDeTCCs
             services.ConfigureApplicationCookie(options => {
                 options.LoginPath = "/Identity/Account/Login";
                 options.AccessDeniedPath = "/Identity/Account/AccessDenied";
+                options.ExpireTimeSpan = System.TimeSpan.FromMinutes(10);
+                options.Cookie.MaxAge = System.TimeSpan.FromMinutes(12);
+                options.SlidingExpiration = true;
+
             });
             services.Configure<IdentityOptions>(options =>
             {
@@ -87,6 +91,7 @@ namespace SistemaDeControleDeTCCs
 
             services.AddScoped<SenderEmail>();
 
+            
 
             services.AddMvc(options =>
             {
@@ -98,22 +103,24 @@ namespace SistemaDeControleDeTCCs
                 return Logger.Factory.Get();
             });
             services.AddScoped<AuditoriaILoggerFilter>();
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env, PopularBancoDados popularBanco)
         {
-            if (env.IsDevelopment() || env.EnvironmentName.StartsWith("Development."))
-            {
-                app.UseDeveloperExceptionPage();
-                app.UseDatabaseErrorPage();
-                popularBanco.Popular();
-            }
-            else
+            if (env.IsProduction() || env.EnvironmentName.StartsWith("Producao"))
             {
                 app.UseExceptionHandler("/Home/Error");
                 popularBanco.PopularProducao();
                 //app.UseExceptionHandler("/Logger/Index");
+                app.UseHsts();
+            }
+            else
+            {
+                app.UseDeveloperExceptionPage();
+                app.UseDatabaseErrorPage();
+                popularBanco.Popular();
                 app.UseHsts();
             }
             app.UseHttpsRedirection();
@@ -123,7 +130,7 @@ namespace SistemaDeControleDeTCCs
 
             app.UseAuthentication();
             app.UseAuthorization();
-
+           
             app.UseKissLogMiddleware(options =>
             {
 
