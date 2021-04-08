@@ -306,12 +306,24 @@ namespace SistemaDeControleDeTCCs.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+                    b.Property<string>("Date")
+                        .HasColumnName("DataUpdate")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("DetalhesAuditoria")
                         .HasColumnName("DetalhesAuditoria")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("EmailUsuario")
                         .HasColumnName("EmailUsuario")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("IdItem")
+                        .HasColumnName("IdIten")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Ip")
+                        .HasColumnName("IpUsuario")
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
