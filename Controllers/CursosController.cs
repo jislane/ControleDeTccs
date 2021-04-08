@@ -76,7 +76,7 @@ namespace SistemaDeControleDeTCCs.Areas.Administrador.Controllers
                   new LogAuditoria
                   {
                       EmailUsuario = User.Identity.Name,
-                      Ip = System.Net.Dns.GetHostEntry(System.Net.Dns.GetHostName()).AddressList[1].ToString(),
+                      Ip = Request.HttpContext.Connection.RemoteIpAddress.ToString(),
                       Date = DateTime.Now.ToLongDateString(),
                       DetalhesAuditoria = "Cadastrou o curso",
                       IdItem = curso.Id.ToString()
@@ -170,7 +170,7 @@ namespace SistemaDeControleDeTCCs.Areas.Administrador.Controllers
                  new LogAuditoria
                  {
                      EmailUsuario = User.Identity.Name,
-                     Ip = System.Net.Dns.GetHostEntry(System.Net.Dns.GetHostName()).AddressList[1].ToString(),
+                     Ip = Request.HttpContext.Connection.RemoteIpAddress.ToString(),
                      Date = DateTime.Now.ToLongDateString(),
                      DetalhesAuditoria = "Atualizou o curso",
                      IdItem = curso.Id.ToString()
@@ -244,7 +244,7 @@ namespace SistemaDeControleDeTCCs.Areas.Administrador.Controllers
                  new LogAuditoria
                  {
                      EmailUsuario = User.Identity.Name,
-                     Ip = System.Net.Dns.GetHostEntry(System.Net.Dns.GetHostName()).AddressList[1].ToString(),
+                     Ip = Request.HttpContext.Connection.RemoteIpAddress.ToString(),
                      Date = DateTime.Now.ToLongDateString(),
                      DetalhesAuditoria = "Removeu o curso",
                      IdItem = curso.Id.ToString()

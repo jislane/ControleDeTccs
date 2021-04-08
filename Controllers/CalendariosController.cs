@@ -94,7 +94,7 @@ namespace SistemaDeControleDeTCCs.Controllers
                    new LogAuditoria
                    {
                        EmailUsuario = User.Identity.Name,
-                       Ip = System.Net.Dns.GetHostEntry(System.Net.Dns.GetHostName()).AddressList[1].ToString(),
+                       Ip = Request.HttpContext.Connection.RemoteIpAddress.ToString(),
                        Date = DateTime.Now.ToLongDateString(),
                        DetalhesAuditoria = "Cadastrou um calendario",
                        IdItem = calendario.CalendarioId.ToString()
@@ -157,7 +157,7 @@ namespace SistemaDeControleDeTCCs.Controllers
                   new LogAuditoria
                   {
                       EmailUsuario = User.Identity.Name,
-                      Ip = System.Net.Dns.GetHostEntry(System.Net.Dns.GetHostName()).AddressList[1].ToString(),
+                      Ip = Request.HttpContext.Connection.RemoteIpAddress.ToString(),
                       Date = DateTime.Now.ToLongDateString(),
                       DetalhesAuditoria = "Editou o calendario",
                       IdItem = calendario.CalendarioId.ToString()
@@ -210,7 +210,7 @@ namespace SistemaDeControleDeTCCs.Controllers
                   new LogAuditoria
                   {
                       EmailUsuario = User.Identity.Name,
-                      Ip = System.Net.Dns.GetHostEntry(System.Net.Dns.GetHostName()).AddressList[1].ToString(),
+                      Ip = Request.HttpContext.Connection.RemoteIpAddress.ToString(),
                       Date = DateTime.Now.ToLongDateString(),
                       DetalhesAuditoria = "Removeu o calendario",
                       IdItem=calendario.CalendarioId.ToString()

@@ -164,7 +164,7 @@ namespace SistemaDeControleDeTCCs.Controllers
                  new LogAuditoria
                  {
                      EmailUsuario = User.Identity.Name,
-                     Ip = System.Net.Dns.GetHostEntry(System.Net.Dns.GetHostName()).AddressList[1].ToString(),
+                     Ip = Request.HttpContext.Connection.RemoteIpAddress.ToString(),
                      Date = DateTime.Now.ToLongDateString(),
                      DetalhesAuditoria = "Cadastrou o TCC",
                      IdItem = tcc.TccId.ToString()
@@ -195,7 +195,7 @@ namespace SistemaDeControleDeTCCs.Controllers
                  new LogAuditoria
                  {
                      EmailUsuario = User.Identity.Name,
-                     Ip = System.Net.Dns.GetHostEntry(System.Net.Dns.GetHostName()).AddressList[1].ToString(),
+                     Ip = Request.HttpContext.Connection.RemoteIpAddress.ToString(),
                      Date = DateTime.Now.ToLongDateString(),
                      DetalhesAuditoria = "Atualizou o TCC",
                      IdItem = tcc.TccId.ToString()
@@ -315,7 +315,7 @@ namespace SistemaDeControleDeTCCs.Controllers
                  new LogAuditoria
                  {
                      EmailUsuario = User.Identity.Name,
-                     Ip = System.Net.Dns.GetHostEntry(System.Net.Dns.GetHostName()).AddressList[1].ToString(),
+                     Ip = Request.HttpContext.Connection.RemoteIpAddress.ToString(),
                      Date = DateTime.Now.ToLongDateString(),
                      DetalhesAuditoria = "Removeu o TCC",
                      IdItem = tcc.TccId.ToString()
@@ -337,7 +337,7 @@ namespace SistemaDeControleDeTCCs.Controllers
                  new LogAuditoria
                  {
                      EmailUsuario = User.Identity.Name,
-                     Ip = System.Net.Dns.GetHostEntry(System.Net.Dns.GetHostName()).AddressList[1].ToString(),
+                     Ip = Request.HttpContext.Connection.RemoteIpAddress.ToString(),
                      Date = DateTime.Now.ToLongDateString(),
                      DetalhesAuditoria = "Cancelou o TCC",
                      IdItem = tcc.TccId.ToString()
