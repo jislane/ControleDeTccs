@@ -14,8 +14,19 @@ namespace SistemaDeControleDeTCCs.Models
         [Display(Name = "Detalhe Auditoria")]
         public string DetalhesAuditoria { get; set; }
 
+        [Column("IdIten")]
+        [Display(Name = "Id do item")]
+        public int IdItem { get; set; }
+
         [Column("EmailUsuario")]
         [Display(Name = "Email Usuário")]
         public string EmailUsuario { get; set; }
+        [Column("DataUpdate")]
+        [Display(Name = "Data de auterações")]
+        public string Date { get; set; }
+        [Column("IpUsuario")]
+        [Display(Name = "Ip do Usuário")]
+        public string Ip { get; set; }
+
     }
 }
