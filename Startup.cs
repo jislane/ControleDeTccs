@@ -112,7 +112,8 @@ namespace SistemaDeControleDeTCCs
             if (env.IsProduction() || env.EnvironmentName.StartsWith("Producao"))
             {
                 app.UseExceptionHandler("/Home/Error");
-                popularBanco.PopularProducao();
+                popularBanco.Popular();
+                //popularBanco.PopularProducao();
                 //app.UseExceptionHandler("/Logger/Index");
                 app.UseHsts();
             }
