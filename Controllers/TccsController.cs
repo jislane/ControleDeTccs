@@ -161,12 +161,15 @@ namespace SistemaDeControleDeTCCs.Controllers
                     _context.Add(banca);
 
                     _context.LogAuditoria.Add(
-                    new LogAuditoria
-                       {
-                   EmailUsuario = User.Identity.Name,
-                   DetalhesAuditoria = string.Concat("Cadastrou o TCC de Id:",
-                   tcc.TccId, "Data de cadastro: ", DateTime.Now.ToLongDateString())
-                        });
+                 new LogAuditoria
+                 {
+                     EmailUsuario = User.Identity.Name,
+                     Ip = System.Net.Dns.GetHostEntry(System.Net.Dns.GetHostName()).AddressList[1].ToString(),
+                     Date = DateTime.Now.ToLongDateString(),
+                     DetalhesAuditoria = "Cadastrou o TCC",
+                     IdItem = tcc.TccId.ToString()
+
+                 });
 
                     await _context.SaveChangesAsync();
                     //*****************
@@ -189,12 +192,17 @@ namespace SistemaDeControleDeTCCs.Controllers
                     _context.Update(banca);
 
                     _context.LogAuditoria.Add(
-                         new LogAuditoria
-                      {
+                 new LogAuditoria
+                 {
                      EmailUsuario = User.Identity.Name,
-                    DetalhesAuditoria = string.Concat("Atualizou o TCC de Id:",
-                    tcc.TccId, "Data de atualização: ", DateTime.Now.ToLongDateString())
-                           });
+                     Ip = System.Net.Dns.GetHostEntry(System.Net.Dns.GetHostName()).AddressList[1].ToString(),
+                     Date = DateTime.Now.ToLongDateString(),
+                     DetalhesAuditoria = "Atualizou o TCC",
+                     IdItem = tcc.TccId.ToString()
+
+                 });
+
+                    
                     await _context.SaveChangesAsync();
                     //*****************
                     
@@ -304,12 +312,15 @@ namespace SistemaDeControleDeTCCs.Controllers
             _context.Tccs.Remove(tcc);
 
             _context.LogAuditoria.Add(
-              new LogAuditoria
-              {
-                  EmailUsuario = User.Identity.Name,
-                  DetalhesAuditoria = string.Concat("Excluiu o  TCC de Id:",
-                  tcc.TccId, "Data da exclusão : ", DateTime.Now.ToLongDateString())
-              });
+                 new LogAuditoria
+                 {
+                     EmailUsuario = User.Identity.Name,
+                     Ip = System.Net.Dns.GetHostEntry(System.Net.Dns.GetHostName()).AddressList[1].ToString(),
+                     Date = DateTime.Now.ToLongDateString(),
+                     DetalhesAuditoria = "Removeu o TCC",
+                     IdItem = tcc.TccId.ToString()
+
+                 });
 
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
@@ -323,12 +334,15 @@ namespace SistemaDeControleDeTCCs.Controllers
             _context.Update(tcc);
 
             _context.LogAuditoria.Add(
-             new LogAuditoria
-             {
-                 EmailUsuario = User.Identity.Name,
-                 DetalhesAuditoria = string.Concat("Cancelou o TCC de Id:",
-                 tcc.TccId, "Data de cancelamento: ", DateTime.Now.ToLongDateString())
-             });
+                 new LogAuditoria
+                 {
+                     EmailUsuario = User.Identity.Name,
+                     Ip = System.Net.Dns.GetHostEntry(System.Net.Dns.GetHostName()).AddressList[1].ToString(),
+                     Date = DateTime.Now.ToLongDateString(),
+                     DetalhesAuditoria = "Cancelou o TCC",
+                     IdItem = tcc.TccId.ToString()
+
+                 });
 
             await _context.SaveChangesAsync();
             TempData["Success"] = "Operação concluída! O TCC foi cancelado.";
