@@ -249,7 +249,7 @@ namespace SistemaDeControleDeTCCs.Controllers
                       Ip = System.Net.Dns.GetHostEntry(System.Net.Dns.GetHostName()).AddressList[1].ToString(),
                       Date = DateTime.Now.ToLongDateString(),
                       DetalhesAuditoria = "Cadastrou banca",
-                      IdItem = banca.BancaId
+                      IdItem =  (banca.BancaId.ToString())
 
                   });
             
@@ -302,7 +302,7 @@ namespace SistemaDeControleDeTCCs.Controllers
                       Ip = System.Net.Dns.GetHostEntry(System.Net.Dns.GetHostName()).AddressList[1].ToString(),
                       Date = DateTime.Now.ToLongDateString(),
                       DetalhesAuditoria = "Atualizou banca",
-                      IdItem = banca.BancaId
+                      IdItem = (banca.BancaId.ToString())
 
                   });
                     await _context.SaveChangesAsync();
@@ -362,7 +362,7 @@ namespace SistemaDeControleDeTCCs.Controllers
                       Ip = System.Net.Dns.GetHostEntry(System.Net.Dns.GetHostName()).AddressList[1].ToString(),
                       Date = DateTime.Now.ToLongDateString(),
                       DetalhesAuditoria = "Removeu banca",
-                      IdItem = banca.BancaId
+                      IdItem = (banca.BancaId.ToString())
 
                   });
             await _context.SaveChangesAsync();
@@ -542,7 +542,7 @@ namespace SistemaDeControleDeTCCs.Controllers
                       Ip = System.Net.Dns.GetHostEntry(System.Net.Dns.GetHostName()).AddressList[1].ToString(),
                       Date = DateTime.Now.ToLongDateString(),
                       DetalhesAuditoria = "Cadastrou a nota",
-                      IdItem = (int)notas
+                      IdItem = notas.ToString()
 
                   });
                 

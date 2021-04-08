@@ -79,7 +79,7 @@ namespace SistemaDeControleDeTCCs.Areas.Administrador.Controllers
                       Ip = System.Net.Dns.GetHostEntry(System.Net.Dns.GetHostName()).AddressList[1].ToString(),
                       Date = DateTime.Now.ToLongDateString(),
                       DetalhesAuditoria = "Cadastrou o curso",
-                      IdItem = curso.Id
+                      IdItem = curso.Id.ToString()
 
                   });
                 
@@ -173,7 +173,7 @@ namespace SistemaDeControleDeTCCs.Areas.Administrador.Controllers
                      Ip = System.Net.Dns.GetHostEntry(System.Net.Dns.GetHostName()).AddressList[1].ToString(),
                      Date = DateTime.Now.ToLongDateString(),
                      DetalhesAuditoria = "Atualizou o curso",
-                     IdItem = curso.Id
+                     IdItem = curso.Id.ToString()
 
                  });
                     await _context.SaveChangesAsync();
@@ -247,7 +247,7 @@ namespace SistemaDeControleDeTCCs.Areas.Administrador.Controllers
                      Ip = System.Net.Dns.GetHostEntry(System.Net.Dns.GetHostName()).AddressList[1].ToString(),
                      Date = DateTime.Now.ToLongDateString(),
                      DetalhesAuditoria = "Removeu o curso",
-                     IdItem = curso.Id
+                     IdItem = curso.Id.ToString()
 
                  });
             await _context.SaveChangesAsync();

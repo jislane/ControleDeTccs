@@ -170,9 +170,19 @@ namespace SistemaDeControleDeTCCs.Controllers
                     userTemp.IdCurso = usuario.IdCurso;
 
                     // Atualiza o usuário
+                    _context.LogAuditoria.Add(
+                         new LogAuditoria
+                         {
+                             EmailUsuario = User.Identity.Name,
+                             Ip = System.Net.Dns.GetHostEntry(System.Net.Dns.GetHostName()).AddressList[1].ToString(),
+                             Date = DateTime.Now.ToLongDateString(),
+                             DetalhesAuditoria = string.Concat("Atualizou o usuário de ID:",
+                        usuario.Id),
 
-                    
+                         });
+
                     await _userManager.UpdateAsync(userTemp);
+                    await _context.SaveChangesAsync();
 
                     if (typeUser != usuario.TipoUsuarioId)
                     {
@@ -196,6 +206,17 @@ namespace SistemaDeControleDeTCCs.Controllers
                     
                     var senha = KeyGenerator.GetUniqueKey(8);
 
+                    _context.LogAuditoria.Add(
+                        new LogAuditoria
+                        {
+                            EmailUsuario = User.Identity.Name,
+                            Ip = Request.Host.Value,
+                            Date = DateTime.Now.ToLongDateString(),
+                            DetalhesAuditoria = string.Concat("Cadastrou o usuário de ID:",
+                       usuario.Id),
+                            
+                        });
+                    
                     await _context.SaveChangesAsync();
 
                     usuario.TipoUsuario = _context.TipoUsuario.Where(x => x.TipoUsuarioId == usuario.TipoUsuarioId).FirstOrDefault();
@@ -234,10 +255,10 @@ namespace SistemaDeControleDeTCCs.Controllers
                           new LogAuditoria
                           {
                               EmailUsuario = User.Identity.Name,
-                              Ip = System.Net.Dns.GetHostEntry(System.Net.Dns.GetHostName()).AddressList[1].ToString(),
+                              Ip = Request.Host.Value,
                               Date = DateTime.Now.ToLongDateString(),
-                              DetalhesAuditoria = string.Concat("Removeu o usuário de ID:",
-                         usuario.Id),
+                              DetalhesAuditoria =  "Removeu o usuário de ID:",
+                              IdItem = usuario.Id,
                              
                           });
             await _context.SaveChangesAsync();

@@ -16,7 +16,7 @@ namespace SistemaDeControleDeTCCs.Models
 
         [Column("IdIten")]
         [Display(Name = "Id do item")]
-        public int IdItem { get; set; }
+        public string IdItem { get; set; }
 
         [Column("EmailUsuario")]
         [Display(Name = "Email Usuário")]
