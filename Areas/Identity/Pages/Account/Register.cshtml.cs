@@ -73,7 +73,7 @@ namespace SistemaDeControleDeTCCs.Areas.Identity.Pages.Account
             public string Matricula { get; set; }
 
             [Display(Name = "CPF")]
-            [Required(ErrorMessage = "A {0} é obrigatória", AllowEmptyStrings = false)]
+            [Required(ErrorMessage = "O {0} é obrigatório", AllowEmptyStrings = false)]
             [ValidacaoPersonalizadaCPF(ErrorMessage = "CPF inválido")]
             public string Cpf { get; set; }
 
@@ -206,6 +206,18 @@ namespace SistemaDeControleDeTCCs.Areas.Identity.Pages.Account
                         return LocalRedirect(returnUrl);
                     }
                     */
+                    _context.LogAuditoria.Add(
+                      new LogAuditoria
+                      {
+                          EmailUsuario = User.Identity.Name,
+                          Ip = Request.Host.Host,
+                          Date = DateTime.Now.ToLongDateString(),
+                          DetalhesAuditoria = string.Concat("Cadastrou o usuário de ID:",
+                     user.Id),
+
+                      });
+
+                    _context.SaveChanges();
 
                     StatusMessage = "Conta criada e enviado e-mail com a senha de acesso.";
                     user.TipoUsuario = _context.TipoUsuario.Where(x => x.TipoUsuarioId == user.TipoUsuarioId).FirstOrDefault();
