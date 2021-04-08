@@ -174,7 +174,7 @@ namespace SistemaDeControleDeTCCs.Controllers
                          new LogAuditoria
                          {
                              EmailUsuario = User.Identity.Name,
-                             Ip = System.Net.Dns.GetHostEntry(System.Net.Dns.GetHostName()).AddressList[1].ToString(),
+                             Ip = Request.HttpContext.Connection.RemoteIpAddress.ToString(),
                              Date = DateTime.Now.ToLongDateString(),
                              DetalhesAuditoria = string.Concat("Atualizou o usuário de ID:",
                         usuario.Id),
@@ -210,7 +210,7 @@ namespace SistemaDeControleDeTCCs.Controllers
                         new LogAuditoria
                         {
                             EmailUsuario = User.Identity.Name,
-                            Ip = Request.Host.Value,
+                            Ip = Request.HttpContext.Connection.RemoteIpAddress.ToString(),
                             Date = DateTime.Now.ToLongDateString(),
                             DetalhesAuditoria = string.Concat("Cadastrou o usuário de ID:",
                        usuario.Id),
@@ -255,7 +255,7 @@ namespace SistemaDeControleDeTCCs.Controllers
                           new LogAuditoria
                           {
                               EmailUsuario = User.Identity.Name,
-                              Ip = Request.Host.Value,
+                              Ip = Request.HttpContext.Connection.RemoteIpAddress.ToString(),
                               Date = DateTime.Now.ToLongDateString(),
                               DetalhesAuditoria =  "Removeu o usuário de ID:",
                               IdItem = usuario.Id,

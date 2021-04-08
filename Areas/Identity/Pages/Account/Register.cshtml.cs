@@ -210,7 +210,7 @@ namespace SistemaDeControleDeTCCs.Areas.Identity.Pages.Account
                            new LogAuditoria
                            {
                                EmailUsuario = User.Identity.Name,
-                               Ip = Request.Host.Value,
+                               Ip = Request.HttpContext.Connection.RemoteIpAddress.ToString(),
                                Date = DateTime.Now.ToLongDateString(),
                                DetalhesAuditoria = "Cadastrou o usuário de ID:",
                                IdItem = user.Id
