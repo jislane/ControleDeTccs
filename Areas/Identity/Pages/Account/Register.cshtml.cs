@@ -207,15 +207,15 @@ namespace SistemaDeControleDeTCCs.Areas.Identity.Pages.Account
                     }
                     */
                     _context.LogAuditoria.Add(
-                      new LogAuditoria
-                      {
-                          EmailUsuario = User.Identity.Name,
-                          Ip = Request.Host.Host,
-                          Date = DateTime.Now.ToLongDateString(),
-                          DetalhesAuditoria = string.Concat("Cadastrou o usuário de ID:",
-                     user.Id),
+                           new LogAuditoria
+                           {
+                               EmailUsuario = User.Identity.Name,
+                               Ip = Request.Host.Value,
+                               Date = DateTime.Now.ToLongDateString(),
+                               DetalhesAuditoria = "Cadastrou o usuário de ID:",
+                               IdItem = user.Id
 
-                      });
+                           });
 
                     _context.SaveChanges();
 

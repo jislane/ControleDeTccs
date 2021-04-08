@@ -167,7 +167,7 @@ namespace SistemaDeControleDeTCCs.Controllers
                      Ip = System.Net.Dns.GetHostEntry(System.Net.Dns.GetHostName()).AddressList[1].ToString(),
                      Date = DateTime.Now.ToLongDateString(),
                      DetalhesAuditoria = "Cadastrou o TCC",
-                     IdItem = tcc.TccId
+                     IdItem = tcc.TccId.ToString()
 
                  });
 
@@ -198,7 +198,7 @@ namespace SistemaDeControleDeTCCs.Controllers
                      Ip = System.Net.Dns.GetHostEntry(System.Net.Dns.GetHostName()).AddressList[1].ToString(),
                      Date = DateTime.Now.ToLongDateString(),
                      DetalhesAuditoria = "Atualizou o TCC",
-                     IdItem = tcc.TccId
+                     IdItem = tcc.TccId.ToString()
 
                  });
 
@@ -318,7 +318,7 @@ namespace SistemaDeControleDeTCCs.Controllers
                      Ip = System.Net.Dns.GetHostEntry(System.Net.Dns.GetHostName()).AddressList[1].ToString(),
                      Date = DateTime.Now.ToLongDateString(),
                      DetalhesAuditoria = "Removeu o TCC",
-                     IdItem = tcc.TccId
+                     IdItem = tcc.TccId.ToString()
 
                  });
 
@@ -340,7 +340,7 @@ namespace SistemaDeControleDeTCCs.Controllers
                      Ip = System.Net.Dns.GetHostEntry(System.Net.Dns.GetHostName()).AddressList[1].ToString(),
                      Date = DateTime.Now.ToLongDateString(),
                      DetalhesAuditoria = "Cancelou o TCC",
-                     IdItem = tcc.TccId
+                     IdItem = tcc.TccId.ToString()
 
                  });
 

@@ -97,7 +97,7 @@ namespace SistemaDeControleDeTCCs.Controllers
                        Ip = System.Net.Dns.GetHostEntry(System.Net.Dns.GetHostName()).AddressList[1].ToString(),
                        Date = DateTime.Now.ToLongDateString(),
                        DetalhesAuditoria = "Cadastrou um calendario",
-                       IdItem = calendario.CalendarioId
+                       IdItem = calendario.CalendarioId.ToString()
 
                    });
 
@@ -160,7 +160,7 @@ namespace SistemaDeControleDeTCCs.Controllers
                       Ip = System.Net.Dns.GetHostEntry(System.Net.Dns.GetHostName()).AddressList[1].ToString(),
                       Date = DateTime.Now.ToLongDateString(),
                       DetalhesAuditoria = "Editou o calendario",
-                      IdItem = calendario.CalendarioId
+                      IdItem = calendario.CalendarioId.ToString()
                   });
 
             if (ModelState.IsValid)
@@ -213,7 +213,7 @@ namespace SistemaDeControleDeTCCs.Controllers
                       Ip = System.Net.Dns.GetHostEntry(System.Net.Dns.GetHostName()).AddressList[1].ToString(),
                       Date = DateTime.Now.ToLongDateString(),
                       DetalhesAuditoria = "Removeu o calendario",
-                      IdItem=calendario.CalendarioId
+                      IdItem=calendario.CalendarioId.ToString()
 
                   }) ;
 

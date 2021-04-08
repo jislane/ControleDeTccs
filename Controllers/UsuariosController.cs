@@ -257,8 +257,8 @@ namespace SistemaDeControleDeTCCs.Controllers
                               EmailUsuario = User.Identity.Name,
                               Ip = Request.Host.Value,
                               Date = DateTime.Now.ToLongDateString(),
-                              DetalhesAuditoria = string.Concat("Removeu o usuário de ID:",
-                         usuario.Id),
+                              DetalhesAuditoria =  "Removeu o usuário de ID:",
+                              IdItem = usuario.Id,
                              
                           });
             await _context.SaveChangesAsync();
