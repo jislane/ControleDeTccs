@@ -39,7 +39,7 @@
 <h1>@ViewData["Title"]</h1>
 <a asp-action="AddOrEdit" class="btn btn-outline-success btnAdd"><i class="fa fa-book" aria-hidden="true"></i> Novo</a>
 
-<table id="tabelaTcc" class="table table-bordered table-hover">
+<table id="tabelaTcc" class="table table-bordered table-hover display responsive nowrap" style="width:100%">
     <thead>
         <tr>
             <th>
@@ -97,9 +97,11 @@
                     {
                         <a class="btn btn-outline-primary btn-sm" asp-action="AddOrEdit" asp-route-id="@item.TccId" title="Editar"><i class="fa fa-pencil" aria-hidden="true"></i></a> <text>|</text>
                         <a asp-action="Cancelar" asp-route-id="@item.TccId" title="Cancelar" class="btn btn-outline-warning btn-sm" ml-1 onclick="return confirm('Tem certeza que quer cancelar este registro?')">
-                            <i class="fa fa-times" aria-hidden="true"></i></a> <text>|</text>
+                            <i class="fa fa-times" aria-hidden="true"></i>
+                        </a> <text>|</text>
                         <a asp-action="Delete" asp-route-id="@item.TccId" title="Excluir" class="btn btn-outline-danger btn-sm" ml-1 onclick="return confirm('Tem certeza que quer deletar este registro?')">
-                            <i class="fa fa-trash" aria-hidden="true"></i></a>
+                            <i class="fa fa-trash" aria-hidden="true"></i>
+                        </a>
                     }
                 </td>
             </tr>
@@ -122,14 +124,17 @@
 
 <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
 <script src="//cdn.datatables.net/1.10.24/js/jquery.dataTables.min.js"></script>
+<script src="//cdn.datatables.net/responsive/2.2.7/js/dataTables.responsive.min.js"></script>
 <script src="//cdn.datatables.net/1.10.24/js/dataTables.bootstrap4.min.js"></script>
 
 @section scripts{
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.css" />
     <link rel="stylesheet" href="https://cdn.datatables.net/1.10.22/css/dataTables.bootstrap4.min.css" />
+    <link rel="stylesheet" href="https://cdn.datatables.net/responsive/2.2.7/css/responsive.dataTables.min.css" />
     <script>
         $(document).ready(function () {
             $('#tabelaTcc').DataTable({
+                responsive: true,
                 "language": {
                     "lengthMenu": "Mostrando _MENU_ registros por página",
                     "zeroRecords": "Registro não localizado!",
