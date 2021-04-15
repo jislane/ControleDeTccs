@@ -10,18 +10,25 @@ namespace SistemaDeControleDeTCCs.Models
     {
         [Key]
         public System.Guid Id { get; set; }
+        
         [Required]
         public string Name { get; set; }
+        
         [Required]
         public string Extension { get; set; }
+        
         [Required]
         public System.DateTime DataCadastro { get; set; }
+        
         [Required]
         public long Length { get; set; }
+        
         [Required]
         public byte[] FileStream { get; set; }
+        
         [Required] 
         public Tcc Tcc { get; set; }
+
         public int TccId { get; set; }
     }
 }

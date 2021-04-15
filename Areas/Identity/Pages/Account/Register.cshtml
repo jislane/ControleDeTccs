@@ -1,17 +1,17 @@
 ﻿@page
 @model RegisterModel
 @{
-    ViewData["Title"] = "Cadastrar Novo Usuário";
+    ViewData["Title"] = "Usuário";
     var tiposUsuarios = (List<SistemaDeControleDeTCCs.Models.TipoUsuario>)ViewData["tiposUsuarios"];
+    var cursos = (List<SistemaDeControleDeTCCs.Models.Curso>)ViewData["cursos"];
 }
 
 <h1>@ViewData["Title"]</h1>
+
+<hr />
 <div class="row">
-    <div class="col-md-6">
+    <div class="col-md-4">
         <form asp-route-returnUrl="@Model.ReturnUrl" method="post">
-            @*<h4>Criar uma nova conta.</h4>*@
-            <hr />
-            @*<div asp-validation-summary="All" class="text-danger"></div>*@
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <partial name="_StatusMessage" for="StatusMessage" />
             <div class="form-row">
@@ -21,6 +21,15 @@
                         <option value="">Selecione</option>
                     </select>
                     <span asp-validation-for="Input.TipoUsuarioId" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-12">
+                    <label asp-for="Input.IdCurso" class="control-label"></label>
+                    <select asp-for="Input.IdCurso" asp-items='new SelectList(cursos,"Id","Nome")' class="form-control">
+                        <option value="">Selecione</option>
+                    </select>
+                    <span asp-validation-for="Input.IdCurso" class="text-danger"></span>
                 </div>
             </div>
             <div class="form-row">
@@ -43,8 +52,8 @@
                 </div>
                 <div class="form-group col-md-6">
                     <label asp-for="Input.Cpf" class="control-label"></label>
-                    <input asp-for="Input.Cpf" class="form-control" />
-                    <span asp-validation-for="Input.Cpf" class="text-danger"></span>
+                    <input asp-for="Input.Cpf" class="form-control" id="inputCPF" onkeydown="javascript: fMasc( this, mCPF );"/>
+                    <span id="inputCPFMessageError" asp-validation-for="Input.Cpf" class="text-danger"> </span>
                 </div>
             </div>
             <div class="form-group">
@@ -58,16 +67,34 @@
                 <span asp-validation-for="Input.PhoneNumber" class="text-danger"></span>
             </div>
             <div class="form-row">
-                <div>
-                    <button type="submit" class="btn btn-outline-success"><i class="fa fa-floppy-o" aria-hidden="true"></i> Salvar</button>
+                <div class="form-group col-md-6">
+                    <button id="btsalvar" type="submit" class="btn btn-outline-success btn-block"><i class="fa fa-floppy-o" aria-hidden="true"></i> Salvar</button>
                 </div>
-                <div>
-                    <a asp-action="Index" asp-area="Coordenador" asp-controller="Usuarios" class="btn btn-outline-secondary"><i class="fa fa-list" aria-hidden="true"></i> Voltar para a lista</a>
+                <div class="form-group col-md-6">
+                    <a asp-action="Index" asp-area="Coordenador" asp-controller="Usuarios" class="btn btn-outline-secondary btn-block"><i class="fa fa-reply" aria-hidden="true"></i> Voltar</a>
                 </div>
             </div>
         </form>
     </div>
 </div>
+<script>
+    function fMasc(objeto, mascara) {
+        obj = objeto
+        masc = mascara
+        setTimeout("fMascEx()", 1)
+    }
+    function fMascEx() {
+        obj.value = masc(obj.value)
+    }
+    function mCPF(cpf) {
+        cpf = cpf.replace(/\D/g, "")
+        cpf = cpf.replace(/(\d{3})(\d)/, "$1.$2")
+        cpf = cpf.replace(/(\d{3})(\d)/, "$1.$2")
+        cpf = cpf.replace(/(\d{3})(\d{1,2})$/, "$1-$2")
+        return cpf
+    }
+</script>
+
 
 @section Scripts {
     <partial name="_ValidationScriptsPartial" />

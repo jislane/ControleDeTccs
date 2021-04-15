@@ -1,0 +1,9 @@
+Antes do Database-update é necessário setar a variavel de ambiente para o seu ambiente, no windows:
+$env:ASPNETCORE_ENVIRONMENT='Development.Ariel'
+
+Lembrando que Development.Ariel é referente ao arquivo appsettings.Development.Ariel.json
+
+Com essa configuração é so executar as migrations
+
+Update Migration:
+dotnet ef database update Alteracao_tcc (onde Alteracao_tcc é o nome da nova Migration)

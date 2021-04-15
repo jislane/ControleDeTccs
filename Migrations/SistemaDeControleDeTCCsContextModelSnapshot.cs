@@ -15,7 +15,7 @@ namespace SistemaDeControleDeTCCs.Migrations
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "3.1.9")
+                .HasAnnotation("ProductVersion", "3.1.12")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
@@ -211,6 +211,59 @@ namespace SistemaDeControleDeTCCs.Migrations
                     b.ToTable("Calendario");
                 });
 
+            modelBuilder.Entity("SistemaDeControleDeTCCs.Models.Campus", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Endereco")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(50)");
+
+                    b.Property<string>("Nome")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(40)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Campus");
+                });
+
+            modelBuilder.Entity("SistemaDeControleDeTCCs.Models.Curso", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<int>("CodEmec")
+                        .HasColumnType("int");
+
+                    b.Property<int>("IdCampus")
+                        .HasColumnType("int");
+
+                    b.Property<string>("IdCoordenador")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("Nome")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Sigla")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("IdCampus");
+
+                    b.HasIndex("IdCoordenador");
+
+                    b.ToTable("Cursos");
+                });
+
             modelBuilder.Entity("SistemaDeControleDeTCCs.Models.FileTCC", b =>
                 {
                     b.Property<Guid>("Id")
@@ -245,6 +298,39 @@ namespace SistemaDeControleDeTCCs.Migrations
                     b.ToTable("FileTCC");
                 });
 
+            modelBuilder.Entity("SistemaDeControleDeTCCs.Models.LogAuditoria", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnName("Id")
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Date")
+                        .HasColumnName("DataUpdate")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("DetalhesAuditoria")
+                        .HasColumnName("DetalhesAuditoria")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("EmailUsuario")
+                        .HasColumnName("EmailUsuario")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("IdItem")
+                        .HasColumnName("IdIten")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Ip")
+                        .HasColumnName("IpUsuario")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("LogAuditoria");
+                });
+
             modelBuilder.Entity("SistemaDeControleDeTCCs.Models.Status", b =>
                 {
                     b.Property<int>("StatusId")
@@ -253,6 +339,7 @@ namespace SistemaDeControleDeTCCs.Migrations
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<string>("DescStatus")
+                        .IsRequired()
                         .HasColumnType("nvarchar(250)");
 
                     b.HasKey("StatusId");
@@ -276,6 +363,9 @@ namespace SistemaDeControleDeTCCs.Migrations
                     b.Property<DateTime?>("DataFinalizacao")
                         .HasColumnType("datetime2");
 
+                    b.Property<int>("IdCurso")
+                        .HasColumnType("int");
+
                     b.Property<string>("LocalApresentacao")
                         .HasColumnType("nvarchar(max)");
 
@@ -298,6 +388,8 @@ namespace SistemaDeControleDeTCCs.Migrations
 
                     b.HasKey("TccId");
 
+                    b.HasIndex("IdCurso");
+
                     b.HasIndex("StatusId");
 
                     b.HasIndex("UsuarioId");
@@ -313,7 +405,8 @@ namespace SistemaDeControleDeTCCs.Migrations
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<string>("DescTipo")
-                        .HasColumnType("nvarchar(max)");
+                        .IsRequired()
+                        .HasColumnType("nvarchar(250)");
 
                     b.HasKey("TipoUsuarioId");
 
@@ -333,6 +426,7 @@ namespace SistemaDeControleDeTCCs.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Cpf")
+                        .IsRequired()
                         .HasColumnType("nvarchar(11)");
 
                     b.Property<string>("Email")
@@ -341,6 +435,9 @@ namespace SistemaDeControleDeTCCs.Migrations
 
                     b.Property<bool>("EmailConfirmed")
                         .HasColumnType("bit");
+
+                    b.Property<int>("IdCurso")
+                        .HasColumnType("int");
 
                     b.Property<bool>("LockoutEnabled")
                         .HasColumnType("bit");
@@ -391,6 +488,8 @@ namespace SistemaDeControleDeTCCs.Migrations
                         .HasMaxLength(256);
 
                     b.HasKey("Id");
+
+                    b.HasIndex("IdCurso");
 
                     b.HasIndex("NormalizedEmail")
                         .HasName("EmailIndex");
@@ -477,6 +576,20 @@ namespace SistemaDeControleDeTCCs.Migrations
                         .IsRequired();
                 });
 
+            modelBuilder.Entity("SistemaDeControleDeTCCs.Models.Curso", b =>
+                {
+                    b.HasOne("SistemaDeControleDeTCCs.Models.Campus", "Campus")
+                        .WithMany()
+                        .HasForeignKey("IdCampus")
+                        .OnDelete(DeleteBehavior.ClientCascade)
+                        .IsRequired();
+
+                    b.HasOne("SistemaDeControleDeTCCs.Models.Usuario", "Coordenador")
+                        .WithMany()
+                        .HasForeignKey("IdCoordenador")
+                        .OnDelete(DeleteBehavior.ClientCascade);
+                });
+
             modelBuilder.Entity("SistemaDeControleDeTCCs.Models.FileTCC", b =>
                 {
                     b.HasOne("SistemaDeControleDeTCCs.Models.Tcc", "Tcc")
@@ -488,6 +601,12 @@ namespace SistemaDeControleDeTCCs.Migrations
 
             modelBuilder.Entity("SistemaDeControleDeTCCs.Models.Tcc", b =>
                 {
+                    b.HasOne("SistemaDeControleDeTCCs.Models.Curso", "Curso")
+                        .WithMany()
+                        .HasForeignKey("IdCurso")
+                        .OnDelete(DeleteBehavior.ClientCascade)
+                        .IsRequired();
+
                     b.HasOne("SistemaDeControleDeTCCs.Models.Status", "Status")
                         .WithMany("Tccs")
                         .HasForeignKey("StatusId")
@@ -503,6 +622,12 @@ namespace SistemaDeControleDeTCCs.Migrations
 
             modelBuilder.Entity("SistemaDeControleDeTCCs.Models.Usuario", b =>
                 {
+                    b.HasOne("SistemaDeControleDeTCCs.Models.Curso", "Curso")
+                        .WithMany()
+                        .HasForeignKey("IdCurso")
+                        .OnDelete(DeleteBehavior.ClientCascade)
+                        .IsRequired();
+
                     b.HasOne("SistemaDeControleDeTCCs.Models.TipoUsuario", "TipoUsuario")
                         .WithMany()
                         .HasForeignKey("TipoUsuarioId")
