@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity.UI.Services;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -33,7 +34,7 @@ namespace SistemaDeControleDeTCCs
         public void ConfigureServices(IServiceCollection services)
 
         {
-            
+
 
             services.AddControllersWithViews().AddRazorRuntimeCompilation();
 
@@ -42,8 +43,25 @@ namespace SistemaDeControleDeTCCs
                     options.UseSqlServer(Configuration.GetConnectionString("SistemaDeControleDeTCCsContextConnection")));
 
             services.AddIdentity<Usuario, IdentityRole>().AddEntityFrameworkStores<SistemaDeControleDeTCCsContext>().AddDefaultTokenProviders();
+            
+            services.AddTransient<IEmailSender, SenderEmail>();
+
+            services.AddTransient<IEmailSender, SenderEmail>(i =>
+                new SenderEmail(
+                    Configuration["Email:Host"],
+                    Configuration.GetValue<int>("Email:Port"),
+                    Configuration.GetValue<bool>("Email:EnableSSL"),
+                    Configuration["Email:UserName"],
+                    Configuration["Email:Password"]
+                )
+            );
+
             services.AddRazorPages();
             services.AddMvc();
+
+
+           
+
 
             services.AddAuthorization(options =>
             {
@@ -79,11 +97,14 @@ namespace SistemaDeControleDeTCCs
             {
                 SmtpClient smtp = new SmtpClient()
                 {
+                    /* Tive que comentar aqui para aparecer os usuários e os TCCs
+                     * 
                     Host = Configuration.GetValue<string>("Email:ServerSMTP"),
                     Port = Configuration.GetValue<int>("Email:ServerPort"),
                     UseDefaultCredentials = false,
                     Credentials = new NetworkCredential(Configuration.GetValue<string>("Email:Username"), Configuration.GetValue<string>("Email:Password")),
                     EnableSsl = true
+                    */
                 };
 
                 return smtp;
