@@ -367,7 +367,7 @@ namespace SistemaDeControleDeTCCs.Controllers
                 return Json(_context
                     .Usuario
                     .Where(u => u.IdCurso == idCurso)
-                    .Where(u => u.TipoUsuario.DescTipo == "Aluno")
+                    .Where(u => u.TipoUsuario.DescTipo == "Aluno" )
                     .Where(u => u.Nome.ToLower().Contains(nome.ToLower()))
                     .Select(u => new { Nome = u.Nome, Id = u.Id })
                     .Take(10).ToList());
@@ -377,7 +377,7 @@ namespace SistemaDeControleDeTCCs.Controllers
                 return Json(_context
                     .Usuario
                     .Where(u => u.IdCurso == idCurso)
-                    .Where(u => u.Nome.ToLower().Contains(nome.ToLower()))
+                    .Where(u => u.TipoUsuario.DescTipo == "Aluno" )                    
                     .Select(u => new { Nome = u.Nome, Id = u.Id })
                     .Take(10).ToList());
             }
@@ -392,8 +392,7 @@ namespace SistemaDeControleDeTCCs.Controllers
                 return Json(_context
                     .Usuario
                     .Where(u => u.Curso.IdCampus == idCampus)
-                    .Where(u => u.TipoUsuario.DescTipo == "Professor" 
-                        || u.TipoUsuario.DescTipo == "Professor")
+                    .Where(u => u.TipoUsuario.DescTipo == "Professor" || u.TipoUsuario.DescTipo == "Coordenador")
                     .Where(u => u.Nome.ToLower().Contains(nome.ToLower()))
                     .Select(u => new { Nome = u.Nome, Id = u.Id })
                     .Take(10).ToList());
@@ -403,8 +402,7 @@ namespace SistemaDeControleDeTCCs.Controllers
                 return Json(_context
                     .Usuario
                     .Where(u => u.Curso.IdCampus == idCampus)
-                    .Where(u => u.TipoUsuario.DescTipo == "Professor"
-                        || u.TipoUsuario.DescTipo == "Professor")
+                    .Where(u => u.TipoUsuario.DescTipo == "Professor" || u.TipoUsuario.DescTipo == "Coordenador")
                     .Select(u => new { Nome = u.Nome, Id = u.Id })
                     .Take(10).ToList());
             }

@@ -46,6 +46,7 @@ namespace SistemaDeControleDeTCCs
             
             services.AddTransient<IEmailSender, SenderEmail>();
 
+            //configuração do json tem que ser igual a de enviar email
             services.AddTransient<IEmailSender, SenderEmail>(i =>
                 new SenderEmail(
                     Configuration["Email:Host"],
@@ -93,18 +94,16 @@ namespace SistemaDeControleDeTCCs
 
             services.AddScoped<PopularBancoDados>();
 
+            //configuração do json tem que ser igual a de enviar email
             services.AddScoped<SmtpClient>(options =>
             {
                 SmtpClient smtp = new SmtpClient()
                 {
-                    /* Tive que comentar aqui para aparecer os usuários e os TCCs
-                     * 
-                    Host = Configuration.GetValue<string>("Email:ServerSMTP"),
-                    Port = Configuration.GetValue<int>("Email:ServerPort"),
+                    Host = Configuration.GetValue<string>("Email:Host"),
+                    Port = Configuration.GetValue<int>("Email:Port"),
                     UseDefaultCredentials = false,
-                    Credentials = new NetworkCredential(Configuration.GetValue<string>("Email:Username"), Configuration.GetValue<string>("Email:Password")),
+                    Credentials = new NetworkCredential(Configuration.GetValue<string>("Email:UserName"), Configuration.GetValue<string>("Email:Password")),
                     EnableSsl = true
-                    */
                 };
 
                 return smtp;
