@@ -209,14 +209,18 @@ namespace SistemaDeControleDeTCCs.Controllers
         // GET: Bancas/Create
         public IActionResult Create(int id)
         {
+            string[] listaTipoUsuario = new string[] { "administrador", "orientador", "aluno" };
+
             ViewData["TccId"] = id;
             ViewData["TipoUsuarioId"] = new 
                 SelectList(_context.TipoUsuario
-                .Where(x => !x.DescTipo.ToLower().Equals("administrador")
-                    && !x.DescTipo.ToLower().Equals("orientador")
-                    && !x.DescTipo.ToLower().Equals("aluno")
-                    )
+                .Where(x => ! listaTipoUsuario.Any( tu => x.DescTipo.ToLower() == tu ) )
                 .OrderBy(x => x.DescTipo), "TipoUsuarioId", "DescTipo");
+           
+            var usuariosDaBanca = _context.Banca.Where(b => b.TccId == id)
+                .Include(b => b.Tcc)
+                .ThenInclude(tcc => tcc.Usuario);
+
             ViewData["UsuarioId"] = new SelectList(_context
                 .Usuario
                 .Where(u => u.Curso.IdCampus == _context.Tccs.Where(t => t.TccId == id).Include(t => t.Curso).First().Curso.IdCampus)
@@ -224,6 +228,7 @@ namespace SistemaDeControleDeTCCs.Controllers
                     && !x.TipoUsuario.DescTipo.ToLower().Equals("orientador")
                     && !x.TipoUsuario.DescTipo.ToLower().Equals("aluno")
                 )
+                .Where( u => ! usuariosDaBanca.Any(ub => ub.UsuarioId == u.Id ))
                 .OrderBy(x => x.Nome), "Id", "Nome");
             return View();
         }
