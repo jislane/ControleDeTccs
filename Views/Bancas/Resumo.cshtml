@@ -8,19 +8,19 @@
 <h1>Resumo do TCC</h1>
 <hr />
 <div class="row">
-    <div class="col-md-4">
+    <div class="col-md-8">
         <form asp-action="ResumoEdit" method="post" enctype="multipart/form-data" class="was-validated">
             <input type="hidden" asp-for="TccId" />
             <div class="mb-3">
                 <label asp-for="Resumo" class="control-label"></label>
-                <textarea asp-for="Resumo" class="form-control is-invalid" id="validationTextarea" placeholder="digite aqui..." required></textarea>
+                <textarea style="height: 40vh;"asp-for="Resumo" class="form-control is-invalid" id="validationTextarea" placeholder="digite aqui..." required></textarea>
                 <span asp-validation-for="Resumo" class="text-danger"></span>
             </div>
             <div class="form-row">
-                <div class="form-group col-md-6">
+                <div class="form-group col-md-2">
                     <button type="submit" class="btn btn-outline-success"><i class="fa fa-floppy-o" aria-hidden="true"></i> Salvar</button>
                 </div>
-                <div class="form-group col-md-6">
+                <div class="form-group col-md-2">
                     <a asp-action="Index" class="btn btn-outline-secondary"><i class="fa fa-reply" aria-hidden="true"></i> Voltar</a>
                 </div>
             </div>
