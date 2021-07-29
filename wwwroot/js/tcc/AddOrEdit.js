@@ -78,7 +78,7 @@
                     dataType: 'json',
                     delay: 250,
                     data: function (params) {
-                        var idc = document.querySelector("#select-campus").value;
+                        //var idc = document.querySelector("#select-campus").value;
                         var idcurso = document.querySelector("#select-curso").value;
                         return {
                             idCurso: idcurso,

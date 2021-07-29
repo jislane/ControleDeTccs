@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity.UI.Services;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -33,7 +34,7 @@ namespace SistemaDeControleDeTCCs
         public void ConfigureServices(IServiceCollection services)
 
         {
-            
+
 
             services.AddControllersWithViews().AddRazorRuntimeCompilation();
 
@@ -42,8 +43,26 @@ namespace SistemaDeControleDeTCCs
                     options.UseSqlServer(Configuration.GetConnectionString("SistemaDeControleDeTCCsContextConnection")));
 
             services.AddIdentity<Usuario, IdentityRole>().AddEntityFrameworkStores<SistemaDeControleDeTCCsContext>().AddDefaultTokenProviders();
+            
+            services.AddTransient<IEmailSender, SenderEmail>();
+
+            //configuração do json tem que ser igual a de enviar email
+            services.AddTransient<IEmailSender, SenderEmail>(i =>
+                new SenderEmail(
+                    Configuration["Email:Host"],
+                    Configuration.GetValue<int>("Email:Port"),
+                    Configuration.GetValue<bool>("Email:EnableSSL"),
+                    Configuration["Email:UserName"],
+                    Configuration["Email:Password"]
+                )
+            );
+
             services.AddRazorPages();
             services.AddMvc();
+
+
+           
+
 
             services.AddAuthorization(options =>
             {
@@ -75,14 +94,15 @@ namespace SistemaDeControleDeTCCs
 
             services.AddScoped<PopularBancoDados>();
 
+            //configuração do json tem que ser igual a de enviar email
             services.AddScoped<SmtpClient>(options =>
             {
                 SmtpClient smtp = new SmtpClient()
                 {
-                    Host = Configuration.GetValue<string>("Email:ServerSMTP"),
-                    Port = Configuration.GetValue<int>("Email:ServerPort"),
+                    Host = Configuration.GetValue<string>("Email:Host"),
+                    Port = Configuration.GetValue<int>("Email:Port"),
                     UseDefaultCredentials = false,
-                    Credentials = new NetworkCredential(Configuration.GetValue<string>("Email:Username"), Configuration.GetValue<string>("Email:Password")),
+                    Credentials = new NetworkCredential(Configuration.GetValue<string>("Email:UserName"), Configuration.GetValue<string>("Email:Password")),
                     EnableSsl = true
                 };
 

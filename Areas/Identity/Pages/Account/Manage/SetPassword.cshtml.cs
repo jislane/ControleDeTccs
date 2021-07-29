@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using SistemaDeControleDeTCCs.Models;
 
 namespace SistemaDeControleDeTCCs.Areas.Identity.Pages.Account.Manage
 {
@@ -84,7 +85,7 @@ namespace SistemaDeControleDeTCCs.Areas.Identity.Pages.Account.Manage
             }
 
             await _signInManager.RefreshSignInAsync(user);
-            StatusMessage = "Your password has been set.";
+            StatusMessage = "Sua senha foi definida.";
 
             return RedirectToPage();
         }
