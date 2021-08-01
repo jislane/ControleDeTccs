@@ -532,7 +532,7 @@ namespace SistemaDeControleDeTCCs.Controllers
                 }
                 var result = _context.Tccs.Where(t => t.TccId == TccId).First();
                 result.Nota = notas / resultTemp.Count;
-                result.StatusId = result.Nota >= 6 ? _context.Status.Where(x => x.DescStatus.ToLower().Equals("aprovado")).Select(x => x.StatusId).FirstOrDefault() : _context.Status.Where(x => x.DescStatus.ToLower().Equals("reprovado")).Select(x => x.StatusId).FirstOrDefault();
+                result.StatusId = result.Nota >= 6 ? _context.Status.Where(x => x.DescStatus.ToLower().Equals("Aprovado")).Select(x => x.StatusId).FirstOrDefault() : _context.Status.Where(x => x.DescStatus.ToLower().Equals("Reprovado")).Select(x => x.StatusId).FirstOrDefault();
                 _context.Update(result);
 
                 _context.LogAuditoria.Add(
