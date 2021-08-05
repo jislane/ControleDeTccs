@@ -1,0 +1,84 @@
+﻿@model IEnumerable<SistemaDeControleDeTCCs.Models.FileTCC>
+
+@{
+    ViewData["Title"] = "Arquivos do TCC";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<hr />
+
+<h1>@ViewData["Title"]</h1>
+<hr />
+<div class="col-md-4">
+    
+</div>
+<div>
+    <table id="tabelaBancaAnexo" class="table table-bordered table-hover display responsive nowrap" style="width:100%">
+        <thead>
+            <tr>
+                <th>
+                    Data/Hora Cadastro
+                </th>
+                <th>
+                    Nome Arquivo
+                </th>
+                <th>
+                    Ação
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.DataCadastro)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Name)
+                    </td>
+                    <td class="columnAcao">
+                        <a title="Baixar" class="btn btn-outline-primary btn-sm" asp-action="Download" asp-controller="FileTCCs" asp-route-id="@item.Id"><i class="fa fa-download" aria-hidden="true"></i></a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    <div>
+        <a asp-action="Index" class="btn btn-outline-secondary"><i class="fa fa-reply" aria-hidden="true"></i> Voltar</a>
+    </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+<script src="//cdn.datatables.net/1.10.24/js/jquery.dataTables.min.js"></script>
+<script src="//cdn.datatables.net/responsive/2.2.7/js/dataTables.responsive.min.js"></script>
+<script src="//cdn.datatables.net/1.10.24/js/dataTables.bootstrap4.min.js"></script>
+
+@section scripts{
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.css" />
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.22/css/dataTables.bootstrap4.min.css" />
+    <link rel="stylesheet" href="https://cdn.datatables.net/responsive/2.2.7/css/responsive.dataTables.min.css" />
+    <script>
+        $(document).ready(function () {
+            $('#tabelaBancaAnexo').DataTable({
+                responsive: true,
+                "language": {
+                    "lengthMenu": "Mostrando _MENU_ registros por página",
+                    "zeroRecords": "Registro não localizado!",
+                    "info": "Mostrando página _PAGE_ de _PAGES_",
+                    "infoEmpty": "Nenhum registro disponível",
+                    "sLoadingRecords": "Carregando...",
+                    "sProcessing": "Processando...",
+                    "infoFiltered": "(Filtrados de _MAX_ registros)",
+                    "sSearch": "Buscar: ",
+                    "oPaginate": {
+                        "sNext": "Próximo",
+                        "sPrevious": "Anterior",
+                        "sFirst": "Primeiro",
+                        "sLast": "Último"
+                    }
+                }
+            });
+        });
+    </script>
+}

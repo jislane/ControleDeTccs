@@ -56,6 +56,7 @@
                                 <li class="nav-item">
                                     <a class="nav-link text-white" asp-area="" asp-controller="Relatorios" asp-action="Index">Relatórios</a>
                                 </li>
+                                
                             }
 
                             @if (User.IsInRole("Professor") || User.IsInRole("Coordenador") || User.IsInRole("Aluno"))
@@ -65,14 +66,14 @@
                                 </li>
                             }
 
-                            @if (User.IsInRole("Professor"))
+                            @if (User.IsInRole("Professor") || User.IsInRole("Aluno") || User.IsInRole("Administrador"))
                             {
-
+                                //acição do link para o TCC finalizado
+                                <li class="nav-item">
+                                    <a class="nav-link text-white" asp-area="" asp-controller="TCCFinalizados" asp-action="Index">TCCs Finalizados</a>
+                                </li>
                             }
-                            @if (User.IsInRole("Aluno"))
-                            {
-
-                            }
+                            
                         }
                         else
                         {

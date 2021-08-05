@@ -15,12 +15,12 @@ using SistemaDeControleDeTCCs.Utils;
 
 namespace SistemaDeControleDeTCCs.Controllers
 {
-    public class BancasController : Controller
+    public class TCCFinalizados : Controller
     {
 
         private readonly SistemaDeControleDeTCCsContext _context;
 
-        public BancasController(SistemaDeControleDeTCCsContext context)
+        public TCCFinalizados(SistemaDeControleDeTCCsContext context)
         {
             _context = context;
         }
@@ -31,8 +31,10 @@ namespace SistemaDeControleDeTCCs.Controllers
             //var sistemaDeControleDeTCCsContext = _context.Banca.Include(b => b.Tcc).Include(b => b.TipoUsuario).Include(b => b.Usuario);
             //return View(await sistemaDeControleDeTCCsContext.ToListAsync());
             List<Banca> result = new List<Banca>();
-            if (User.IsInRole("Coordenador"))
+            if (User.IsInRole("Coordenador") || User.IsInRole("Administrador"))
             {
+
+                //consulta de tcc finalizado para todos os Coordenadores
                 result = await _context.Banca.Where(x => x.TipoUsuario.DescTipo.ToLower().Equals("orientador"))
                     .OrderByDescending(x => x.DataDeCadastro).ToListAsync();
             }
@@ -42,6 +44,10 @@ namespace SistemaDeControleDeTCCs.Controllers
                 result = await _context.Banca.Where(x => x.TipoUsuario.DescTipo.ToLower().Equals("orientador")
                         && x.UsuarioId == userId)
                     .OrderByDescending(x => x.DataDeCadastro).ToListAsync();
+
+                //consulta de tcc finalizado para todos os Professores
+                result = await _context.Banca.Where(x => x.TipoUsuario.DescTipo.ToLower().Equals("orientador"))
+                   .OrderByDescending(x => x.DataDeCadastro).ToListAsync();
             }
             else if (User.IsInRole("Aluno"))
             {
@@ -52,6 +58,10 @@ namespace SistemaDeControleDeTCCs.Controllers
                     result.Add(await _context.Banca.Where(b => b.TccId == item.TccId
                             && b.TipoUsuario.DescTipo.ToLower().Equals("orientador"))
                         .OrderByDescending(x => x.DataDeCadastro).FirstAsync());
+
+                    //consulta de tcc finalizado para todos os alunos
+                    result = await _context.Banca.Where(x => x.TipoUsuario.DescTipo.ToLower().Equals("orientador"))
+                   .OrderByDescending(x => x.DataDeCadastro).ToListAsync();
                 }
             }
 
@@ -63,10 +73,7 @@ namespace SistemaDeControleDeTCCs.Controllers
                 item.TipoUsuario = _context.TipoUsuario.Find(item.TipoUsuarioId);
             }
 
-            if (User.IsInRole("Aluno"))
-            {
-                return View("indexAluno", result);
-            }
+            
 
             return View(result);
 
@@ -585,16 +592,12 @@ namespace SistemaDeControleDeTCCs.Controllers
             if (result.Nota >= 6)
             {
                 result.StatusId = _context.Status.Where(x => x.DescStatus.ToLower().Equals("Aprovado")).Select(x => x.StatusId).FirstOrDefault();
-               
-                //aqui em baixo salvará a data atual no banco caso for aprovado na finalização do tcc
-                result.DataFinalizacao = DateTime.Now;
+
             }
             else
             {
                 result.StatusId = _context.Status.Where(x => x.DescStatus.ToLower().Equals("Reprovado")).Select(x => x.StatusId).FirstOrDefault();
 
-                //aqui em baixo salvará a data atual no banco caso for aprovado na finalização do tcc
-                result.DataFinalizacao = DateTime.Now;
             }
             _context.SaveChanges();
             return soma / resultTemp.Count();
