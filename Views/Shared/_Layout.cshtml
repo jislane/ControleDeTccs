@@ -48,17 +48,17 @@
                             @if (User.IsInRole("Coordenador"))
                             {
                                 <li class="nav-item">
-                                    <a class="nav-link text-white" asp-area="" asp-controller="Tccs" asp-action="Index">TCC's</a>
+                                    <a class="nav-link text-white" asp-area="" asp-controller="Tccs" asp-action="Index">TCC</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link text-white" asp-area="" asp-controller="Calendarios" asp-action="Index">Calendários</a>
+                                    <a class="nav-link text-white" asp-area="" asp-controller="Calendarios" asp-action="Index">Calendário</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link text-white" asp-area="" asp-controller="Relatorios" asp-action="Index">Relatórios</a>
+                                    <a class="nav-link text-white" asp-area="" asp-controller="Relatorios" asp-action="Index">Relatório</a>
                                 </li>
                             }
 
-                            @if (User.IsInRole("Professor") || User.IsInRole("Coordenador") || User.IsInRole("Aluno"))
+                            @if (User.IsInRole("Professor") || User.IsInRole("Coordenador"))
                             {
                                 <li class="nav-item">
                                     <a class="nav-link text-white" asp-area="" asp-controller="Bancas" asp-action="Index">Banca</a>
@@ -71,7 +71,9 @@
                             }
                             @if (User.IsInRole("Aluno"))
                             {
-
+                                <li class="nav-item">
+                                    <a class="nav-link text-white" asp-area="" asp-controller="Bancas" asp-action="Index">TCC</a>
+                                </li>
                             }
                         }
                         else
