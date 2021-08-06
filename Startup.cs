@@ -1,3 +1,4 @@
+using FluentValidation.AspNetCore;
 using KissLog;
 using KissLog.AspNetCore;
 using KissLog.CloudListeners.Auth;
@@ -61,7 +62,9 @@ namespace SistemaDeControleDeTCCs
             services.AddMvc();
 
 
-           
+            services.AddMvc()
+                 .AddFluentValidation(fvc =>
+                             fvc.RegisterValidatorsFromAssemblyContaining<Startup>());
 
 
             services.AddAuthorization(options =>
@@ -110,8 +113,6 @@ namespace SistemaDeControleDeTCCs
             });
 
             services.AddScoped<SenderEmail>();
-
-            
 
             services.AddMvc(options =>
             {
