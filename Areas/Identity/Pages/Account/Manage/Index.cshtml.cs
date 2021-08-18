@@ -33,7 +33,7 @@ namespace SistemaDeControleDeTCCs.Areas.Identity.Pages.Account.Manage
 
         public class InputModel
         {
-            [Phone]
+            [Phone(ErrorMessage = "Número inválido")]
             [Display(Name = "Telefone")]
             public string PhoneNumber { get; set; }
 
@@ -44,6 +44,7 @@ namespace SistemaDeControleDeTCCs.Areas.Identity.Pages.Account.Manage
             public string Sobrenome { get; set; }
 
             [Display(Name = "E-mail")]
+            [EmailAddress(ErrorMessage = "E-mail em formato inválido.")]
             [Required(ErrorMessage = "O {0} é obrigatório", AllowEmptyStrings = false)]
             public string Email { get; set; }
 
