@@ -25,7 +25,7 @@
     </div>
 }
 
-<h1>Bancas</h1>
+<h1>Banca</h1>
 <table id="tabelaBanca" class="table table-bordered table-hover display responsive nowrap" style="width:100%">
     <thead>
         <tr>
@@ -65,7 +65,11 @@
                 <td class="columnAcao">
                     <a title="Informações" class="btn btn-outline-secondary btn-sm" style="padding-left: 0.8rem; padding-right: 0.7rem;" asp-action="Details" asp-route-id="@item.TccId"><i class="fa fa-info" aria-hidden="true"></i></a> |
                     <a title="Adicionar Membro" class="btn btn-outline-success btn-sm" asp-action="Create" asp-route-id="@item.TccId"><i class="fa fa-user-plus" aria-hidden="true"></i></a>
-                    @if (item.Tcc.StatusId == 3 || item.Tcc.StatusId == 4 || item.Tcc.StatusId == 5)
+                    @if (item.Tcc.StatusId == 3)
+                    {
+                        <text>|</text> <a title="Banca Homologada" class="btn btn-success btn-sm" asp-controller="Tccs" asp-action="AddDataLocalApresentacao" asp-route-id="@item.TccId"><i class="fa fa-check" aria-hidden="true"></i></a>
+                    }
+                    else
                     {
                         <text>|</text> <a title="Homologar Banca" class="btn btn-outline-success btn-sm" asp-controller="Tccs" asp-action="AddDataLocalApresentacao" asp-route-id="@item.TccId"><i class="fa fa-check" aria-hidden="true"></i></a>
                     }

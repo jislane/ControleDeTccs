@@ -35,18 +35,18 @@ namespace SistemaDeControleDeTCCs.Areas.Identity.Pages.Account.Manage
 
         public class InputModel
         {
-            [Required(ErrorMessage = "O campo Senha atual é obrigatório")]
+            [Required(ErrorMessage = "O campo {0} atual é obrigatório")]
             [DataType(DataType.Password)]
             [Display(Name = "Senha atual")]
             public string OldPassword { get; set; }
 
-            [Required(ErrorMessage = "O campo Nova senha é obrigatório")]
+            [Required(ErrorMessage = "O campo Nova {0} é obrigatório")]
             [StringLength(100, ErrorMessage = "A senha deve ter no mínimo 6 caracteres.", MinimumLength = 6)]
             [DataType(DataType.Password)]
             [Display(Name = "Nova senha")]
             public string NewPassword { get; set; }
 
-            [Required(ErrorMessage = "O campo Confirmar nova senha é obrigatório")]
+            [Required(ErrorMessage = "O campo {0} é obrigatório")]
             [DataType(DataType.Password)]
             [Display(Name = "Confirmar nova senha")]
             [Compare("NewPassword", ErrorMessage = "A Nova Senha e a Confirmação de Nova Senha não são iguais.")]
