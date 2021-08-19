@@ -5,20 +5,24 @@
 
 <ul class="navbar-nav">
     @if (SignInManager.IsSignedIn(User))
+
+        
     {
+        var user = @UserManager.FindByNameAsync(User.Identity.Name);
+
         <li class="nav-item">
-            <a id="manage" class="nav-link text-white" asp-area="Identity" asp-page="/Account/Manage/Index" title="Manage">Bem-vindo, @UserManager.GetUserName(User)!</a>
+            <a id="manage" class="nav-link" style="color:black" asp-area="Identity" asp-page="/Account/Manage/Index" title="Manage"><b>Bem-vindo(a), @user.Result.Nome!</b></a>
         </li>
         <li class="nav-item">
             <form id="logoutForm" class="form-inline" asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Action("Index", "Home", new { area = "" })">
-                <button id="logout" type="submit" class="nav-link btn btn-link text-white">Sair</button>
+                <button id="logout" type="submit" class="nav-link btn btn-link" style="color:black"><b>Sair</b></button>
             </form>
         </li>
     }
     else
     {
         <li class="nav-item">
-            <a class="nav-link text-white" id="login" asp-area="Identity" asp-page="/Account/Login">Acessar</a>
+            <a class="nav-link" style="color:black" id="login" asp-area="Identity" asp-page="/Account/Login"><b>Acessar</b></a>
         </li>
         @*<li class="nav-item">
             <a class="nav-link text-dark" id="register" asp-area="Identity" asp-page="/Account/Register">Registre-se</a>

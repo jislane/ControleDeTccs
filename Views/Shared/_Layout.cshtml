@@ -36,45 +36,45 @@
                             @if (User.IsInRole("Administrador"))
                             {
                                 <li class="nav-item">
-                                    <a class="nav-link text-white" asp-area="" asp-controller="Cursos" asp-action="Index">Cursos</a>
+                                    <a class="nav-link" style="color:black" asp-area="" asp-controller="Cursos" asp-action="Index"><b>Cursos</b></a>
                                 </li>
                             }
                             @if (User.IsInRole("Administrador") || User.IsInRole("Coordenador"))
                             {
                                 <li class="nav-item">
-                                    <a class="nav-link text-white" asp-area="" asp-controller="Usuarios" asp-action="Index">Usuários</a>
+                                    <a class="nav-link" style="color:black" asp-area="" asp-controller="Usuarios" asp-action="Index"><b>Usuários</b></a>
                                 </li>
                             }
                             @if (User.IsInRole("Coordenador"))
                             {
                                 <li class="nav-item">
-                                    <a class="nav-link text-white" asp-area="" asp-controller="Tccs" asp-action="Index">TCC</a>
+                                    <a class="nav-link" style="color:black"  asp-area="" asp-controller="Tccs" asp-action="Index"><b>TCC's</b></a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link text-white" asp-area="" asp-controller="Calendarios" asp-action="Index">Calendário</a>
+                                    <a class="nav-link" style="color:black" asp-area="" asp-controller="Calendarios" asp-action="Index"><b>Calendários</b></a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link text-white" asp-area="" asp-controller="Relatorios" asp-action="Index">Relatório</a>
+                                    <a class="nav-link" style="color:black" asp-area="" asp-controller="Relatorios" asp-action="Index"><b>Relatórios</b></a>
+
                                 </li>
+                                
                             }
 
                             @if (User.IsInRole("Professor") || User.IsInRole("Coordenador"))
                             {
                                 <li class="nav-item">
-                                    <a class="nav-link text-white" asp-area="" asp-controller="Bancas" asp-action="Index">Banca</a>
+                                    <a class="nav-link" style="color:black" asp-area="" asp-controller="Bancas" asp-action="Index"><b>Banca</b></a>
                                 </li>
                             }
 
-                            @if (User.IsInRole("Professor"))
+                            @if (User.IsInRole("Professor") || User.IsInRole("Aluno") || User.IsInRole("Administrador"))
                             {
-
-                            }
-                            @if (User.IsInRole("Aluno"))
-                            {
+                                //acição do link para o TCC finalizado
                                 <li class="nav-item">
-                                    <a class="nav-link text-white" asp-area="" asp-controller="Bancas" asp-action="Index">TCC</a>
+                                    <a class="nav-link text-white" asp-area="" asp-controller="TCCFinalizados" asp-action="Index">TCCs Finalizados</a>
                                 </li>
                             }
+                            
                         }
                         else
                         {
