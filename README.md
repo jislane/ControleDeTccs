@@ -40,7 +40,7 @@ Para que todo ambiente funciona de forma certa seguir seguintes regas:
   Indicado que antes faça o fork para e após o fork realizar o clonet com o link do seu repositório
 
 - Abrir arquivo no Visual Studio
-  <img src=".github/imgArquivos.png" alt="querolabs" width="600"/>
+  <img src=".github/imgArquivos.png" alt="arquivoVS" width="600"/>
 
 - Procure a string de conexão do SQL Server na máquina [Como criar Connection Strings consistentes para SQL Server](https://youtu.be/fZnEVPdjcic)
 
@@ -56,6 +56,10 @@ Para que todo ambiente funciona de forma certa seguir seguintes regas:
 `dotnet ef database update`
 
 - Run
+
+## 🗃️DER 
+
+<img src=".github/DER.png" alt="DER"/>
 
 ## 📝 Manual do Sistema
 
