@@ -162,7 +162,7 @@
                         <td> @item.Usuario.Nome @item.Usuario.Sobrenome</td>
                         <td> @item.TipoUsuario.DescTipo</td>
                         <td>
-                            <input value="@item.Nota" class="form-control"
+                            <input type="number" value="@item.Nota" class="form-control"
                                    data-js="nota-@item.UsuarioId"
                                    placeholder="Atribua a nota!" asp-for="@item.Nota" />
                         </td>
