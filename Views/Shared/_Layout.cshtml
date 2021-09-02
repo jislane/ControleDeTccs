@@ -60,7 +60,7 @@
                                 
                             }
 
-                            @if (User.IsInRole("Professor") || User.IsInRole("Coordenador"))
+                            @if (User.IsInRole("Professor") || User.IsInRole("Coordenador") || User.IsInRole("Aluno"))
                             {
                                 <li class="nav-item">
                                     <a class="nav-link" style="color:black" asp-area="" asp-controller="Bancas" asp-action="Index"><b>Banca</b></a>
@@ -74,7 +74,6 @@
                                     <a class="nav-link" style="color:black" asp-area="" asp-controller="TCCFinalizados" asp-action="Index"><b>TCCs Finalizados</b></a>
                                 </li>
                             }
-                            
                         }
                         else
                         {

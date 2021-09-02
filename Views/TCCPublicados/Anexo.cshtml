@@ -1,0 +1,68 @@
+﻿@model IEnumerable<SistemaDeControleDeTCCs.Models.FileTCC>
+
+@{
+    ViewData["Title"] = "Arquivo do TCC";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<hr />
+
+<h1>@ViewData["Title"]</h1>
+<hr />
+<div class="col-md-4">
+    
+</div>
+<div>
+    <table id="tabelaTccPublicadoAnexo" class="table table-bordered table-hover display responsive nowrap" style="width:100%">
+        <thead>
+            <tr>
+                <th>
+                    Ação
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td class="columnAcao">
+                        <a title="Baixar" class="btn btn-outline-primary btn-sm" asp-action="Download" asp-controller="FileTCCs" asp-route-id="@item.Id"><i class="fa fa-download" aria-hidden="true"></i></a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    <div>
+        <a asp-action="Index" class="btn btn-outline-secondary"><i class="fa fa-reply" aria-hidden="true"></i> Voltar</a>
+    </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+<script src="//cdn.datatables.net/1.10.24/js/jquery.dataTables.min.js"></script>
+<script src="//cdn.datatables.net/responsive/2.2.7/js/dataTables.responsive.min.js"></script>
+<script src="//cdn.datatables.net/1.10.24/js/dataTables.bootstrap4.min.js"></script>
+
+@section scripts{
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.css" />
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.22/css/dataTables.bootstrap4.min.css" />
+    <link rel="stylesheet" href="https://cdn.datatables.net/responsive/2.2.7/css/responsive.dataTables.min.css" />
+    <script>
+        $(document).ready(function () {
+            $('#tabelaTccPublicadoAnexo').DataTable({
+                responsive: true,
+                "bPaginate": false,
+                "bFilter": false,
+                "ordering": false,
+                "paging": false,
+                "info": false,
+                "language": {
+                    "zeroRecords": "Registro não localizado!",
+                    "infoEmpty": "Nenhum registro disponível",
+                    "sLoadingRecords": "Carregando...",
+                    "sProcessing": "Processando...",
+                    "infoFiltered": "(Filtrados de _MAX_ registros)",
+                }
+            });
+        });
+    </script>
+}
