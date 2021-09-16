@@ -1,0 +1,28 @@
+﻿@model SistemaDeControleDeTCCs.Models.Tcc
+
+@{
+    ViewData["Title"] = "Resumo do TCC";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<h1>Resumo do TCC</h1>
+<hr />
+<div class="panel-body">
+    <div class="row">
+        <dt class = "col-sm-10 form-group">
+            @Html.DisplayNameFor(model => model.Resumo)
+        </dt>
+    </div>
+    <div class="row">
+        <dd class = "col-sm-10 form-group">
+            @Html.DisplayFor(model => model.Resumo)
+        </dd>
+    </div>
+
+    <div>
+        <a asp-action="Index" class="btn btn-outline-secondary"><i class="fa fa-reply" aria-hidden="true"></i> Voltar</a>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

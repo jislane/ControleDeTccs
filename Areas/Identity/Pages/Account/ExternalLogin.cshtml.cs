@@ -13,6 +13,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.WebUtilities;
 using Microsoft.Extensions.Logging;
+using SistemaDeControleDeTCCs.Models;
 
 namespace SistemaDeControleDeTCCs.Areas.Identity.Pages.Account
 {
@@ -71,13 +72,13 @@ namespace SistemaDeControleDeTCCs.Areas.Identity.Pages.Account
             returnUrl = returnUrl ?? Url.Content("~/");
             if (remoteError != null)
             {
-                ErrorMessage = $"Error from external provider: {remoteError}";
+                ErrorMessage = $"Erro de provedor externo: {remoteError}";
                 return RedirectToPage("./Login", new {ReturnUrl = returnUrl });
             }
             var info = await _signInManager.GetExternalLoginInfoAsync();
             if (info == null)
             {
-                ErrorMessage = "Error loading external login information.";
+                ErrorMessage = "Erro ao carregar informações de login externo.";
                 return RedirectToPage("./Login", new { ReturnUrl = returnUrl });
             }
 
@@ -115,13 +116,13 @@ namespace SistemaDeControleDeTCCs.Areas.Identity.Pages.Account
             var info = await _signInManager.GetExternalLoginInfoAsync();
             if (info == null)
             {
-                ErrorMessage = "Error loading external login information during confirmation.";
+                ErrorMessage = "Erro ao carregar informações de login externo durante a confirmação.";
                 return RedirectToPage("./Login", new { ReturnUrl = returnUrl });
             }
 
             if (ModelState.IsValid)
             {
-                var user = new IdentityUser { UserName = Input.Email, Email = Input.Email };
+                var user = new Usuario { UserName = Input.Email, Email = Input.Email };
 
                 var result = await _userManager.CreateAsync(user);
                 if (result.Succeeded)
@@ -140,8 +141,8 @@ namespace SistemaDeControleDeTCCs.Areas.Identity.Pages.Account
                             values: new { area = "Identity", userId = userId, code = code },
                             protocol: Request.Scheme);
 
-                        await _emailSender.SendEmailAsync(Input.Email, "Confirm your email",
-                            $"Please confirm your account by <a href='{HtmlEncoder.Default.Encode(callbackUrl)}'>clicking here</a>.");
+                        await _emailSender.SendEmailAsync(Input.Email, "Confirme seu email",
+                            $"Por favor, confirme sua conta <a href='{HtmlEncoder.Default.Encode(callbackUrl)}'>Clique aqui</a>.");
 
                         // If account confirmation is required, we need to show the link if we don't have a real email sender
                         if (_userManager.Options.SignIn.RequireConfirmedAccount)

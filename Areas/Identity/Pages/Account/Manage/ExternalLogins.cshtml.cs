@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using SistemaDeControleDeTCCs.Models;
 
 namespace SistemaDeControleDeTCCs.Areas.Identity.Pages.Account.Manage
 {
@@ -95,14 +96,14 @@ namespace SistemaDeControleDeTCCs.Areas.Identity.Pages.Account.Manage
             var result = await _userManager.AddLoginAsync(user, info);
             if (!result.Succeeded)
             {
-                StatusMessage = "The external login was not added. External logins can only be associated with one account.";
+                StatusMessage = "O login externo não foi adicionado. Logins externos só podem ser associados a uma conta.";
                 return RedirectToPage();
             }
 
             // Clear the existing external cookie to ensure a clean login process
             await HttpContext.SignOutAsync(IdentityConstants.ExternalScheme);
 
-            StatusMessage = "The external login was added.";
+            StatusMessage = "O login externo foi adicionado.";
             return RedirectToPage();
         }
     }
