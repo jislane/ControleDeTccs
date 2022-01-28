@@ -12,89 +12,130 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="~/css/site.css" />
-    <link rel="stylesheet" href="~/css/bootstrap.min.css" />
+
+    <!--
+            <link rel="stylesheet" href="~/css/site.css" />
+        <link rel="stylesheet" href="~/css/bootstrap.min.css" />
+        -->
+
     <title>@ViewData["Title"] </title>
     <link rel="shortcut icon" href="~/favicon.ico">
     <script src="~/js/jquery-3.5.1.min.js"></script>
     <script src="https://kit.fontawesome.com/832f1d49a9.js" crossorigin="anonymous"></script>
+    <style>
+        * {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            outline: none;
+        }
+        body {
+            margin: 0;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        .main {
+            height: 90vh;
+        }
+
+        .main-login {
+            height: 90%;
+            padding: 50px;
+            display: flex;
+            flex-direction: row;
+        }
+
+            .main-login .left,
+            .main-login .right {
+                margin: auto;
+            }
+
+            .main-login .left {
+                width: 60%;
+            }
+
+                .main-login .left .banner {
+                    display: flex;
+                }
+
+                    .main-login .left .banner figure {
+                        margin: auto;
+                        width: 60%;
+                        height: 60%;
+                    }
+
+                        .main-login .left .banner figure img {
+                            width: 100%;
+                            height: 100%;
+                            object-fit: scale-down;
+                        }
+
+            .main-login .right {
+                width: 40%;
+                border-radius: 5px;
+                background: #ebebeb;
+            }
+
+                .main-login .right .area-form {
+                    padding: 15px;
+                    text-align: center;
+                }
+
+                    .main-login .right .area-form .header-form {
+                    }
+
+                    .main-login .right .area-form .form-container {
+                        align-items: center;
+                        display: flex;
+                        flex-direction: column;
+                        margin-bottom: 50px;
+                    }
+
+                        .main-login .right .area-form .form-container .form {
+                            display: flex;
+                            flex-direction: column;
+                        }
+
+                        .main-login .right .area-form .form-container .form .input {
+                            margin-top: 20px;
+                            height: 35px;
+                            width: 300px;
+                            font-size: 12pt;
+                            padding: 5px 10px;
+                            border: none;
+                            border-radius: 5px;
+                        }
+
+                        .main-login .right .area-form .form-container .btn-form {
+                            margin-top: 25px;
+                            padding: 16px 60px;
+                            border: none;
+                            border-radius: 50px;
+                            color: white;
+                            cursor: pointer;
+                            font-size: 12pt;
+                            background: #08a217;
+                        }
+
+                    .main-login .right .area-form .footer-form .link-form-tcc {
+                        color: #08a217;
+                    }
+    </style>
 </head>
 <body>
-    <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-transparent border-bottom box-shadow mb-3">
-            <div class="container">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index"><img src="~/img/ControleTCC-IFS-Menu.png"></a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
-                    <partial name="_LoginPartial" />
-                    <ul class="navbar-nav flex-grow-1">
-                        @if (SignInManager.IsSignedIn(User))
-                        {
-                            @if (User.IsInRole("Administrador"))
-                            {
-                                <li class="nav-item">
-                                    <a class="nav-link" style="color:black" asp-area="" asp-controller="Cursos" asp-action="Index"><b>Cursos</b></a>
-                                </li>
-                            }
-                            @if (User.IsInRole("Administrador") || User.IsInRole("Coordenador"))
-                            {
-                                <li class="nav-item">
-                                    <a class="nav-link" style="color:black" asp-area="" asp-controller="Usuarios" asp-action="Index"><b>Usuários</b></a>
-                                </li>
-                            }
-                            @if (User.IsInRole("Coordenador"))
-                            {
-                                <li class="nav-item">
-                                    <a class="nav-link" style="color:black"  asp-area="" asp-controller="Tccs" asp-action="Index"><b>TCC's</b></a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" style="color:black" asp-area="" asp-controller="Calendarios" asp-action="Index"><b>Calendários</b></a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" style="color:black" asp-area="" asp-controller="Relatorios" asp-action="Index"><b>Relatórios</b></a>
-
-                                </li>
-                                
-                            }
-
-                            @if (User.IsInRole("Professor") || User.IsInRole("Coordenador") || User.IsInRole("Aluno"))
-                            {
-                                <li class="nav-item">
-                                    <a class="nav-link" style="color:black" asp-area="" asp-controller="Bancas" asp-action="Index"><b>Banca</b></a>
-                                </li>
-                            }
-
-                            @if (User.IsInRole("Professor") || User.IsInRole("Aluno") || User.IsInRole("Administrador"))
-                            {
-                                //acição do link para o TCC finalizado
-                                <li class="nav-item">
-                                    <a class="nav-link" style="color:black" asp-area="" asp-controller="TCCFinalizados" asp-action="Index"><b>TCCs Finalizados</b></a>
-                                </li>
-                            }
-                        }
-                        else
-                        {
-
-                        }
-                    </ul>
-                </div>
-            </div>
-        </nav>
-    </header>
-    <div class="container">
-        <main role="main" class="pb-3">
+    <div class="container" style="padding: 0;">
+        <main role="main" class="pb-3 main">
             @RenderBody()
         </main>
     </div>
-    <footer class="border-top footer text-muted">
-        <div class="container">
-            &copy; 2021 - Controle de TCC's - IFS - Versão: @version
-        </div>
-    </footer>
-    <script src="~/js/bootstrap.bundle.min.js"></script>
+    <!--
+        <footer class="border-top footer text-muted">
+            <div class="container">
+                &copy; 2021 - Controle de TCC's - IFS - Versão: @version
+            </div>
+        </footer>
+    -->
     <script src="~/js/site.js" asp-append-version="true"></script>
     @RenderSection("Scripts", required: false)
 </body>

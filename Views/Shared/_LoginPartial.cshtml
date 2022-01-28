@@ -6,7 +6,7 @@
 <ul class="navbar-nav">
     @if (SignInManager.IsSignedIn(User))
 
-        
+
     {
         var user = @UserManager.FindByNameAsync(User.Identity.Name);
 
@@ -18,6 +18,11 @@
                 <button id="logout" type="submit" class="nav-link btn btn-link" style="color:black"><b>Sair</b></button>
             </form>
         </li>
+        <li class="nav-item">
+            <div style="display: flex; flex-direction: column; align-items: center;">
+                <img src="~/img/user.jpg" alt="Alternate Text" style="width: 50px; border-radius: 50px;" />
+            </div>
+        </li>
     }
     else
     {
@@ -25,7 +30,7 @@
             <a class="nav-link" style="color:black" id="login" asp-area="Identity" asp-page="/Account/Login"><b>Acessar</b></a>
         </li>
         @*<li class="nav-item">
-            <a class="nav-link text-dark" id="register" asp-area="Identity" asp-page="/Account/Register">Registre-se</a>
-          </li>*@
+              <a class="nav-link text-dark" id="register" asp-area="Identity" asp-page="/Account/Register">Registre-se</a>
+            </li>*@
     }
 </ul>

@@ -2,18 +2,41 @@
     ViewData["Title"] = "Inicio";
 }
 
-<div>
-    <div class="text-center">
-        <h1 class="display-4">Sistema de Controle de TCC's</h1>
-        <img src="~/img/ControleTCC-IFS-Inicio.png" width=400>
-    </div>
-</div>
-
-<div class="container" style="margin-top: 15%;display: flex;justify-content: space-between;flex-direction: column;">   
-    
-    <button class="btn btn-brand" style="background-color: green;">
-        <a class="nav-link" style="color:white;padding: 0rem 1rem;" asp-area="" asp-controller="TCCPublicados" asp-action="Index"><b>TCCs</b></a>
-    </button>
+<div class="main-login">
+    <aside class="left">
+        <div class="banner">
+            <figure>
+                <img src="~/img/ifs-logo.png" />
+            </figure>
+        </div>
+    </aside>
+    <aside class="right">
+        <div class="area-form">
+            <div class="header-form">
+                <div class="text-center">
+                    <img src="~/img/ifs-logo-marca.png" width=125>
+                </div>
+            </div>
+            <div class="form-container">
+                <form class="form">
+                    <input class="input" type="email" placeholder="E-mail" />
+                    <input class="input" type="password" placeholder="Senha" />
+                </form>
+                <button class="btn-form">SIGN IN</button>
+            </div>
+            <div class="footer-form">
+                <footer>
+                    <a class="link-form-tcc" href="/TCCPublicados">Sistemas de Controle de TCCs</a>
+                    <!--
+    <div class="container" style="margin-top: 5%;display: flex;justify-content: space-between;flex-direction: column;">
+        <button class="btn btn-brand" style="background-color: green;">
+            <a class="nav-link" style="color:white;padding: 0rem 1rem;" asp-area="" asp-controller="TCCPublicados" asp-action="Index"><b>TCCs</b></a>
+        </button>
+    </div>-->
+                </footer>
+            </div>
+        </div>
+    </aside>
 </div>
 
 

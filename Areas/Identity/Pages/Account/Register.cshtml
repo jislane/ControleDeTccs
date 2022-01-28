@@ -6,6 +6,9 @@
     var cursos = (List<SistemaDeControleDeTCCs.Models.Curso>)ViewData["cursos"];
 }
 
+<link rel="stylesheet" href="~/css/bootstrap.min.css" />
+<partial name="_HeaderPartial" />
+
 <h1>@ViewData["Title"]</h1>
 
 <hr />
@@ -52,7 +55,7 @@
                 </div>
                 <div class="form-group col-md-6">
                     <label asp-for="Input.Cpf" class="control-label"></label>
-                    <input asp-for="Input.Cpf" class="form-control" id="inputCPF" onkeydown="javascript: fMasc( this, mCPF );"/>
+                    <input asp-for="Input.Cpf" class="form-control" id="inputCPF" onkeydown="javascript: fMasc( this, mCPF );" />
                     <span id="inputCPFMessageError" asp-validation-for="Input.Cpf" class="text-danger"> </span>
                 </div>
             </div>

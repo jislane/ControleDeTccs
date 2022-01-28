@@ -4,11 +4,26 @@
     ViewData["Title"] = "Usuários";
 }
 
+<partial name="_HeaderPartial" />
+
 <h1>@ViewData["Title"]</h1>
+
+<style>
+    .btn-float {
+        border: 1px solid green;
+        position: fixed;
+        bottom: 100px;
+        right: 60px;
+        padding: 20px;
+        border-radius: 20px;
+        background: white;
+    }
+</style>
 <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-<a class="btn btn-outline-success btnAdd" id="register" asp-area="Identity" asp-page="/Account/Register"><i class="fa fa-user-plus" aria-hidden="true"></i> Novo</a>
-<table id="tabela" class="table table-bordered table-hover display responsive nowrap" style="width:100%">
-    <thead>
+<!--btn btn-outline-success btnAdd table-bordered -->
+<a class="btn-float" id="register" asp-area="Identity" asp-page="/Account/Register"><i class="fa fa-user-plus" aria-hidden="true" style="font-size: 20pt; color: green;"></i></a>
+<table id="tabela" class="table table-hover display responsive nowrap" style="width:100%">
+    <thead style="background: lightgreen;">
         <tr>
             <th>
                 Tipo

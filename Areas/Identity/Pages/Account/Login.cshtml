@@ -17,59 +17,99 @@
     @{
         if (SignInManager.IsSignedIn(User))
         {
-            
-        <div style=" text-align: center;">
-            <h3>O Usuário já está Logado</h3>
-            <h4>Redirecionando para a tela de incio em </h4>
-            <br />
-            <br />
-            <br />
-            <h1 id="count"></h1>
-            <script>
-                var i = 5;
-                var myVar = setInterval(myTimer, 1000);
-                function myTimer(){
-                    $("#count").get()[0].textContent = i;
-                    if (i <= 0) {
-                        clearInterval(myVar);
-                        location.replace("/");
-                    } else {
-                        i--;
+
+            <div style=" text-align: center;">
+                <h3>O Usuário já está Logado</h3>
+                <h4>Redirecionando para a tela de incio em </h4>
+                <br />
+                <br />
+                <br />
+                <h1 id="count"></h1>
+                <script>
+                    var i = 5;
+                    var myVar = setInterval(myTimer, 1000);
+                    function myTimer() {
+                        $("#count").get()[0].textContent = i;
+                        if (i <= 0) {
+                            clearInterval(myVar);
+                            location.replace("/");
+                        } else {
+                            i--;
+                        }
                     }
-                }
-            </script>
-        </div>
+                </script>
+            </div>
         }
         else
         {
-            <div class="card" id="id_telaLogin" style="width: 18rem;">
-                <div class="card-body" id="id_card">
-                    <h5 class="card-title text-center"><b>Insira suas credenciais</b></h5>
-                    <span class="text-danger field-validation-error text-center">@Html.ValidationSummary(true)</span>
-                    <form id="account" method="post">
-                        <div class="form-label-group">
-                            <i class="fa fa-envelope-o" aria-hidden="true"></i>
-                            <label asp-for="Input.Email"></label>
-                            <input asp-for="Input.Email" class="form-control fas fa-at" />
-                            <span asp-validation-for="Input.Email" class="text-danger"></span>
-                        </div>
-                        <div class="form-label-group">
-                            <i class="fa fa-key" aria-hidden="true"></i>
-                            <label asp-for="Input.Password"></label>
-                            <input asp-for="Input.Password" class="form-control" />
-                            <span asp-validation-for="Input.Password" class="text-danger"></span>
-                            <p></p>
-                        </div>
-                        <button class="btn btn-sm btn btn-outline-primary btn-block" type="submit"><i class="fa fa-sign-in" aria-hidden="true"></i> Entrar</button>
-                    </form>
-                    <br />
-                    <div text-center" style="font-size:small">
-                        <a>
-                            Esqueceu sua <b>@Html.ActionLink("Senha", "ForgotPassword", "Account", null, new { @class = "btn-outline-secondary" })</b>?
-                        </a>
+            <div class="main-login">
+                <aside class="left">
+                    <div class="banner">
+                        <figure>
+                            <img src="~/img/ifs-logo.png" />
+                        </figure>
                     </div>
-                </div>
+                </aside>
+                <aside class="right">
+                    <div class="area-form">
+                        <div class="header-form">
+                            <div class="text-center">
+                                <img src="~/img/ifs-logo-marca.png" width=125>
+                            </div>
+                        </div>
+                        <div class="form-container">
+                            <form id="account" class="form" method="post">
+                                <input asp-for="Input.Email" class="input" type="email" placeholder="E-mail" />
+                                <span asp-validation-for="Input.Email" class="text-danger"></span>
+                                <input asp-for="Input.Password" class="input" type="password" placeholder="Senha" />
+                                <span asp-validation-for="Input.Password" class="text-danger"></span>
+                                <button type="submit" class="btn-form">SIGN IN</button>
+                            </form>
+                        </div>
+                        <div class="footer-form">
+                            <footer>
+                                <a class="link-form-tcc" href="/TCCPublicados">Sistemas de Controle de TCCs</a>
+                                <!--
+                                <div class="container" style="margin-top: 5%;display: flex;justify-content: space-between;flex-direction: column;">
+                                    <button class="btn btn-brand" style="background-color: green;">
+                                        <a class="nav-link" style="color:white;padding: 0rem 1rem;" asp-area="" asp-controller="TCCPublicados" asp-action="Index"><b>TCCs</b></a>
+                                    </button>
+                                </div>-->
+                            </footer>
+                        </div>
+                    </div>
+                </aside>
             </div>
+            <!--
+                        <div class="card" id="id_telaLogin" style="width: 18rem;">
+                            <div class="card-body" id="id_card">
+                                <h5 class="card-title text-center"><b>Insira suas credenciais</b></h5>
+                                <span class="text-danger field-validation-error text-center">@Html.ValidationSummary(true)</span>
+                                <form id="account" method="post">
+                                    <div class="form-label-group">
+                                        <i class="fa fa-envelope-o" aria-hidden="true"></i>
+                                        <label asp-for="Input.Email"></label>
+                                        <input asp-for="Input.Email" class="form-control fas fa-at" />
+                                        <span asp-validation-for="Input.Email" class="text-danger"></span>
+                                    </div>
+                                    <div class="form-label-group">
+                                        <i class="fa fa-key" aria-hidden="true"></i>
+                                        <label asp-for="Input.Password"></label>
+                                        <input asp-for="Input.Password" class="form-control" />
+                                        <span asp-validation-for="Input.Password" class="text-danger"></span>
+                                        <p></p>
+                                    </div>
+                                    <button class="btn btn-sm btn btn-outline-primary btn-block" type="submit"><i class="fa fa-sign-in" aria-hidden="true"></i> Entrar</button>
+                                </form>
+                                <br />
+                                <div text-center" style="font-size:small">
+                                    <a>
+                                        Esqueceu sua <b>@Html.ActionLink("Senha", "ForgotPassword", "Account", null, new { @class = "btn-outline-secondary" })</b>?
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+            -->
         }
 
     }
