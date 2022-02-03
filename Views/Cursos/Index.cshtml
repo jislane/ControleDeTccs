@@ -5,11 +5,30 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h1>@ViewData["Title"]</h1>
-<a asp-action="Create" class="btn btn-outline-success btnAdd"><i class="fa fa-book" aria-hidden="true"></i> Novo</a>
+<partial name="_HeaderPartial" />
 
-<table id="tabela" class="table table-bordered table-hover display responsive nowrap" style="width:100%">
-    <thead>
+<h1>@ViewData["Title"]</h1>
+
+<style>
+    .btn-float {
+        border: 1px solid green;
+        position: fixed;
+        bottom: 100px;
+        right: 60px;
+        padding: 20px;
+        border-radius: 20px;
+        background: white;
+    }
+
+    .btn-action {
+        background: blue;
+    }
+</style>
+<!--btn btn-outline-success btnAdd table-bordered-->
+<a asp-action="Create" class="btn-float"><i class="fa fa-user-plus" aria-hidden="true" style="font-size: 20pt; color: green;"></i></a>
+
+<table id="tabela" class="table table-hover display responsive nowrap" style="width:100%">
+    <thead style="background: lightgreen;">
         <tr>
             <th>
                 @Html.DisplayNameFor(model => model.Nome)
@@ -56,7 +75,7 @@
                     @Html.DisplayFor(modelItem => item.Campus.Endereco)
                 </td>
                 <td class="columnAcao">
-                    <a title="Editar" class="btn btn-outline-primary btn-sm" asp-action="Edit" asp-route-id="@item.Id"><i class="fa fa-pencil" aria-hidden="true"></i></a> |
+                    <a title="Editar" class="btn btn-outline-primary btn-sm btn-action" asp-action="Edit" asp-route-id="@item.Id"><i class="fa fa-pencil" aria-hidden="true"></i></a> |
                     <a title="Informações" class="btn btn-outline-secondary btn-sm" style="padding-left: 0.8rem; padding-right: 0.7rem;" asp-action="Details" asp-route-id="@item.Id"><i class="fa fa-info" aria-hidden="true"></i></a> |
                     <a title="Excluir" class="btn btn-outline-danger btn-sm" ml-1 onclick="return confirm('Tem certeza que quer deletar este registro?')" asp-action="Delete" asp-route-id="@item.Id">
                         <i class="fa fa-trash" aria-hidden="true"></i>

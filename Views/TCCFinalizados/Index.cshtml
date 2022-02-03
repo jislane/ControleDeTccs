@@ -5,6 +5,8 @@
     //Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
+<partial name="_HeaderPartial" />
+
 @if (TempData["Error"] != null)
 {
     <div class="alert alert-danger alert-dismissible fade show" role="alert">
@@ -27,7 +29,7 @@
 
 <h1>TCCs Finalizados</h1>
 <table id="tabelaBanca" class="table table-bordered table-hover display responsive nowrap" style="width:100%">
-    <thead>
+    <thead style="background: lightgreen;">
         <tr>
             <th>
                 @Html.DisplayNameFor(model => model.DataDeCadastro)
