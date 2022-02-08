@@ -10,23 +10,24 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
+    <title>@ViewData["Title"]</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-    <!--
-            <link rel="stylesheet" href="~/css/site.css" />
-        <link rel="stylesheet" href="~/css/bootstrap.min.css" />
-        -->
-
-    <title>@ViewData["Title"] </title>
     <link rel="shortcut icon" href="~/favicon.ico">
+    <link rel="stylesheet" href="~/css/bootstrap.css" />
+    <link rel="stylesheet" href="~/css/main.css" />
+
+    @RenderSection("Head", required: false)
+    @RenderSection("Styles", required: false)
+
     <script src="~/js/jquery-3.5.1.min.js"></script>
-    <script src="https://kit.fontawesome.com/832f1d49a9.js" crossorigin="anonymous"></script>
+
     <style>
         * {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             outline: none;
         }
+
         body {
             margin: 0;
         }
@@ -38,105 +39,39 @@
         .main {
             height: 90vh;
         }
-
-        .main-login {
-            height: 90%;
-            padding: 50px;
-            display: flex;
-            flex-direction: row;
-        }
-
-            .main-login .left,
-            .main-login .right {
-                margin: auto;
-            }
-
-            .main-login .left {
-                width: 60%;
-            }
-
-                .main-login .left .banner {
-                    display: flex;
-                }
-
-                    .main-login .left .banner figure {
-                        margin: auto;
-                        width: 60%;
-                        height: 60%;
-                    }
-
-                        .main-login .left .banner figure img {
-                            width: 100%;
-                            height: 100%;
-                            object-fit: scale-down;
-                        }
-
-            .main-login .right {
-                width: 40%;
-                border-radius: 5px;
-                background: #ebebeb;
-            }
-
-                .main-login .right .area-form {
-                    padding: 15px;
-                    text-align: center;
-                }
-
-                    .main-login .right .area-form .header-form {
-                    }
-
-                    .main-login .right .area-form .form-container {
-                        align-items: center;
-                        display: flex;
-                        flex-direction: column;
-                        margin-bottom: 50px;
-                    }
-
-                        .main-login .right .area-form .form-container .form {
-                            display: flex;
-                            flex-direction: column;
-                        }
-
-                        .main-login .right .area-form .form-container .form .input {
-                            margin-top: 20px;
-                            height: 35px;
-                            width: 300px;
-                            font-size: 12pt;
-                            padding: 5px 10px;
-                            border: none;
-                            border-radius: 5px;
-                        }
-
-                        .main-login .right .area-form .form-container .btn-form {
-                            margin-top: 25px;
-                            padding: 16px 60px;
-                            border: none;
-                            border-radius: 50px;
-                            color: white;
-                            cursor: pointer;
-                            font-size: 12pt;
-                            background: #08a217;
-                        }
-
-                    .main-login .right .area-form .footer-form .link-form-tcc {
-                        color: #08a217;
-                    }
     </style>
 </head>
 <body>
-    <div class="container" style="padding: 0;">
-        <main role="main" class="pb-3 main">
-            @RenderBody()
-        </main>
-    </div>
-    <!--
-        <footer class="border-top footer text-muted">
-            <div class="container">
-                &copy; 2021 - Controle de TCC's - IFS - Versão: @version
-            </div>
-        </footer>
-    -->
+    <main role="main" id="main" class="pb-3 main" style="padding: 10px 80px 20px 80px;">
+        @RenderBody()
+    </main>
+    <script src="https://kit.fontawesome.com/832f1d49a9.js" crossorigin="anonymous"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
+
     @RenderSection("Scripts", required: false)
+
+    <script>
+        $(document).ready(function () {
+            $('#tabela').DataTable({
+                responsive: true,
+                "language": {
+                    "lengthMenu": "Mostrando _MENU_ registros por página",
+                    "zeroRecords": "Registro não localizado!",
+                    "info": "Mostrando página _PAGE_ de _PAGES_",
+                    "infoEmpty": "Nenhum registro disponível",
+                    "sLoadingRecords": "Carregando...",
+                    "sProcessing": "Processando...",
+                    "infoFiltered": "(Filtrados de _MAX_ registros)",
+                    "sSearch": "Buscar: ",
+                    "oPaginate": {
+                        "sNext": "Próximo",
+                        "sPrevious": "Anterior",
+                        "sFirst": "Primeiro",
+                        "sLast": "Último"
+                    }
+                }
+            });
+        });
+    </script>
 </body>
 </html>

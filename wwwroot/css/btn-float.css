@@ -1,0 +1,10 @@
+﻿.btn-float {
+    border: 1px solid green;
+    position: fixed;
+    bottom: 80px;
+    right: 20px;
+    padding: 20px;
+    border-radius: 20px;
+    z-index: 2;
+    background: white;
+}

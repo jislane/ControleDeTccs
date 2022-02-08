@@ -36,7 +36,7 @@ namespace SistemaDeControleDeTCCs.Extentions.Filters
         void IActionFilter.OnActionExecuting(ActionExecutingContext context)
         {
             
-            _logger.Info($"Url Acessda: {context.HttpContext.Request.GetDisplayUrl()} \n " +
+            _logger.Info($"Url Acessada: {context.HttpContext.Request.GetDisplayUrl()} \n " +
                 $"\n ________________________________________\n\n");
         }
     }
