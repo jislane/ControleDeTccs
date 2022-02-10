@@ -6,6 +6,8 @@
     Calendario calendario = ViewBag.CalendarioAtivo;
 }
 
+<partial name="_HeaderPartial" />
+
 @if (TempData["Error"] != null)
 {
     <div class="alert alert-danger alert-dismissible fade show" role="alert">

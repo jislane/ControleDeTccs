@@ -18,7 +18,7 @@
 <div asp-validation-summary="ModelOnly" class="text-danger"></div>
 
 <!--btn btn-outline-success btnAdd table-bordered -->
-<a class="btn-float" id="register" asp-area="Identity" asp-page="/Account/Register"><i class="fa fa-user-plus" aria-hidden="true" style="font-size: 20pt; color: green;"></i></a>
+<a class="btn-float" id="register" asp-area="Identity" asp-page="/Account/Register"><i class="fa fa-user-plus" aria-hidden="true"></i></a>
 
 <table id="tabela" class="table table-hover display responsive nowrap">
     <thead>
@@ -52,7 +52,7 @@
                 </td>
                 <td class="columnAcao">
                     <a title="Editar" class="btn btn-outline-primary btn-sm" asp-action="AddOrEdit" asp-route-id="@item.Id"><i class="fa fa-pencil" aria-hidden="true"></i></a> |
-                    <a title="Informações" class="btn btn-outline-secondary btn-sm" style="padding-left: 0.8rem; padding-right: 0.7rem;" asp-action="Details" asp-route-id="@item.Id"><i class="fa fa-info" aria-hidden="true"></i></a> |
+                    <!--<a title="Informações" class="btn btn-outline-secondary btn-sm" style="padding-left: 0.8rem; padding-right: 0.7rem;" asp-action="Details" asp-route-id="@item.Id"><i class="fa fa-info" aria-hidden="true"></i></a> |-->
                     <a title="Resetar senha" class="btn btn-outline-warning btn-sm" asp-action="Reset" asp-route-id="@item.UserName"><i class="fa fa-key" aria-hidden="true"></i></a>
                     @{
                         if (!item.TipoUsuario.DescTipo.Equals("Administrador"))

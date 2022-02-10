@@ -3,6 +3,8 @@
     ViewData["Title"] = "Relatório";
 }
 
+<partial name="_HeaderPartial" />
+
 <h2>@ViewData["Title"]</h2>
 <br /><br />
 <form asp-action="Preview" method="get" target="_blank">
@@ -23,3 +25,4 @@
         </div>
     </div>
 </form>
+<button onclick="history.back()" class="btn btn-outline-secondary"><i class="fa fa-reply" aria-hidden="true"></i> Voltar</button>
