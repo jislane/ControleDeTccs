@@ -7,11 +7,12 @@ table thead th:last-child {
 }
 
 table th {
-    color: white;
+    color: black;
     padding: 15px 20px;
     text-align: center;
-    font-weight: normal;
-    background-color: rgb(112, 196, 105);
+    font-weight: bold;
+    background-color: #87f4ac;
+    /*rgb(112, 196, 105)*/
 }
 
 table tr:nth-child(odd) {
