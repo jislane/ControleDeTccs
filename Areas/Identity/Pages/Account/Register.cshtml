@@ -6,16 +6,14 @@
     var cursos = (List<SistemaDeControleDeTCCs.Models.Curso>)ViewData["cursos"];
 }
 
-<!---->
 @section Styles {
-    <link rel="stylesheet" href="~/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/style-form-group.css" />
 }
-<link rel="stylesheet" href="~/css/bootstrap.min.css" />
-<link rel="stylesheet" href="~/css/Pagina-cadastrar_editar.css"/>
+
 <partial name="_HeaderPartial" />
 
-<h3>Registrar um novo usuário</h3>
+<h3>Registrar novo usuário</h3>
+<br />
 <div class="row" id="fundo">
     <div class="col-md-12">
         <form asp-route-returnUrl="@Model.ReturnUrl" method="post">

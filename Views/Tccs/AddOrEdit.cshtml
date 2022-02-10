@@ -4,14 +4,17 @@
     var idOrientador = 0;
 }
 
-<link rel="stylesheet" href="~/css/bootstrap.min.css" />
-<link rel="stylesheet" href="~/css/Pagina-cadastrar_editar.css"/>
+@section Styles {
+    <link rel="stylesheet" href="~/css/style-form-group.css" />
+}
+
 <partial name="_HeaderPartial" />
 
 <style>
-    select{
+    select {
         width: 100%;
     }
+
     .select2 {
         width: 100% !important;
     }
@@ -20,6 +23,7 @@
         height: calc(1.5em + .75rem + 2px) !important;
         line-height: 31px !important;
     }
+
     .select2-selection__rendered {
         line-height: calc(1.5em + .75rem + 2px) !important;
     }
@@ -40,15 +44,14 @@
             <div class="form-row">
                 <div class="form-group col-md-6">
                     <label asp-for="Tcc.Tema" class="control-label"></label>
-                    <input asp-for="Tcc.Tema" class="form-control input" placeholder="Digite o tema completo do TCC"/>
+                    <input asp-for="Tcc.Tema" class="form-control input" placeholder="Digite o tema completo do TCC" />
                     <span asp-validation-for="Tcc.Tema" class="text-danger"></span>
                 </div>
                 <div class="form-group col-md-6">
                     <label class="control-label">Discente</label>
                     <select asp-for="Tcc.UsuarioId"
                             id="select-discente"
-                            class="form-control input"
-                            >
+                            class="form-control input">
                         @{
                             if (Model.Tcc.UsuarioId != null)
                             {
@@ -83,8 +86,7 @@
                     <label>Orientador</label>
                     <select asp-for="@idOrientador"
                             class="form-control input"
-                            id="select-orientador"
-                            >
+                            id="select-orientador">
                         @{
                             if (Model.Tcc.UsuarioId != null)
                             {
@@ -105,8 +107,7 @@
                 <label class="control-label">Curso</label>
                 <select asp-for="Tcc.IdCurso"
                         id="select-curso"
-                        class="form-control input"
-                        >
+                        class="form-control input">
                     @{
                         if (Model.Tcc.IdCurso != 0)
                         {

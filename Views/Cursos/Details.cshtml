@@ -2,38 +2,37 @@
 
 @{
     ViewData["Title"] = "Curso";
-    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<link rel="stylesheet" href="~/css/bootstrap.min.css" />
-<link rel="stylesheet" href="~/css/Pagina-cadastrar_editar.css"/>
+@section Styles {
+    <link rel="stylesheet" href="~/css/style-form-group.css" />
+}
+
 <partial name="_HeaderPartial" />
 
-<h1>@ViewData["Title"]</h1>
-<br />
 <div>
     <h3>Curso: @Html.DisplayFor(model => model.Nome)</h3>
-    
+    <br />
     <dl class="row" id="fundo">
-        <dt class = "col-sm-2">
+        <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.Nome)
         </dt>
-        <dd class = "col-sm-10">
+        <dd class="col-sm-10">
             @Html.DisplayFor(model => model.Nome)
         </dd>
-        <dt class = "col-sm-2">
+        <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.Sigla)
         </dt>
-        <dd class = "col-sm-10">
+        <dd class="col-sm-10">
             @Html.DisplayFor(model => model.Sigla)
         </dd>
         <dt class="col-sm-2">
             Código MEC
         </dt>
-        <dd class = "col-sm-10">
+        <dd class="col-sm-10">
             @Html.DisplayFor(model => model.CodEmec)
         </dd>
-        <dt class = "col-sm-2">
+        <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.Coordenador)
         </dt>
         <dd class="col-sm-10">
@@ -43,13 +42,13 @@
             }
             else
             {
-            @Html.DisplayFor(model => model.Coordenador.Nome)
+                @Html.DisplayFor(model => model.Coordenador.Nome)
             }
         </dd>
-        <dt class = "col-sm-2">
+        <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.Campus)
         </dt>
-        <dd class = "col-sm-10">
+        <dd class="col-sm-10">
             @Html.DisplayFor(model => model.Campus.Endereco)
         </dd>
     </dl>

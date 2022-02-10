@@ -4,11 +4,11 @@
     ViewData["Title"] = "Calendário";
 }
 
-<link rel="stylesheet" href="~/css/bootstrap.min.css" />
-<link rel="stylesheet" href="~/css/Pagina-cadastrar_editar.css"/>
-<partial name="_HeaderPartial" />
+@section Styles {
+    <link rel="stylesheet" href="~/css/style-form-group.css" />
+}
 
-<h1>@ViewData["Title"]</h1>
+<partial name="_HeaderPartial" />
 
 @if (TempData["Error"] != null)
 {
@@ -20,7 +20,8 @@
     </div>
 }
 
-<h3>Registrar um novo calendário</h3>
+<h3>Registrar novo calendário</h3>
+<br />
 <div class="row" id="fundo">
     <div class="col-md-12">
         <form asp-action="Create">

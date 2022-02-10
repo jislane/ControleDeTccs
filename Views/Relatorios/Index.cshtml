@@ -1,27 +1,29 @@
-﻿
-@{
+﻿@{
     ViewData["Title"] = "Relatório";
 }
 
-<link rel="stylesheet" href="~/css/bootstrap.min.css" />
-<link rel="stylesheet" href="~/css/Pagina-cadastrar_editar.css"/>
+@section Styles {
+    <link rel="stylesheet" href="~/css/style-form-group.css" />
+}
+
 <partial name="_HeaderPartial" />
 
 <h2>@ViewData["Title"]</h2>
-<br /><br />
+<br />
+<br />
 <form asp-action="Preview" method="get" target="_blank">
     <div class="form-group row">
-        
+
         <div>
             <label class="col-sm-2 col-form-label">Semestre:</label>
         </div>
-        
+
         <div class="col-sm-auto">
             <select class="form-control" asp-items="@ViewBag.Semestre" id="filterSemestre" name="filterSemestre">
                 <option selected>Selecione</option>
             </select>
         </div>
-        
+
         <div>
             <input type="submit" value="Gerar PDF" class="btn btn-outline-primary" />
         </div>

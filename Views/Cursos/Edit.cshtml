@@ -11,13 +11,7 @@
 <partial name="_HeaderPartial" />
 
 <h3>Editar curso: @Html.DisplayFor(model => model.Nome)</h3>
-<link rel="stylesheet" href="~/css/bootstrap.min.css" />
-<link rel="stylesheet" href="~/css/Pagina-cadastrar_editar.css"/>
-
-<h1>@ViewData["Title"]</h1>
 <br />
-
-<h3>Curso: @Html.DisplayFor(model => model.Nome)</h3>
 <div class="row" id="fundo">
     <div class="col-md-12">
         <form asp-action="Edit">
@@ -26,7 +20,7 @@
             <div class="form-row">
                 <div class="form-group col-md-6">
                     <label asp-for="Nome" class="control-label"></label>
-                    <input asp-for="Nome" class="form-control input" placeholder="Digite o nome do curso"/>
+                    <input asp-for="Nome" class="form-control input" placeholder="Digite o nome do curso" />
                     <span asp-validation-for="Nome" class="text-danger"></span>
                 </div>
                 <div class="form-group col-md-6">

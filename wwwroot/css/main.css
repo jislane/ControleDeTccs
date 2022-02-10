@@ -29,3 +29,27 @@
     flex-direction: row;
 }
 */
+
+* {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    outline: none;
+}
+
+body {
+    margin: 0;
+}
+
+a {
+    text-decoration: none !important;
+}
+
+.main {
+    height: 90vh;
+    padding: 10px 80px 20px 80px;
+}
+
+@media all and (max-width: 1000px) {
+    .main {
+        padding: 20px;
+    }
+}

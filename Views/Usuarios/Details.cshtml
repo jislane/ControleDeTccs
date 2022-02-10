@@ -2,18 +2,17 @@
 
 @{
     ViewData["Title"] = "Usuário";
-    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<link rel="stylesheet" href="~/css/bootstrap.min.css" />
-<link rel="stylesheet" href="~/css/Pagina-cadastrar_editar.css"/>
+@section Styles {
+    <link rel="stylesheet" href="~/css/style-form-group.css" />
+}
+
 <partial name="_HeaderPartial" />
 
-<h1>@ViewData["Title"]</h1>
-<br />
 <div>
     <h3>Usuário: @Html.DisplayFor(model => model.Nome) @Html.DisplayFor(model => model.Sobrenome)</h3>
-    
+    <br />
     <dl class="row" id="fundo">
         <dt class="col-sm-2">
             Tipo

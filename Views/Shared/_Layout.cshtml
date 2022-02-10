@@ -22,33 +22,14 @@
     @RenderSection("Styles", required: false)
 
     <script src="~/js/jquery-3.5.1.min.js"></script>
-
-    <style>
-        * {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            outline: none;
-        }
-
-        body {
-            margin: 0;
-        }
-
-        a {
-            text-decoration: none !important;
-        }
-
-        .main {
-            height: 90vh;
-        }
-    </style>
+    <script src="https://kit.fontawesome.com/832f1d49a9.js" crossorigin="anonymous"></script>
 </head>
 <body>
-    <main role="main" id="main" class="pb-3 main" style="padding: 10px 80px 20px 80px;">
+    <main role="main" id="main" class="pb-3 main">
         @RenderBody()
     </main>
-    <script src="https://kit.fontawesome.com/832f1d49a9.js" crossorigin="anonymous"></script>
+    
     <script src="~/js/site.js" asp-append-version="true"></script>
-
     @RenderSection("Scripts", required: false)
 
     <script>
