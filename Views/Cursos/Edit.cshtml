@@ -11,6 +11,13 @@
 <partial name="_HeaderPartial" />
 
 <h3>Editar curso: @Html.DisplayFor(model => model.Nome)</h3>
+<link rel="stylesheet" href="~/css/bootstrap.min.css" />
+<link rel="stylesheet" href="~/css/Pagina-cadastrar_editar.css"/>
+
+<h1>@ViewData["Title"]</h1>
+<br />
+
+<h3>Curso: @Html.DisplayFor(model => model.Nome)</h3>
 <div class="row" id="fundo">
     <div class="col-md-12">
         <form asp-action="Edit">
@@ -24,14 +31,15 @@
                 </div>
                 <div class="form-group col-md-6">
                     <label asp-for="Sigla" class="control-label"></label>
-                    <input asp-for="Sigla" class="form-control input" placeholder="Digite a sigla do curso"/>
+                    <input asp-for="Sigla" class="form-control input" />
                     <span asp-validation-for="Sigla" class="text-danger"></span>
                 </div>
             </div>
+
             <div class="form-row">
                 <div class="form-group col-md-6">
                     <label asp-for="CodEmec" class="control-label"></label>
-                    <input asp-for="CodEmec" class="form-control input" placeholder="Digite o código do curso no MEC"/>
+                    <input asp-for="CodEmec" class="form-control input" />
                     <span asp-validation-for="CodEmec" class="text-danger"></span>
                 </div>
                 <div class="form-group col-md-6">
@@ -40,21 +48,18 @@
                     <span asp-validation-for="IdCoordenador" class="text-danger"></span>
                 </div>
             </div>
+
             <div class="form-row">
                 <div class="form-group col-md-6">
                     <label asp-for="IdCampus" class="control-label"></label>
-                    <select asp-for="IdCampus" class="form-control input" asp-items="ViewBag.IdCampus">
-                        <option value="">Selecione o campus</option>
-                    </select>
+                    <select asp-for="IdCampus" class="form-control input" asp-items="ViewBag.IdCampus"></select>
                     <span asp-validation-for="IdCampus" class="text-danger"></span>
                 </div>
-            </div>
-            <div class="form-row">
-                <div class="form-group col-md-6">
-                    <button id="btsalvar" type="submit" class="btn-form btn-outline-success btn-block"><i class="fa fa-floppy-o" aria-hidden="true"></i> Salvar</button>
+                <div class="form-group col-md-3">
+                    <button id="btsalvar" type="submit" class="btn-form"><i class="fa fa-floppy-o" aria-hidden="true"></i> Salvar</button>
                 </div>
-                <div class="form-group col-md-6">
-                    <a id="avoltar" asp-action="Index" class="btn btn-form"><i class="fa fa-reply" aria-hidden="true"></i> Voltar</a>
+                <div class="form-group col-md-3">
+                    <a asp-action="Index" id="avoltar" class="btn btn-form"><i class="fa fa-reply" aria-hidden="true"></i> Voltar</a>
                 </div>
             </div>
         </form>
