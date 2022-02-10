@@ -4,11 +4,17 @@
     var idOrientador = 0;
 }
 
+@section Styles {
+    <link rel="stylesheet" href="~/css/style-form-group.css" />
+}
+
+<partial name="_HeaderPartial" />
 
 <style>
-    select{
+    select {
         width: 100%;
     }
+
     .select2 {
         width: 100% !important;
     }
@@ -17,6 +23,7 @@
         height: calc(1.5em + .75rem + 2px) !important;
         line-height: 31px !important;
     }
+
     .select2-selection__rendered {
         line-height: calc(1.5em + .75rem + 2px) !important;
     }
@@ -24,45 +31,83 @@
 @{
     ViewData["Title"] = "TCC";
 }
-<h1>Cadastrar/Editar TCC</h1>
+<h1>TCC's</h1>
 
-<hr />
-<div class="row">
-    <div class="col-md-4">
+<h3>Registrar um novo TCC</h3>
+<div class="row" id="fundo">
+    <div class="col-md-12">
         <form asp-action="AddOrEdit">
             <div asp-validation-summary="ModelOnly" class="text-danger">
             </div>
             <input type="hidden" asp-for="Tcc.TccId" />
             <input type="hidden" asp-for="Tcc.DataDeCadastro" />
-            <div class="form-group">
-                <label asp-for="Tcc.Tema" class="control-label"></label>
-                <input asp-for="Tcc.Tema" class="form-control" />
-                <span asp-validation-for="Tcc.Tema" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label class="control-label">Campus</label>
-                <select id="select-campus"
-                        asp-items="@(IEnumerable<SelectListItem>)ViewBag.Campus" class="form-control">
-                    @{
-                        Campus c = ViewBag.campusSelected;
-                        if (c != null)
-                        {
-                            <option value="@c.Id">@c.Nome</option>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label asp-for="Tcc.Tema" class="control-label"></label>
+                    <input asp-for="Tcc.Tema" class="form-control input" placeholder="Digite o tema completo do TCC" />
+                    <span asp-validation-for="Tcc.Tema" class="text-danger"></span>
+                </div>
+                <div class="form-group col-md-6">
+                    <label class="control-label">Discente</label>
+                    <select asp-for="Tcc.UsuarioId"
+                            id="select-discente"
+                            class="form-control input">
+                        @{
+                            if (Model.Tcc.UsuarioId != null)
+                            {
+                                <option selected value="@Model.Tcc.UsuarioId">@Model.Tcc.Usuario.Nome</option>
+                            }
+
                         }
-                        else
-                        {
-                            <option value="">Selecione</option>
-                        }
-                    }
-                </select>
+                    </select>
+                    <span asp-validation-for="Tcc.UsuarioId" class="text-danger"></span>
+                </div>
             </div>
 
-            <div class="form-group">
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label class="control-label">Campus</label>
+                    <select id="select-campus"
+                            asp-items="@(IEnumerable<SelectListItem>)ViewBag.Campus" class="form-control input">
+                        @{
+                            Campus c = ViewBag.campusSelected;
+                            if (c != null)
+                            {
+                                <option value="@c.Id">@c.Nome</option>
+                            }
+                            else
+                            {
+                                <option value="">Selecione</option>
+                            }
+                        }
+                    </select>
+                </div>
+                <div class="form-group col-md-6">
+                    <label>Orientador</label>
+                    <select asp-for="@idOrientador"
+                            class="form-control input"
+                            id="select-orientador">
+                        @{
+                            if (Model.Tcc.UsuarioId != null)
+                            {
+                                Usuario u = ViewBag.orientadorAtual;
+
+                                <option selected value="@u.Id">@u.Nome</option>
+                            }
+
+
+                        }
+                    </select>
+                    <span asp-validation-for="Tcc.UsuarioId" class="text-danger"></span>
+                </div>
+            </div>
+
+
+            <div class="form-group col-md-6">
                 <label class="control-label">Curso</label>
                 <select asp-for="Tcc.IdCurso"
                         id="select-curso"
-                        class="form-control"
-                        >
+                        class="form-control input">
                     @{
                         if (Model.Tcc.IdCurso != 0)
                         {
@@ -73,48 +118,13 @@
                 <span asp-validation-for="Tcc.IdCurso" class="text-danger"></span>
             </div>
 
-            <div class="form-group">
-                <label class="control-label">Discente</label>
-                <select asp-for="Tcc.UsuarioId"
-                        id="select-discente"
-                        class="form-control"
-                        >
-                    @{
-                        if (Model.Tcc.UsuarioId != null)
-                        {
-                            <option selected value="@Model.Tcc.UsuarioId">@Model.Tcc.Usuario.Nome</option>
-                        }
-
-                    }
-                </select>
-                <span asp-validation-for="Tcc.UsuarioId" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label>Orientador</label>
-                <select asp-for="@idOrientador"
-                        class="form-control"
-                        id="select-orientador"
-                        >
-                    @{
-                        if (Model.Tcc.UsuarioId != null)
-                        {
-                            Usuario u = ViewBag.orientadorAtual;
-
-                            <option selected value="@u.Id">@u.Nome</option>
-                        }
-
-
-                    }
-                </select>
-                <span asp-validation-for="Tcc.UsuarioId" class="text-danger"></span>
-            </div>
 
             <div class="form-row">
                 <div class="form-group col-md-6">
-                    <button type="submit" class="btn btn-outline-success btn-block"><i class="fa fa-floppy-o" aria-hidden="true"> Salvar</i></button>
+                    <button type="submit" id="btsalvar" class="btn-form"><i class="fa fa-floppy-o" aria-hidden="true"> Salvar</i></button>
                 </div>
                 <div class="form-group col-md-6">
-                    <a asp-action="Index" class="btn btn-outline-secondary btn-block"><i class="fa fa-reply" aria-hidden="true"></i> Voltar</a>
+                    <a asp-action="Index" id="avoltar" class="btn btn-form"><i class="fa fa-reply" aria-hidden="true"></i> Voltar</a>
                 </div>
             </div>
         </form>

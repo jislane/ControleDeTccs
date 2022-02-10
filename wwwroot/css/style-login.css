@@ -1,0 +1,82 @@
+﻿.main-login {
+    height: 90%;
+    padding: 50px;
+    display: flex;
+    flex-direction: row;
+}
+
+    .main-login .left,
+    .main-login .right {
+        margin: auto;
+    }
+
+    .main-login .left {
+        width: 60%;
+    }
+
+        .main-login .left .banner {
+            display: flex;
+        }
+
+            .main-login .left .banner figure {
+                margin: auto;
+                width: 60%;
+                height: 60%;
+            }
+
+                .main-login .left .banner figure img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: scale-down;
+                }
+
+    .main-login .right {
+        width: 40%;
+        border-radius: 5px;
+        background: #ebebeb;
+    }
+
+        .main-login .right .area-form {
+            padding: 15px;
+            text-align: center;
+        }
+
+            .main-login .right .area-form .header-form {
+            }
+
+            .main-login .right .area-form .form-container {
+                align-items: center;
+                display: flex;
+                flex-direction: column;
+                margin-bottom: 50px;
+            }
+
+                .main-login .right .area-form .form-container .form {
+                    display: flex;
+                    flex-direction: column;
+                }
+
+                    .main-login .right .area-form .form-container .form .input {
+                        margin-top: 20px;
+                        height: 35px;
+                        width: 300px;
+                        font-size: 12pt;
+                        padding: 5px 10px;
+                        border: none;
+                        border-radius: 5px;
+                    }
+
+                .main-login .right .area-form .form-container .btn-form {
+                    margin-top: 25px;
+                    padding: 16px 60px;
+                    border: none;
+                    border-radius: 50px;
+                    color: white;
+                    cursor: pointer;
+                    font-size: 12pt;
+                    background: #08a217;
+                }
+
+            .main-login .right .area-form .footer-form .link-form-tcc {
+                color: #08a217;
+            }

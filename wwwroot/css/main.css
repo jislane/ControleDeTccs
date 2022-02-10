@@ -1,0 +1,55 @@
+﻿:root {
+    font-size: 12pt;
+}
+/*
+.row {
+    
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    margin: 10px auto;
+}
+
+.control-label {
+    margin-bottom: 5px;
+}
+
+.form-control {
+    height: 35px;
+}
+
+.col-md-4 {
+    width: 40%;
+}
+
+.navbar {
+    display: flex;
+    flex-direction: row;
+}
+*/
+
+* {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    outline: none;
+}
+
+body {
+    margin: 0;
+}
+
+a {
+    text-decoration: none !important;
+}
+
+.main {
+    height: 90vh;
+    padding: 10px 80px 20px 80px;
+}
+
+@media all and (max-width: 1000px) {
+    .main {
+        padding: 20px;
+    }
+}

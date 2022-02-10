@@ -4,45 +4,31 @@
     ViewData["Title"] = "Usuários";
 }
 
+@section Styles {
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.22/css/dataTables.bootstrap4.min.css" />
+    <link rel="stylesheet" href="https://cdn.datatables.net/responsive/2.2.7/css/responsive.dataTables.min.css" />
+    <link rel="stylesheet" href="~/css/btn-float.css" />
+    <link rel="stylesheet" href="~/css/style-table.css" />
+}
+
 <partial name="_HeaderPartial" />
 
 <h1>@ViewData["Title"]</h1>
 
-<style>
-    .btn-float {
-        border: 1px solid green;
-        position: fixed;
-        bottom: 100px;
-        right: 60px;
-        padding: 20px;
-        border-radius: 20px;
-        background: white;
-    }
-</style>
 <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
 <!--btn btn-outline-success btnAdd table-bordered -->
-<a class="btn-float" id="register" asp-area="Identity" asp-page="/Account/Register"><i class="fa fa-user-plus" aria-hidden="true" style="font-size: 20pt; color: green;"></i></a>
-<table id="tabela" class="table table-hover display responsive nowrap" style="width:100%">
-    <thead style="background: lightgreen;">
+<a class="btn-float" id="register" asp-area="Identity" asp-page="/Account/Register"><i class="fa fa-user-plus" aria-hidden="true"></i></a>
+
+<table id="tabela" class="table table-hover display responsive nowrap">
+    <thead>
         <tr>
-            <th>
-                Tipo
-            </th>
-            <th>
-                Nome
-            </th>
-            <th>
-                Matrícula
-            </th>
-            <th>
-                Curso
-            </th>
-            <th>
-                E-mail
-            </th>
-            <th>
-                Ação
-            </th>
+            <th>Tipo</th>
+            <th>Nome</th>
+            <th>Matrícula</th>
+            <th>Curso</th>
+            <th>E-mail</th>
+            <th>Ação</th>
         </tr>
     </thead>
     <tbody>
@@ -66,7 +52,7 @@
                 </td>
                 <td class="columnAcao">
                     <a title="Editar" class="btn btn-outline-primary btn-sm" asp-action="AddOrEdit" asp-route-id="@item.Id"><i class="fa fa-pencil" aria-hidden="true"></i></a> |
-                    <a title="Informações" class="btn btn-outline-secondary btn-sm" style="padding-left: 0.8rem; padding-right: 0.7rem;" asp-action="Details" asp-route-id="@item.Id"><i class="fa fa-info" aria-hidden="true"></i></a> |
+                    <!--<a title="Informações" class="btn btn-outline-secondary btn-sm" style="padding-left: 0.8rem; padding-right: 0.7rem;" asp-action="Details" asp-route-id="@item.Id"><i class="fa fa-info" aria-hidden="true"></i></a> |-->
                     <a title="Resetar senha" class="btn btn-outline-warning btn-sm" asp-action="Reset" asp-route-id="@item.UserName"><i class="fa fa-key" aria-hidden="true"></i></a>
                     @{
                         if (!item.TipoUsuario.DescTipo.Equals("Administrador"))
@@ -86,36 +72,9 @@
     </tbody>
 </table>
 
-<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
-<script src="//cdn.datatables.net/1.10.24/js/jquery.dataTables.min.js"></script>
-<script src="//cdn.datatables.net/responsive/2.2.7/js/dataTables.responsive.min.js"></script>
-<script src="//cdn.datatables.net/1.10.24/js/dataTables.bootstrap4.min.js"></script>
-
 @section scripts{
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.css" />
-    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.22/css/dataTables.bootstrap4.min.css" />
-    <link rel="stylesheet" href="https://cdn.datatables.net/responsive/2.2.7/css/responsive.dataTables.min.css" />
-    <script>
-        $(document).ready(function () {
-            $('#tabela').DataTable({
-                responsive: true,
-                "language": {
-                    "lengthMenu": "Mostrando _MENU_ registros por página",
-                    "zeroRecords": "Registro não localizado!",
-                    "info": "Mostrando página _PAGE_ de _PAGES_",
-                    "infoEmpty": "Nenhum registro disponível",
-                    "sLoadingRecords": "Carregando...",
-                    "sProcessing": "Processando...",
-                    "infoFiltered": "(Filtrados de _MAX_ registros)",
-                    "sSearch": "Buscar: ",
-                    "oPaginate": {
-                        "sNext": "Próximo",
-                        "sPrevious": "Anterior",
-                        "sFirst": "Primeiro",
-                        "sLast": "Último"
-                    }
-                }
-            });
-        });
-    </script>
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script src="//cdn.datatables.net/1.10.24/js/jquery.dataTables.min.js"></script>
+    <script src="//cdn.datatables.net/responsive/2.2.7/js/dataTables.responsive.min.js"></script>
+    <script src="//cdn.datatables.net/1.10.24/js/dataTables.bootstrap4.min.js"></script>
 }

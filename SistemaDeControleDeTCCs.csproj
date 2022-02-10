@@ -16,14 +16,17 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Remove="Views\Shared\_AddUserBtnFloat.cshtml.cs" />
     <Compile Remove="Views\Tccs\Delete.cshtml.cs" />
   </ItemGroup>
 
   <ItemGroup>
+    <Content Remove="Views\Shared\_AddUserBtnFloat.cshtml" />
     <Content Remove="Views\Usuarios\Index1.cshtml" />
     <Content Remove="Views\Usuarios\_AddOrEdit.cshtml" />
     <Content Remove="Views\Shared\_Modal.cshtml" />
     <Content Remove="wwwroot\css\sass\.DS_Store" />
+    <Content Remove="wwwroot\css\StyleSheet.css" />
     <Content Remove="wwwroot\js\Teste.js" />
   </ItemGroup>
 

@@ -1,0 +1,17 @@
+﻿.columnAcao a {
+    font-size: 13pt;
+    border-radius: 12px 0 12px 0;
+}
+
+.columnAcao .fa::after {
+    font-weight: normal;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.columnAcao .fa-pencil::after {
+    content: " Editar";
+}
+
+.columnAcao .fa-trash::after {
+    content: " Excluir";
+}
