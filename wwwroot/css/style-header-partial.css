@@ -1,0 +1,11 @@
+﻿.header-partial #checkbox-btn {
+    display: none;
+}
+
+@media screen and (max-width: 1000px) {
+    .header-partial .header-nav {
+        height: 0;
+        overflow: hidden;
+        transition: height 0.28s;
+    }
+}

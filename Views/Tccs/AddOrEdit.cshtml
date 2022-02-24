@@ -1,37 +1,16 @@
 ﻿@model SistemaDeControleDeTCCs.Models.ViewModels.TccViewModel
 
 @{
+    ViewData["Title"] = "TCC";
     var idOrientador = 0;
 }
 
 @section Styles {
+    <link href="~/css/select2/select2.4.0.6-rc.0.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="~/css/style-form-group.css" />
 }
 
 <partial name="_HeaderPartial" />
-
-<style>
-    select {
-        width: 100%;
-    }
-
-    .select2 {
-        width: 100% !important;
-    }
-
-    .select2-selection {
-        height: calc(1.5em + .75rem + 2px) !important;
-        line-height: 31px !important;
-    }
-
-    .select2-selection__rendered {
-        line-height: calc(1.5em + .75rem + 2px) !important;
-    }
-</style>
-@{
-    ViewData["Title"] = "TCC";
-}
-<h1>TCC's</h1>
 
 <h3>Registrar um novo TCC</h3>
 <div class="row" id="fundo">
@@ -102,22 +81,22 @@
                 </div>
             </div>
 
-
-            <div class="form-group col-md-6">
-                <label class="control-label">Curso</label>
-                <select asp-for="Tcc.IdCurso"
-                        id="select-curso"
-                        class="form-control input">
-                    @{
-                        if (Model.Tcc.IdCurso != 0)
-                        {
-                            <option selected value="@Model.Tcc.IdCurso">@Model.Tcc.Curso.Nome</option>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label class="control-label">Curso</label>
+                    <select asp-for="Tcc.IdCurso"
+                            id="select-curso"
+                            class="form-control input">
+                        @{
+                            if (Model.Tcc.IdCurso != 0)
+                            {
+                                <option selected value="@Model.Tcc.IdCurso">@Model.Tcc.Curso.Nome</option>
+                            }
                         }
-                    }
-                </select>
-                <span asp-validation-for="Tcc.IdCurso" class="text-danger"></span>
+                    </select>
+                    <span asp-validation-for="Tcc.IdCurso" class="text-danger"></span>
+                </div>
             </div>
-
 
             <div class="form-row">
                 <div class="form-group col-md-6">
@@ -131,10 +110,8 @@
     </div>
 </div>
 
-<link href="~/css/select2/select2.4.0.6-rc.0.min.css" rel="stylesheet" />
-<script src="~/js/select2/select2.4.0.6-rc.0.min.js"></script>
-<script src="~/js/tcc/AddOrEdit.js"></script>
-
 @section Scripts {
+    <script src="~/js/select2/select2.4.0.6-rc.0.min.js"></script>
+    <script src="~/js/tcc/AddOrEdit.js"></script>
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
 }

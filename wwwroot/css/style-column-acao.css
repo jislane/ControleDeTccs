@@ -1,11 +1,17 @@
-﻿.columnAcao a {
-    font-size: 13pt;
+﻿/*
+.columnAcao {
+    text-align: center;
+}
+
+.columnAcao a {
+    font-size: 1.084rem;
     border-radius: 12px 0 12px 0;
 }
 
 .columnAcao .fa::after {
     font-weight: normal;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    /*font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: Helvetica, sans-serif;
 }
 
 .columnAcao .fa-pencil::after {
@@ -15,3 +21,4 @@
 .columnAcao .fa-trash::after {
     content: " Excluir";
 }
+*/

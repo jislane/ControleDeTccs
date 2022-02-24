@@ -7,17 +7,38 @@ table thead th:last-child {
 }
 
 table th {
-    color: white;
+    color: black;
     padding: 15px 20px;
     text-align: center;
     font-weight: bold;
-    background-color: rgb(112, 196, 105);
+    background-color: #87f4ac;
 }
 
 table tr:nth-child(odd) {
-    background: rgb(245,245,245);
+    background: rgb(242,242,242);
 }
 
 table tr:nth-child(even) {
     background: rgb(255,255,255);
 }
+
+.columnAcao {
+    text-align: center;
+}
+    .columnAcao a {
+        font-size: 1.084rem;
+        border-radius: 12px 0 12px 0;
+    }
+
+    .columnAcao .fa::after {
+        font-weight: normal;
+        font-family: Helvetica, sans-serif;
+    }
+
+    .columnAcao .fa-pencil::after {
+        content: " Editar";
+    }
+
+    .columnAcao .fa-trash::after {
+        content: " Excluir";
+    }

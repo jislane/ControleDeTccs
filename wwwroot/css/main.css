@@ -1,37 +1,9 @@
 ﻿:root {
     font-size: 12pt;
 }
-/*
-.row {
-    
-}
-
-.form-group {
-    display: flex;
-    flex-direction: column;
-    margin: 10px auto;
-}
-
-.control-label {
-    margin-bottom: 5px;
-}
-
-.form-control {
-    height: 35px;
-}
-
-.col-md-4 {
-    width: 40%;
-}
-
-.navbar {
-    display: flex;
-    flex-direction: row;
-}
-*/
 
 * {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: Helvetica, sans-serif;
     outline: none;
 }
 
