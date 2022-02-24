@@ -3,10 +3,10 @@
 @inject SignInManager<Usuario> SignInManager
 @inject UserManager<Usuario> UserManager
 
-<ul class="navbar-nav">
-    @if (SignInManager.IsSignedIn(User))
+<link href="~/css/style-login-parcial.css" rel="stylesheet" />
 
-        
+<ul class="navbar-nav" id="second-nav">
+    @if (SignInManager.IsSignedIn(User))
     {
         var user = @UserManager.FindByNameAsync(User.Identity.Name);
 
@@ -14,9 +14,14 @@
             <a id="manage" class="nav-link" style="color:black" asp-area="Identity" asp-page="/Account/Manage/Index" title="Manage"><b>Bem-vindo(a), @user.Result.Nome!</b></a>
         </li>
         <li class="nav-item">
-            <form id="logoutForm" class="form-inline" asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Action("Index", "Home", new { area = "" })">
+            <form id="logoutForm" class="form-inline" asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Action("Index", "TCCPublicados", new { area = "" })">
                 <button id="logout" type="submit" class="nav-link btn btn-link" style="color:black"><b>Sair</b></button>
             </form>
+        </li>
+        <li class="nav-item icon-user">
+            <div style="display: flex; flex-direction: column; align-items: center;">
+                <img src="~/img/user.jpg" alt="Alternate Text" style="width: 50px; border-radius: 50px;" />
+            </div>
         </li>
     }
     else
@@ -25,7 +30,7 @@
             <a class="nav-link" style="color:black" id="login" asp-area="Identity" asp-page="/Account/Login"><b>Acessar</b></a>
         </li>
         @*<li class="nav-item">
-            <a class="nav-link text-dark" id="register" asp-area="Identity" asp-page="/Account/Register">Registre-se</a>
-          </li>*@
+              <a class="nav-link text-dark" id="register" asp-area="Identity" asp-page="/Account/Register">Registre-se</a>
+            </li>*@
     }
 </ul>

@@ -1,0 +1,131 @@
+﻿.main {
+    padding: 0;
+}
+
+.main-login {
+    display: flex;
+    flex-direction: row;
+    height: 100vh;
+    width: 100vw;
+    padding: 30px;
+    background: rgb(245, 245, 245);
+}
+
+    .main-login .left,
+    .main-login .right {
+        margin: auto;
+    }
+
+    .main-login .left {
+        width: 60%;
+        height: 100%;
+    }
+
+        .main-login .left .banner {
+            display: flex;
+            height: 100%;
+        }
+
+            .main-login .left .banner figure {
+                margin: auto;
+                width: 60%;
+                height: 60%;
+            }
+
+                .main-login .left .banner figure img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: scale-down;
+                }
+
+    .main-login .right {
+        width: 40%;
+        height: 100%;
+    }
+
+        .main-login .right .area-form {
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+            padding: 15px;
+            border-radius: 30px;
+            background: white;
+        }
+
+            .main-login .right .area-form > div {
+                margin: auto;
+                width: 100%;
+                text-align: center;
+            }
+
+            .main-login .right .area-form .header-form {
+                
+            }
+
+                .main-login .right .area-form .header-form .text-center img {
+                    width: 120px;
+                }
+
+                    .main-login .right .area-form .header-form .text-center label {
+                        position: relative;
+                        top: 45px;
+                        font-size: 2.5rem;
+                        color: #828282;
+                    }
+
+                    .main-login .right .area-form .form-container {
+                        display: flex;
+                        flex-direction: column;
+                        margin-bottom: 50px;
+                    }
+
+                .main-login .right .area-form .form-container .form {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    width: 100%;
+                    padding: 0 10px;
+                }
+
+                    .main-login .right .area-form .form-container .form .input {
+                        margin-top: 20px;
+                        height: 55px;
+                        width: 100%;
+                        font-size: 13pt;
+                        padding: 5px 15px;
+                        border: none;
+                        border-radius: 5px;
+                        background: rgb(240, 240, 245);
+                    }
+
+                .main-login .right .area-form .form-container .form .btn-form {
+                    margin-top: 50px;
+                    padding: 20px 60px;
+                    width: 55%;
+                    border: none;
+                    border-radius: 50px;
+                    color: white;
+                    cursor: pointer;
+                    font-size: 1.2rem;
+                    background: #009f36;
+                }
+
+            .main-login .right .area-form .footer-form .link-form-tcc {
+                color: #08a217;
+                font-size: 1.4rem;
+            }
+
+@media screen and (max-width: 1000px) {
+    .main-login {
+        flex-direction: column;
+    }
+
+        .main-login .left,
+        .main-login .right {
+            width: 100%;
+        }
+
+        .main-login .left {
+            display: none;
+        }
+}

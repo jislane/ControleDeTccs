@@ -1,33 +1,36 @@
 ﻿@page
 @model RegisterModel
 @{
-    ViewData["Title"] = "Usuário";
+    ViewData["Title"] = "Registrar Usuário";
     var tiposUsuarios = (List<SistemaDeControleDeTCCs.Models.TipoUsuario>)ViewData["tiposUsuarios"];
     var cursos = (List<SistemaDeControleDeTCCs.Models.Curso>)ViewData["cursos"];
 }
 
-<h1>@ViewData["Title"]</h1>
+@section Styles {
+    <link rel="stylesheet" href="~/css/style-form-group.css" />
+}
 
-<hr />
-<div class="row">
-    <div class="col-md-4">
+<partial name="_HeaderPartial" />
+
+<h3>Registrar novo usuário</h3>
+<br />
+<div class="row" id="fundo">
+    <div class="col-md-12">
         <form asp-route-returnUrl="@Model.ReturnUrl" method="post">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <partial name="_StatusMessage" for="StatusMessage" />
             <div class="form-row">
-                <div class="form-group col-md-12">
+                <div class="form-group col-md-6">
                     <label asp-for="Input.TipoUsuarioId" class="control-label"></label>
-                    <select asp-for="Input.TipoUsuarioId" asp-items='new SelectList(tiposUsuarios,"TipoUsuarioId","DescTipo")' class="form-control">
-                        <option value="">Selecione</option>
+                    <select asp-for="Input.TipoUsuarioId" asp-items='new SelectList(tiposUsuarios,"TipoUsuarioId","DescTipo")' class="form-control input">
+                        <option value="">Selecione o tipo</option>
                     </select>
                     <span asp-validation-for="Input.TipoUsuarioId" class="text-danger"></span>
                 </div>
-            </div>
-            <div class="form-row">
-                <div class="form-group col-md-12">
+                <div class="form-group col-md-6">
                     <label asp-for="Input.IdCurso" class="control-label"></label>
-                    <select asp-for="Input.IdCurso" asp-items='new SelectList(cursos,"Id","Nome")' class="form-control">
-                        <option value="">Selecione</option>
+                    <select asp-for="Input.IdCurso" asp-items='new SelectList(cursos,"Id","Nome")' class="form-control input">
+                        <option value="">Selecione o curso</option>
                     </select>
                     <span asp-validation-for="Input.IdCurso" class="text-danger"></span>
                 </div>
@@ -35,43 +38,45 @@
             <div class="form-row">
                 <div class="form-group col-md-6">
                     <label asp-for="Input.Nome"></label>
-                    <input asp-for="Input.Nome" class="form-control" />
+                    <input asp-for="Input.Nome" class="form-control input" placeholder="Digite o nome completo" />
                     <span asp-validation-for="Input.Nome" class="text-danger"></span>
                 </div>
                 <div class="form-group col-md-6">
                     <label asp-for="Input.Sobrenome"></label>
-                    <input asp-for="Input.Sobrenome" class="form-control" />
+                    <input asp-for="Input.Sobrenome" class="form-control input" placeholder="Digite o sobrenome" />
                     <span asp-validation-for="Input.Sobrenome" class="text-danger"></span>
                 </div>
             </div>
             <div class="form-row">
                 <div class="form-group col-md-6">
                     <label asp-for="Input.Matricula" class="control-label"></label>
-                    <input asp-for="Input.Matricula" class="form-control" />
+                    <input asp-for="Input.Matricula" class="form-control input" placeholder="Digite a matrícula" />
                     <span asp-validation-for="Input.Matricula" class="text-danger"></span>
                 </div>
                 <div class="form-group col-md-6">
                     <label asp-for="Input.Cpf" class="control-label"></label>
-                    <input asp-for="Input.Cpf" class="form-control" id="inputCPF" onkeydown="javascript: fMasc( this, mCPF );"/>
+                    <input asp-for="Input.Cpf" class="form-control input" id="inputCPF" onkeydown="javascript: fMasc( this, mCPF );" placeholder="Digite o CPF" />
                     <span id="inputCPFMessageError" asp-validation-for="Input.Cpf" class="text-danger"> </span>
                 </div>
             </div>
-            <div class="form-group">
-                <label asp-for="Input.Email"></label>
-                <input asp-for="Input.Email" class="form-control" />
-                <span asp-validation-for="Input.Email" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Input.PhoneNumber" class="control-label"></label>
-                <input asp-for="Input.PhoneNumber" class="form-control" />
-                <span asp-validation-for="Input.PhoneNumber" class="text-danger"></span>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label asp-for="Input.Email"></label>
+                    <input asp-for="Input.Email" class="form-control input" placeholder="Digite o e-mail" />
+                    <span asp-validation-for="Input.Email" class="text-danger"></span>
+                </div>
+                <div class="form-group col-md-6">
+                    <label asp-for="Input.PhoneNumber" class="control-label"></label>
+                    <input asp-for="Input.PhoneNumber" class="form-control input" placeholder="Digite o número de telefone" />
+                    <span asp-validation-for="Input.PhoneNumber" class="text-danger"></span>
+                </div>
             </div>
             <div class="form-row">
                 <div class="form-group col-md-6">
-                    <button id="btsalvar" type="submit" class="btn btn-outline-success btn-block"><i class="fa fa-floppy-o" aria-hidden="true"></i> Salvar</button>
+                    <button id="btsalvar" type="submit" class="btn-form"><i class="fa fa-floppy-o" aria-hidden="true"></i> Salvar</button>
                 </div>
                 <div class="form-group col-md-6">
-                    <a asp-action="Index" asp-area="Coordenador" asp-controller="Usuarios" class="btn btn-outline-secondary btn-block"><i class="fa fa-reply" aria-hidden="true"></i> Voltar</a>
+                    <a asp-action="Index" asp-area="Coordenador" asp-controller="Usuarios" id="avoltar" class="btn btn-form"><i class="fa fa-reply" aria-hidden="true"></i> Voltar</a>
                 </div>
             </div>
         </form>
@@ -94,7 +99,6 @@
         return cpf
     }
 </script>
-
 
 @section Scripts {
     <partial name="_ValidationScriptsPartial" />

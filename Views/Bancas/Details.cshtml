@@ -3,8 +3,9 @@
 
 @{
     ViewData["Title"] = "Banca";
-    Layout = "~/Views/Shared/_Layout.cshtml";
 }
+
+<partial name="_HeaderPartial" />
 
 <style>
     .popoup-info {
@@ -63,9 +64,6 @@
 <div>
     <div>
         <h1 style="float: left;">Detalhes da Banca</h1>
-        <div>
-            <a asp-action="Index" style="float: right; margin-top:1em;" class="btn btn-outline-secondary"><i class="fa fa-reply" aria-hidden="true"></i> Voltar</a>
-        </div>
 
     </div>
     <div style="clear: both;">
@@ -172,10 +170,14 @@
                         </td>
                     </tr>
                 }
-                <tr>
-                    <td><button id="button" type="submit" class="btn btn-outline-success" asp-for="t"><i class="fa fa-floppy-o" aria-hidden="true"></i> Salvar Notas</button></td>
-
-                </tr>
+            <tr>
+                <td>
+                    <button id="button" type="submit" class="btn btn-outline-success" asp-for="t">
+                        <i class="fa fa-floppy-o" aria-hidden="true"></i> Salvar Notas
+                    </button>
+                    <a asp-action="Index" style="margin-left:1em;" class="btn btn-outline-secondary"><i class="fa fa-reply" aria-hidden="true"></i> Voltar</a>
+                </td>
+            </tr>
             </tbody>
         </table>
     </form>
