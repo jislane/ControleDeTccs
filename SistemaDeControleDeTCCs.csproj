@@ -25,7 +25,11 @@
     <Content Remove="Views\Usuarios\Index1.cshtml" />
     <Content Remove="Views\Usuarios\_AddOrEdit.cshtml" />
     <Content Remove="Views\Shared\_Modal.cshtml" />
+    <Content Remove="wwwroot\css\Login-Page.css" />
+    <Content Remove="wwwroot\css\Pagina-cadastrar_editar.css" />
+    <Content Remove="wwwroot\css\Pagina-Login.css" />
     <Content Remove="wwwroot\css\sass\.DS_Store" />
+    <Content Remove="wwwroot\css\site.css" />
     <Content Remove="wwwroot\css\StyleSheet.css" />
     <Content Remove="wwwroot\js\Teste.js" />
   </ItemGroup>
