@@ -12,14 +12,6 @@
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.08);
 }
 
-@media screen and (max-width: 1000px) {
-    #fundo {
-        width: 100%;
-        margin: 0;
-        padding: 10px;
-    }
-}
-
 h3 {
     font-family: "Arial";
     font-weight: bold;
@@ -73,7 +65,6 @@ h3 {
 .input {
     background: #F4F8F7;
     width: 90%;
-    margin: auto;
     border: none;
     height: 55px;
 }
@@ -83,6 +74,46 @@ h3 {
 }
 
 label {
-    margin-left: 1.4vw;
     font-weight: bold;
+}
+
+.select2 {
+    width: 100% !important;
+}
+
+.select2-selection__rendered {
+    line-height: calc(1.5em + .75rem + 2px) !important;
+}
+
+.select2-selection {
+    line-height: 31px !important;
+    width: 90% !important;
+    border: none !important;
+    height: 55px !important;
+    background: #F4F8F7 !important;
+}
+
+@media screen and (max-width: 1000px) {
+    #fundo {
+        width: 100%;
+        margin: 0;
+        padding: 28px 15px;
+    }
+
+    .input {
+        width: 100%;
+    }
+
+    #btsalvar {
+        float: none;
+        width: 100%;
+    }
+
+    #avoltar {
+        width: 100%;
+    }
+
+    .select2-selection {
+        width: 100% !important;
+    }
 }
