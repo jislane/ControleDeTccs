@@ -4,7 +4,11 @@
     ViewData["Title"] = "Calendário";
 }
 
-<h1>@ViewData["Title"]</h1>
+@section Styles {
+    <link rel="stylesheet" href="~/css/style-form-group.css" />
+}
+
+<partial name="_HeaderPartial" />
 
 @if (TempData["Error"] != null)
 {
@@ -16,20 +20,21 @@
     </div>
 }
 
-<hr />
-<div class="row">
-    <div class="col-md-4">
+<h3>Registrar novo calendário</h3>
+<br />
+<div class="row" id="fundo">
+    <div class="col-md-12">
         <form asp-action="Create">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-row">
                 <div class="form-group col-md-6">
                     <label asp-for="Ano" class="control-label"></label>
-                    <input asp-for="Ano" class="form-control" />
+                    <input asp-for="Ano" class="form-control input" placeholder="Digite o ano" />
                     <span asp-validation-for="Ano" class="text-danger"></span>
                 </div>
                 <div class="form-group col-md-6">
                     <label asp-for="Semestre" class="control-label"></label>
-                    <select asp-for="Semestre" class="form-control">
+                    <select asp-for="Semestre" class="form-control input">
                         <option value="">Selecione</option>
                         <option value="1">1</option>
                         <option value="2">2</option>
@@ -38,18 +43,18 @@
                 </div>
             </div>
             <div class="form-row">
-                <div class="form-group col-md-12">
+                <div class="form-group col-md-6">
                     <label asp-for="DataInicio" class="control-label"></label>
-                    <input asp-for="DataInicio" class="form-control" />
+                    <input asp-for="DataInicio" class="form-control input" />
                     <span asp-validation-for="DataInicio" class="text-danger"></span>
+                </div>
+                <div class="form-group col-md-6">
+                    <label asp-for="DataFim" class="control-label"></label>
+                    <input asp-for="DataFim" class="form-control input" />
+                    <span asp-validation-for="DataFim" class="text-danger"></span>
                 </div>
             </div>
             <div class="form-row">
-                <div class="form-group col-md-12">
-                    <label asp-for="DataFim" class="control-label"></label>
-                    <input asp-for="DataFim" class="form-control" />
-                    <span asp-validation-for="DataFim" class="text-danger"></span>
-                </div>
             </div>
             <div class="form-group form-check">
                 <label class="form-check-label">
@@ -58,10 +63,10 @@
             </div>
             <div class="form-row">
                 <div class="form-group col-md-6">
-                    <button type="submit" class="btn btn-outline-success btn-block"><i class="fa fa-floppy-o" aria-hidden="true"> Salvar</i></button>
+                    <button type="submit" id="btsalvar" class="btn-form"><i class="fa fa-floppy-o" aria-hidden="true"> Salvar</i></button>
                 </div>
                 <div class="form-group col-md-6">
-                    <a asp-action="Index" class="btn btn-outline-secondary btn-block"><i class="fa fa-reply" aria-hidden="true"></i> Voltar</a>
+                    <a asp-action="Index" id="avoltar" class="btn btn-form"><i class="fa fa-reply" aria-hidden="true"></i> Voltar</a>
                 </div>
             </div>
         </form>

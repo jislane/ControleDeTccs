@@ -2,34 +2,37 @@
 
 @{
     ViewData["Title"] = "Curso";
-    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h1>@ViewData["Title"]</h1>
-<br />
+@section Styles {
+    <link rel="stylesheet" href="~/css/style-form-group.css" />
+}
+
+<partial name="_HeaderPartial" />
+
 <div>
-    <h4>Curso: @Html.DisplayFor(model => model.Nome)</h4>
-    <hr />
-    <dl class="row">
-        <dt class = "col-sm-2">
+    <h3>Curso: @Html.DisplayFor(model => model.Nome)</h3>
+    <br />
+    <dl class="row" id="fundo">
+        <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.Nome)
         </dt>
-        <dd class = "col-sm-10">
+        <dd class="col-sm-10">
             @Html.DisplayFor(model => model.Nome)
         </dd>
-        <dt class = "col-sm-2">
+        <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.Sigla)
         </dt>
-        <dd class = "col-sm-10">
+        <dd class="col-sm-10">
             @Html.DisplayFor(model => model.Sigla)
         </dd>
         <dt class="col-sm-2">
             Código MEC
         </dt>
-        <dd class = "col-sm-10">
+        <dd class="col-sm-10">
             @Html.DisplayFor(model => model.CodEmec)
         </dd>
-        <dt class = "col-sm-2">
+        <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.Coordenador)
         </dt>
         <dd class="col-sm-10">
@@ -39,22 +42,22 @@
             }
             else
             {
-            @Html.DisplayFor(model => model.Coordenador.Nome)
+                @Html.DisplayFor(model => model.Coordenador.Nome)
             }
         </dd>
-        <dt class = "col-sm-2">
+        <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.Campus)
         </dt>
-        <dd class = "col-sm-10">
+        <dd class="col-sm-10">
             @Html.DisplayFor(model => model.Campus.Endereco)
         </dd>
     </dl>
 </div>
 <div class="form-row">
-    <div class="form-group col-md-2">
-        <a class="btn btn-outline-info btn-block" asp-action="Edit" asp-route-id="@Model.Id"><i class="fa fa-pencil" aria-hidden="true"></i> Editar</a>
+    <div class="form-group col-md-6">
+        <a id="bteditar" class="btn btn-form" asp-action="Edit" asp-route-id="@Model.Id"><i class="fa fa-pencil" aria-hidden="true"></i> Editar</a>
     </div>
-    <div class="form-group col-md-2">
-        <a class="btn btn-outline-secondary btn-block" asp-action="Index"><i class="fa fa-reply" aria-hidden="true"></i> Voltar</a>
+    <div class="form-group col-md-6">
+        <a id="avoltar" class="btn btn-form" asp-action="Index"><i class="fa fa-reply" aria-hidden="true"></i> Voltar</a>
     </div>
 </div>

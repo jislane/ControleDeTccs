@@ -2,15 +2,18 @@
 
 @{
     ViewData["Title"] = "Usuário";
-    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h1>@ViewData["Title"]</h1>
-<br />
+@section Styles {
+    <link rel="stylesheet" href="~/css/style-form-group.css" />
+}
+
+<partial name="_HeaderPartial" />
+
 <div>
-    <h4>Usuário: @Html.DisplayFor(model => model.Nome) @Html.DisplayFor(model => model.Sobrenome)</h4>
-    <hr />
-    <dl class="row">
+    <h3>Usuário: @Html.DisplayFor(model => model.Nome) @Html.DisplayFor(model => model.Sobrenome)</h3>
+    <br />
+    <dl class="row" id="fundo">
         <dt class="col-sm-2">
             Tipo
         </dt>
@@ -56,10 +59,10 @@
     </dl>
 </div>
 <div class="form-row">
-    <div class="form-group col-md-2">
-        <a class="btn btn-outline-info btn-block" asp-action="AddOrEdit" asp-route-id="@Model.Id"><i class="fa fa-pencil" aria-hidden="true"></i> Editar</a>
+    <div class="form-group col-md-6">
+        <a id="bteditar" class="btn btn-form" asp-action="AddOrEdit" asp-route-id="@Model.Id"><i class="fa fa-pencil" aria-hidden="true"></i> Editar</a>
     </div>
-    <div class="form-group col-md-2">
-        <a class="btn btn-outline-secondary btn-block" asp-action="Index"><i class="fa fa-reply" aria-hidden="true"></i> Voltar</a>
+    <div class="form-group col-md-6">
+        <a id="avoltar" class="btn btn-form" asp-action="Index"><i class="fa fa-reply" aria-hidden="true"></i> Voltar</a>
     </div>
 </div>

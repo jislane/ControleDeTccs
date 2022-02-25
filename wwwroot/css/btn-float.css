@@ -1,0 +1,31 @@
+﻿.btn-float {
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    bottom: 80px;
+    right: 25px;
+    padding: 20px;
+    z-index: 2;
+    color: green !important;
+    font-size: 15pt !important;
+    border-radius: 20px;
+    border: 1px solid green;
+    background: white;
+    transition: background 0.26s, color 0.26s;
+}
+
+    .btn-float i {
+        margin: auto;
+        color: green !important;
+        font-size: 18pt !important;
+        transition: color 0.26s;
+    }
+
+    .btn-float:hover {
+        background: green;
+        color: white !important;
+    }
+
+        .btn-float:hover i {
+            color: white !important;
+        }
